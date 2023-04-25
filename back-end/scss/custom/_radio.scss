@@ -1,0 +1,51 @@
+@use "../global" as *;
+@use "../partials" as *;
+
+.custom-radio {
+  .radio-input {
+    &:checked ~ .radio-label {
+      &::after {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  .radio-label {
+    position: relative;
+    color: $white;
+    cursor: pointer;
+    @include font($tt-nooks-script-trial, 16, light, normal, 22.4);
+    padding-left: size(30);
+
+    @include breakpoint(tab992) {
+      font-size: size(18);
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      @include translateY(-50%);
+      left: 0;
+    }
+
+    &::before {
+      @include square(18);
+      @include border(solid, 1, $white);
+      @include circle;
+      @include transitiontransform;
+    }
+
+    &::after {
+      background: $white;
+      @include square(9);
+      @include circle;
+      left: size(4.5);
+      opacity: 0;
+      visibility: hidden;
+      @include transitiontransform;
+    }
+  }
+}

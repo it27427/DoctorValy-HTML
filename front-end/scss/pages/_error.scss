@@ -1,0 +1,44 @@
+@use "../global" as *;
+@use "../partials" as *;
+
+/*
+ ERROR-SECTION START
+*/
+
+.error {
+  @include flex-center;
+  @include w100;
+  height: 100vh;
+  overflow: hidden;
+  padding: size(16);
+  background: $white;
+
+  &-thumbnail {
+    @include flex-center;
+    overflow: hidden;
+
+    @include breakpoint(mobile576) {
+      @include square(300);
+    }
+
+    @include breakpoint(tab992) {
+      @include square(480);
+    }
+
+    svg {
+      @include wh100;
+      object-fit: cover;
+    }
+
+    .st0,
+    .st1,
+    .st2,
+    .st3,
+    .st4,
+    .st5 {
+      &::selection {
+        @include setBgColor(transparent, $red);
+      }
+    }
+  }
+}

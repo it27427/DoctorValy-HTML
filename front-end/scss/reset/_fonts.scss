@@ -1,0 +1,96 @@
+@use '../global' as *;
+@use '../partials' as *;
+
+// ZAGORA FONT
+@font-face {
+  font-family: 'Zagora';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Zagora'), url('../fonts/zagora/Zagora-mLEPG.woff') format('woff');
+}
+
+// CALLISTA FONT
+@font-face {
+  font-family: 'Callista';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Callista'), url('../fonts/callista/Callista-vmqlE.woff') format('woff');
+}
+
+// TT NOOKS SCRIPT TRIAL
+@font-face {
+  font-family: 'TT Nooks Script Trial';
+  font-style: normal;
+  font-weight: 300;
+  src: local('TT Nooks Script Trial'), 
+        url('../fonts/tt-nooks-script-trial/TT Nooks Script Trial Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'TT Nooks Script Trial';
+  font-style: normal;
+  font-weight: 400;
+  src: local('TT Nooks Script Trial'), 
+        url('../fonts/tt-nooks-script-trial/TT Nooks Script Trial Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'TT Nooks Script Trial';
+  font-style: normal;
+  font-weight: 700;
+  src: local('TT Nooks Script Trial'), 
+        url('../fonts/tt-nooks-script-trial/TT Nooks Script Trial Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'TT Nooks Script Trial';
+  font-style: normal;
+  font-weight: 900;
+  src: local('TT Nooks Script Trial'), 
+        url('../fonts/tt-nooks-script-trial/TT Nooks Script Trial Black.woff') format('woff');
+}
+
+// ZAGORA FONT
+// @font-face {
+//   font-family: 'Zagora';
+//   font-style: normal;
+//   font-weight: 400;
+//   src: local('Zagora'), url('https://fonts.cdnfonts.com/s/90263/Zagora-mLEPG.woff') format('woff');
+// }
+
+// CALLISTA FONT
+// @font-face {
+//   font-family: 'Callista';
+//   font-style: normal;
+//   font-weight: 400;
+//   src: local('Callista'), url('https://fonts.cdnfonts.com/s/74202/Callista-vmqlE.woff') format('woff');
+// }
+
+// TT NOOKS SCRIPT TRIAL
+// @font-face {
+//   font-family: 'TT Nooks Script Trial';
+//   font-style: normal;
+//   font-weight: 300;
+//   src: local('TT Nooks Script Trial'), url('https://fonts.cdnfonts.com/s/96461/TT Nooks Script Trial Light.woff') format('woff');
+// }
+
+// @font-face {
+//   font-family: 'TT Nooks Script Trial';
+//   font-style: normal;
+//   font-weight: 400;
+//   src: local('TT Nooks Script Trial'), url('https://fonts.cdnfonts.com/s/96461/TT Nooks Script Trial Regular.woff') format('woff');
+// }
+
+// @font-face {
+//   font-family: 'TT Nooks Script Trial';
+//   font-style: normal;
+//   font-weight: 700;
+//   src: local('TT Nooks Script Trial'), url('https://fonts.cdnfonts.com/s/96461/TT Nooks Script Trial Bold.woff') format('woff');
+// }
+
+// @font-face {
+//   font-family: 'TT Nooks Script Trial';
+//   font-style: normal;
+//   font-weight: 900;
+//   src: local('TT Nooks Script Trial'), url('https://fonts.cdnfonts.com/s/96461/TT Nooks Script Trial Black.woff') format('woff');
+// }

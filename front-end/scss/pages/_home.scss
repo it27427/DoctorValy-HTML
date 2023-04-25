@@ -1,0 +1,894 @@
+@use "../global" as *;
+@use "../partials" as *;
+
+/*
+ HOME-SLIDER-SECTION START
+*/
+.home-slider {
+  @include w100;
+  height: 100vh;
+  position: relative;
+  top: 0;
+  left: 0;
+  
+  @include breakpoint(tab992) {
+    // margin-bottom: size(168);
+  }
+
+  .swiper {
+    position: relative;
+    @include h100;
+
+    .parallax-bg {
+      background: $white;
+      background-size: cover;
+      background-position: center;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 130%;
+      height: 100%;
+    }
+
+    &-slide {
+      position: relative;
+  
+      img {
+        @include wh100;
+        object-fit: cover;
+      }
+  
+      .slider-caption {
+        @include flex-center-column;
+        gap: size(32);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        @include transform(translate(-50%, -50%));
+        text-align: center;
+        z-index: 10;
+
+        .slider-title {
+          color: $white;
+          font-family: $calista;
+          font-weight: 400;
+        }
+
+        .slider-event {
+          @include flex-center-column;
+          gap: size(24);
+          min-width: size(300);
+
+          @include breakpoint(mobile768) {
+            min-width: size(476);
+          }
+
+          .title,
+          .slider-text {
+            color: $white;
+            @include font($tt-nooks-script-trial, 14, normal, normal, 19);
+          }
+
+          .event {
+            background: $white;
+            @include radius(100);
+            @include flex-center-column;
+            padding: size(24);
+
+            @include breakpoint(mobile768) {
+              flex-direction: row;
+              justify-content: space-between;
+              gap: size(16);
+            }
+
+            .day-date {
+              @include flex-center-column;
+              text-align: center;
+
+              @include breakpoint(mobile768) {
+                width: 50%;
+              }
+
+              .day,
+              .date {
+                color: $footertitle;
+                @include font($tt-nooks-script-trial, 16, normal, normal, 22.4);
+
+                @include breakpoint(tab992) {
+                  font-size: size(18);
+                }
+              }
+            }
+
+            .divider {
+              @include w100;
+              height: size(1);
+              margin: size(8) auto;
+              background: $footertitle;
+
+              @include breakpoint(mobile768) {
+                width: size(1);
+                height: size(34);
+                margin: 0;
+              }
+            }
+
+            .locationbox {
+              @include flex-center-column;
+              text-align: center;
+
+              @include breakpoint(mobile768) {
+                width: 50%;
+                padding-left: size(16);
+              }
+
+              .location {
+                color: $footertitle;
+                @include font($tt-nooks-script-trial, 16, normal, normal, 22.4);
+
+                @include breakpoint(tab992) {
+                  font-size: size(18);
+                }
+              }
+            }
+          }
+        }
+      }
+  
+      .overlay {
+        background: rgba($overlaybg, 0.6);
+        position: absolute;
+        inset: 0;
+        @include wh100;
+        z-index: 1;
+      }
+    }
+
+    &-pagination {
+      bottom: size(54);
+      
+      @include breakpoint(mobile768) {
+        bottom: size(48);
+      }
+
+      @include breakpoint(tab992) {
+        bottom: size(32);
+      }
+
+      &-bullet {
+        position: relative;
+        @include square(40);
+        @include circle;
+        @include border(solid, 1, transparent);
+        margin: 0;
+        background: transparent;
+        opacity: 1;
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          @include transform(translate(-50%, -50%));
+          @include square(10);
+          @include circle;
+          background: $bulletbg;
+        }
+
+        &.swiper-pagination-bullet-active {
+          border-color: $white;
+  
+          &::after {
+            background: $white;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*
+ COUPLE-SECTION START
+*/
+.copules {
+  padding: size(0) size(8) size(80);
+
+  @include breakpoint(tab992) {
+    padding: size(0) size(8) size(120);
+  }
+
+  @include breakpoint(desktop1200) {
+    padding: size(0) size(8) size(160);
+  }
+
+  .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%, -50%));
+    @include square(273);
+    @include flex-center;
+    overflow: hidden;
+    z-index: 1;
+
+    svg {
+      @include wh100;
+    }
+  }
+
+  .lovely-couple {
+    background: url(../images/lovely-couple/lovely-couple.png) no-repeat center center/cover;
+    padding: size(32) size(8) size(64);
+    position: relative;
+  
+    @include breakpoint(tab992) {
+      padding: size(64) size(8) size(96);
+    }
+  
+    &-details {
+      @include flex-center-column;
+      text-align: center;
+      gap: size(16);
+  
+      .icon {
+        @include square(96);
+        @include flex-center;
+        overflow: hidden;
+  
+        img {
+          @include wh100;
+          object-fit: cover;
+        }
+      }
+  
+      .textinfo {
+        max-width: size(604);
+        margin-inline: auto;
+  
+        .section-text {
+          color: $footertitle;
+        }
+      }
+    }
+  }
+}
+
+/*
+ WHEN-WHERE-SECTION START
+*/
+.whenwhere {
+  padding: size(80) size(8);
+  position: relative;
+
+  @include breakpoint(tab992) {
+    padding: size(115) size(8);
+  }
+
+  &-content {
+    background: url(../images/wedding/wedding.png) no-repeat center center/cover;
+  }
+
+  &-details {
+    @include flex-column;
+    gap: size(48);
+
+    @include breakpoint(tab992) {
+      gap: size(70);
+    }
+  }
+
+  &-header {
+    @include flex-column;
+    gap: size(20);
+
+    @include breakpoint(tab992) {
+      gap: size(32);
+    }
+
+    .title {
+      font-size: size(28);
+      color: $footertitle;
+      font-weight: 400;
+
+      @include breakpoint(mobile768) {
+        font-size: size(32);
+      }
+
+      @include breakpoint(tab992) {
+        font-size: size(42);
+      }
+    }
+    
+    .text {
+      color: $textcolor;
+      @include font($tt-nooks-script-trial, 16, light, normal, 22.4);
+
+      @include breakpoint(tab992) {
+        font-size: size(18);
+      }
+    }
+  }
+
+  .location {
+    background: $white;
+    box-shadow: $cardshadow;
+    @include flex-center;
+    @include w100;
+    min-height: size(360);
+    max-height: size(530);
+    overflow: hidden;
+    padding: size(16);
+    
+    @include breakpoint(tab992) {
+      padding: size(20);
+    }
+
+    img {
+      @include wh100;
+    }
+  }
+
+  .icon {
+    @include square(160);
+    @include flex-center;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+    z-index: -1;
+
+    @include breakpoint(tab992) {
+      @include square(260);
+    }
+
+    @include breakpoint(desktop1200) {
+      @include square(360);
+    }
+  
+    svg {
+      @include w100;
+    }
+  }
+}
+
+/*
+ MORE-EVENTS-SECTION START
+*/
+.more-events {
+  padding: size(80) size(8);
+  
+  @include breakpoint(tab992) {
+    padding: size(115) size(8);
+  }
+
+  @include breakpoint(desktop1200) {
+    padding: size(154) size(8);
+  }
+
+  &-content {
+    @include flex-column;
+    gap: size(40);
+  
+    @include breakpoint(tab992) {
+      gap: size(72);
+    }
+  }
+
+  &-header {
+    background: url(../images/events/celebration.png) no-repeat center center/cover;
+    @include flex-center-column;
+    gap: size(20);
+    text-align: center;
+
+    @include breakpoint(tab992) {
+      gap: size(32);
+    }
+
+    .section-title {
+      color: $footertitle;
+      @include font($tt-nooks-script-trial, 32, normal, normal, 44.8);
+    
+      @include breakpoint(mobile576) {
+        font-size: size(36);
+      }
+    
+      @include breakpoint(mobile768) {
+        font-size: size(44);
+      }
+    }
+
+    .section-text {
+      color: $footertitle;
+      @include font($tt-nooks-script-trial, 16, light, normal, 22.4);
+    
+      @include breakpoint(mobile576) {
+        font-size: size(18);
+      }
+    }
+  }
+ 
+  .scheduleinfo {
+    @include w100;
+    @include flex-center;
+    position: relative;
+    margin-top: size(64);
+
+    .section-link {
+      position: relative;
+      margin-top: size(-32);
+      z-index: 10;
+    }
+
+    .icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      @include transform(translate(-50%, -50%));
+      z-index: 1;
+    }
+  }
+}
+
+/*
+ EMPTY-BANNER-SECTION START
+*/
+.empty-banner {
+  position: relative;
+  @include w100;
+  height: size(260);
+
+  @include breakpoint(mobile576) {
+    height: size(330);
+  }
+
+  @include breakpoint(mobile768) {
+    height: size(400);
+  }
+
+  @include breakpoint(tab992) {
+    height: size(540);
+  }
+
+  .empty-thumbnail {
+    @include wh100;
+    @include flex-center;
+    overflow: hidden;
+
+    img {
+      @include wh100;
+      object-fit: cover;
+    }
+  }
+
+  .overlay {
+    background: rgba($overlaybg, 0.6);
+    position: absolute;
+    inset: 0;
+    @include wh100;
+    z-index: 1;
+  }
+}
+
+/*
+ LOVESTORY-SECTION START
+*/
+.lovestory {
+  padding: size(80) size(8) size(96);
+
+  @include breakpoint(tab992) {
+    padding: size(115) size(8) size(140);
+  }
+
+  &-content {
+    @include flex-center-column;
+    gap: size(80);
+    text-align: center;
+  }
+
+  &-header {
+    @include w100;
+    background: url(../images/love-story/love-story.png) no-repeat center center/cover;
+    @include flex-center;
+    text-align: center;
+
+    .section-title {
+      color: $footertitle;
+      font-family: $tt-nooks-script-trial;
+    }
+  }
+
+  &-body {
+    .lovestory-leftcontent,
+    .lovestory-midcontent,
+    .lovestory-rightcontent {
+      @include flex-column;
+      gap: size(24);
+    }
+
+    .lovestory-midcontent {
+      @include breakpoint(mobile768) {
+        padding-top: size(140);
+      }
+    }
+  }
+
+  &-footer {
+    @include flex-center;
+    position: relative;
+    text-align: center;
+
+    .section-title {
+      color: $footertitle;
+      position: relative;
+      z-index: 10;
+    }
+
+    .icon {
+      @include square(326);
+      @include flex-center;
+      overflow: hidden;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      @include translate(-50%, -50%);
+
+      svg {
+        @include w100;
+      }
+    }
+  }
+}
+
+/*
+ ATTENDING-SECTION START
+*/
+.attending {
+  background: url(../images/attending/attending-bg.png) no-repeat center center/cover;
+  padding: size(80) size(8);
+  position: relative;
+
+  @include breakpoint(tab992) {
+    padding: size(115) size(8);
+  }
+
+  &-details {
+    position: relative;
+    z-index: 2;
+    @include flex-center-column;
+    gap: size(20);
+    text-align: center;
+
+    @include breakpoint(mobile768) {
+      gap: size(32);
+    }
+
+    @include breakpoint(tab992) {
+      gap: size(40);
+    }
+
+    @include breakpoint(desktop1200) {
+      gap: size(58);
+    }
+  }
+  
+  .overlay {
+    background: rgba($overlaybg, 0.6);
+    position: absolute;
+    inset: 0;
+    @include wh100;
+    z-index: 1;
+  }
+}
+
+/*
+ OURGALLERY-SECTION START
+*/
+.ourgallery {
+  padding: size(80) size(8) size(96);
+
+  @include breakpoint(tab992) {
+    padding: size(115) size(8) size(140);
+  }
+
+  &-content {
+    @include flex-center-column;
+    gap: size(80);
+    text-align: center;
+  }
+
+  &-header {
+    background: url(../images/gallery/our-moments.png) no-repeat center center/cover;
+    @include flex-center-column;
+    gap: size(16);
+
+    .section-title {
+      color: $footertitle;
+      font-family: $tt-nooks-script-trial;
+    }
+
+    .section-text {
+      color: $textcolor;
+    }
+  }
+
+  &-body {
+    position: relative;
+    @include w100;
+
+    .icon {
+      position: absolute;
+      left: 50%;
+      top: 75%;
+      bottom: 0;
+      @include translateX(-50%);
+      @include square(150);
+      @include flex-center;
+
+      @include breakpoint(mobile768) {
+        @include square(200);
+      }
+
+      @include breakpoint(tab992) {
+        @include square(250);
+      }
+
+      svg {
+        @include w100;
+      }
+    }
+  }
+
+  .swiper {
+    @include w100;
+
+    &-slide {
+      box-shadow: $cardshadow;
+      @include square(150);
+      @include flex-center;
+      overflow: hidden;
+
+      img {
+        @include wh100;
+        object-fit: cover;
+      }
+
+      @include breakpoint(mobile576) {
+        @include square(200);
+      }
+
+      @include breakpoint(mobile768) {
+        @include square(300);
+      }
+
+      @include breakpoint(tab992) {
+        @include square(400);
+      }
+    }
+
+  }
+}
+
+/*
+ COUNTDOWN-SECTION START
+*/
+.countdown {
+  background: url(../images/counter-banner/counter-banner-1.png) no-repeat center center/cover;
+  padding: size(80) size(8);
+  position: relative;
+
+  @include breakpoint(tab992) {
+    padding: size(115) size(8);
+  }
+
+  &-details {
+    position: relative;
+    z-index: 2;
+    @include flex-center-column;
+    gap: size(20);
+    text-align: center;
+
+    @include breakpoint(mobile768) {
+      gap: size(32);
+    }
+
+    @include breakpoint(tab992) {
+      gap: size(40);
+    }
+
+    .countdown-clock {
+      @include flex-center;
+      gap: size(24);
+
+      .countdown-time {
+        @include flex-center-column;
+        gap: size(20);
+        text-align: center;
+
+        .days,
+        .hours,
+        .minutes,
+        .seconds {
+          @include square(64);
+          @include setBgColor($white, $countdowntext);
+          @include circle;
+          @include flex-center;
+          @include font($tt-nooks-script-trial, 18, bold, normal, 25.2);
+
+          @include breakpoint(desktop1200) {
+            @include square(80);
+            font-size: size(24);
+          }
+        }
+  
+        .count-title {
+          color: $white;
+          @include font($tt-nooks-script-trial, 18, light, normal, 25.2);
+
+          @include breakpoint(tab992) {
+            font-size: size(20);
+          }
+
+          @include breakpoint(desktop1200) {
+            font-size: size(24);
+          }
+        }
+      }
+    }
+  }
+  
+  .overlay {
+    background: rgba($overlaybg, 0.6);
+    position: absolute;
+    inset: 0;
+    @include wh100;
+    z-index: 1;
+  }
+}
+
+/*
+ MARQUEE-SLIDER-SECTION START
+*/
+.marqueeslider {
+  padding: size(80) size(8);
+
+  @include breakpoint(tab992) {
+    padding: size(115) size(8);
+  }
+
+  @include breakpoint(desktop1200) {
+    padding: size(190) size(8) size(200);
+  }
+
+  &-content {
+    @include flex-center-column;
+    gap: size(80);
+    text-align: center;
+  }
+
+  &-header {
+    @include flex-center-column;
+    gap: size(16);
+
+    .section-title {
+      color: $footertitle;
+      font-family: $tt-nooks-script-trial;
+    }
+
+    .section-text {
+      color: $textcolor;
+    }
+  }
+
+  .guests {
+    @include flex-center-vert;
+    gap: size(16);
+    overflow: hidden;
+    @include w100;
+
+    @include breakpoint(tab992) {
+      gap: size(20);
+    }
+
+    .js-marquee {
+      @include flex-center-vert;
+      gap: size(16);
+      overflow: hidden;
+      @include w100;
+  
+      @include breakpoint(tab992) {
+        gap: size(20);
+      }
+    }
+  }
+}
+
+/*
+ CONTACT-SECTION START
+*/
+.contact {
+  background: $footertitle;
+  padding: size(80) size(8);
+
+  @include breakpoint(tab992) {
+    padding: size(115) size(8);
+  }
+
+  &-form {
+    @include flex-column;
+    gap: size(80);
+    padding-left: size(12);
+    padding-right: size(12);
+    
+    @include breakpoint(tab992) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .confirm-attend {
+      @include flex-center-vert;
+      gap: size(32);
+
+      @include breakpoint(tab992) {
+        gap: size(80);  
+      }
+    }
+
+    .form-control {
+      @include setBgColor(transparent, $white);
+      @include radius(0);
+      border: 0;
+      @include border-single(bottom, solid, 1, $white);
+      @include font($tt-nooks-script-trial, 16, light, normal, 22.4);
+      padding: size(14) size(20);
+
+      @include breakpoint(tab992) {
+        font-size: size(18);
+      }
+
+      &::placeholder {
+        color: $white;
+      }
+    }
+
+    .nice-select {
+      @include setBgColor(transparent, $white);
+      @include radius(0);
+      border: 0;
+      @include border-single(bottom, solid, 1, $white);
+      @include font($tt-nooks-script-trial, 16, light, normal, 22.4);
+      padding: size(14) size(20);
+      height: auto;
+
+      @include breakpoint(tab992) {
+        font-size: size(18);
+      }
+
+      .option {
+        color: $countdowntext;
+      }
+    }
+  }
+
+  &-thumbnail {
+    @include wh100;
+    @include flex-center;
+    overflow: hidden;
+    
+    img {
+      @include wh100;
+    }
+  }
+}
+
+#meetus,
+#ourstory,
+#whenwhere,
+#events,
+#ourgallery,
+#groomsmen,
+#bridesmaid,
+#contact {
+  overflow: auto;
+  scroll-padding-top: size(167);
+  scroll-margin-top: size(167);
+}

@@ -1,0 +1,259 @@
+@use "../../global" as *;
+@use "../../partials" as *;
+
+.card-lovely {
+  @include flex-center-column;
+  gap: size(32);
+  position: relative;
+  z-index: 10;
+
+  @include breakpoint(tab992) {
+    gap: size(48);
+  }
+
+  .profile-picture {
+    box-shadow: $cardshadow;
+    @include w100;
+    min-height: size(260);
+    max-height: size(470);
+    @include flex-center;
+    overflow: hidden;
+
+    img {
+      @include wh100;
+      object-fit: cover;
+      @include transitiontransform;
+
+      @include hover {
+        @include scale(1.1);
+      }
+    }
+  }
+
+  &-body {
+    @include flex-center-column;
+    gap: size(20);
+    text-align: center;
+
+    @include breakpoint(tab992) {
+      gap: size(32);
+    }
+
+    .name {
+      color: $footertitle;
+      font-weight: 400;
+
+      @include breakpoint(tab992) {
+        font-size: size(24);
+      }
+    }
+
+    .section-text {
+      color: $textcolor;
+      @include font($tt-nooks-script-trial, 16, light, normal, 22.4);
+    
+      @include breakpoint(mobile576) {
+        font-size: size(18);
+      }
+    }
+  }
+}
+
+.card-wedding {
+  @include flex-column;
+  gap: size(4);
+
+  .icon {
+    @include square(88);
+    @include flex-center;
+    overflow: hidden;
+
+    svg {
+      @include w100;
+    }
+  }
+
+  .weddinginfo {
+    @include flex-column;
+    gap: size(12);
+
+    .wedding-title {
+      color: $footertitle;
+      font-weight: 400;
+
+      @include breakpoint(tab992) {
+        font-size: size(24);
+      }
+    }
+
+    .wedding-text {
+      color: $textcolor;
+      @include font($tt-nooks-script-trial, 16, light, normal, 22.4);
+
+      @include breakpoint(tab992) {
+        font-size: size(18);
+      }
+    }
+  }
+}
+
+.card-event {
+  @include flex-center-column;
+  gap: size(24);
+
+  @include breakpoint(tab992) {
+    gap: size(44);
+  }
+
+  &-header {
+    @include w100;
+    min-height: size(260);
+    max-height: size(470);
+    @include flex-center;
+    overflow: hidden;
+
+    img {
+      @include wh100;
+      object-fit: cover;
+      @include transitiontransform;
+
+      @include hover {
+        @include scale(1.1);
+      }
+    }
+  }
+
+  &-body {
+    @include flex-center-column;
+    gap: size(20);
+    text-align: center;
+
+    .title {
+      color: $footertitle;
+      font-weight: 400;
+
+      @include breakpoint(tab992) {
+        font-size: size(24);
+      }
+    }
+
+    .textinfo {
+      max-width: size(360);
+      margin-inline: auto;
+    }
+
+    .text {
+      color: $textcolor;
+      @include font($tt-nooks-script-trial, 16, light, normal, 22.4);
+    
+      @include breakpoint(mobile576) {
+        font-size: size(18);
+      }
+    }
+  }
+}
+
+.card-guest {
+  @include flex-center-column;
+  gap: size(20);
+  min-width: size(300);
+  max-width: size(360);
+
+  @include breakpoint(tab992) {
+    gap: size(32);
+  }
+
+  &-header {
+    @include w100;
+    min-height: size(280);
+    max-height: size(400);
+    @include flex-center;
+    overflow: hidden;
+
+    img {
+      @include wh100;
+      object-fit: cover;
+      @include transitiontransform;
+
+      @include hover {
+        @include scale(1.1);
+      }
+    }
+  }
+
+  &-body {
+    @include flex-center-column;
+    gap: size(4);
+    text-align: center;
+
+    .guest-name {
+      color: $footertitle;
+      font-weight: 400;
+
+      @include breakpoint(tab992) {
+        font-size: size(24);
+      }
+    }
+
+    .guest-relation {
+      color: $textcolor;
+      @include font($tt-nooks-script-trial, 16, light, normal, 22.4);
+    
+      @include breakpoint(mobile576) {
+        font-size: size(18);
+      }
+    }
+  }
+}
+
+.love-card {
+  @include flex-column;
+  gap: size(24);
+
+  &-thumbnail {
+    @include w100;
+    min-height: size(280);
+    max-height: size(480);
+    @include flex-center;
+    overflow: hidden;
+
+    img {
+      @include wh100;
+      object-fit: cover;
+      @include transitiontransform;
+
+      @include hover {
+        @include scale(1.1);
+      }
+    }
+  }
+
+  &-detail {
+    @include flex-column;
+    gap: size(8);
+    text-align: left;
+  
+    .date,
+    .lovetext {
+      color: $textcolor;
+      @include font($tt-nooks-script-trial, 16, light, normal, 22.4);
+    
+      @include breakpoint(mobile576) {
+        font-size: size(18);
+      }
+    }
+
+    .lovetitle {
+      color: $footertitle;
+      font-weight: 400;
+
+      @include breakpoint(tab992) {
+        font-size: size(24);
+      }
+    }
+
+    .info {
+      max-width: size(380);
+    }
+  }
+}
