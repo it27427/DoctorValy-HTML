@@ -1,7 +1,3 @@
-$calista: 'callista';
-$zagora: 'zagora';
-$tt-nooks-script-trial: 'TT Nooks Script Trial';
-
 // FONT SIZE PIXEL TO REM
 @function calculateRem($size, $base: 16) {
   $remSize: calc($size / $base);

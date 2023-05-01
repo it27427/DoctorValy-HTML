@@ -15,7 +15,7 @@
     position: relative;
     color: $white;
     cursor: pointer;
-    @include font($tt-nooks-script-trial, 16, light, normal, 22.4);
+    // @include font($tt-nooks-script-trial, 16, light, normal, 22.4);
     padding-left: size(30);
 
     @include breakpoint(tab992) {

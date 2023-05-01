@@ -17,3 +17,48 @@
     box-shadow: none;
   }
 }
+
+.form-item {
+  position: relative;
+  margin-bottom: size(15);
+
+  input {
+    display: block;
+    min-width: size(300);
+    max-width: size(400);
+    height: size(40);
+    background: transparent;
+    border: solid 1px #ccc;
+    @include border(solid, 1, #ccc);
+    transition: all .3s ease;
+    padding: 0 size(15);
+
+    &:focus{
+      border-color: blue
+    }
+  }
+
+  input, label {
+    position: absolute;
+    cursor: text;
+    z-index: 2;
+    top: 13px;
+    left: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    background: #fff;
+    padding: 0 10px;
+    color: #999;
+    transition: all .3s ease
+  }
+
+  input:focus + label,
+  input:valid + label {
+    font-size: 11px;
+    top: -5px
+  }
+
+  input:focus + label{
+    color: blue
+  }
+}
