@@ -4,3 +4,15 @@
 .header {
   
 }
+
+.dashboard-header {
+  background: $headerbg;
+  height: size(60);
+  @include flex-center-vert;
+  
+  &-nav {
+    @include flex-center-between;
+    @include w100;
+    padding-inline: size(20);
+  }
+}
