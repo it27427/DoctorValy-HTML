@@ -14,5 +14,88 @@
     @include flex-center-between;
     @include w100;
     padding-inline: size(20);
+
+    .dashboard-dropdown {
+      cursor: pointer;
+      position: relative;
+      min-height: size(60);
+      padding-inline: size(20);
+      @include flex-center;
+
+      .dropdownlink {
+        @include flex-center-vert;
+        gap: size(7);
+
+        .text {
+          color: $white;
+          @include font($primaryFont, 16, normal, normal, 22.4);
+        }
+
+        .icon {
+          svg {
+            @include transitiontransform;
+          }
+        }
+      }
+
+      .dropdown-info {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        @include w100;
+        padding-top: size(1);
+        display: none;
+        @extend %animation;
+        @extend %slideUpIn;
+        
+        .dropdownlist {
+          @include flex-column;
+          gap: size(1);
+
+          .dropdownlink {
+            @include flex-center-vert;
+            gap: size(10);
+            @include radius(4);
+            background: $dropdownbg;
+            padding: size(10.95) size(15);
+            @include transitionsall;
+
+            .icon {
+              @include square(18);
+              @include flex-center;
+              overflow: hidden;
+
+              svg {
+                @include wh100;
+              }
+            }
+
+            .text {
+              color: $white;
+              @include font($primaryFont, 13, normal, normal, 18.2);
+              letter-spacing: size(0.4);
+            }
+
+            @include hover {
+              background: $darktext;
+            }
+          }
+        }
+      }
+
+      @include hover {
+        .dropdownlink {
+          .icon {
+            svg {
+              @include rotateX(180);
+            }
+          }
+        }
+
+        .dropdown-info {
+          display: block;
+        }
+      }
+    }
   }
 }

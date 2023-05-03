@@ -2,6 +2,11 @@
 /**=====================================================**
                 ANIMATION-STYLES
 =======================================================**/
+.dashboard-header-nav .dashboard-dropdown .dropdown-info {
+  animation-duration: 350ms;
+  animation-fill-mode: both;
+}
+
 @keyframes slideDownIn {
   0% {
     transform: translateY(-100%);
@@ -35,6 +40,10 @@
     transform: translateY(1.25rem);
   }
 }
+.dashboard-header-nav .dashboard-dropdown .dropdown-info {
+  animation-name: slideUpIn;
+}
+
 @keyframes slideUpInMobile {
   0% {
     transform: translateY(2.5rem);
@@ -401,6 +410,84 @@ button:not([disabled]):hover,
   align-items: center;
   width: 100%;
   padding-inline: 1.25rem;
+}
+.dashboard-header-nav .dashboard-dropdown {
+  cursor: pointer;
+  position: relative;
+  min-height: 3.75rem;
+  padding-inline: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dashboard-header-nav .dashboard-dropdown .dropdownlink {
+  display: flex;
+  align-items: center;
+  gap: 0.4375rem;
+}
+.dashboard-header-nav .dashboard-dropdown .dropdownlink .text {
+  color: hsl(0, 0%, 100%);
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.4;
+}
+.dashboard-header-nav .dashboard-dropdown .dropdownlink .icon svg {
+  transition: transform 350ms ease-in-out;
+}
+.dashboard-header-nav .dashboard-dropdown .dropdown-info {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  padding-top: 0.0625rem;
+  display: none;
+}
+.dashboard-header-nav .dashboard-dropdown .dropdown-info .dropdownlist {
+  display: flex;
+  flex-direction: column;
+  gap: 0.0625rem;
+}
+.dashboard-header-nav .dashboard-dropdown .dropdown-info .dropdownlist .dropdownlink {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 0.25rem;
+  border-radius: 0.25rem;
+  background: hsl(226, 20%, 20%);
+  padding: 0.684375rem 0.9375rem;
+  transition: all 350ms ease-in-out;
+}
+.dashboard-header-nav .dashboard-dropdown .dropdown-info .dropdownlist .dropdownlink .icon {
+  width: 1.125rem;
+  height: 1.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.dashboard-header-nav .dashboard-dropdown .dropdown-info .dropdownlist .dropdownlink .icon svg {
+  width: 100%;
+  height: 100%;
+}
+.dashboard-header-nav .dashboard-dropdown .dropdown-info .dropdownlist .dropdownlink .text {
+  color: hsl(0, 0%, 100%);
+  font-family: "Inter", sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.4;
+  letter-spacing: 0.025rem;
+}
+.dashboard-header-nav .dashboard-dropdown .dropdown-info .dropdownlist .dropdownlink:not([disabled]):hover {
+  background: hsl(0, 0%, 10%);
+}
+.dashboard-header-nav .dashboard-dropdown:not([disabled]):hover .dropdownlink .icon svg {
+  transform: rotateX(180deg);
+}
+.dashboard-header-nav .dashboard-dropdown:not([disabled]):hover .dropdown-info {
+  display: block;
 }
 
 .form-control:focus,
