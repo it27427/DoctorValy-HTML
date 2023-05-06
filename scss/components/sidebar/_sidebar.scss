@@ -13,19 +13,118 @@
 
   @include breakpoint(tab992) {
     @include flex-column;
+    gap: size(20);
   }
 
   &-header {
+    padding: size(20) size(20) size(0);
+
     .userlink {
+      @include flex-center-vert;
+      gap: size(12);
+
       .userlink-info {
         @include flex-column;
 
         .name {
+          color: $linkcolor;
           @include font($primaryFont, 14, medium, normal, 19.6);
+
+          @include breakpoint(tab992) {
+            font-size: size(16);
+          }
+
+          @include breakpoint(desktop1200) {
+            font-size: size(18);
+          }
         }
 
         .mail {
-          @include font($primaryFont, 14, medium, normal, 19.6);
+          color: $linkcolor;
+          @include font($primaryFont, 12, medium, normal, 16.8);
+
+          @include breakpoint(tab992) {
+            font-size: size(13);
+          }
+        }
+      }
+    }
+  }
+
+  .divider {
+    @include w100;
+    height: size(1);
+    background: lighten($dropdownbg, 20%);
+  }
+
+  &-body {
+    padding: size(0) size(20) size(20);
+    @include flex-center-column;
+
+    .sidelist {
+      @include list-vertical;
+      @include w100;
+      gap: size(2);
+      
+      &-link {
+        @include flex-center-vert;
+        padding: size(12);
+        gap: size(12);
+        @include radius(10);
+
+        .icon {
+          @include square(18);
+          @include flex-center;
+          overflow: hidden;
+
+          svg {
+            @include wh100;
+          }
+        }
+
+        .text {
+          color: $linkcolor;
+          @include font($primaryFont, 15, normal, normal, 21);
+        }
+
+        &:hover:not(.active) {
+          background: rgba($white, 0.2);
+        }
+
+        &.active {
+          background: rgba($white, 0.2);
+        }
+      }
+    }
+
+    .userlist {
+      @include list-vertical;
+      @include w100;
+      gap: size(2);
+      
+      &-link {
+        @include flex-center-vert;
+        padding: size(12);
+        gap: size(12);
+        @include radius(10);
+
+        .icon {
+          @include square(18);
+          @include flex-center;
+          overflow: hidden;
+
+          svg {
+            @include wh100;
+          }
+        }
+
+        .text {
+          color: $linkcolor;
+          @include font($primaryFont, 15, normal, normal, 21);
+        }
+
+        @include hover {
+          background: rgba($white, 0.2);
         }
       }
     }
@@ -38,6 +137,17 @@
       .userlink {
         .userlink-info {
           display: none;
+        }
+      }
+    }
+
+    .sidebar-body {
+      .sidelist,
+      .userlist {
+        &-link {
+          .text {
+            display: none;
+          }
         }
       }
     }
