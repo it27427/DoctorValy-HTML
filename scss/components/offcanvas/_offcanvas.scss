@@ -41,6 +41,10 @@
       overflow: hidden;
     }
 
+  }
+
+  &-body {
+    
     .btn-close {
       @include setBgColor(transparent, $hamburgerbg);
       @include flex;
@@ -66,10 +70,6 @@
         }
       }
     }
-  }
-
-  &-body {
-    
 
     &::-webkit-scrollbar {
       background: transparent;

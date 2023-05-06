@@ -708,7 +708,7 @@ button:not([disabled]):hover,
   justify-content: center;
   overflow: hidden;
 }
-.offcanvas-header .btn-close {
+.offcanvas-body .btn-close {
   background: transparent;
   color: hsl(5, 86%, 56%);
   display: flex;
@@ -723,15 +723,15 @@ button:not([disabled]):hover,
   border-radius: 0rem;
   transition: all 350ms ease-in-out;
 }
-.offcanvas-header .btn-close svg {
+.offcanvas-body .btn-close svg {
   width: 100%;
   height: 100%;
 }
-.offcanvas-header .btn-close:not([disabled]):hover {
+.offcanvas-body .btn-close:not([disabled]):hover {
   opacity: 1;
   transform: rotate(180deg);
 }
-.offcanvas-header .btn-close:not([disabled]):hover svg path {
+.offcanvas-body .btn-close:not([disabled]):hover svg path {
   fill: hsl(343, 79%, 50%);
 }
 .offcanvas-body::-webkit-scrollbar {
@@ -962,6 +962,151 @@ button:not([disabled]):hover,
 .sidebar.collapsed-sidebar .sidebar-body .sidelist-link .text,
 .sidebar.collapsed-sidebar .sidebar-body .userlist-link .text {
   display: none;
+}
+
+.mobilesidebar {
+  background: hsl(0, 3%, 6%);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.mobilesidebar-header {
+  padding: 1.25rem 1.25rem 0rem;
+}
+.mobilesidebar-header .userlink {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.mobilesidebar-header .userlink .userlink-info {
+  display: flex;
+  flex-direction: column;
+}
+.mobilesidebar-header .userlink .userlink-info .name {
+  color: hsl(220, 2%, 68%);
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1.4;
+}
+@media screen and (min-width: 62rem) {
+  .mobilesidebar-header .userlink .userlink-info .name {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 75rem) {
+  .mobilesidebar-header .userlink .userlink-info .name {
+    font-size: 1.125rem;
+  }
+}
+.mobilesidebar-header .userlink .userlink-info .mail {
+  color: hsl(220, 2%, 68%);
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1.4;
+}
+@media screen and (min-width: 62rem) {
+  .mobilesidebar-header .userlink .userlink-info .mail {
+    font-size: 0.8125rem;
+  }
+}
+.mobilesidebar .divider {
+  width: 100%;
+  height: 0.0625rem;
+  background: #525b7a;
+}
+.mobilesidebar-body {
+  padding: 0rem 1.25rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.mobilesidebar-body .sidelist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.125rem;
+}
+.mobilesidebar-body .sidelist-link {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
+  gap: 0.75rem;
+  border-radius: 0.625rem;
+  border-radius: 0.625rem;
+}
+.mobilesidebar-body .sidelist-link .icon {
+  width: 1.125rem;
+  height: 1.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.mobilesidebar-body .sidelist-link .icon svg {
+  width: 100%;
+  height: 100%;
+}
+.mobilesidebar-body .sidelist-link .text {
+  color: hsl(220, 2%, 68%);
+  font-family: "Inter", sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.4;
+}
+.mobilesidebar-body .sidelist-link:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.2);
+}
+.mobilesidebar-body .sidelist-link.active {
+  background: rgba(255, 255, 255, 0.2);
+}
+.mobilesidebar-body .userlist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.125rem;
+}
+.mobilesidebar-body .userlist-link {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
+  gap: 0.75rem;
+  border-radius: 0.625rem;
+  border-radius: 0.625rem;
+}
+.mobilesidebar-body .userlist-link .icon {
+  width: 1.125rem;
+  height: 1.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.mobilesidebar-body .userlist-link .icon svg {
+  width: 100%;
+  height: 100%;
+}
+.mobilesidebar-body .userlist-link .text {
+  color: hsl(220, 2%, 68%);
+  font-family: "Inter", sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.4;
+}
+.mobilesidebar-body .userlist-link:not([disabled]):hover {
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .mainsection {
