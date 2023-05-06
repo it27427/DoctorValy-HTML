@@ -1,4 +1,23 @@
 @use "../../global" as *;
 @use "../../partials" as *;
 
+.mainsection {
+  @include w100;
+  min-height: 100vh;
+  padding: size(20);
+  @include transition(width $time $sidebarcollapse);
+  
+  @include breakpoint(mobile768) {
+    padding: size(32);
+  }
+  
+  @include breakpoint(tab992) {
+    padding: size(40);
+    width: calc(100% - size(250));
+    margin-left: auto;
+  }
 
+  &.collapsed-main {
+    width: calc(100% - size(80));
+  }
+}

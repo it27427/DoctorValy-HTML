@@ -111,12 +111,16 @@ video {
 }
 
 body {
-  // @include setBgColor($bodybg, $textprimary);
-  // font-family: $tt-nooks-script-trial;
-  letter-spacing: size(0.48);
+  background: $bodybg;
+  font-family: $primaryFont;
+  font-weight: 400;
   text-rendering: optimizeSpeed;
   overflow: hidden;
   margin: 0;
+}
+
+.dashboard-body {
+  margin-top: size(64);
 }
 
 h1,

@@ -2,7 +2,7 @@
 /**=====================================================**
                 ANIMATION-STYLES
 =======================================================**/
-.dashboard-header-nav .dashboard-dropdown .dropdown-info {
+.dashboard-header-nav .dashboard-dropdown .dropdown-info, .dashboard-header-nav .mynotifications-info {
   animation-duration: 350ms;
   animation-fill-mode: both;
 }
@@ -40,7 +40,7 @@
     transform: translateY(1.25rem);
   }
 }
-.dashboard-header-nav .dashboard-dropdown .dropdown-info {
+.dashboard-header-nav .dashboard-dropdown .dropdown-info, .dashboard-header-nav .mynotifications-info {
   animation-name: slideUpIn;
 }
 
@@ -202,10 +202,16 @@ video {
   margin: 0;
 }
 body {
-  letter-spacing: 0.03rem;
+  background: hsl(0, 3%, 94%);
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
   text-rendering: optimizeSpeed;
   overflow: hidden;
   margin: 0;
+}
+
+.dashboard-body {
+  margin-top: 4rem;
 }
 
 h1,
@@ -399,7 +405,7 @@ button:not([disabled]):hover,
 
 .dashboard-header {
   background: hsl(0, 3%, 6%);
-  height: 3.75rem;
+  height: 4rem;
   display: flex;
   align-items: center;
 }
@@ -414,7 +420,7 @@ button:not([disabled]):hover,
 .dashboard-header-nav .dashboard-dropdown {
   cursor: pointer;
   position: relative;
-  min-height: 3.75rem;
+  min-height: 4rem;
   padding-inline: 1.25rem;
   display: flex;
   align-items: center;
@@ -439,7 +445,7 @@ button:not([disabled]):hover,
 .dashboard-header-nav .dashboard-dropdown .dropdown-info {
   position: absolute;
   top: 100%;
-  left: 0;
+  left: -1rem;
   width: 100%;
   padding-top: 0.0625rem;
   display: none;
@@ -481,13 +487,136 @@ button:not([disabled]):hover,
   letter-spacing: 0.025rem;
 }
 .dashboard-header-nav .dashboard-dropdown .dropdown-info .dropdownlist .dropdownlink:not([disabled]):hover {
-  background: hsl(0, 0%, 10%);
+  background: #525b7a;
 }
-.dashboard-header-nav .dashboard-dropdown:not([disabled]):hover .dropdownlink .icon svg {
+.dashboard-header-nav .dashboard-dropdown:not([disabled]):hover .dropdownlink .arrowicon svg {
   transform: rotateX(180deg);
 }
 .dashboard-header-nav .dashboard-dropdown:not([disabled]):hover .dropdown-info {
   display: block;
+}
+.dashboard-header-nav .mynotifications {
+  cursor: pointer;
+  position: relative;
+  min-height: 4rem;
+  padding-inline: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dashboard-header-nav .mynotifications .notificationlink {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.dashboard-header-nav .mynotifications .notificationlink svg {
+  width: 100%;
+  height: 100%;
+}
+.dashboard-header-nav .mynotifications-info {
+  position: absolute;
+  top: 100%;
+  right: 0rem;
+  width: 100%;
+  width: 18.75rem;
+  padding-top: 0.0625rem;
+  display: none;
+}
+.dashboard-header-nav .mynotifications-info .notificationlist {
+  background: #a3aac2;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.0625rem;
+  width: 100%;
+  max-height: 15.25rem;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.dashboard-header-nav .mynotifications-info .notificationlist::-webkit-scrollbar {
+  background: transparent;
+  background: hsl(226, 20%, 20%);
+  width: 0.5rem;
+}
+.dashboard-header-nav .mynotifications-info .notificationlist::-webkit-scrollbar-thumb {
+  background: hsl(5, 86%, 56%);
+  border-radius: 0.5rem;
+  border-radius: 0.5rem;
+  width: 0.5rem;
+}
+.dashboard-header-nav .mynotifications-info .notificationlist-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: hsl(226, 20%, 20%);
+  padding: 0.625rem 0.9375rem;
+  transition: all 350ms ease-in-out;
+}
+.dashboard-header-nav .mynotifications-info .notificationlist-link .icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  overflow: hidden;
+}
+.dashboard-header-nav .mynotifications-info .notificationlist-link .icon svg {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.dashboard-header-nav .mynotifications-info .notificationlist-link .textbox {
+  width: calc(100% - 3rem);
+}
+.dashboard-header-nav .mynotifications-info .notificationlist-link .text {
+  color: hsl(0, 0%, 100%);
+  font-family: "Inter", sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.4;
+  letter-spacing: 0.025rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+}
+.dashboard-header-nav .mynotifications-info .notificationlist-link:not([disabled]):hover {
+  background: #525b7a;
+}
+.dashboard-header-nav .mynotifications-info .viewall {
+  width: 100%;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: #3d445c;
+}
+.dashboard-header-nav .mynotifications-info .viewall-link {
+  color: hsl(0, 0%, 100%);
+  font-family: "Inter", sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.4;
+  letter-spacing: 0.025rem;
+  transition: all 350ms ease-in-out;
+}
+.dashboard-header-nav .mynotifications-info .viewall-link:not([disabled]):hover {
+  color: rgba(255, 255, 255, 0.75);
+}
+.dashboard-header-nav .mynotifications:not([disabled]):hover .mynotifications-info {
+  display: flex;
+  flex-direction: column;
 }
 
 .form-control:focus,
@@ -546,27 +675,8 @@ button:not([disabled]):hover,
 
 .offcanvas {
   height: 100vh;
-  width: 18.75rem !important;
-}
-@media screen and (min-width: 36rem) {
-  .offcanvas {
-    width: 25rem !important;
-  }
-}
-@media screen and (min-width: 48rem) {
-  .offcanvas {
-    width: 33rem !important;
-  }
-}
-@media screen and (min-width: 62rem) {
-  .offcanvas {
-    width: 62% !important;
-  }
-}
-@media screen and (min-width: 64rem) {
-  .offcanvas {
-    width: 100% !important;
-  }
+  width: 100%;
+  background: hsl(0, 3%, 6%);
 }
 .offcanvas.offcanvas-top {
   border-bottom: 0;
@@ -577,6 +687,11 @@ button:not([disabled]):hover,
 }
 .offcanvas.offcanvas-start {
   border-right: 0;
+}
+@media screen and (min-width: 36rem) {
+  .offcanvas.offcanvas-start {
+    width: 60%;
+  }
 }
 .offcanvas.offcanvas-end {
   border-left: 0;
@@ -594,6 +709,8 @@ button:not([disabled]):hover,
   overflow: hidden;
 }
 .offcanvas-header .btn-close {
+  background: transparent;
+  color: hsl(5, 86%, 56%);
   display: flex;
   gap: 0.625rem;
   width: 1.25rem;
@@ -613,6 +730,9 @@ button:not([disabled]):hover,
 .offcanvas-header .btn-close:not([disabled]):hover {
   opacity: 1;
   transform: rotate(180deg);
+}
+.offcanvas-header .btn-close:not([disabled]):hover svg path {
+  fill: hsl(343, 79%, 50%);
 }
 .offcanvas-body::-webkit-scrollbar {
   background: transparent;
@@ -650,6 +770,97 @@ button:not([disabled]):hover,
 .tooltip-inner {
   font-size: 0.75rem;
 }
+.footer {
+  height: 2.5rem;
+  width: 100%;
+  background: hsl(231, 15%, 24%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 350ms cubic-bezier(1, 0.335, 0.89, 0.825);
+}
+@media screen and (min-width: 62rem) {
+  .footer {
+    width: calc(100% - 15.625rem);
+    margin-left: auto;
+  }
+}
+.footer.collapsed-footer {
+  width: calc(100% - 5rem);
+}
+.footer .text-copyright {
+  color: hsl(0, 0%, 100%);
+  font-family: "Inter", sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.sidebar {
+  background: hsl(0, 3%, 6%);
+  width: 15.625rem;
+  height: calc(100vh - 4rem);
+  position: fixed;
+  top: 4rem;
+  left: 0rem;
+  transition: width 350ms cubic-bezier(1, 0.335, 0.89, 0.825);
+  display: none;
+}
+@media screen and (min-width: 62rem) {
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.sidebar-header .userlink .userlink-info {
+  display: flex;
+  flex-direction: column;
+}
+.sidebar-header .userlink .userlink-info .name {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1.4;
+}
+.sidebar-header .userlink .userlink-info .mail {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1.4;
+}
+.sidebar.collapsed-sidebar {
+  width: 5rem;
+}
+.sidebar.collapsed-sidebar .sidebar-header .userlink .userlink-info {
+  display: none;
+}
+
+.mainsection {
+  width: 100%;
+  min-height: 100vh;
+  padding: 1.25rem;
+  transition: width 350ms cubic-bezier(1, 0.335, 0.89, 0.825);
+}
+@media screen and (min-width: 48rem) {
+  .mainsection {
+    padding: 2rem;
+  }
+}
+@media screen and (min-width: 62rem) {
+  .mainsection {
+    padding: 2.5rem;
+    width: calc(100% - 15.625rem);
+    margin-left: auto;
+  }
+}
+.mainsection.collapsed-main {
+  width: calc(100% - 5rem);
+}
+
 .custom-radio .radio-input:checked ~ .radio-label::after {
   opacity: 1;
   visibility: visible;

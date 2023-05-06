@@ -1,5 +1,5 @@
 // DEFAULT COLORS
-$bodybg: hsl(0, 33%, 98%); //#FBF7F7
+$bodybg: hsl(0, 3%, 94%); //#EFEEEE
 $white: hsl(0, 0%, 100%); //#ffffff
 $black: hsl(0, 0%, 0%); //#000000
 
@@ -40,3 +40,6 @@ $cardshadow: .25rem .25rem 1rem .1875rem $shade-1;
 
 // LETTER-SPECING
 $specing-1: size(0.24);
+
+// ANIMATION VARIABLES
+$sidebarcollapse: cubic-bezier(1.000, 0.335, 0.890, 0.825);

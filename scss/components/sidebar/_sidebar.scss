@@ -1,3 +1,45 @@
 @use "../../global" as *;
 @use "../../partials" as *;
 
+.sidebar {
+  background: $headerbg;
+  width: size(250);
+  height: calc(100vh - size(64));
+  position: fixed;
+  top: size(64);
+  left: size(0);
+  @include transition(width $time $sidebarcollapse);
+  display: none;
+
+  @include breakpoint(tab992) {
+    @include flex-column;
+  }
+
+  &-header {
+    .userlink {
+      .userlink-info {
+        @include flex-column;
+
+        .name {
+          @include font($primaryFont, 14, medium, normal, 19.6);
+        }
+
+        .mail {
+          @include font($primaryFont, 14, medium, normal, 19.6);
+        }
+      }
+    }
+  }
+
+  &.collapsed-sidebar {
+    width: size(80);
+
+    .sidebar-header {
+      .userlink {
+        .userlink-info {
+          display: none;
+        }
+      }
+    }
+  }
+}

@@ -2,5 +2,24 @@
 @use "../../partials" as *;
 
 .footer {
+  height: size(40);
+  @include w100;
+  background: $textprimary;
+  @include flex-center;
+  @include transition(width $time $sidebarcollapse);
   
+  @include breakpoint(tab992) {
+    width: calc(100% - size(250));
+    margin-left: auto;
+  }
+
+  &.collapsed-footer {
+    width: calc(100% - size(80));
+  }
+
+  .text-copyright {
+    color: $white;
+    @include font($primaryFont, 13, medium, normal, 18.2);
+    text-align: center;
+  }
 }
