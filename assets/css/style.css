@@ -812,11 +812,11 @@ button:not([disabled]):hover,
   .sidebar {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
   }
 }
 .sidebar-header {
-  padding: 1.25rem 1.25rem 0rem;
+  padding: 1.25rem;
+  border-bottom: solid 0.0625rem #525b7a;
 }
 .sidebar-header .userlink {
   display: flex;
@@ -858,17 +858,14 @@ button:not([disabled]):hover,
     font-size: 0.8125rem;
   }
 }
-.sidebar .divider {
-  width: 100%;
-  height: 0.0625rem;
-  background: #525b7a;
-}
 .sidebar-body {
-  padding: 0rem 1.25rem 1.25rem;
+  padding: 1.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  justify-content: space-between;
+  height: calc(100% - 5.1875rem);
 }
 .sidebar-body .sidelist {
   margin: 0;

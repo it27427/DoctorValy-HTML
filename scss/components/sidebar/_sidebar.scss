@@ -13,11 +13,11 @@
 
   @include breakpoint(tab992) {
     @include flex-column;
-    gap: size(20);
   }
 
   &-header {
-    padding: size(20) size(20) size(0);
+    padding: size(20);
+    @include border-single(bottom, solid, 1, lighten($dropdownbg, 20%));
 
     .userlink {
       @include flex-center-vert;
@@ -51,15 +51,11 @@
     }
   }
 
-  .divider {
-    @include w100;
-    height: size(1);
-    background: lighten($dropdownbg, 20%);
-  }
-
   &-body {
-    padding: size(0) size(20) size(20);
+    padding: size(20);
     @include flex-center-column;
+    justify-content: space-between;
+    height: calc(100% - size(83));
 
     .sidelist {
       @include list-vertical;
