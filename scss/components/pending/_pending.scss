@@ -1,0 +1,89 @@
+@use "../../global"as *;
+@use "../../partials"as *;
+
+.pending {
+  @include flex-center-column;
+  gap: size(80);
+
+  &-icon {
+    background: $lightbg;
+    @include radius(25);
+    width: size(280);
+    height: size(160);
+    @include flex-center;
+    overflow: hidden;
+
+    svg {
+      g {
+        @include w100;
+      }
+    }
+  }
+
+  &-title {
+    color: $black;
+  }
+
+  &-text {
+    color: $textgray;
+
+    @include breakpoint(desktop1400) {
+      font-size: size(18);
+    }
+  }
+
+  &-contact {
+    position: relative;
+    background: $contactbg;
+    @include radius(25);
+    @include flex-center-column;
+
+    .icon {
+      @include square(100);
+      @include flex-center;
+      overflow: hidden;
+      position: absolute;
+      top: 50%;
+      left: -5%;
+      @include translateY(-50%);
+
+      @include breakpoint(mobile576) {
+        @include square(126);
+        left: -20%;
+      }
+
+      svg {
+        @include wh100;
+      }
+    }
+
+    .descript {
+      @include flex-center-column;
+      gap: size(4);
+      padding: size(8) size(24);
+      width: size(300);
+      height: size(90);
+
+      .divider {
+        width: size(198);
+        height: size(4);
+        @include flex-center;
+        overflow: hidden;
+        margin-left: size(60);
+
+        svg {
+          @include wh100;
+        }
+      }
+    
+      .calltitle,
+      .phonenumber {
+        font-size: size(20);
+        color: $contactcolor;
+        font-weight: 700;
+        width: size(198);
+        margin-left: size(60);
+      }
+    }
+  }
+}

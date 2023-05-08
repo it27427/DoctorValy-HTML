@@ -113,10 +113,15 @@ video {
 body {
   background: $bodybg;
   font-family: $primaryFont;
+  font-size: size(14);
   font-weight: 400;
   text-rendering: optimizeSpeed;
   overflow: hidden;
   margin: 0;
+
+  @include breakpoint(tab992) {
+    font-size: size(15);
+  }
 }
 
 .dashboard-body {

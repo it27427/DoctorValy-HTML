@@ -204,10 +204,16 @@ video {
 body {
   background: hsl(0, 3%, 94%);
   font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
   font-weight: 400;
   text-rendering: optimizeSpeed;
   overflow: hidden;
   margin: 0;
+}
+@media screen and (min-width: 62rem) {
+  body {
+    font-size: 0.9375rem;
+  }
 }
 
 .dashboard-body {
@@ -1126,6 +1132,103 @@ button:not([disabled]):hover,
 }
 .mainsection.collapsed-main {
   width: calc(100% - 5rem);
+}
+
+.pending {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5rem;
+}
+.pending-icon {
+  background: hsl(0, 0%, 94%);
+  border-radius: 1.5625rem;
+  border-radius: 1.5625rem;
+  width: 17.5rem;
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.pending-icon svg g {
+  width: 100%;
+}
+.pending-title {
+  color: hsl(0, 0%, 0%);
+}
+.pending-text {
+  color: hsl(0, 0%, 63%);
+}
+@media screen and (min-width: 87.5rem) {
+  .pending-text {
+    font-size: 1.125rem;
+  }
+}
+.pending-contact {
+  position: relative;
+  background: hsl(0, 23%, 16%);
+  border-radius: 1.5625rem;
+  border-radius: 1.5625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.pending-contact .icon {
+  width: 6.25rem;
+  height: 6.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: -5%;
+  transform: translateY(-50%);
+}
+@media screen and (min-width: 36rem) {
+  .pending-contact .icon {
+    width: 7.875rem;
+    height: 7.875rem;
+    left: -20%;
+  }
+}
+.pending-contact .icon svg {
+  width: 100%;
+  height: 100%;
+}
+.pending-contact .descript {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.5rem 1.5rem;
+  width: 18.75rem;
+  height: 5.625rem;
+}
+.pending-contact .descript .divider {
+  width: 12.375rem;
+  height: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-left: 3.75rem;
+}
+.pending-contact .descript .divider svg {
+  width: 100%;
+  height: 100%;
+}
+.pending-contact .descript .calltitle,
+.pending-contact .descript .phonenumber {
+  font-size: 1.25rem;
+  color: hsl(0, 16%, 82%);
+  font-weight: 700;
+  width: 12.375rem;
+  margin-left: 3.75rem;
 }
 
 .custom-radio .radio-input:checked ~ .radio-label::after {
