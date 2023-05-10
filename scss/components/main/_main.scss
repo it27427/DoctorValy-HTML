@@ -4,12 +4,8 @@
 .mainsection {
   @include w100;
   min-height: 100vh;
-  padding: size(20);
+  padding: size(32) size(20);
   @include transition(width $time $sidebarcollapse);
-  
-  @include breakpoint(mobile768) {
-    padding: size(32);
-  }
   
   @include breakpoint(tab992) {
     padding: size(40);

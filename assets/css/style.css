@@ -195,10 +195,12 @@ thead,
 time,
 tr,
 tt,
+textarea,
 u,
 ul,
 var,
 video {
+  font: inherit;
   margin: 0;
 }
 body {
@@ -226,6 +228,7 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: inherit;
   margin: 0;
 }
 img {
@@ -407,6 +410,136 @@ button:not([disabled]):hover,
 .btn-hamburger:not([disabled]):hover span.active::after {
   left: 0rem;
   background: hsl(5, 86%, 56%);
+}
+
+.card-welcome {
+  background: hsl(0, 0%, 100%);
+  box-shadow: 0.25rem 0.25rem 1rem 0.1875rem rgba(72, 75, 137, 0.2);
+  padding: 1rem;
+  border-radius: 0.625rem;
+  border-radius: 0.625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+@media screen and (min-width: 48rem) {
+  .card-welcome {
+    flex-direction: row;
+    gap: 2.5rem;
+    padding: 2rem;
+  }
+}
+.card-welcome .card-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  order: 1;
+}
+@media screen and (min-width: 48rem) {
+  .card-welcome .card-detail {
+    order: 0;
+    width: calc(100% - 10.625rem);
+  }
+}
+.card-welcome .card-detail .cardtitle {
+  color: hsl(226, 20%, 20%);
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.4;
+}
+@media screen and (min-width: 36rem) {
+  .card-welcome .card-detail .cardtitle {
+    font-size: 1.25rem;
+  }
+}
+@media screen and (min-width: 62rem) {
+  .card-welcome .card-detail .cardtitle {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 75rem) {
+  .card-welcome .card-detail .cardtitle {
+    font-size: 1.75rem;
+  }
+}
+.card-welcome .card-detail .cardtitle span {
+  color: hsl(5, 86%, 56%);
+  font: inherit;
+}
+.card-welcome .card-detail .cardtext {
+  color: hsl(226, 20%, 20%);
+}
+@media screen and (min-width: 62rem) {
+  .card-welcome .card-detail .cardtext {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 75rem) {
+  .card-welcome .card-detail .cardtext {
+    font-size: 1.125rem;
+  }
+}
+.card-welcome .card-detail .author {
+  color: hsl(233, 3%, 50%);
+}
+@media screen and (min-width: 62rem) {
+  .card-welcome .card-detail .author {
+    font-size: 1rem;
+  }
+}
+.card-welcome .card-thumbnail {
+  width: 8.125rem;
+  height: 8.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  order: 0;
+}
+@media screen and (min-width: 48rem) {
+  .card-welcome .card-thumbnail {
+    order: 1;
+  }
+}
+.card-welcome .card-thumbnail img {
+  width: 100%;
+}
+
+.card-impression {
+  background: hsl(0, 0%, 100%);
+  box-shadow: 0.25rem 0.25rem 1rem 0.1875rem rgba(72, 75, 137, 0.2);
+  padding: 1rem;
+  border-radius: 0.625rem;
+  border-radius: 0.625rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+@media screen and (min-width: 48rem) {
+  .card-impression {
+    padding: 2rem;
+  }
+}
+.card-impression-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.card-impression-header .impression-title {
+  color: hsl(226, 20%, 20%);
+}
+.card-impression-header .impression-text {
+  color: hsl(0, 7%, 52%);
+  font-size: 0.75rem;
+}
+@media screen and (min-width: 62rem) {
+  .card-impression-header .impression-text {
+    font-size: 0.8125rem;
+  }
 }
 
 .dashboard-header {
@@ -972,6 +1105,8 @@ button:not([disabled]):hover,
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+  width: 100%;
+  height: 100%;
 }
 .mobilesidebar-header {
   padding: 1.25rem 1.25rem 0rem;
@@ -1027,6 +1162,8 @@ button:not([disabled]):hover,
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  justify-content: space-between;
+  height: calc(100% - 5.1875rem);
 }
 .mobilesidebar-body .sidelist {
   margin: 0;
@@ -1115,13 +1252,8 @@ button:not([disabled]):hover,
 .mainsection {
   width: 100%;
   min-height: 100vh;
-  padding: 1.25rem;
+  padding: 2rem 1.25rem;
   transition: width 350ms cubic-bezier(1, 0.335, 0.89, 0.825);
-}
-@media screen and (min-width: 48rem) {
-  .mainsection {
-    padding: 2rem;
-  }
 }
 @media screen and (min-width: 62rem) {
   .mainsection {

@@ -1,2 +1,116 @@
 @use "../../global" as *;
 @use "../../partials" as *;
+
+.card-welcome {
+  background: $white;
+  box-shadow: $cardshadow;
+  padding: size(16);
+  @include radius(10);
+  @include flex-center-column;
+  gap: size(20);
+
+  @include breakpoint(mobile768) {
+    flex-direction: row;
+    gap: size(40);
+    padding: size(32);
+  }
+
+  .card-detail {
+    @include flex-column;
+    gap: size(8);
+    order: 1;
+    
+    @include breakpoint(mobile768) {
+      order: 0;
+      width: calc(100% - size(170));
+    }
+
+    .cardtitle {
+      color: $dropdownbg;
+      @include font($primaryFont, 16, normal, normal, 22.4);
+
+      @include breakpoint(mobile576) {
+        font-size: size(20);
+      }
+      
+      @include breakpoint(tab992) {
+        font-size: size(24);
+      }
+      
+      @include breakpoint(desktop1200) {
+        font-size: size(28);
+      }
+
+      span {
+        color: $hamburgerbg;
+        font: inherit;
+      }
+    }
+
+    .cardtext {
+      color: $dropdownbg;
+
+      @include breakpoint(tab992) {
+        font-size: size(16);
+      }
+      
+      @include breakpoint(desktop1200) {
+        font-size: size(18);
+      }
+    }
+
+    .author {
+      color: $authortext;
+
+      @include breakpoint(tab992) {
+        font-size: size(16);
+      }
+    }
+  }
+
+  .card-thumbnail {
+    @include square(130);
+    @include flex-center;
+    overflow: hidden;
+    order: 0;
+
+    @include breakpoint(mobile768) {
+      order: 1;
+    }
+
+    img {
+      @include w100;
+    }
+  }
+}
+
+.card-impression {
+  background: $white;
+  box-shadow: $cardshadow;
+  padding: size(16);
+  @include radius(10);
+  @include flex-column;
+  gap: size(20);
+
+  @include breakpoint(mobile768) {
+    padding: size(32);
+  }
+
+  &-header {
+    @include flex-column;
+    gap: size(8);
+
+    .impression-title {
+      color: $dropdownbg;
+    }
+
+    .impression-text {
+      color: $textimpression;
+      font-size: size(12);
+
+      @include breakpoint(tab992) {
+        font-size: size(13);
+      }
+    }
+  }
+}

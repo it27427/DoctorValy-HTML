@@ -154,6 +154,7 @@
   background: $headerbg;
   @include flex-column;
   gap: size(20);
+  @include wh100;
 
   &-header {
     padding: size(20) size(20) size(0);
@@ -199,6 +200,8 @@
   &-body {
     padding: size(0) size(20) size(20);
     @include flex-center-column;
+    justify-content: space-between;
+    height: calc(100% - size(83));
 
     .sidelist {
       @include list-vertical;

@@ -10,6 +10,8 @@
   <!-- BOOTSTRAP-CSS[v5.3] -->
   <link rel="stylesheet" href="../../assets/css/bootstrap/bootstrap-icons.css">
   <link rel="stylesheet" href="../../assets/css/bootstrap/bootstrap.min.css">
+  <!-- APEXCHARTS-CSS -->
+  <link rel="stylesheet" href="../../assets/css/apexcharts/apexcharts.css">
   <!-- DOCTORVALY CSS -->
   <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
@@ -288,6 +290,7 @@
     </div>
     
     <div class="sidebar-body">
+      <!-- MAIN-LIST -->
       <ul class="sidelist">
         <li class="sidelist-item">
           <a href="index.html" class="sidelist-link active" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="DashBoard">
@@ -323,6 +326,7 @@
         </li>
       </ul>
 
+      <!-- USERINFO-LIST -->
       <ul class="userlist">
         <li class="userlist-item">
           <a href="#" class="userlist-link" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Your Feedback">
@@ -366,7 +370,54 @@
 
   <!-- MAIN-SECTION START -->
   <main class="mainsection">
-    <h1>This is main section</h1>
+    <div class="row g-4">
+      <div class="col-lg-8">
+        <div class="d-flex flex-column gap-4">
+          <div class="card-welcome">
+            <div class="card-detail">
+              <h1 class="cardtitle">
+                Good Morning, <span>Doctor Strange</span>
+              </h1>
+              
+              <div class="textbox">
+                <p class="cardtext">
+                  medicines cure diseases but only doctors can cure patients.
+                </p>
+              </div>
+
+              <div class="d-flex justify-content-end">
+                <p class="author">- Carl Jung</p>
+              </div>
+            </div>
+            
+            <figure class="card-thumbnail">
+              <img src="../assets/images/avatar/profile.svg" alt="card-thumbnail">
+            </figure>
+          </div>
+
+          <div class="card-impression">
+            <div class="card-impression-header">
+              <h5 class="impression-title">Your Profile Impression</h5>
+              <p class="impression-text">
+                This graph shows your profile view for the last 6 months. 
+                This views are counted when any users views your profile. 
+                Every time they visits we increase your profile impression.
+              </p>
+            </div>
+            
+            <div class="card-impression-body">
+              <div id="profile-impression-chart"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-4">
+        <div class="d-flex flex-column gap-4">
+
+        </div>
+      </div>
+    </div>
   </main>
   <!-- MAIN-SECTION END -->
 
@@ -388,6 +439,11 @@
   <script src="../../assets/js/copyright/copyright.js"></script>
   <!-- TOOLTIP -->
   <script src="../../assets/js/tooltip/tooltip.js"></script>
+  <script src="../../assets/js/tooltip/tooltip.js"></script>
+  <!-- APEXCHARTS-JS -->
+  <script src="../../assets/js/apexcharts/apexcharts.min.js"></script>
+  <!-- CHARTS -->
+  <script src="../../assets/js/charts/homechart.js"></script>
 
 </body>
 </html>
