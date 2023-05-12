@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 /**=====================================================**
                 ANIMATION-STYLES
 =======================================================**/
@@ -540,6 +540,148 @@ button:not([disabled]):hover,
   .card-impression-header .impression-text {
     font-size: 0.8125rem;
   }
+}
+
+.card-progress {
+  background: hsl(0, 0%, 100%);
+  box-shadow: 0.25rem 0.25rem 1rem 0.1875rem rgba(72, 75, 137, 0.2);
+  padding: 1rem;
+  border-radius: 0.625rem;
+  border-radius: 0.625rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3125rem;
+}
+@media screen and (min-width: 48rem) {
+  .card-progress {
+    padding: 1.25rem;
+  }
+}
+.card-progress .progress-title {
+  color: hsl(226, 20%, 20%);
+  font-weight: 700;
+}
+.card-progress .progress-completed,
+.card-progress .progress-text {
+  color: hsl(226, 20%, 20%);
+  font-size: 0.8125rem;
+  font-weight: 300;
+}
+.card-progress-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+.card-progress-body .progress {
+  background: hsl(0, 0%, 85%);
+  border-radius: 0.625rem;
+  border-radius: 0.625rem;
+  height: 0.625rem;
+}
+.card-progress-body .progress-bar {
+  background: hsl(5, 86%, 56%);
+  border-radius: 0.625rem;
+  border-radius: 0.625rem;
+}
+
+.card-schedule {
+  border-radius: 0.625rem;
+  border-radius: 0.625rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3125rem;
+  padding: 0.75rem;
+  position: relative;
+}
+.card-schedule::before {
+  background: hsl(0, 0%, 100%);
+  border: solid 0.0625rem rgba(41, 46, 61, 0.5);
+  border-radius: 0.625rem;
+  border-radius: 0.625rem;
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  opacity: 0.2;
+  z-index: 1;
+}
+.card-schedule .schedule-time,
+.card-schedule .location {
+  color: hsl(226, 20%, 20%);
+  font-size: 0.8125rem;
+  font-weight: 300;
+  position: relative;
+  z-index: 10;
+  transition: all 350ms ease-in-out;
+}
+.card-schedule .hospitalname {
+  color: hsl(226, 20%, 20%);
+  font-weight: 700;
+  position: relative;
+  z-index: 10;
+  transition: all 350ms ease-in-out;
+}
+.card-schedule.active {
+  background: hsl(5, 86%, 56%);
+  border-color: hsl(5, 86%, 56%);
+}
+.card-schedule.active::before {
+  display: none;
+  opacity: 1;
+}
+.card-schedule.active .schedule-time,
+.card-schedule.active .hospitalname,
+.card-schedule.active .location {
+  color: hsl(0, 0%, 100%);
+}
+
+.card-view {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+  background: hsl(0, 0%, 100%);
+  box-shadow: 0.25rem 0.25rem 1rem 0.1875rem rgba(72, 75, 137, 0.2);
+  padding: 1rem;
+  border-radius: 0.625rem;
+  border-radius: 0.625rem;
+}
+@media screen and (min-width: 48rem) {
+  .card-view {
+    padding: 1.25rem;
+  }
+}
+.card-view-icon {
+  background: rgba(239, 62, 46, 0.2);
+  width: 4rem;
+  height: 4rem;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0.75rem;
+}
+.card-view-icon svg {
+  width: 100%;
+  height: 100%;
+}
+.card-view-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: right;
+}
+.card-view-detail .view-title {
+  color: hsl(0, 0%, 0%);
+  font-weight: 700;
+}
+.card-view-detail .view-count {
+  color: hsl(0, 0%, 0%);
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1.4;
 }
 
 .dashboard-header {
@@ -1401,6 +1543,37 @@ button:not([disabled]):hover,
   opacity: 0;
   visibility: hidden;
   transition: transform 350ms ease-in-out;
+}
+
+.schedule-today {
+  background: hsl(0, 0%, 100%);
+  box-shadow: 0.25rem 0.25rem 1rem 0.1875rem rgba(72, 75, 137, 0.2);
+  padding: 1rem;
+  border-radius: 0.625rem;
+  border-radius: 0.625rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9375rem;
+}
+@media screen and (min-width: 48rem) {
+  .schedule-today {
+    padding: 1.25rem;
+  }
+}
+.schedule-today-header .schedule-title {
+  color: hsl(226, 20%, 20%);
+  font-weight: 700;
+}
+.schedule-today-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.viewscounter {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 /*

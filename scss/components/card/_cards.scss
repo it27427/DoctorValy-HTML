@@ -1,6 +1,7 @@
 @use "../../global" as *;
 @use "../../partials" as *;
 
+// HOME-CARDS
 .card-welcome {
   background: $white;
   box-shadow: $cardshadow;
@@ -111,6 +112,155 @@
       @include breakpoint(tab992) {
         font-size: size(13);
       }
+    }
+  }
+}
+
+.card-progress {
+  background: $white;
+  box-shadow: $cardshadow;
+  padding: size(16);
+  @include radius(10);
+  @include flex-column;
+  gap: size(5);
+  
+  @include breakpoint(mobile768) {
+    padding: size(20);
+  }
+
+  .progress-title {
+    color: $dropdownbg;
+    font-weight: 700;
+  }
+
+  .progress-completed,
+  .progress-text {
+    color: $dropdownbg;
+    font-size: size(13);
+    font-weight: 300;
+  }
+  
+  &-body {
+    @include flex-column;
+    gap: size(10);
+
+    .progress {
+      background: $progressbg;
+      @include radius(10);
+      height: size(10);
+
+      &-bar {
+        background: $hamburgerbg;
+        @include radius(10);
+      }
+    }
+  }
+}
+
+.card-schedule {
+  @include radius(10);
+  @include flex-column;
+  gap: size(5);
+  padding: size(12);
+  position: relative;
+
+  &::before {
+    background: $white;
+    @include border(solid, 1, rgba($dropdownbg, 0.5));
+    @include radius(10);
+    content: '';
+    @include wh100;
+    position: absolute;
+    inset: 0;
+    opacity: 0.2;
+    z-index: 1;
+  }
+
+  .schedule-time,
+  .location {
+    color: $dropdownbg;
+    font-size: size(13);
+    font-weight: 300;
+    position: relative;
+    z-index: 10;
+    @include transitionsall;
+  }
+
+  .hospitalname {
+    color: $dropdownbg;
+    font-weight: 700;
+    position: relative;
+    z-index: 10;
+    @include transitionsall;
+  }
+
+  &.active {
+    background: $hamburgerbg;
+    border-color: $hamburgerbg;
+
+    &::before {
+      display: none;
+      opacity: 1;
+    }
+
+    .schedule-time,
+    .hospitalname,
+    .location {
+      color: $white;
+    }
+  }
+
+  // &:hover:not(.active) {
+  //   background: $hamburgerbg;
+  //   border-color: $hamburgerbg;
+
+  //   .schedule-time,
+  //   .hospitalname,
+  //   .location {
+  //     color: $white;
+  //   }
+  // }
+}
+
+.card-view {
+  @include flex-center-between;
+  background: $white;
+  box-shadow: $cardshadow;
+  padding: size(16);
+  @include radius(10);
+  
+  @include breakpoint(mobile768) {
+    padding: size(20);
+  }
+
+  &-icon {
+    background: rgba($hamburgerbg, 0.2);
+    @include square(64);
+    @include circle;
+    @include flex-center;
+    overflow: hidden;
+    padding: size(12);
+
+    svg {
+      @include wh100;
+    }
+  }
+
+  &-detail {
+    @include flex-column;
+    gap: size(8);
+    text-align: right;
+
+    .view-title {
+      color: $black;
+      font-weight: 700;
+    }
+
+    .view-count {
+      color: $black;
+      font-size: size(20);
+      font-weight: 300;
+      line-height: 1.4;
     }
   }
 }

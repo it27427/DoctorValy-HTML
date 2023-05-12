@@ -1,2 +1,32 @@
 @use "../global" as *;
 @use "../partials" as *;
+
+.schedule-today {
+  background: $white;
+  box-shadow: $cardshadow;
+  padding: size(16);
+  @include radius(10);
+  @include flex-column;
+  gap: size(15);
+  
+  @include breakpoint(mobile768) {
+    padding: size(20);
+  }
+
+  &-header {
+    .schedule-title {
+      color: $dropdownbg;
+      font-weight: 700;
+    }
+  }
+
+  &-body {
+    @include flex-column;
+    gap: size(20);
+  }
+}
+
+.viewscounter {
+  @include flex-column;
+  gap: size(24);
+}
