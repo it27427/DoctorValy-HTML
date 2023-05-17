@@ -1,2 +1,108 @@
 @use "../global" as *;
 @use "../partials" as *;
+
+.notifications {
+  @include flex-column;
+  gap: size(20);
+
+  &-header {
+    @include border-single(bottom, solid, 2, $hamburgerbg);
+    padding-bottom: size(10);
+    @include flex-column;
+    gap: size(12);
+
+    @include breakpoint(mobile576) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .title-box {
+      @include flex-center-vert;
+      gap: size(12);
+
+      .notification-title {
+        color: $dropdownbg;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+
+      .notification-badge {
+        @include setBgColor(rgba($hamburgerbg, 0.2), $hamburgerbg);
+        @include radius(8);
+        @include font($primaryFont, 14, normal, normal, 19.6);
+        @include flex-center;
+        width: size(40);
+        height: size(28);
+        text-align: center;
+      }
+    }
+
+    .filternotification {
+      @include w100;
+      background: $white;
+      box-shadow: $cardshadow;
+      @include flex-center-vert;
+      padding: size(6) size(12);
+      @include radius(10);
+
+      @include breakpoint(mobile576) {
+        width: size(300);
+      }
+
+      input {
+        width: calc(100% - size(16));
+        @include setBgColor($white, $black);
+        @include font($primaryFont, 14, normal, normal, 19.6);
+        padding: size(4);
+
+        &::placeholder {
+          color: $textgray;
+        }
+      }
+
+      label {
+        cursor: pointer;
+        @include square(16);
+        @include flex-center;
+        overflow: hidden;
+
+        svg {
+          @include wh100;
+        }
+      }
+    }
+  }
+
+  &-day {
+  }
+
+  &-body {
+    @include flex-column;
+    gap: size(20);
+
+    .notification {
+      @include flex-column;
+      gap: size(20);
+
+      &-date {
+        .dateinfo {
+          color: $black;
+          @include font($primaryFont, 16, semibold, normal, 22.4);
+        }
+      }
+
+      &-list {
+        @include flex-column;
+        gap: size(16);
+  
+        @include breakpoint(tab992) {
+          gap: size(20);
+        }
+      }
+    }
+  }
+}
+
+.mc-calendar--inline .mc-select__month .mc-select__nav--next, .mc-select__nav--next {
+  right: size(-24);
+}

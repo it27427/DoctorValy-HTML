@@ -1,2 +1,13 @@
 @use "../global" as *;
 @use "../partials" as *;
+
+.schedule {
+  @include flex-column;
+  gap: size(20);
+
+  &-header {
+    padding-bottom: size(14);
+    @include border-single(bottom, solid, 2, $hamburgerbg);
+
+  }
+}

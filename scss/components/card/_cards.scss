@@ -264,3 +264,233 @@
     }
   }
 }
+
+.card-notification {
+  background: $white;
+  box-shadow: $cardshadow;
+  @include radius(10);
+  cursor: pointer;
+  @include flex-center-vert;
+  align-items: flex-start;
+  gap: size(16);
+  padding: size(16);
+  
+  @include breakpoint(mobile768) {
+    padding: size(20);
+    gap: size(24);
+  }
+
+  .listicon {
+    @include flex-center;
+    @include square(18);
+    @include circle;
+    overflow: hidden;
+
+    svg {
+      @include w100;
+    }
+  }
+
+  .info {
+    @include flex-center-between;
+    gap: size(8);
+    flex-wrap: wrap;
+    width: calc(100% - size(16));
+  
+    @include breakpoint(mobile768) {
+      width: calc(100% - size(24));
+    }
+
+    .notification-detail {
+      @include flex-center-vert;
+      align-items: flex-start;
+      gap: size(10);
+
+      .icon {
+        @include square(20);
+        @include flex-center;
+        overflow: hidden;
+
+        svg {
+          @include w100;
+        }
+      }
+
+      .detail {
+        width: calc(100% - size(30));
+
+        .detail-text {
+          @include font($primaryFont, 14, normal, normal, 19.6);
+          color: $dropdownbg;
+
+          strong {
+            color: inherit;
+            font-size: inherit;
+          }
+
+          span {
+            color:$hamburgerbg;
+            font: inherit;
+          }
+        }
+      }
+    }
+
+    .postedtime {
+      @include flex-end;
+      @include w100;
+
+      @include breakpoint(mobile768) {
+        width: auto;
+      }
+
+      .time {
+        color: $textgray;
+        @include font($primaryFont, 13, normal, normal, 18.2);
+      }
+    }
+  }
+
+  .accordion {
+    @include w100;
+
+    &-item {
+      border: 0;
+      border-radius: 0;
+    
+      &:last-of-type {
+        .accordion-collapse,
+        .accordion-button.collapsed {
+          @include radius(0);
+        }
+      }
+    }
+
+    &-button {
+      @include flex-center-vert;
+      align-items: flex-start;
+      gap: size(16);
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+
+      @include breakpoint(tab992) {
+        align-items: center;
+      }
+
+      &::after {
+        display: none;
+        box-shadow: none;
+      }
+  
+      @include breakpoint(mobile768) {
+        gap: size(24);
+      }
+
+      .icon {
+        @include flex-center;
+        @include square(18);
+        @include circle;
+        overflow: hidden;
+    
+        svg {
+          @include w100;
+        }
+      }
+    
+      .info {
+        @include flex-center-between;
+        gap: size(8);
+        flex-wrap: wrap;
+        width: calc(100% - size(16));
+      
+        @include breakpoint(mobile768) {
+          width: calc(100% - size(24));
+        }
+    
+        .notification-detail {
+          @include flex-center-vert;
+          align-items: flex-start;
+          gap: size(10);
+
+          @include breakpoint(tab992) {
+            align-items: center;
+          }
+    
+          .icon {
+            @include square(20);
+            @include flex-center;
+            overflow: hidden;
+          }
+    
+          .detail {
+            width: calc(100% - size(30));
+    
+            .detail-text {
+              @include font($primaryFont, 14, normal, normal, 19.6);
+              color: $dropdownbg;
+    
+              strong {
+                color: inherit;
+                font-size: inherit;
+              }
+    
+              span {
+                color:$hamburgerbg;
+                font: inherit;
+              }
+            }
+          }
+
+          .arricon {
+            @include rotate(0);
+          }
+        }
+    
+        .postedtime {
+          @include flex-end;
+          @include w100;
+    
+          @include breakpoint(mobile768) {
+            width: auto;
+          }
+    
+          .time {
+            color: $textgray;
+            @include font($primaryFont, 13, normal, normal, 18.2);
+          }
+        }
+      }
+
+      &:not(.collapsed) {
+        box-shadow: none;
+      
+        &::after {
+          box-shadow: none;
+          display: none;
+        }
+
+        .info {
+          .notification-detail {
+            .arricon {
+              @include rotate(180);
+            }
+          }
+        }
+      }
+    }
+
+    &-body {
+      background: rgba($white, 0.5);
+
+      .message {
+        color: $dropdownbg;
+        font-size: size(14);
+      }
+    }
+  }
+}
+
+.card-notify {
+  
+}
