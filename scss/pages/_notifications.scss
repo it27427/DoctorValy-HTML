@@ -73,9 +73,6 @@
     }
   }
 
-  &-day {
-  }
-
   &-body {
     @include flex-column;
     gap: size(20);

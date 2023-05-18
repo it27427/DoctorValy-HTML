@@ -1,2 +1,116 @@
 @use "../global" as *;
 @use "../partials" as *;
+
+.blog {
+  @include flex-column;
+  gap: size(20);
+
+  &-header {
+    @include border-single(bottom, solid, 2, $hamburgerbg);
+    padding-bottom: size(10);
+    @include flex-column;
+    gap: size(12);
+
+    @include breakpoint(mobile576) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .title-box {
+      @include flex-center-vert;
+      gap: size(12);
+
+      .blog-title {
+        color: $dropdownbg;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+
+      .blog-badge {
+        @include setBgColor(rgba($hamburgerbg, 0.2), $hamburgerbg);
+        @include radius(8);
+        @include font($primaryFont, 14, normal, normal, 19.6);
+        @include flex-center;
+        width: size(40);
+        height: size(28);
+        text-align: center;
+      }
+    }
+    
+    .rightinfo {
+      @include flex-center-vert;
+      gap: size(20);
+
+      .btn-search {
+        background: $hamburgerbg;
+        @include radius(5);
+        @include square(36);
+        @include flex-center;
+      }
+
+      .addpost {
+        .btn-add {
+          @include flex-center;
+          gap: size(8);
+          @include setBgColor($hamburgerbg, $white);
+          @include radius(5);
+          height: size(36);
+          padding: size(5);
+
+          .text {
+            color: inherit;
+            @include font($primaryFont, 14, bold, normal, 19.6);
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+  }
+
+  &-body {
+
+  }
+
+  &-footer {
+    @include flex-center;
+    
+    .pagination {
+      gap: size(8);
+
+      &-list {
+        background: $white;
+        @include radius(10);
+        max-width: size(200);
+        @include list-horizontal;
+        gap: size(4);
+
+        .page-item {
+          .page-link {
+            @include square(36);
+            @include radius(10);
+            @include flex-center;
+            @include setBgColor($white, $selectcolor);
+            border: 0;
+  
+            &:focus {
+              box-shadow: none;
+              outline: none;
+            }
+          }
+
+          &:hover:not(.active) {
+            .page-link {
+              @include setBgColor($hamburgerbg, $white);
+            }
+          }
+
+          &.active {
+            .page-link {
+              @include setBgColor($hamburgerbg, $white);
+            }
+          }
+        }
+      }
+    }
+  }
+}

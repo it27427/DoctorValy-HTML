@@ -366,7 +366,95 @@
 
   <!-- MAIN-SECTION START -->
   <main class="mainsection">
-    <h1>This is main section</h1>
+    <div class="blog">
+      <div class="blog-header">
+        <div class="title-box">
+          <h5 class="blog-title">ALL BLOGS</h5>
+          <span class="blog-badge">9</span>
+        </div>
+
+        <div class="rightinfo">
+          <button class="btn-search">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12.9028 11.4444H12.1347L11.8625 11.1819C12.8153 10.0736 13.3889 8.63472 13.3889 7.06944C13.3889 3.57917 10.5597 0.75 7.06944 0.75C3.57917 0.75 0.75 3.57917 0.75 7.06944C0.75 10.5597 3.57917 13.3889 7.06944 13.3889C8.63472 13.3889 10.0736 12.8153 11.1819 11.8625L11.4444 12.1347V12.9028L16.3056 17.7542L17.7542 16.3056L12.9028 11.4444V11.4444ZM7.06944 11.4444C4.64861 11.4444 2.69444 9.49028 2.69444 7.06944C2.69444 4.64861 4.64861 2.69444 7.06944 2.69444C9.49028 2.69444 11.4444 4.64861 11.4444 7.06944C11.4444 9.49028 9.49028 11.4444 7.06944 11.4444Z" fill="white"/>
+            </svg>
+          </button>
+
+          <div class="choicesoption">
+            <select id="normal-select-1" placeholder-text="Filter by">
+              <option value="1" class="select-dropdown__list-item">PUBLISHED</option>
+              <option value="2" class="select-dropdown__list-item">UNPUBLISHED</option>
+              <option value="3" class="select-dropdown__list-item">NEWEST</option>
+              <option value="4" class="select-dropdown__list-item">OLDEST</option>
+            </select>
+          </div>
+
+          <div class="addpost">
+            <a href="add-post.html" class="btn-add">
+              <span class="text">ADD POST</span>
+              <span class="icon">
+                <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#plusicon)">
+                    <path d="M10 20.5C15.5234 20.5 20 16.0234 20 10.5C20 4.97656 15.5234 0.5 10 0.5C4.47656 0.5 0 4.97656 0 10.5C0 16.0234 4.47656 20.5 10 20.5ZM9.0625 13.9375V11.4375H6.5625C6.04297 11.4375 5.625 11.0195 5.625 10.5C5.625 9.98047 6.04297 9.5625 6.5625 9.5625H9.0625V7.0625C9.0625 6.54297 9.48047 6.125 10 6.125C10.5195 6.125 10.9375 6.54297 10.9375 7.0625V9.5625H13.4375C13.957 9.5625 14.375 9.98047 14.375 10.5C14.375 11.0195 13.957 11.4375 13.4375 11.4375H10.9375V13.9375C10.9375 14.457 10.5195 14.875 10 14.875C9.48047 14.875 9.0625 14.457 9.0625 13.9375Z" fill="white"/>
+                  </g>
+                  <defs>
+                    <clipPath id="plusicon">
+                      <rect width="20" height="20" fill="white" transform="translate(0 0.5)"/>
+                    </clipPath>
+                  </defs>
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="blog-body"></div>
+      
+      <div class="blog-footer">
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+            <li class="page-item">
+              <a href="#" class="bth-previous" aria-label="Previous">
+                <span aria-hidden="true">
+                  <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="17.5" cy="17.5" r="17.5" fill="white"/>
+                    <path d="M22 23.2375L16.4372 17.5L22 11.7625L20.2874 10L13 17.5L20.2874 25L22 23.2375Z" fill="black"/>
+                  </svg>
+                </span>
+              </a>
+            </li>
+            <ul class="pagination-list">
+              <li class="page-item active" aria-current="page">
+                <a href="#" class="page-link">1</a>
+              </li>
+              <li class="page-item">
+                <a href="#" class="page-link">2</a>
+              </li>
+              <li class="page-item">
+                <a href="#" class="page-link">3</a>
+              </li>
+              <li class="page-item">
+                <a href="#" class="page-link">...</a>
+              </li>
+              <li class="page-item">
+                <a href="#" class="page-link">9</a>
+              </li>
+            </ul>
+            <li class="page-item">
+              <a href="#" class="btn-next" aria-label="Next">
+                <span aria-hidden="true">
+                  <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="17.5" cy="17.5" r="17.5" fill="white"/>
+                    <path d="M13 11.7625L18.5628 17.5L13 23.2375L14.7126 25L22 17.5L14.7126 10L13 11.7625Z" fill="black"/>
+                  </svg>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
   </main>
   <!-- MAIN-SECTION END -->
 
@@ -388,6 +476,7 @@
   <script src="../../assets/js/copyright/copyright.js"></script>
   <!-- TOOLTIP -->
   <script src="../../assets/js/tooltip/tooltip.js"></script>
+  <script src="../../assets/js/selets/select.js"></script>
 
 </body>
 </html>
