@@ -1,2 +1,57 @@
 @use "../global" as *;
 @use "../partials" as *;
+
+.myprofile {
+  .nav-tabs {
+    .nav-item {
+
+    }
+
+    .nav-link {
+      &.active {
+
+      }
+    }
+  }
+
+  &-detail {
+    @include flex-center-vert;
+    gap: size(16);
+    padding: size(20);
+    background: $linearbg;
+
+    .icon {
+      @include square(60);
+      @include circle;
+      @include flex-center;
+      overflow: hidden;
+
+      svg {
+        @include wh100;
+      }
+    }
+
+    .detail {
+      @include flex-column;
+      gap: size(4);
+      width: calc(100% - size(76));
+
+      .profile-title {
+        color: $hamburgerbg;
+        @include font($primaryFont, 20, bold, normal, 28);
+      }
+
+      .profiletext {
+        color: $textimpression;
+        @include font($primaryFont, 14, normal, normal, 19.6);
+      }
+    }
+  }
+
+  .personalinfo,
+  .professionalinfo,
+  .educationinfo,
+  .profileimage {
+    min-height: 100vh;
+  }
+}

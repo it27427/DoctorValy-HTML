@@ -10,11 +10,13 @@ function toggleBurger() {
   }
 
   const sidebar = document.querySelector('.sidebar');
-  const main = document.querySelector('.mainsection');
+  const myprofile = document.querySelector('.mainsection');
+  const main = document.querySelector('.myprofile');
   const footer = document.querySelector('.footer');
 
   sidebar.classList.toggle('collapsed-sidebar');
   main.classList.toggle('collapsed-main');
+  myprofile.classList.toggle('collapsed-main');
   footer.classList.toggle('collapsed-footer');
 }
 
