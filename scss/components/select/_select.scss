@@ -18,16 +18,21 @@
     @include setBgColor($hamburgerbg, $white);
     @include radius(5);
 		cursor: pointer;
-    @include font($primaryFont, 12, semibold, normal, 16.8);
+    @include font($primaryFont, 10, semibold, normal, 14);
     @include flex-center-between;
     gap: size(8);
-		min-width: size(160);
 		max-width: 100%;
+		min-width: size(147);
     height: size(36);
     letter-spacing: size(1.6);
     padding: size(6) size(12);
     text-align: left;
     text-transform: uppercase;
+
+		@include breakpoint(mobile768) {
+			min-width: size(160);
+			font-size: size(12);
+		}
 
     @include breakpoint(tab992) {
       font-size: size(14);
@@ -55,6 +60,7 @@
 		display: block;
 		left: size(0);
 		right: size(0);
+		min-width: size(160);
 		max-height: size(300);
 		overflow: auto;
 		margin: size(0);

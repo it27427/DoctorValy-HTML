@@ -1190,6 +1190,40 @@ button:not([disabled]):hover,
   color: blue;
 }
 
+.form-check {
+  margin: 0rem;
+}
+.form-check-input {
+  background-color: hsl(0, 0%, 63%);
+  border-color: hsl(0, 0%, 63%);
+}
+.form-check-input:focus {
+  outline: none;
+  box-shadow: none;
+}
+.form-check-input:not(:checked)[type=checkbox] {
+  --bs-form-switch-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+  background-image: var(--bs-form-switch-bg);
+  background-color: hsl(0, 0%, 63%);
+  border-color: hsl(0, 0%, 63%);
+}
+
+.form-switch {
+  padding: 0rem;
+}
+.form-switch .form-check-input {
+  cursor: pointer;
+  margin: 0rem;
+  width: 3.4375rem;
+  height: 1.75rem;
+  --bs-form-switch-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+  background-image: var(--bs-form-switch-bg);
+}
+.form-switch .form-check-input:checked {
+  background-color: hsl(5, 86%, 56%);
+  border-color: hsl(5, 86%, 56%);
+}
+
 .offcanvas {
   height: 100vh;
   width: 100%;
@@ -1914,7 +1948,7 @@ button:not([disabled]):hover,
   border-radius: 0.3125rem;
   cursor: pointer;
   font-family: "Inter", sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.625rem;
   font-weight: 600;
   font-style: normal;
   line-height: 1.4;
@@ -1923,13 +1957,19 @@ button:not([disabled]):hover,
   justify-content: space-between;
   align-items: center;
   gap: 0.5rem;
-  min-width: 10rem;
   max-width: 100%;
+  min-width: 9.1875rem;
   height: 2.25rem;
   letter-spacing: 0.1rem;
   padding: 0.375rem 0.75rem;
   text-align: left;
   text-transform: uppercase;
+}
+@media screen and (min-width: 48rem) {
+  .select-dropdown__button {
+    min-width: 10rem;
+    font-size: 0.75rem;
+  }
 }
 @media screen and (min-width: 62rem) {
   .select-dropdown__button {
@@ -1953,6 +1993,7 @@ button:not([disabled]):hover,
   display: block;
   left: 0rem;
   right: 0rem;
+  min-width: 10rem;
   max-height: 18.75rem;
   overflow: auto;
   margin: 0rem;
@@ -2069,7 +2110,7 @@ button:not([disabled]):hover,
 .blog {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 2.5rem;
 }
 .blog-header {
   border-bottom: solid 0.125rem hsl(5, 86%, 56%);
@@ -2141,11 +2182,198 @@ button:not([disabled]):hover,
 .blog-header .rightinfo .addpost .btn-add .text {
   color: inherit;
   font-family: "Inter", sans-serif;
-  font-size: 0.875rem;
+  font-size: 0.625rem;
   font-weight: 700;
   font-style: normal;
   line-height: 1.4;
   text-transform: uppercase;
+}
+@media screen and (min-width: 48rem) {
+  .blog-header .rightinfo .addpost .btn-add .text {
+    font-size: 0.75rem;
+  }
+}
+@media screen and (min-width: 62rem) {
+  .blog-header .rightinfo .addpost .btn-add .text {
+    font-size: 0.875rem;
+  }
+}
+.blog-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.blog-body .card-blog {
+  background: hsl(0, 0%, 100%);
+  border: solid 0.0625rem hsl(0, 0%, 94%);
+  box-shadow: 0.25rem 0.25rem 1rem 0.1875rem rgba(72, 75, 137, 0.2);
+  padding: 0.625rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+@media screen and (min-width: 48rem) {
+  .blog-body .card-blog {
+    flex-direction: row;
+  }
+}
+.blog-body .card-blog .blog-thumbnail {
+  width: 100%;
+  height: 12.5rem;
+  border-radius: 0.3125rem;
+  border-radius: 0.3125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+@media screen and (min-width: 48rem) {
+  .blog-body .card-blog .blog-thumbnail {
+    width: 12.1875rem;
+    height: 6.25rem;
+  }
+}
+@media screen and (min-width: 62rem) {
+  .blog-body .card-blog .blog-thumbnail {
+    height: 7.5rem;
+  }
+}
+.blog-body .card-blog .blog-thumbnail img {
+  width: 100%;
+  height: 100%;
+}
+.blog-body .card-blog .blog-details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+@media screen and (min-width: 48rem) {
+  .blog-body .card-blog .blog-details {
+    width: calc(100% - 12.8125rem);
+  }
+}
+@media screen and (min-width: 62rem) {
+  .blog-body .card-blog .blog-details {
+    flex-direction: row;
+  }
+}
+.blog-body .card-blog .blog-details .blog-article {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  width: 60%;
+}
+@media screen and (min-width: 75rem) {
+  .blog-body .card-blog .blog-details .blog-article {
+    width: 80%;
+  }
+}
+.blog-body .card-blog .blog-details .blog-article .blog-title {
+  color: hsl(5, 86%, 56%);
+  font-family: "Inter", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.4;
+  max-width: 99%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media screen and (min-width: 48rem) {
+  .blog-body .card-blog .blog-details .blog-article .blog-title {
+    font-size: 1.5rem;
+  }
+}
+.blog-body .card-blog .blog-details .blog-article .blog-text {
+  color: hsl(0, 7%, 52%);
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.4;
+}
+@media screen and (min-width: 48rem) {
+  .blog-body .card-blog .blog-details .blog-article .blog-text {
+    font-size: 0.875rem;
+  }
+}
+.blog-body .card-blog .blog-details .divider {
+  width: 100%;
+  height: 0.0625rem;
+  background: hsl(0, 0%, 94%);
+}
+@media screen and (min-width: 62rem) {
+  .blog-body .card-blog .blog-details .divider {
+    height: 100%;
+    width: 0.0625rem;
+  }
+}
+.blog-body .card-blog .blog-details .blogviews {
+  color: hsl(0, 3%, 17%);
+  font-family: "Inter", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 1.4;
+}
+.blog-body .card-blog .blog-details .shareblog {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+.blog-body .card-blog .blog-details .shareblog .sharetext {
+  color: hsl(0, 7%, 52%);
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1.4;
+}
+.blog-body .card-blog .blog-details .publish-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+.blog-body .card-blog .blog-details .publish-badge .icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0.3125rem;
+}
+.blog-body .card-blog .blog-details .publish-badge .icon svg {
+  width: 100%;
+  height: 100%;
+}
+.blog-body .card-blog .blog-details .publish-badge .sharetext {
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1.4;
+}
+.blog-body .card-blog .blog-details .publish-badge.published .icon {
+  background: rgba(77, 203, 113, 0.2);
+}
+.blog-body .card-blog .blog-details .publish-badge.published .icon svg path {
+  fill: hsl(137, 55%, 55%);
+}
+.blog-body .card-blog .blog-details .publish-badge.published .sharetext {
+  color: hsl(137, 55%, 55%);
+}
+.blog-body .card-blog .blog-details .publish-badge.unpublished .icon {
+  background: rgba(196, 196, 196, 0.2);
+}
+.blog-body .card-blog .blog-details .publish-badge.unpublished .icon svg path {
+  fill: hsl(0, 0%, 77%);
+}
+.blog-body .card-blog .blog-details .publish-badge.unpublished .sharetext {
+  color: hsl(0, 0%, 77%);
 }
 .blog-footer {
   display: flex;
@@ -2155,8 +2383,22 @@ button:not([disabled]):hover,
 .blog-footer .pagination {
   gap: 0.5rem;
 }
+.blog-footer .pagination .page-item .btn-previous svg circle, .blog-footer .pagination .page-item .btn-previous svg path,
+.blog-footer .pagination .page-item .btn-next svg circle,
+.blog-footer .pagination .page-item .btn-next svg path {
+  transition: all 350ms ease-in-out;
+}
+.blog-footer .pagination .page-item .btn-previous:not([disabled]):hover svg circle,
+.blog-footer .pagination .page-item .btn-next:not([disabled]):hover svg circle {
+  fill: hsl(5, 86%, 56%);
+}
+.blog-footer .pagination .page-item .btn-previous:not([disabled]):hover svg path,
+.blog-footer .pagination .page-item .btn-next:not([disabled]):hover svg path {
+  fill: hsl(0, 0%, 100%);
+}
 .blog-footer .pagination-list {
   background: hsl(0, 0%, 100%);
+  box-shadow: 0.25rem 0.25rem 1rem 0.1875rem rgba(72, 75, 137, 0.2);
   border-radius: 0.625rem;
   border-radius: 0.625rem;
   max-width: 12.5rem;

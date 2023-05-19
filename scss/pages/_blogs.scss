@@ -3,7 +3,7 @@
 
 .blog {
   @include flex-column;
-  gap: size(20);
+  gap: size(40);
 
   &-header {
     @include border-single(bottom, solid, 2, $hamburgerbg);
@@ -59,8 +59,16 @@
 
           .text {
             color: inherit;
-            @include font($primaryFont, 14, bold, normal, 19.6);
+            @include font($primaryFont, 10, bold, normal, 14);
             text-transform: uppercase;
+
+            @include breakpoint(mobile768) {
+              font-size: size(12);
+            }
+        
+            @include breakpoint(tab992) {
+              font-size: size(14);
+            }
           }
         }
       }
@@ -68,7 +76,166 @@
   }
 
   &-body {
+    @include flex-column;
+    gap: size(20);
 
+    .card-blog {
+      background: $white;
+      @include border(solid, 1, $lightbg);
+      box-shadow: $cardshadow;
+      padding: size(10);
+      @include flex-column;
+      gap: size(10);
+
+      @include breakpoint(mobile768) {
+        flex-direction: row;
+      }
+
+      .blog-thumbnail {
+        @include w100;
+        height: size(200);
+        @include radius(5);
+        @include flex-center;
+        overflow: hidden;
+
+        @include breakpoint(mobile768) {
+          width: size(195);
+          height: size(100);
+        }
+
+        @include breakpoint(tab992) {
+          height: size(120);
+        }
+
+        img {
+          @include wh100;
+        }
+      }
+
+      .blog-details {
+        @include w100;
+        @include flex-column;
+        gap: size(10);
+
+        @include breakpoint(mobile768) {
+          width: calc(100% - size(205));
+        }
+
+        @include breakpoint(tab992) {
+          flex-direction: row;
+        }
+
+        .blog-article {
+          @include flex-column;
+          gap: size(10);
+          width: 60%;
+
+          @include breakpoint(desktop1200) {
+            width: 80%;
+          }
+
+          .blog-title {
+            color: $hamburgerbg;
+            @include font($primaryFont, 20, normal, normal, 28);
+            @include text-overflow;
+
+            @include breakpoint(mobile768) {
+              font-size: size(24);
+            }
+          }
+
+          .blog-text {
+            color: $textimpression;
+            @include font($primaryFont, 12, normal, normal, 16.8);
+
+            @include breakpoint(mobile768) {
+              font-size: size(14);
+            }
+          }
+        }
+
+        .divider {
+          @include w100;
+          height: size(1);
+          background: $lightbg;
+
+          @include breakpoint(tab992) {
+            @include h100;
+            width: size(1);
+          }
+        }
+
+        .blogviews {
+          color: $selectcolor;
+          @include font($primaryFont, 20, semibold, normal, 28);
+        }
+
+        .shareblog {
+          @include flex-center-vert;
+          gap: size(10);
+
+          .sharetext {
+            color: $textimpression;
+            @include font($primaryFont, 12, medium, normal, 16.8);
+          }
+        }
+
+        .edit-link {}
+
+        .publish-badge {
+          @include flex-center-vert;
+          gap: size(10);
+
+          .icon {
+            @include square(24);
+            @include circle;
+            @include flex-center;
+            overflow: hidden;
+            padding: size(5);
+
+            svg {
+              @include wh100;
+            }
+          }
+
+          .sharetext {
+            @include font($primaryFont, 12, medium, normal, 16.8);
+          }
+
+          &.published {
+            .icon {
+              background: rgba($successbg, 0.2);
+
+              svg {
+                path {
+                  fill: $successbg;
+                }
+              }
+            }
+
+            .sharetext {
+              color: $successbg;
+            }
+          }
+
+          &.unpublished {
+            .icon {
+              background: rgba($graybg, 0.2);
+
+              svg {
+                path {
+                  fill: $graybg;
+                }
+              }
+            }
+
+            .sharetext {
+              color: $graybg;
+            }
+          }
+        }
+      }
+    }
   }
 
   &-footer {
@@ -77,8 +244,32 @@
     .pagination {
       gap: size(8);
 
+      .page-item {
+        .btn-previous,
+        .btn-next {
+          svg {
+            circle, path {
+              @include transitionsall;
+            }
+          }
+
+          @include hover {
+            svg {
+              circle {
+                fill: $hamburgerbg;
+              }
+
+              path {
+                fill: $white;
+              }
+            }
+          }
+        }
+      }
+
       &-list {
         background: $white;
+        box-shadow: $cardshadow;
         @include radius(10);
         max-width: size(200);
         @include list-horizontal;
