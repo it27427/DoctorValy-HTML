@@ -389,7 +389,6 @@
       </li>
     </ul>
 
-
     <div class="tab-content" id="profileTabContent">
       <!-- PERSONAL-INFORMATION -->
       <div class="tab-pane fade show active" id="personalinformation-tab-pane" role="tabpanel" aria-labelledby="personalinformation-tab" tabindex="0">
@@ -504,6 +503,31 @@
               </p>
             </div>
           </div>
+
+          <div class="profileimage-info">
+            <div class="details emptyprofile">
+              <figure class="default-thumb">
+                <img src="../assets/images/avatar/default-profile.svg" alt="default-profile" id="uploadedImage" class="default-image">
+
+                <input type="file" id="profileImage" multiple hidden>
+                <label for="profileImage">
+                  <svg width="56" height="57" viewBox="0 0 56 57" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M55.5 28.4C55.5 43.8154 43.1811 56.2999 28 56.2999C12.8188 56.2999 0.5 43.8154 0.5 28.4C0.5 12.9845 12.8188 0.5 28 0.5C43.1811 0.5 55.5 12.9845 55.5 28.4Z" fill="#707070" stroke="white"/>
+                    <path d="M31.0119 22.9519L32.3473 24.3064L19.1972 37.6462H17.8619V36.2916L31.0119 22.9519ZM36.2371 14.0881C35.8743 14.0881 35.4969 14.2354 35.2211 14.5151L32.565 17.2096L38.0079 22.731L40.664 20.0365C41.2301 19.4623 41.2301 18.5347 40.664 17.9605L37.2677 14.5151C36.9774 14.2206 36.6145 14.0881 36.2371 14.0881ZM31.0119 18.785L14.959 35.0695V40.591H20.4019L36.4548 24.3064L31.0119 18.785Z" fill="white"/>
+                  </svg>
+                </label>
+              </figure>
+
+              <div class="empty-info">
+                <p>You don't have any photo</p>
+                <p>Please upload photo By CliCKING EDIT ICON AND THEN CLICK UPDATE IMAGE BUTTON</p>
+              </div>
+
+              <div class="updateinfo">
+                <button class="btn-update">UPDATE IMAGE</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -529,6 +553,7 @@
   <script src="../../assets/js/copyright/copyright.js"></script>
   <!-- TOOLTIP -->
   <script src="../../assets/js/tooltip/tooltip.js"></script>
+  <script src="../../assets/js/fileupload/uploadprofile.js"></script>
 
 </body>
 </html>

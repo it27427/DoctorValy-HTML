@@ -2863,6 +2863,54 @@ label {
   color: hsl(0, 0%, 100%);
 }
 
+.myprofile .nav-tabs {
+  width: 100%;
+  background: hsl(0, 0%, 100%);
+}
+.myprofile .nav-tabs .nav-item {
+  width: 25%;
+  border-right: solid 0.125rem hsl(0, 0%, 94%);
+}
+.myprofile .nav-tabs .nav-item:last-of-type {
+  border-right: 0rem;
+}
+.myprofile .nav-tabs .nav-link {
+  color: hsl(226, 20%, 20%);
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.4;
+  text-align: center;
+  border: 0;
+  border-radius: 0rem;
+  border-radius: 0rem;
+  border-bottom: solid 0.125rem transparent;
+  transition: all 350ms ease-in-out;
+}
+@media screen and (min-width: 62rem) {
+  .myprofile .nav-tabs .nav-link {
+    font-size: 0.875rem;
+  }
+}
+@media screen and (min-width: 75rem) {
+  .myprofile .nav-tabs .nav-link {
+    font-size: 1rem;
+  }
+}
+.myprofile .nav-tabs .nav-link:hover:not(.active) {
+  color: hsl(5, 86%, 56%);
+  border-color: hsl(5, 86%, 56%);
+}
+.myprofile .nav-tabs .nav-link.active {
+  color: hsl(5, 86%, 56%);
+  border-color: hsl(5, 86%, 56%);
+}
 .myprofile-detail {
   display: flex;
   align-items: center;
@@ -2892,24 +2940,148 @@ label {
 .myprofile-detail .detail .profile-title {
   color: hsl(5, 86%, 56%);
   font-family: "Inter", sans-serif;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 700;
   font-style: normal;
   line-height: 1.4;
 }
+@media screen and (min-width: 62rem) {
+  .myprofile-detail .detail .profile-title {
+    font-size: 1.125rem;
+  }
+}
+@media screen and (min-width: 75rem) {
+  .myprofile-detail .detail .profile-title {
+    font-size: 1.25rem;
+  }
+}
 .myprofile-detail .detail .profiletext {
   color: hsl(0, 7%, 52%);
   font-family: "Inter", sans-serif;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-weight: 400;
   font-style: normal;
   line-height: 1.4;
+}
+@media screen and (min-width: 62rem) {
+  .myprofile-detail .detail .profiletext {
+    font-size: 0.875rem;
+  }
 }
 .myprofile .personalinfo,
 .myprofile .professionalinfo,
 .myprofile .educationinfo,
 .myprofile .profileimage {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.myprofile .profileimage-info {
+  padding: 2rem 1.25rem;
+}
+@media screen and (min-width: 62rem) {
+  .myprofile .profileimage-info {
+    padding: 2.5rem;
+  }
+}
+.myprofile .profileimage-info .details {
+  background: hsl(0, 0%, 100%);
+  box-shadow: 0.25rem 0.25rem 1rem 0.1875rem rgba(72, 75, 137, 0.2);
+  border-radius: 0.625rem;
+  border-radius: 0.625rem;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+@media screen and (min-width: 62rem) {
+  .myprofile .profileimage-info .details {
+    padding: 3rem;
+  }
+}
+.myprofile .profileimage-info .details .default-thumb {
+  width: 17.75rem;
+  height: 21.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 1.25rem;
+}
+.myprofile .profileimage-info .details .default-thumb img {
+  width: 100%;
+  height: 100%;
+}
+.myprofile .profileimage-info .details .default-thumb label {
+  position: absolute;
+  bottom: -0.75rem;
+  right: -1.75rem;
+  cursor: pointer;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.myprofile .profileimage-info .details .default-thumb label svg {
+  width: 100%;
+  height: 100%;
+}
+.myprofile .profileimage-info .details .updateinfo .btn-update {
+  width: 17.125rem;
+  height: 2.75rem;
+  background: hsl(0, 0%, 100%);
+  color: hsl(5, 86%, 56%);
+  border: solid 0.0625rem hsl(5, 86%, 56%);
+  border-radius: 0.3125rem;
+  border-radius: 0.3125rem;
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 1.4;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  transition: all 350ms ease-in-out;
+}
+@media screen and (min-width: 62rem) {
+  .myprofile .profileimage-info .details .updateinfo .btn-update {
+    font-size: 0.875rem;
+  }
+}
+.myprofile .profileimage-info .details .updateinfo .btn-update:not([disabled]):hover {
+  background: hsl(5, 86%, 56%);
+  color: hsl(0, 0%, 100%);
+}
+.myprofile .profileimage-info .details .empty-info {
+  display: none;
+}
+.myprofile .profileimage-info .details.emptyprofile .empty-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.25rem;
+  text-align: center;
+}
+.myprofile .profileimage-info .details.emptyprofile .empty-info p {
+  color: hsl(214, 28%, 15%);
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 62rem) {
+  .myprofile .profileimage-info .details.emptyprofile .empty-info p {
+    font-size: 0.875rem;
+  }
 }
 
 /*
