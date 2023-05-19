@@ -119,7 +119,11 @@
           @include font($primaryFont, 15, normal, normal, 21);
         }
 
-        @include hover {
+        &:hover:not(.active) {
+          background: rgba($white, 0.2);
+        }
+
+        &.active {
           background: rgba($white, 0.2);
         }
       }
@@ -265,7 +269,11 @@
           @include font($primaryFont, 15, normal, normal, 21);
         }
 
-        @include hover {
+        &:hover:not(.active) {
+          background: rgba($white, 0.2);
+        }
+
+        &.active {
           background: rgba($white, 0.2);
         }
       }

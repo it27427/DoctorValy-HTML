@@ -103,3 +103,23 @@
     }
   }
 }
+
+label {
+  color: $dropdownbg;
+  @include font($primaryFont, 14, normal, normal, 19.6);
+}
+
+.form-control {
+  color: $dropdownbg;
+  border-color: rgba($dropdownbg, 0.2);
+  @include font($primaryFont, 14, normal, normal, 19.6);
+  padding: size(11) size(16);
+
+  &::placeholder {
+    color: $textgray;
+  }
+
+  &:focus {
+    border-color: $dropdownbg;
+  }
+}
