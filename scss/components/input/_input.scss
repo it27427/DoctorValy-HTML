@@ -107,6 +107,10 @@
 label {
   color: $dropdownbg;
   @include font($primaryFont, 14, normal, normal, 19.6);
+  
+  span {
+    color: $dangertext;
+  }
 }
 
 .form-control {
@@ -114,6 +118,7 @@ label {
   border-color: rgba($dropdownbg, 0.2);
   @include font($primaryFont, 14, normal, normal, 19.6);
   padding: size(11) size(16);
+  @include transitionsall;
 
   &::placeholder {
     color: $textgray;
@@ -121,5 +126,39 @@ label {
 
   &:focus {
     border-color: $dropdownbg;
+  }
+}
+
+.inputbox {
+  .select-dropdown__button {
+    background: $white;
+    color: $darktext;
+    @include border(solid, 1, rgba($dropdownbg, 0.2));
+    @include radius(6);
+    padding: size(11) size(16);
+    height: size(43.5);
+    @include transitionsall;
+
+    .select-dropdown--0 {
+      color: $dropdownbg;
+      @include font($primaryFont, 12, normal, normal, 16.8);
+    }
+
+    .arrowicon {
+      svg {
+        path {
+          fill: $textgray;
+        }
+      }
+    }
+
+    &:focus {
+      border-color: $dropdownbg;
+    }
+  }
+
+  .error-message {
+    color: $dangertext;
+    @include font($primaryFont, 12, normal, normal, 16.8);
   }
 }

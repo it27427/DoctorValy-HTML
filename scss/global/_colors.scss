@@ -19,6 +19,7 @@ $successbg: hsl(137, 55%, 55%); //#4ECB71
 $graybg: hsl(0, 0%, 77%); //#C4C4C4
 $lightdanger: hsl(0, 64%, 90%); //#F6D6D6
 $activebg: hsl(0, 67%, 90%); //#F7D6D6
+$closebg: hsl(5, 5%, 49%); //#837776
 
 // ICON-BACKGROUNDS
 
@@ -32,7 +33,6 @@ $contactcolor: hsl(0, 16%, 82%); //#D9CACA
 $authortext: hsl(233, 3%, 50%); //#7C7D84
 $textimpression: hsl(0, 7%, 52%); //#8C7B7B
 $selectcolor: hsl(0, 3%, 17%); //#2D2A2A
-
 $alertcolor: hsl(0, 0%, 44%); //#707070
 
 // SUCCESS COLOR
@@ -41,6 +41,7 @@ $alertcolor: hsl(0, 0%, 44%); //#707070
 // DANGER COLOR
 $dangercolor: hsl(343, 79%, 50%); //#E31B54
 $red: hsl(1, 71%, 54%); //#dd3936
+$dangertext: hsl(0, 84%, 50%); //#EB1515
 
 // LINEAR-BACKGROUNDS
 $linearbg: linear-gradient(180deg, rgba(240, 65, 48, 0) 0%, rgba(240, 65, 48, 0.0979167) 48.96%, rgba(240, 65, 48, 0.2) 100%);

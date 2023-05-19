@@ -116,6 +116,8 @@
   background: transparent !important;
   color: $hamburgerbg !important;
   @include font($primaryFont, 14, semibold, normal, 19.6);
+  outline: none;
+  border: none;
   
   @include hover {
     color: $dangercolor !important;
