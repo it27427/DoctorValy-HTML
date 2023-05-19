@@ -2500,157 +2500,6 @@ label {
   color: hsl(0, 0%, 100%);
 }
 
-.postform .postimage {
-  background: hsl(0, 0%, 100%);
-  border: solid 0.0625rem rgba(41, 46, 61, 0.2);
-  border-radius: 0.375rem;
-  border-radius: 0.375rem;
-  padding: 0.5rem 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.5rem;
-}
-.postform .postimage-filename {
-  display: flex;
-  align-items: center;
-  gap: 0.875rem;
-  width: calc(100% - 2rem);
-}
-.postform .postimage-filename .icon {
-  width: 2.6875rem;
-  height: 2.6875rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-.postform .postimage-filename .icon svg {
-  width: 100%;
-  height: 100%;
-}
-.postform .postimage-filename .fileinfo {
-  display: flex;
-  align-items: center;
-  gap: 0.875rem;
-  width: calc(100% - 3.5625rem);
-}
-.postform .postimage-filename .fileinfo .filename {
-  color: hsl(0, 0%, 63%);
-  font-family: "Inter", sans-serif;
-  font-size: 0.875rem;
-  font-weight: 400;
-  font-style: normal;
-  line-height: 1.4;
-}
-.postform .postimage-filename .fileinfo .btn-remove {
-  width: 1.5rem;
-  height: 1.5rem;
-  border-radius: 100%;
-  overflow: hidden;
-  display: none;
-}
-.postform .postimage-filename .fileinfo .btn-remove svg {
-  width: 100%;
-  height: 100%;
-}
-.postform .postimage .btn-upload {
-  cursor: pointer;
-  width: 1.5rem;
-  height: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-.postform .postimage .btn-upload svg {
-  width: 100%;
-  height: 100%;
-}
-.postform .postimage.is-active {
-  background: hsl(0, 67%, 90%);
-  border-color: hsl(0, 0%, 94%);
-}
-.postform .postimage.is-active .postimage-filename .fileinfo .filename {
-  color: hsl(5, 86%, 56%);
-  text-decoration: underline;
-}
-.postform .postimage.is-active .postimage-filename .fileinfo .btn-remove {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.postform .upload-thumbnail {
-  border-radius: 0.3125rem;
-  border-radius: 0.3125rem;
-  width: 100%;
-  height: 9.375rem;
-  overflow: hidden;
-}
-.postform .upload-thumbnail img {
-  width: 100%;
-  height: 100%;
-}
-
-.ck-editor {
-  border-radius: 0.375rem;
-  border-radius: 0.375rem;
-}
-
-.ck-content {
-  min-height: 12.5rem;
-}
-
-.ck.ck-editor__main > .ck-editor__editable:not(.ck-focused) {
-  border-color: rgba(41, 46, 61, 0.2);
-  transition: all 350ms ease-in-out;
-}
-
-.ck.ck-editor__editable.ck-focused:not(.ck-editor__nested-editable) {
-  border-color: hsl(0, 0%, 77%);
-}
-
-.ck-rounded-corners .ck.ck-editor__main > .ck-editor__editable, .ck.ck-editor__main > .ck-editor__editable.ck-rounded-corners {
-  padding: 1rem;
-}
-
-.swal2-styled.swal2-cancel {
-  background: transparent;
-  color: hsl(5, 86%, 56%);
-  font-family: "Inter", sans-serif;
-  font-size: 0.875rem;
-  font-weight: 600;
-  font-style: normal;
-  line-height: 1.4;
-}
-.swal2-styled.swal2-cancel:not([disabled]):hover {
-  background: transparent;
-  color: hsl(343, 79%, 50%);
-}
-.swal2-styled.swal2-cancel:focus {
-  box-shadow: none;
-  outline: none;
-}
-
-.swal2-title {
-  color: hsl(226, 20%, 20%);
-  font-family: "Inter", sans-serif;
-  font-size: 1.25rem;
-  font-weight: 400;
-  font-style: normal;
-  line-height: 1.4;
-}
-
-.swal2-html-container {
-  color: hsl(0, 0%, 44%);
-  font-family: "Inter", sans-serif;
-  font-size: 0.875rem;
-  font-weight: 400;
-  font-style: normal;
-  line-height: 1.4;
-}
-
 .notifications {
   display: flex;
   flex-direction: column;
@@ -2782,6 +2631,226 @@ label {
 .schedule-header {
   padding-bottom: 0.875rem;
   border-bottom: solid 0.125rem hsl(5, 86%, 56%);
+}
+
+.postform .postimage {
+  background: hsl(0, 0%, 100%);
+  border: solid 0.0625rem rgba(41, 46, 61, 0.2);
+  border-radius: 0.375rem;
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+.postform .postimage-filename {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  width: calc(100% - 2rem);
+}
+.postform .postimage-filename .icon {
+  width: 2.6875rem;
+  height: 2.6875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.postform .postimage-filename .icon svg {
+  width: 100%;
+  height: 100%;
+}
+.postform .postimage-filename .fileinfo {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  width: calc(100% - 3.5625rem);
+}
+.postform .postimage-filename .fileinfo .filename {
+  color: hsl(0, 0%, 63%);
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.4;
+}
+.postform .postimage-filename .fileinfo .btn-remove {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 100%;
+  overflow: hidden;
+  display: none;
+}
+.postform .postimage-filename .fileinfo .btn-remove svg {
+  width: 100%;
+  height: 100%;
+}
+.postform .postimage .btn-upload {
+  cursor: pointer;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.postform .postimage .btn-upload svg {
+  width: 100%;
+  height: 100%;
+}
+.postform .postimage.is-active {
+  background: hsl(0, 67%, 90%);
+  border-color: hsl(0, 0%, 94%);
+}
+.postform .postimage.is-active .postimage-filename .fileinfo .filename {
+  color: hsl(5, 86%, 56%);
+  text-decoration: underline;
+}
+.postform .postimage.is-active .postimage-filename .fileinfo .btn-remove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.postform .upload-thumbnail {
+  border-radius: 0.3125rem;
+  border-radius: 0.3125rem;
+  width: 100%;
+  height: 9.375rem;
+  overflow: hidden;
+}
+.postform .upload-thumbnail img {
+  width: 100%;
+  height: 100%;
+}
+
+.ck-editor {
+  border-radius: 0.375rem;
+  border-radius: 0.375rem;
+}
+
+.ck-content {
+  min-height: 12.5rem;
+}
+
+.ck.ck-editor__main > .ck-editor__editable:not(.ck-focused) {
+  border-color: rgba(41, 46, 61, 0.2);
+  transition: all 350ms ease-in-out;
+}
+
+.ck.ck-editor__editable.ck-focused:not(.ck-editor__nested-editable) {
+  border-color: hsl(0, 0%, 77%);
+}
+
+.ck-rounded-corners .ck.ck-editor__main > .ck-editor__editable, .ck.ck-editor__main > .ck-editor__editable.ck-rounded-corners {
+  padding: 1rem;
+}
+
+.swal2-styled.swal2-cancel {
+  border: 0 !important;
+  background: transparent !important;
+  color: hsl(5, 86%, 56%) !important;
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 1.4;
+}
+.swal2-styled.swal2-cancel:not([disabled]):hover {
+  color: hsl(343, 79%, 50%) !important;
+}
+.swal2-styled.swal2-cancel:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.swal2-title {
+  color: hsl(226, 20%, 20%);
+  font-family: "Inter", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.4;
+}
+
+.swal2-html-container {
+  color: hsl(0, 0%, 44%);
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.4;
+}
+
+.feedbackform {
+  background: hsl(0, 0%, 100%);
+  border-radius: 0.625rem;
+  border-radius: 0.625rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+@media screen and (min-width: 62rem) {
+  .feedbackform {
+    padding: 1.5rem;
+  }
+}
+.feedbackform-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.feedbackform-header .feedback-title {
+  color: hsl(226, 20%, 20%);
+}
+.feedbackform-header .feedback-title span {
+  color: hsl(5, 86%, 56%);
+}
+@media screen and (min-width: 62rem) {
+  .feedbackform-header .feedbackinfo {
+    max-width: 75%;
+  }
+}
+.feedbackform-header .feedback-text {
+  color: hsl(226, 20%, 20%);
+}
+.feedbackform-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.feedbackform-body .inputbox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.feedbackform-body .btn-submit {
+  background: hsl(5, 86%, 56%);
+  color: hsl(0, 0%, 100%);
+  border-radius: 0.5rem;
+  border-radius: 0.5rem;
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.4;
+  text-align: center;
+  text-transform: uppercase;
+  height: 2.25rem;
+  padding: 0.5rem;
+  transition: all 350ms ease-in-out;
+}
+@media screen and (min-width: 62rem) {
+  .feedbackform-body .btn-submit {
+    font-size: 0.875rem;
+  }
+}
+.feedbackform-body .btn-submit:not([disabled]):hover {
+  background: hsl(1, 71%, 54%);
+  color: hsl(0, 0%, 100%);
 }
 
 /*
