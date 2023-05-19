@@ -3029,12 +3029,17 @@ label span {
   box-shadow: 0.25rem 0.25rem 1rem 0.1875rem rgba(72, 75, 137, 0.2);
   border-radius: 0.625rem;
   border-radius: 0.625rem;
-  padding: 2rem;
+  padding: 1.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   gap: 1.25rem;
+}
+@media screen and (min-width: 48rem) {
+  .myprofile .personalinfo-info .details {
+    padding: 2rem;
+  }
 }
 @media screen and (min-width: 62rem) {
   .myprofile .personalinfo-info .details {
@@ -3054,12 +3059,17 @@ label span {
   box-shadow: 0.25rem 0.25rem 1rem 0.1875rem rgba(72, 75, 137, 0.2);
   border-radius: 0.625rem;
   border-radius: 0.625rem;
-  padding: 2rem;
+  padding: 1.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   gap: 1.25rem;
+}
+@media screen and (min-width: 48rem) {
+  .myprofile .professionalinfo-info .details {
+    padding: 2rem;
+  }
 }
 @media screen and (min-width: 62rem) {
   .myprofile .professionalinfo-info .details {
@@ -3079,14 +3089,33 @@ label span {
   box-shadow: 0.25rem 0.25rem 1rem 0.1875rem rgba(72, 75, 137, 0.2);
   border-radius: 0.625rem;
   border-radius: 0.625rem;
-  padding: 2rem;
+  padding: 1.25rem;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
 }
+@media screen and (min-width: 48rem) {
+  .myprofile .educationinfo .details {
+    padding: 2rem;
+  }
+}
 @media screen and (min-width: 62rem) {
   .myprofile .educationinfo .details {
     padding: 3rem;
+  }
+}
+.myprofile .educationinfo .details-header .title {
+  color: hsl(226, 20%, 20%);
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 62rem) {
+  .myprofile .educationinfo .details-header .title {
+    font-size: 1.25rem;
   }
 }
 .myprofile .educationinfo .details-body .inputbox {
@@ -3243,6 +3272,8 @@ label span {
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 1rem;
+  flex-wrap: wrap;
+  gap: 0.25rem;
 }
 .myprofile .educationinfo .details-body .qualificationsinfo .qualificationlist-item .institute-name {
   font-family: "Inter", sans-serif;
@@ -3276,13 +3307,20 @@ label span {
 }
 .myprofile .educationinfo .details-body .qualificationsinfo .qualificationlist-item .actions .btn-edit,
 .myprofile .educationinfo .details-body .qualificationsinfo .qualificationlist-item .actions .btn-delete {
-  width: 2.3125rem;
-  height: 2.3125rem;
+  width: 1.5rem;
+  height: 1.5rem;
   border-radius: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+}
+@media screen and (min-width: 62rem) {
+  .myprofile .educationinfo .details-body .qualificationsinfo .qualificationlist-item .actions .btn-edit,
+  .myprofile .educationinfo .details-body .qualificationsinfo .qualificationlist-item .actions .btn-delete {
+    width: 2.3125rem;
+    height: 2.3125rem;
+  }
 }
 .myprofile .educationinfo .details-body .qualificationsinfo .qualificationlist-item .actions .btn-edit svg,
 .myprofile .educationinfo .details-body .qualificationsinfo .qualificationlist-item .actions .btn-delete svg {
@@ -3302,12 +3340,17 @@ label span {
   box-shadow: 0.25rem 0.25rem 1rem 0.1875rem rgba(72, 75, 137, 0.2);
   border-radius: 0.625rem;
   border-radius: 0.625rem;
-  padding: 2rem;
+  padding: 1.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   gap: 1.25rem;
+}
+@media screen and (min-width: 48rem) {
+  .myprofile .profileimage-info .details {
+    padding: 2rem;
+  }
 }
 @media screen and (min-width: 62rem) {
   .myprofile .profileimage-info .details {

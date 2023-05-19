@@ -114,9 +114,13 @@
         background: $white;
         box-shadow: $cardshadow;
         @include radius(10);
-        padding: size(32);
+        padding: size(20);
         @include flex-center-column;
         gap: size(20);
+
+        @include breakpoint(mobile768) {
+          padding: size(32);
+        }
     
         @include breakpoint(tab992) {
           padding: size(48);
@@ -137,9 +141,13 @@
         background: $white;
         box-shadow: $cardshadow;
         @include radius(10);
-        padding: size(32);
+        padding: size(20);
         @include flex-center-column;
         gap: size(20);
+
+        @include breakpoint(mobile768) {
+          padding: size(32);
+        }
     
         @include breakpoint(tab992) {
           padding: size(48);
@@ -161,12 +169,28 @@
       background: $white;
       box-shadow: $cardshadow;
       @include radius(10);
-      padding: size(32);
+      padding: size(20);
       @include flex-column;
       gap: size(20);
+
+      @include breakpoint(mobile768) {
+        padding: size(32);
+      }
   
       @include breakpoint(tab992) {
         padding: size(48);
+      }
+
+      &-header {
+        .title {
+          color: $dropdownbg;
+          @include font($primaryFont, 16, semibold, normal, 22.4);
+          text-transform: uppercase;
+  
+          @include breakpoint(tab992) {
+            font-size: size(20);
+          }
+        }
       }
 
       &-body {
@@ -312,6 +336,8 @@
               @include radius(10);
               @include flex-center-between;
               padding: size(8) size(16);
+              flex-wrap: wrap;
+              gap: size(4);
 
               .institute {
                 &-name {
@@ -340,10 +366,14 @@
 
                 .btn-edit,
                 .btn-delete {
-                  @include square(37);
+                  @include square(24);
                   @include circle;
                   @include flex-center;
                   overflow: hidden;
+  
+                  @include breakpoint(tab992) {
+                    @include square(37);
+                  }
 
                   svg {
                     @include wh100;
@@ -369,9 +399,13 @@
         background: $white;
         box-shadow: $cardshadow;
         @include radius(10);
-        padding: size(32);
+        padding: size(20);
         @include flex-center-column;
         gap: size(20);
+
+        @include breakpoint(mobile768) {
+          padding: size(32);
+        }
     
         @include breakpoint(tab992) {
           padding: size(48);
