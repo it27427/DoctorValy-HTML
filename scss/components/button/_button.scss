@@ -135,3 +135,14 @@ button,
     @include setBgColor($red, $white);
   }
 }
+
+.btn-resend {
+  display: inline-block;
+  width: auto;
+  @include font($primaryFont, 13, semibold, normal, 18.2);
+  @include transitionsall;
+
+  @include hover {
+    color: $hamburgerbg;
+  }
+}

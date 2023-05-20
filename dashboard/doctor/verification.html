@@ -26,11 +26,10 @@
     
           <div class="authentication-body">
             <div class="d-flex flex-column gap-2 align-items-center justify-content-center text-center">
-              <h3 class="title text-center">Forgot Password</h3>
+              <h3 class="title text-center">Verify your email</h3>
               <div class="info">
                 <p class="infotext">
-                  No Problem! Enter your email below and we will send you an email 
-                  with instruction to reset your password.
+                  Please enter the 4 digit code sent to doctorstrange@gmail.com
                 </p>
               </div>
             </div>
@@ -39,19 +38,27 @@
               <form class="authform">
                 <div class="row g-4">
                   <div class="col-12">
-                    <div class="inputbox">
-                      <label for="emailadd" class="inputlabel">
-                        E-mail Address <span>*</span>
-                      </label>
-                      <input type="email" id="emailadd" class="form-control" placeholder="Enter email address" autocomplete="off">
-                      <p class="error-message d-none">This field is required</p>
+                    <div class="verifybox">
+                      <div class="d-flex align-items-center justify-content-center gap-3">
+                        <input type="number" class="verifynumber">
+                        <input type="number" class="verifynumber">
+                        <input type="number" class="verifynumber">
+                        <input type="number" class="verifynumber">
+                      </div>
+
+                      <div class="d-flex align-items-center justify-content-center gap-2">
+                        <span class="havetext">
+                          Haven’t recieved the code yet? 
+                        </span>
+                        <button class="btn-resend">Resend</button>
+                      </div>
                     </div>
                   </div>
 
                   <div class="col-12">
                     <div class="d-flex flex-column align-items-center justify-content-center gap-3">
-                      <button class="btn-submit d-none">Send Reset Link</button>
-                      <a href="verification.html" class="btn-submit w-100">Send Reset Link</a>
+                      <button class="btn-submit d-none">Verify</button>
+                      <a href="confirmed.html" class="btn-submit w-100">Send Reset Link</a>
                       <p class="authtext">
                         Back to <a href="login.html" class="link">Sign In</a>
                       </p>

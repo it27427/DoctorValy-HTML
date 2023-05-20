@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DoctorValy | Doctor's Login</title>
+  <title>DoctorValy | Doctor's Register</title>
   <!-- FAVICON -->
   <link rel="shortcut icon" href="../../assets/images/favicon.ico" type="image/x-icon">
   <!-- BOOTSTRAP-CSS[v5.3] -->
@@ -25,49 +25,56 @@
           </div>
     
           <div class="authentication-body">
-            <h3 class="title text-center">Sign In</h3>
+            <h3 class="title text-center">Sign Up</h3>
 
             <div class="authinfo">
               <form class="authform">
                 <div class="row g-4">
                   <div class="col-12">
                     <div class="inputbox">
-                      <label for="username" class="inputlabel">
-                        Username or e-mail <span>*</span>
+                      <label for="fullname" class="inputlabel">
+                        Full name <span>*</span>
                       </label>
-                      <input type="text" id="designation" class="form-control" placeholder="Enter username or email" autocomplete="off">
+                      <input type="text" id="fullname" class="form-control" placeholder="Enter full name" autocomplete="off">
                       <p class="error-message d-none">This field is required</p>
                     </div>
                   </div>
   
                   <div class="col-12">
                     <div class="inputbox">
-                      <label for="username" class="inputlabel">
-                        Password <span>*</span>
+                      <label for="emailaddress" class="inputlabel">
+                        E-mail Address <span>*</span>
                       </label>
-                      <input type="password" id="designation" class="form-control" placeholder="Enter password" autocomplete="off">
+                      <input type="email" id="emailaddress" class="form-control" placeholder="Enter email address" autocomplete="off">
                       <p class="error-message d-none">This field is required</p>
                     </div>
                   </div>
   
                   <div class="col-12">
-                    <div class="d-flex align-items-center justify-content-between">
-                      <div class="checkfield">
-                        <input type="checkbox" class="checkinput" id="rememberme" autocomplete="off" hidden>
-                        <label for="rememberme" class="checklabel">
-                          Remember me
-                        </label>
-                      </div>
-  
-                      <a href="forgotpassword.html" class="forgotlink">Forgot your password?</a>
+                    <div class="inputbox">
+                      <label for="phonenum" class="inputlabel">
+                        Phone number <span>*</span>
+                      </label>
+                      <input type="tel" pattern="[0-9]{3}-[0-9]{8}" id="phonenum" class="form-control" placeholder="Enter phone number" autocomplete="off">
+                      <p class="error-message d-none">This field is required</p>
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <div class="inputbox">
+                      <label for="regnumber" class="inputlabel">
+                        BMDC Registration No <span>*</span>
+                      </label>
+                      <input type="text" id="regnumber" class="form-control" placeholder="A-40742" autocomplete="off">
+                      <p class="error-message d-none">This field is required</p>
                     </div>
                   </div>
 
                   <div class="col-12">
                     <div class="d-flex flex-column align-items-center justify-content-center gap-3">
-                      <button class="btn-submit">Sign In</button>
+                      <button class="btn-submit">Sign Up</button>
                       <p class="authtext">
-                        Don’t have an account? <a href="register.html" class="link">Sign Up</a>
+                        Already have an account? <a href="login.html" class="link">Sign In</a>
                       </p>
                     </div>
                   </div>
@@ -87,7 +94,7 @@
                         <path d="M24.2714 20.7695L24.8271 17.239H21.4041V14.9441C21.4041 13.9787 21.882 13.0354 23.4101 13.0354H24.9882V10.0289C24.0692 9.88238 23.1406 9.80309 22.2098 9.79172C19.3926 9.79172 17.5533 11.4853 17.5533 14.5469V17.239H14.4304V20.7695H17.5533V29.3091H21.4041V20.7695H24.2714Z" fill="white"/>
                       </svg>
                     </span>
-                    <span class="text">Sign in with FB</span>
+                    <span class="text">Signup with FB</span>
                   </button>
 
                   <button type="button" class="btn-or">
@@ -100,7 +107,7 @@
                         <path d="M18.8889 12.7168C20.5733 12.6908 22.2318 13.3387 23.4497 14.5048L26.8444 11.0842C24.6936 9.06292 21.8431 7.97454 18.8889 8.00045C14.3799 8.00045 10.2856 10.54 8.26428 14.5566L12.2032 17.6145C13.162 14.7899 15.7793 12.7168 18.8889 12.7168Z" fill="#E54335"/>
                       </svg>
                     </span>
-                    <span class="text">Sign in with Google</span>
+                    <span class="text">Sign up with Google</span>
                   </button>
                 </div>
               </div>

@@ -52,6 +52,27 @@
       }
     }
 
+    .authtext {
+      color: $black;
+      @include font($primaryFont, 12, normal, normal, 16.8);
+
+      .link {
+        font: inherit;
+        font-weight: 600;
+        color: $hamburgerbg;
+        @include transitionsall;
+
+        @include hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .infotext {
+      color: $selectcolor;
+      @include font($primaryFont, 13, normal, normal, 18.2);
+    }
+
     .or {
       @include flex-column;
       gap: size(24);
@@ -75,10 +96,15 @@
       &-body {
         @include flex-center-vert;
         gap: size(8);
+        flex-wrap: wrap;
+
+        @include breakpoint(mobile576) {
+          flex-wrap: nowrap;
+        }
 
         .btn-or {
           @include flex-center;
-          gap: size(8);
+          gap: size(4);
           @include border(solid, 1, $orborder);
           @include radius(8);
           padding: size(8) size(12);
@@ -98,6 +124,51 @@
             @include font($primaryFont, 12, medium, normal, 16.8);
           }
         }
+      }
+    }
+
+    .havetext {
+      color: $selectcolor;
+      @include font($primaryFont, 13, normal, normal, 18.2);
+    }
+
+    .verifybox {
+      @include flex-center-column;
+      gap: size(24);
+      text-align: center;
+
+      .verifynumber {
+        @include setBgColor($white, $darktext);
+        @include square(64);
+        @include flex-center;
+        @include border(solid, 1, rgba($dropdownbg, 0.2));
+        @include radius(4);
+        @include font($primaryFont, 20, medium, normal, 28);
+        text-align: center;
+        @include transitionsall;
+
+        &:focus {
+          border-color: $dropdownbg;
+        }
+      }
+    }
+
+    .successbox {
+      padding: size(24);
+      
+      .successicon {
+        text-align: center;
+        font-size: size(128);
+        
+        &::selection {
+          background: transparent;
+        }
+      }
+    }
+
+    .emoji {
+      &::selection {
+        background: transparent;
       }
     }
   }
