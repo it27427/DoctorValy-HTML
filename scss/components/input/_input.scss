@@ -168,7 +168,6 @@ label {
   gap: size(8);
 }
 
-
 .edubtns {
   @include flex-center-vert;
   gap: size(24);
@@ -204,6 +203,222 @@ label {
 
     @include hover {
       @include setBgColor($alertcolor, $white);
+    }
+  }
+}
+
+.checkfield {
+  @include flex-center-vert;
+
+  .checkinput {
+    &:checked ~ .checklabel {
+      &::before {
+        background: $hamburgerbg;
+        border-color: $hamburgerbg;
+      }
+      
+      &::after {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  .checklabel {
+    position: relative;
+    padding-left: size(26);
+    cursor: pointer;
+    color: $dropdownbg;
+    @include font($primaryFont, 12, normal, normal, 16.8);
+    letter-spacing: size(0.4);
+
+    @include breakpoint(tab992) {
+      font-size: size(14);
+    }
+
+    &::selection {
+      @include setBgColor(transparent, $dropdownbg);
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+    }
+
+    &::before {
+      left: 0;
+      @include translateY(-50%);
+      @include square(18);
+      background: $progressbg;
+      @include border(solid, 2, $progressbg);
+    }
+
+    &::after {
+      width: size(5);
+      height: size(10);
+      @include border(solid, 2, $white);
+      @include transform(translateY(-60%) rotate(45deg));
+      border-top: 0;
+      border-left: 0;
+      left: size(7);
+      opacity: 0;
+      visibility: hidden;
+      @include transitionsall;
+    }
+  }
+}
+
+.tagswrapper {
+  @include flex-center-vert;
+  gap: size(4) size(12);
+  @include border(solid, 1, rgba($dropdownbg, 0.2));
+  @include radius(6);
+  min-height: size(44);
+  padding: size(8);
+  @include transitionsall;
+  flex-wrap: wrap;
+
+  &:focus {
+    border-color: $dropdownbg;
+  }
+
+  .tag {
+    position: relative;
+    @include setBgColor($hamburgerbg, $white);
+    @include text-overflow;
+    @include w100;
+    height: size(36);
+    @include radius(10);
+    @include font($primaryFont, 12, normal, normal, 16.8);
+    @include flex-center-vert;
+    text-align: left;
+    padding-left: size(8);
+
+    @include breakpoint(mobile576) {
+      width: size(145);
+    }
+    
+    @include breakpoint(tab992) {
+      font-size: size(14);
+    }
+
+    button {
+      @include square(38);
+      @include flex-center;
+      overflow: hidden;
+      position: absolute;
+      top: size(-1);
+      right: size(-1);
+
+      svg {
+        @include wh100;
+      }
+    }
+
+    input {
+      @include font($primaryFont, 12, normal, normal, 16.8);
+    
+      @include breakpoint(tab992) {
+        font-size: size(14);
+      }
+    }
+  }
+}
+
+.socialbox {
+  @include border(solid, 1, rgba($dropdownbg, 0.2));
+  @include radius(6);
+  height: size(44);
+  @include flex-center-vert;
+  gap: size(12);
+
+  .icon {
+    @include square(44);
+    @include flex-center;
+    overflow: hidden;
+
+    svg {
+      @include wh100;
+    }
+  }
+
+  .detail {
+    width: calc(100% - size(56));
+
+    input {
+      @include font($primaryFont, 14, normal, normal, 19.6);
+    }
+  }
+}
+
+.gender {
+  @include flex-center-vert;
+  gap: size(8) size(48);
+  flex-wrap: wrap;
+
+  &-box {
+    @include flex-center-vert;
+    gap: size(8) size(16);
+    flex-wrap: wrap;
+
+    .gender-single {
+
+      input[type="radio"] {
+        &:checked ~ label {
+          background: $hamburgerbg;
+
+          .icon {
+            svg {
+              path {
+                fill: $white;
+              }
+            }
+          }
+
+          .gentext {
+            color: $white;
+          }
+        }
+      }
+
+      label {
+        background: $progressbg;
+        width: size(300);
+        height: size(44);
+        @include radius(10);
+        @include flex-center;
+        gap: size(20);
+        cursor: pointer;
+
+        @include breakpoint(mobile576) {
+          width: size(150);
+        }
+
+        .icon {
+          @include square(24);
+          @include flex-center;
+          overflow: hidden;
+
+          svg {
+            @include wh100;
+          
+            path {
+              fill: $darktext;
+            }
+          }
+        }
+
+        .gentext {
+          color: $darktext;
+          @include font($primaryFont, 12, normal, normal, 16.8);
+    
+          @include breakpoint(tab992) {
+            font-size: size(14);
+          }
+        }
+      }
     }
   }
 }
