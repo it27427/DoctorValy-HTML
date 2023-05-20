@@ -162,3 +162,48 @@ label {
     @include font($primaryFont, 12, normal, normal, 16.8);
   }
 }
+
+.inputbox {
+  @include flex-column;
+  gap: size(8);
+}
+
+
+.edubtns {
+  @include flex-center-vert;
+  gap: size(24);
+  margin-top: size(20);
+
+  .btn-profile-add,
+  .btn-profile-close {
+    width: size(124);
+    height: size(36);
+    @include flex-center;
+    text-align: center;
+    @include font($primaryFont, 12, semibold, normal, 16.8);
+    @include radius(5);
+    padding: size(6);
+    letter-spacing: size(1.6);
+    @include transitionsall;
+
+    @include breakpoint(tab992) {
+      font-size: size(14);
+    }
+  }
+
+  .btn-profile-add {
+    @include setBgColor($hamburgerbg, $white);
+
+    @include hover {
+      @include setBgColor($dangercolor, $white);
+    }
+  }
+  
+  .btn-profile-close {
+    @include setBgColor($closebg, $white);
+
+    @include hover {
+      @include setBgColor($alertcolor, $white);
+    }
+  }
+}

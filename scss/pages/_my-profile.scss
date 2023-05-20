@@ -142,7 +142,7 @@
         box-shadow: $cardshadow;
         @include radius(10);
         padding: size(20);
-        @include flex-center-column;
+        @include flex-column;
         gap: size(20);
 
         @include breakpoint(mobile768) {
@@ -151,6 +151,193 @@
     
         @include breakpoint(tab992) {
           padding: size(48);
+        }
+
+        .treatment-summary {
+          padding: size(12);
+          @include border(solid, 1, $textgray);
+          position: relative;
+
+          .summarytitle {
+            position: absolute;
+            top: size(-8);
+            left: size(12);
+            @include setBgColor($white, $textgray);
+            @include font($primaryFont, 12, normal, normal, 16.8);
+            padding-inline: size(4);
+          }
+
+          .summarytext {
+            color: $darktext;
+            @include font($primaryFont, 12, normal, normal, 16.8);
+            letter-spacing: size(0.4);
+    
+            @include breakpoint(tab992) {
+              font-size: size(14);
+            }
+          }
+        }
+
+        &-header {
+          @include flex-start;
+  
+          .title {
+            color: $dropdownbg;
+            @include font($primaryFont, 16, semibold, normal, 22.4);
+            text-transform: uppercase;
+    
+            @include breakpoint(tab992) {
+              font-size: size(20);
+            }
+          }
+        }
+  
+        &-body {
+          .emptyeducation {
+            @include flex-center-column;
+            gap: size(32);
+  
+            .icon {
+              width: size(130);
+              height: size(104);
+              @include flex-center;
+              overflow: hidden;
+  
+              svg {
+                @include wh100;
+              }
+            }
+  
+            .info {
+              max-width: size(520);
+              text-align: center;
+  
+              p {
+                color: $darktext;
+                @include font($primaryFont, 12, semibold, normal, 16.8);
+                text-transform: uppercase;
+        
+                @include breakpoint(tab992) {
+                  font-size: size(14);
+                }
+              }
+            }
+          }
+  
+          .btn-qualifications {
+            @include flex-center;
+            gap: size(8);
+            width: size(274);
+            height: size(44);
+            background: $white;
+            @include border(solid, 1, $hamburgerbg);
+            @include radius(5);
+            @include transitionsall;
+  
+            .text {
+              @include font($primaryFont, 12, semibold, normal, 16.8);
+              letter-spacing: size(1.6);
+              text-transform: uppercase;
+  
+              @include breakpoint(tab992) {
+                font-size: size(14);
+              }
+            }
+  
+            .icon {
+              @include square(20);
+              @include circle;
+              overflow: hidden;
+            }
+  
+            @include hover {
+              background: $hamburgerbg;
+  
+              .text {
+                color: $white;
+              }
+  
+              .icon {
+                svg {
+                  g {
+                    path {
+                      fill: $white;
+                    }
+                  }
+  
+                  defs {
+                    clipPath {
+                      rect {
+                        fill: $hamburgerbg;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+  
+          .qualificationsinfo {
+            @include flex-column;
+            gap: size(40);
+            
+            .qualificationlist {
+              @include flex-column;
+              gap: size(8);
+  
+              &-item {
+                background: $white;
+                box-shadow: $cardshadow;
+                @include radius(10);
+                @include flex-center-between;
+                padding: size(8) size(16);
+                flex-wrap: wrap;
+                gap: size(4);
+  
+                .institute {
+                  &-name {
+                    @include font($primaryFont, 12, semibold, normal, 16.8);
+      
+                    @include breakpoint(tab992) {
+                      font-size: size(14);
+                    }
+                  }
+                }
+  
+                .duration {
+                  .coursedeadline {
+                    color: $darktext;
+                    @include font($primaryFont, 12, normal, normal, 16.8);
+      
+                    @include breakpoint(tab992) {
+                      font-size: size(14);
+                    }
+                  }
+                }
+  
+                .actions {
+                  @include flex-center-vert;
+                  gap: size(12);
+  
+                  .btn-edit,
+                  .btn-delete {
+                    @include square(24);
+                    @include circle;
+                    @include flex-center;
+                    overflow: hidden;
+    
+                    @include breakpoint(tab992) {
+                      @include square(37);
+                    }
+  
+                    svg {
+                      @include wh100;
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -182,6 +369,8 @@
       }
 
       &-header {
+        @include flex-start;
+
         .title {
           color: $dropdownbg;
           @include font($primaryFont, 16, semibold, normal, 22.4);
@@ -194,50 +383,6 @@
       }
 
       &-body {
-        .inputbox {
-          @include flex-column;
-          gap: size(8);
-        }
-
-        .edubtns {
-          @include flex-center-vert;
-          gap: size(24);
-          margin-top: size(20);
-
-          .btn-profile-add,
-          .btn-profile-close {
-            width: size(124);
-            height: size(36);
-            @include flex-center;
-            text-align: center;
-            @include font($primaryFont, 12, semibold, normal, 16.8);
-            @include radius(5);
-            padding: size(6);
-            letter-spacing: size(1.6);
-            @include transitionsall;
-    
-            @include breakpoint(tab992) {
-              font-size: size(14);
-            }
-          }
-
-          .btn-profile-add {
-            @include setBgColor($hamburgerbg, $white);
-
-            @include hover {
-              @include setBgColor($dangercolor, $white);
-            }
-          }
-          
-          .btn-profile-close {
-            @include setBgColor($closebg, $white);
-
-            @include hover {
-              @include setBgColor($alertcolor, $white);
-            }
-          }
-        }
-
         .emptyeducation {
           @include flex-center-column;
           gap: size(32);
