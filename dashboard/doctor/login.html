@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DoctorValy | Doctor's Login</title>
+  <!-- FAVICON -->
+  <link rel="shortcut icon" href="../../assets/images/favicon.ico" type="image/x-icon">
+  <!-- BOOTSTRAP-CSS[v5.3] -->
+  <link rel="stylesheet" href="../../assets/css/bootstrap/bootstrap-icons.css">
+  <link rel="stylesheet" href="../../assets/css/bootstrap/bootstrap.min.css">
+  <!-- DOCTORVALY CSS -->
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+  <main class="authentication">
+    <div class="row w-100">
+      <div class="col-md-6 col-lg-4 col-12 mx-md-auto">
+        <div class="authentication-detail">
+          <div class="authentication-header">
+            <a href="index.html" class="logo">
+              <img src="../../assets/images/logo.svg" alt="logo">
+            </a>
+          </div>
+    
+          <div class="authentication-body">
+            <h3 class="title text-center">Sign In</h3>
+
+            <div class="authinfo">
+              <form class="authform">
+                <div class="row g-4">
+                  <div class="col-12">
+                    <div class="inputbox">
+                      <label for="username" class="inputlabel">
+                        Username or email <span>*</span>
+                      </label>
+                      <input type="text" id="designation" class="form-control" placeholder="Enter username or email" autocomplete="off">
+                      <p class="error-message d-none">This field is required</p>
+                    </div>
+                  </div>
+  
+                  <div class="col-12">
+                    <div class="inputbox">
+                      <label for="username" class="inputlabel">
+                        password <span>*</span>
+                      </label>
+                      <input type="password" id="designation" class="form-control" placeholder="Enter password" autocomplete="off">
+                      <p class="error-message d-none">This field is required</p>
+                    </div>
+                  </div>
+  
+                  <div class="col-12">
+                    <div class="d-flex align-items-center justify-content-between">
+                      <div class="checkfield">
+                        <input type="checkbox" class="checkinput" id="rememberme" autocomplete="off" hidden>
+                        <label for="rememberme" class="checklabel">
+                          Remember me
+                        </label>
+                      </div>
+  
+                      <a href="forgotpassword.html" class="forgotlink">Forgot your password?</a>
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <button class="btn-submit">Sign In</button>
+                  </div>
+                </div>
+              </form>
+
+              <div class="or">
+                <div class="or-header">
+                  <h5 class="ortitle">Or</h5>
+                </div>
+  
+                <div class="or-body">
+                  <button type="button" class="btn-or">
+                    <span class="icon">
+                      <svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="39" height="39" rx="19.5" fill="#337FFF"/>
+                        <path d="M24.2714 20.7695L24.8271 17.239H21.4041V14.9441C21.4041 13.9787 21.882 13.0354 23.4101 13.0354H24.9882V10.0289C24.0692 9.88238 23.1406 9.80309 22.2098 9.79172C19.3926 9.79172 17.5533 11.4853 17.5533 14.5469V17.239H14.4304V20.7695H17.5533V29.3091H21.4041V20.7695H24.2714Z" fill="white"/>
+                      </svg>
+                    </span>
+                    <span class="text">Sign in with FB</span>
+                  </button>
+
+                  <button type="button" class="btn-or">
+                    <span class="icon">
+                      <svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="39" height="39" rx="19.5" fill="#F1F1F1"/>
+                        <path d="M30.3149 20.1798C30.3149 19.3765 30.2372 18.5473 30.1076 17.7699H18.887V22.3566H25.3136C25.0544 23.8337 24.1993 25.1294 22.9295 25.9586L26.7647 28.9387C29.0192 26.8397 30.3149 23.7819 30.3149 20.1798Z" fill="#4280EF"/>
+                        <path d="M18.8889 31.7892C22.1022 31.7892 24.7973 30.7267 26.7667 28.9127L22.9315 25.9586C21.869 26.6842 20.4956 27.0988 18.8889 27.0988C15.7793 27.0988 13.162 24.9998 12.2032 22.2011L8.26428 25.233C10.2856 29.2496 14.3799 31.7892 18.8889 31.7892Z" fill="#34A353"/>
+                        <path d="M12.2022 22.1752C11.7098 20.6981 11.7098 19.0915 12.2022 17.6144L8.2633 14.5566C6.5789 17.9254 6.5789 21.8902 8.2633 25.233L12.2022 22.1752Z" fill="#F6B704"/>
+                        <path d="M18.8889 12.7168C20.5733 12.6908 22.2318 13.3387 23.4497 14.5048L26.8444 11.0842C24.6936 9.06292 21.8431 7.97454 18.8889 8.00045C14.3799 8.00045 10.2856 10.54 8.26428 14.5566L12.2032 17.6145C13.162 14.7899 15.7793 12.7168 18.8889 12.7168Z" fill="#E54335"/>
+                      </svg>
+                    </span>
+                    <span class="text">Sign in with Google</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

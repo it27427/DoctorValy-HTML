@@ -43,24 +43,5 @@
       @include flex-column;
       gap: size(8);
     }
-
-    .btn-submit {
-      @include setBgColor($hamburgerbg, $white);
-      @include radius(8);
-      @include font($primaryFont, 12, bold, normal, 16.8);
-      text-align: center;
-      text-transform: uppercase;
-      height: size(36);
-      padding: size(8);
-      @include transitionsall;
-  
-      @include breakpoint(tab992) {
-        font-size: size(14);
-      }
-
-      @include hover {
-        @include setBgColor($red, $white);
-      }
-    }
   }
 }

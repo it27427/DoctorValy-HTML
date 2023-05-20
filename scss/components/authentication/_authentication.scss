@@ -1,0 +1,104 @@
+@use "../../global" as *;
+@use "../../partials" as *;
+
+.authentication {
+  min-height: 100vh;
+  @include flex-center;
+
+  &-detail {
+    @include flex-column;
+    gap: size(24);
+    padding: size(40) size(0);
+  }
+
+  &-header {
+    @include flex-center-column;
+    @include w100;
+    gap: size(14);
+
+    .authentic-title {
+      @include font($primaryFont, 20, semibold, normal, 28);
+      letter-spacing: size(1.4);
+    
+      @include breakpoint(tab992) {
+        font-size: size(24);
+      }
+    }
+  }
+
+  &-body {
+    padding: size(24);
+    background: $white;
+    box-shadow: $authshadow;
+    @include flex-column;
+    gap: size(32);
+
+    @include breakpoint(tab992) {
+      padding: size(48) size(32);
+    }
+
+    .authinfo {
+      @include flex-column;
+      gap: size(40);
+    }
+
+    .forgotlink {
+      color: $textprimary;
+      @include font($primaryFont, 12, normal, normal, 16.8);
+      @include transitionsall;
+
+      @include hover {
+        color: $hamburgerbg;
+      }
+    }
+
+    .or {
+      @include flex-column;
+      gap: size(24);
+
+      &-header {
+        @include border-single(bottom, solid, 1, $textgray);
+        position: relative;
+
+        .ortitle {
+          position: absolute;
+          top: size(-8);
+          left: 50%;
+          color: $authortext;
+          @include translateX(-50%);
+          background: $white;
+          padding-inline: size(20);
+          @include font($primaryFont, 14, normal, normal, 19.6);
+        }
+      }
+
+      &-body {
+        @include flex-center-vert;
+        gap: size(8);
+
+        .btn-or {
+          @include flex-center;
+          gap: size(8);
+          @include border(solid, 1, $orborder);
+          @include radius(8);
+          padding: size(8) size(12);
+
+          .icon {
+            @include square(32);
+            @include flex-center;
+            overflow: hidden;
+
+            svg {
+              @include wh100;
+            }
+          }
+
+          .text {
+            color: $darktext;
+            @include font($primaryFont, 12, medium, normal, 16.8);
+          }
+        }
+      }
+    }
+  }
+}
