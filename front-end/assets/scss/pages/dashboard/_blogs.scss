@@ -1,0 +1,89 @@
+.blogs {
+  @include flex-column;
+  gap: size(20);
+
+  &-header {
+    @include flex-center-between;
+    gap: size(10);
+    flex-wrap: wrap;
+    @include border-single(bottom, solid, 2, $dashprimary);
+    padding-bottom: size(14);
+
+    .leftcontent {
+      @include flex-center-vert;
+      gap: size(20);
+
+      .title {
+        color: $dropdownbg;
+        font-family: $interFont;
+        font-size: size(20);
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+
+      .counter {
+        width: size(40);
+        height: size(28);
+        @include setBgColor(rgba($dashprimary, 0.2), $dashprimary);
+        @include radius(8);
+        @include flex-center;
+        font-size: size(14);
+        font-weight: 500;
+        text-align: center;
+      }
+    }
+
+    .rightcontent {
+      @include flex-center-vert;
+      gap: size(20);
+
+      .dashsearchbox {
+        position: relative;
+
+        .btn-search {
+          background: $dashprimary;
+          @include square(size(36));
+          @include radius(5);
+          @include transitionsbackground;
+
+          @include hover {
+            background: darken($dashprimary, 10%);
+          }
+        }
+
+        .searchform {
+
+        }
+      }
+
+      .addinfo {
+        .btn-add {
+          background: $dashprimary;
+          padding: size(8) size(12);
+          @include radius(5);
+          @include flex-center;
+          gap: size(8);
+          @include transitionsbackground;
+
+          .text {
+            color: $white;
+            display: inline-block;
+            font-family: $interFont;
+            font-size: size(12);
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-top: size(3);
+          }
+
+          @include hover {
+            background: darken($dashprimary, 10%);
+          }
+        }
+      }
+    }
+  }
+
+  &-body {
+
+  }
+}

@@ -1,0 +1,182 @@
+/**=======================================================**
+                        HEADER SECTION START
+**=======================================================**/
+
+.header {
+  background: $headerBg;
+  box-shadow: $head-shadow;
+  position: fixed;
+  @include w100;
+  top: 0;
+  left: 0;
+  height: length(64);
+  transition: ease $time;
+  z-index: 9999;
+  padding: length(0) length(20);
+
+  .hamburger {
+    @include flex-center;
+    order: 0;
+
+    @include breakpoint(mobile768) {
+      display: none;
+    }
+
+    .btn-hamburger {
+      @include flex-center;
+      @include square(length(44));
+      background: transparent;
+    }
+  }
+
+  &-nav {
+    @include flex-center-between;
+    padding: length(8) length(0);
+
+    .sitelogo {
+      order: 1;
+
+      @include breakpoint(mobile768) {
+        order: 0;
+      }
+      
+      .logo {
+        width: length(136);
+        height: length(44);
+
+        img {
+          @include wh100;
+          object-fit: cover;
+        }
+      }
+    }
+
+    .desktopsearch {
+      display: none;
+      width: length(320);
+      margin-inline: auto;
+      background: rgba($white, 0.05);
+
+      @include breakpoint(mobile768) {
+        @include flex-center-vert;
+      }
+
+      @include breakpoint(tab992) {
+        width: length(500);
+      }
+
+      .searchfield {
+        @include setBgColor(transparent, $white);
+        padding: length(11) length(16);
+        height: length(44);
+        width: calc(100% - 2.75rem);
+
+        &::placeholder {
+          color: $gray-500;
+        }
+      }
+
+      .btn-search {
+        background: transparent;
+        @include square(length(44));
+        @include flex-center;
+        padding: length(13);
+
+        svg {
+          @include wh100;
+
+          path {
+            fill: $gray-300;
+            @include transitionsall;
+          }
+        }
+
+        @include hover {
+          svg {
+            path {
+              fill: $primary;
+            }
+          }
+        }
+      }
+    }
+
+    .desktoplist {
+      display: none;
+
+      @include breakpoint(mobile768) {
+        @include flex-end;
+      }
+
+      &-item {
+        list-style: none;
+
+        &:last-child {
+          .desktoplist-link {
+            padding-right: 0;
+          }
+        }
+      }
+
+      &-link {
+        color: $white;
+        display: inline-block;
+        @include font-face($primaryFont, style('normal'), size(15), weight('bold'), line-height(21, 15));
+        padding: length(10.812) length(8);
+        letter-spacing: length(0.32);
+        text-align: center;
+        text-transform: uppercase;
+        @include transitionscolor;
+
+        @include breakpoint(tab992) {
+          padding: length(10.812) length(16);
+        }
+
+        &:hover:not(.nuxt-link-exact-active) {
+          color: $primary;
+        }
+
+        &.nuxt-link-exact-active {
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  .mobilesearch {
+    @include flex-center;
+    order: 2;
+
+    @include breakpoint(mobile768) {
+      display: none;
+    }
+
+    .btn-mobsearch {
+      background: transparent;
+      @include square(length(44));
+      @include flex-center;
+      padding: length(12);
+
+      svg {
+        @include wh100;
+
+        path {
+          fill: $gray-500;
+          @include transitionsall;
+        }
+      }
+
+      @include hover {
+        svg {
+          path {
+            fill: $primary;
+          }
+        }
+      }
+    }
+  }
+}
+
+/**=======================================================**
+                        HEADER SECTION END
+**=======================================================**/

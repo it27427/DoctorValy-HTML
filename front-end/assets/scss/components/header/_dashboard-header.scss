@@ -1,0 +1,93 @@
+/**=======================================================**
+                    DASHBOARD-HEADER START
+**=======================================================**/
+
+.dashboard-header {
+  background: $darkPrimary;
+  height: size(60);
+  padding: size(8) size(20);
+  @include flex-center-vert;
+
+  .rightmenu {
+    @include flex-center-vert;
+    margin-left: auto;
+
+    .userdropdown {
+      position: relative;
+      height: size(60);
+      padding: size(8) size(20);
+      cursor: pointer;
+      @include flex-center-vert;
+
+      .btn-strange {
+        @include transparent-button;
+        @include flex-center-vert;
+        gap: size(8);
+
+        .text {
+          color: $white;
+          font-family: $nameFont;
+          font-size: size(15);
+        }
+
+        .icon {
+          @include flex-center;
+          overflow: hidden;
+
+          svg {
+            @include wh100;
+          }
+        }
+      }
+
+      &-content {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding-top: size(1);
+        display: none;
+
+        @extend %animation;
+        @extend %slideUpIn;
+
+        .dropdownlist {
+          @include list-vertical;
+          gap: size(1);
+          width: size(126);
+
+          &-link {
+            background: $dropdownbg;
+            @include flex-center-vert;
+            gap: size(8);
+            @include w100;
+            @include radius(4);
+            height: size(40);
+            padding: size(10) size(15);
+
+            .icon {
+              svg {
+                @include wh100;
+              }
+            }
+
+            .text {
+              color: $white;
+              font-family: $interFont;
+              font-size: size(12);
+            }
+          }
+        }
+      }
+
+      @include hover {
+        .userdropdown-content {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+/**=======================================================**
+                    DASHBOARD-HEADER END
+**=======================================================**/
