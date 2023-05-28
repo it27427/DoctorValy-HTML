@@ -1,2 +1,18 @@
 @use "../../global" as *;
 @use "../../partials" as *;
+
+.preloader {
+	background: $white;
+	@include flex-center;
+	position: fixed;
+	inset: size(0);
+	@include w100;
+	min-height: 100vh;
+	overflow: hidden;
+	z-index: 9999;
+
+	.loader {
+		@include square(250);
+		@include flex-center;
+	}
+}
