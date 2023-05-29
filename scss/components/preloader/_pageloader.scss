@@ -12,7 +12,15 @@
 	z-index: 9999;
 
 	.loader {
-		@include square(250);
+		@include square(150);
 		@include flex-center;
+
+		@include breakpoint(mobile576) {
+			@include square(200);
+		}
+
+		@include breakpoint(mobile768) {
+			@include square(250);
+		}
 	}
 }
