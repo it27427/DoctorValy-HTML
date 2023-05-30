@@ -1,3 +1,56 @@
 @use '../../global' as *;
 @use '../../partials' as *;
 
+.headersearch {
+  @include flex-center-vert;
+  @include radius(50);
+  overflow: hidden;
+  height: size(40);
+  background: rgba($white, 0.1);
+
+  @include breakpoint(tab992) {
+    min-width: size(400);
+    margin-inline: auto;
+  }
+
+  @include breakpoint(desktop1024) {
+    min-width: size(448);
+  }
+
+  @include breakpoint(desktop1200) {
+    min-width: size(500);
+  }
+
+  .searchfield {
+    width: calc(100% - size(64));
+    @include h100;
+    @include setBgColor(transparent, $white);
+    @include font($secondaryFont, 14, normal, normal, 19.6);
+    padding-left: size(16);
+
+    &::placeholder {
+      color: $textplaceholder;
+    }
+  }
+
+  .btn-search {
+    background: $primary;
+    width: size(64);
+    @include h100;
+    @include flex-center;
+
+    svg {
+      path {
+        fill: $white;
+      }
+    }
+  }
+}
+
+.mobilesearch {
+  background: $headerbg;
+
+  .collapse {
+    padding-bottom: size(16);
+  }
+}

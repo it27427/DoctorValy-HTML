@@ -3,7 +3,68 @@
 
 // FRONT-END HEADER
 .header {
+  background: $headerbg;
+  @include flex-center-vert;
+  height: size(64);
   
+  &-nav {
+    @include flex-center-between;
+
+    .logo {
+      width: size(136);
+      height: size(44);
+      @include flex-center;
+      overflow: hidden;
+
+      img {
+        @include wh100;
+        object-fit: cover;
+      }
+    }
+
+    .desktoplist {
+      @include list-horizontal;
+      gap: size(24);
+
+      &-link {
+        color: $white;
+        display: inline-block;
+        @include font($secondaryFont, 14, bold, normal, 19.6);
+        text-transform: uppercase;
+        letter-spacing: size(0.48);
+        @include transitionsall;
+
+        &:hover:not(.active) {
+          color: $primary;
+        }
+
+        &.active {
+          color: $primary;
+        }
+      }
+    }
+
+    .btn-mobsearch {
+      @include square(24);
+      @include flex-center;
+      overflow: hidden;
+
+      svg {
+        path {
+          fill: $white;
+          @include transitionsall;
+        }
+      }
+
+      @include hover {
+        svg {
+          path {
+            fill: $hamburgerbg;
+          }
+        }
+      }
+    }
+  }
 }
 
 // DASHBOARD-HEADER

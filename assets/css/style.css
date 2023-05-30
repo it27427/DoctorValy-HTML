@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Nunito:wght@300;400;500;600;700&display=swap");
 /**=====================================================**
                 ANIMATION-STYLES
 =======================================================**/
@@ -1135,6 +1135,74 @@ button:not([disabled]):hover,
   color: hsl(0, 0%, 77%);
 }
 
+.header {
+  background: hsl(0, 3%, 6%);
+  display: flex;
+  align-items: center;
+  height: 4rem;
+}
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-nav .logo {
+  width: 8.5rem;
+  height: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.header-nav .logo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.header-nav .desktoplist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.header-nav .desktoplist-link {
+  color: hsl(0, 0%, 100%);
+  display: inline-block;
+  font-family: "Nunito", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 0.03rem;
+  transition: all 350ms ease-in-out;
+}
+.header-nav .desktoplist-link:hover:not(.active) {
+  color: hsl(0, 100%, 64%);
+}
+.header-nav .desktoplist-link.active {
+  color: hsl(0, 100%, 64%);
+}
+.header-nav .btn-mobsearch {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.header-nav .btn-mobsearch svg path {
+  fill: hsl(0, 0%, 100%);
+  transition: all 350ms ease-in-out;
+}
+.header-nav .btn-mobsearch:not([disabled]):hover svg path {
+  fill: hsl(5, 86%, 56%);
+}
+
 .dashboard-header {
   background: hsl(0, 3%, 6%);
   height: 4rem;
@@ -1811,11 +1879,6 @@ label span {
 .offcanvas.offcanvas-start {
   border-right: 0;
 }
-@media screen and (min-width: 36rem) {
-  .offcanvas.offcanvas-start {
-    width: 60%;
-  }
-}
 .offcanvas.offcanvas-end {
   border-left: 0;
 }
@@ -1823,39 +1886,78 @@ label span {
   border-right: 0;
 }
 .offcanvas-header .logo {
-  width: 3.75rem;
-  height: 3.75rem;
-  border-radius: 100%;
+  width: 8.5rem;
+  height: 2.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
 }
-.offcanvas-body .btn-close {
-  background: transparent;
-  color: hsl(5, 86%, 56%);
-  display: flex;
-  gap: 0.625rem;
+.offcanvas-header .logo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.offcanvas-header .btn-close {
   width: 1.25rem;
   height: 1.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  border-radius: 0rem;
-  border-radius: 0rem;
-  transition: all 350ms ease-in-out;
 }
-.offcanvas-body .btn-close svg {
+.offcanvas-header .btn-close:focus {
+  box-shadow: none;
+  outline: none;
+}
+.offcanvas-header .btn-close svg {
   width: 100%;
   height: 100%;
+  transition: transform 350ms ease-in-out;
 }
-.offcanvas-body .btn-close:not([disabled]):hover {
+.offcanvas-header .btn-close svg path {
+  fill: hsl(0, 0%, 100%);
+}
+.offcanvas-header .btn-close:not([disabled]):hover {
   opacity: 1;
+}
+.offcanvas-header .btn-close:not([disabled]):hover svg {
   transform: rotate(180deg);
 }
-.offcanvas-body .btn-close:not([disabled]):hover svg path {
-  fill: hsl(343, 79%, 50%);
+.offcanvas-header .btn-close:not([disabled]):hover svg path {
+  fill: hsl(5, 86%, 56%);
+}
+.offcanvas-body .mobilelist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.offcanvas-body .mobilelist-link {
+  border-bottom: solid 0.0625rem hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 100%);
+  display: inline-block;
+  font-family: "Nunito", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.4;
+  letter-spacing: 0.03rem;
+  padding: 0.5rem 0rem;
+  width: 100%;
+  text-transform: uppercase;
+  transition: all 350ms ease-in-out;
+}
+.offcanvas-body .mobilelist-link:hover:not(.active) {
+  color: hsl(0, 100%, 64%);
+  border-color: hsl(0, 100%, 64%);
+}
+.offcanvas-body .mobilelist-link.active {
+  color: hsl(0, 100%, 64%);
+  border-color: hsl(0, 100%, 64%);
 }
 .offcanvas-body::-webkit-scrollbar {
   background: transparent;
@@ -1864,6 +1966,68 @@ label span {
 .offcanvas-body::-webkit-scrollbar-thumb {
   border-radius: 0.5rem;
   border-radius: 0.5rem;
+}
+
+.headersearch {
+  display: flex;
+  align-items: center;
+  border-radius: 3.125rem;
+  border-radius: 3.125rem;
+  overflow: hidden;
+  height: 2.5rem;
+  background: rgba(255, 255, 255, 0.1);
+}
+@media screen and (min-width: 62rem) {
+  .headersearch {
+    min-width: 25rem;
+    margin-inline: auto;
+  }
+}
+@media screen and (min-width: 64rem) {
+  .headersearch {
+    min-width: 28rem;
+  }
+}
+@media screen and (min-width: 75rem) {
+  .headersearch {
+    min-width: 31.25rem;
+  }
+}
+.headersearch .searchfield {
+  width: calc(100% - 4rem);
+  height: 100%;
+  background: transparent;
+  color: hsl(0, 0%, 100%);
+  font-family: "Nunito", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.4;
+  padding-left: 1rem;
+}
+.headersearch .searchfield::-moz-placeholder {
+  color: hsl(214, 20%, 69%);
+}
+.headersearch .searchfield::placeholder {
+  color: hsl(214, 20%, 69%);
+}
+.headersearch .btn-search {
+  background: hsl(0, 100%, 64%);
+  width: 4rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.headersearch .btn-search svg path {
+  fill: hsl(0, 0%, 100%);
+}
+
+.mobilesearch {
+  background: hsl(0, 3%, 6%);
+}
+.mobilesearch .collapse {
+  padding-bottom: 1rem;
 }
 
 .modal-content {

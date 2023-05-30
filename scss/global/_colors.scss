@@ -4,6 +4,7 @@ $white: hsl(0, 0%, 100%); //#ffffff
 $black: hsl(0, 0%, 0%); //#000000
 
 // THEME-COLORS
+$primary: hsl(0deg, 100%, 64%); //#ff4747
 
 // BACKGROUND-COLORS
 $dropdownbg: hsl(226, 20%, 20%); //#292E3E
@@ -35,6 +36,8 @@ $textimpression: hsl(0, 7%, 52%); //#8C7B7B
 $selectcolor: hsl(0, 3%, 17%); //#2D2A2A
 $alertcolor: hsl(0, 0%, 44%); //#707070
 
+$textplaceholder: hsl(214, 20%, 69%); //#a0aec0
+
 // SUCCESS COLOR
 
 
@@ -59,6 +62,7 @@ $authshadow: 0 .375rem 1rem 0 rgba($black, 0.2);
 
 // LETTER-SPECING
 $specing-1: size(0.24);
+$specing-2: size(0.48);
 
 // ANIMATION VARIABLES
 $sidebarcollapse: cubic-bezier(1.000, 0.335, 0.890, 0.825);

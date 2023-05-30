@@ -17,10 +17,6 @@
 
   &.offcanvas-start {
     border-right: 0;
-
-    @include breakpoint(mobile576) {
-      width: 60%;
-    }
   }
 
   &.offcanvas-end {
@@ -32,41 +28,75 @@
   }
 
   &-header {
-    // padding-bottom: 0;
-
     .logo {
-      @include square(60);
-      @include circle;
+      width: size(136);
+      height: size(44);
       @include flex-center;
       overflow: hidden;
+
+      img {
+        @include wh100;
+        object-fit: cover;
+      }
     }
 
-  }
-
-  &-body {
-    
     .btn-close {
-      @include setBgColor(transparent, $hamburgerbg);
-      @include flex;
-      gap: size(10);
       @include square(20);
       @include flex-center;
       overflow: hidden;
-      @include radius(0);
-      @include transitionsall;
+
+      &:focus {
+        box-shadow: none;
+        outline: none;
+      }
 
       svg {
         @include wh100;
+        @include transitiontransform;
+
+        path {
+          fill: $white;
+        }
       }
 
       @include hover {
         opacity: 1;
-        @include rotate(180);
 
         svg {
+          @include rotate(180);
+
           path {
-            fill: $dangercolor;
+            fill: $hamburgerbg;
           }
+        }
+      }
+    }
+  }
+
+  &-body {
+    .mobilelist {
+      @include list-vertical;
+      gap: size(8);
+
+      &-link {
+        @include border-single(bottom, solid, 1, $white);
+        color: $white;
+        display: inline-block;
+        @include font($secondaryFont, 14, bold, normal, 19.6);
+        letter-spacing: size(0.48);
+        padding: size(8) size(0);
+        @include w100;
+        text-transform: uppercase;
+        @include transitionsall;
+
+        &:hover:not(.active) {
+          color: $primary;
+          border-color: $primary;
+        }
+
+        &.active {
+          color: $primary;
+          border-color: $primary;
         }
       }
     }
