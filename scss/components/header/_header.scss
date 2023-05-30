@@ -5,8 +5,9 @@
 .header {
   background: $headerbg;
   @include flex-center-vert;
+  @include w100;
   height: size(64);
-  
+
   &-nav {
     @include flex-center-between;
 

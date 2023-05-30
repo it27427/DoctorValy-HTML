@@ -309,6 +309,10 @@ table tr th, table tr td {
   vertical-align: middle;
 }
 
+.frontbody {
+  margin-top: 4rem;
+}
+
 button,
 [type=button],
 [type=reset],
@@ -1139,6 +1143,7 @@ button:not([disabled]):hover,
   background: hsl(0, 3%, 6%);
   display: flex;
   align-items: center;
+  width: 100%;
   height: 4rem;
 }
 .header-nav {
@@ -2055,29 +2060,140 @@ label span {
   transform: rotate(90deg);
 }
 .tooltip-inner {
+  background: hsl(226, 20%, 20%);
   font-size: 0.75rem;
 }
+.tooltip.bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before {
+  border-top-color: hsl(226, 20%, 20%);
+}
+.tooltip.bs-tooltip-auto[data-popper-placement^=bottom] .tooltip-arrow::before {
+  border-bottom-color: hsl(226, 20%, 20%);
+}
+.tooltip.bs-tooltip-auto[data-popper-placement^=left] .tooltip-arrow::before {
+  border-left-color: hsl(226, 20%, 20%);
+}
+.tooltip.bs-tooltip-auto[data-popper-placement^=right] .tooltip-arrow::before {
+  border-right-color: hsl(226, 20%, 20%);
+}
+
 .footer {
-  height: 2.5rem;
   width: 100%;
-  background: hsl(231, 15%, 24%);
+  background: hsl(225, 6%, 13%);
+}
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.footer .footerupper {
+  padding: 4rem 0rem 5rem;
+}
+.footer .footerupper .footerlogo {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: width 350ms cubic-bezier(1, 0.335, 0.89, 0.825);
 }
-@media screen and (min-width: 62rem) {
-  .footer {
-    width: calc(100% - 15.625rem);
-    margin-left: auto;
+@media screen and (min-width: 48rem) {
+  .footer .footerupper .footerlogo {
+    justify-content: flex-start;
   }
 }
-.footer.collapsed-footer {
-  width: calc(100% - 5rem);
+.footer .footerupper .footerinfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.5rem;
 }
-.footer .text-copyright {
+@media screen and (min-width: 62rem) {
+  .footer .footerupper .footerinfo {
+    align-items: flex-start;
+  }
+}
+.footer .footerupper .footerinfo-header .footerinfo-title {
   color: hsl(0, 0%, 100%);
-  font-family: "Inter", sans-serif;
+  font-family: "Nunito", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 0.7583333333;
+}
+.footer .footerupper .footerinfo-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+@media screen and (min-width: 62rem) {
+  .footer .footerupper .footerinfo-body {
+    align-items: flex-start;
+  }
+}
+.footer .footerupper .footerinfo-body .footerlist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.625rem;
+}
+@media screen and (min-width: 62rem) {
+  .footer .footerupper .footerinfo-body .footerlist {
+    align-items: flex-start;
+  }
+}
+.footer .footerupper .footerinfo-body .footerlist-link {
+  color: hsl(0, 0%, 100%);
+  display: inline-block;
+  position: relative;
+  transition: all 350ms ease-in-out;
+}
+.footer .footerupper .footerinfo-body .footerlist-link::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 0.0625rem;
+  width: 0;
+  background: hsl(0, 100%, 64%);
+  transition: all 350ms ease-in-out;
+}
+.footer .footerupper .footerinfo-body .footerlist-link:not([disabled]):hover {
+  color: hsl(0, 100%, 64%);
+}
+.footer .footerupper .footerinfo-body .footerlist-link:not([disabled]):hover::before {
+  width: 100%;
+}
+.footer .footerupper .footerinfo-body .social-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.footer .footerupper .footerinfo-body .social-list-link {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.footer .footerupper .footerinfo-body .social-list-link svg {
+  width: 100%;
+  height: 100%;
+}
+.footer .footerlower {
+  background: hsl(0, 0%, 10%);
+  padding: 0.75rem;
+}
+.footer .footerlower .copyright .copyright-text {
+  color: hsl(0, 0%, 100%);
+  font-family: "Nunito", sans-serif;
   font-size: 0.8125rem;
   font-weight: 500;
   font-style: normal;

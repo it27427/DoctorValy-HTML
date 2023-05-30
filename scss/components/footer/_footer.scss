@@ -2,24 +2,117 @@
 @use "../../partials" as *;
 
 .footer {
-  height: size(40);
   @include w100;
-  background: $textprimary;
-  @include flex-center;
-  @include transition(width $time $sidebarcollapse);
+  background: $footerbg;
+
+  &-content {
+    @include flex-column;
+    @include w100;
+  }
   
-  @include breakpoint(tab992) {
-    width: calc(100% - size(250));
-    margin-left: auto;
-  }
+  .footerupper {
+    padding: size(64) size(0) size(80);
 
-  &.collapsed-footer {
-    width: calc(100% - size(80));
-  }
+    .footerlogo {
+      @include flex-center;
 
-  .text-copyright {
-    color: $white;
-    @include font($primaryFont, 13, medium, normal, 18.2);
-    text-align: center;
+      @include breakpoint(mobile768) {
+        justify-content: flex-start;
+      }
+    }
+    
+    .footerinfo {
+      @include flex-center-column;
+      gap: size(24);
+
+      @include breakpoint(tab992) {
+        align-items: flex-start;
+      }
+
+      &-header {
+        .footerinfo-title {
+          color: $white;
+          @include font($secondaryFont, 24, medium, normal, 18.2);
+        }
+      }
+
+      &-body {
+        @include flex-center-column;
+        gap: size(40);
+
+        @include breakpoint(tab992) {
+          align-items: flex-start;
+        }
+
+        .footerlist {
+            @include list-vertical;
+            align-items: center;
+            gap: size(10);
+  
+            @include breakpoint(tab992) {
+              align-items: flex-start;
+            }
+
+          &-link {
+            color: $white;
+            display: inline-block;
+            position: relative;
+            @include transitionsall;
+
+            &::before {
+              content: "";
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              height: size(1);
+              width: 0;
+              background: $primary;
+              @include transitionsall;
+            }
+
+            @include hover {
+              color: $primary;
+
+              &::before {
+                @include w100;
+              }
+            }
+          }
+        }
+
+        .social-list {
+          @include list-horizontal;
+          gap: size(16);
+
+          &-link {
+            @include square(40);
+            @include circle;
+            @include flex-center;
+            overflow: hidden;
+
+            svg {
+              @include wh100;
+            }
+          }
+        }
+      }
+    }
+
+    .footeraboutinfo {
+
+    }
+  }
+  
+  .footerlower {
+    background: $darktext;
+    padding: size(12);
+
+    .copyright {
+      .copyright-text {
+        color: $white;
+        @include font($secondaryFont, 13, medium, normal, 18.2);
+        text-align: center;
+      }
+    }
   }
 }
