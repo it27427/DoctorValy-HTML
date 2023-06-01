@@ -647,3 +647,98 @@
     }
   }
 }
+
+//FRONT-END CARDS
+.card-doctor {
+  background: $white;
+  cursor: pointer;
+  @include radius(15);
+  padding: size(16) size(8);
+  overflow: hidden;
+  @include flex-center-column;
+  gap: size(14);
+  text-align: center;
+  // width: size(240);
+  @include h100;
+  // margin-inline: auto;
+
+  @include breakpoint(desktop1200) {
+    padding: size(28) size(26) size(30);
+  }
+
+  &-header {
+    @include square(200);
+    @include radius(8);
+    @include flex-center;
+    overflow: hidden;
+
+    img {
+      @include wh100;
+      object-fit: contain;
+      object-position: center center;
+      @include transitionsall;
+    }
+  }
+
+  &-body {
+    @include flex-center-column;
+    gap: size(8);
+
+    .name-status {
+      @include flex-center;
+      gap: size(8);
+    }
+
+    .name {
+      color: $textprimary;
+      @include font($secondaryFont, 12, normal, normal, 16.8);
+      @include line-clamp;
+
+      @include breakpoint(tab992) {
+        font-size: size(14);
+      }
+
+      @include breakpoint(desktop1400) {
+        font-size: size(16);
+      }
+
+      @include hover {
+        color: $primary;
+      }
+    }
+    
+    .status {
+      @include square(8);
+      @include flex-center;
+      @include circle;
+      background: $authortext;
+
+      &.active {
+        background: $successbg;
+      }
+    }
+
+    .position {
+      color: $textprimary;
+      @include font($secondaryFont, 12, normal, normal, 16.8);
+      height: size(40);
+      @include line-clamp;
+
+      @include breakpoint(tab992) {
+        font-size: size(14);
+      }
+
+      @include breakpoint(desktop1400) {
+        font-size: size(16);
+      }
+    }
+  }
+
+  @include hover {
+    .card-doctor-header {
+      img {
+        @include scale(0.95);
+      }
+    }
+  }
+}

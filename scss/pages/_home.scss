@@ -1,6 +1,74 @@
 @use "../global" as *;
 @use "../partials" as *;
 
+.doctorstoday {
+  padding: size(48) size(0);
+
+  &-details {
+    .slider {
+      margin-bottom: size(24);
+      position: relative;
+
+      &-buttons {
+        position: absolute;
+        top: 50%;
+        @include translateY(-50%);
+        @include w100;
+        @include flex-center-between;
+        z-index: 1000;
+
+        button {
+          @include square(36);
+          @include flex-center;
+
+          svg {
+            @include wh100;
+
+            path {
+              fill: $dropdownbg;
+              @include transitionsall;
+            }
+          }
+
+          @include hover {
+            svg {
+              path {
+                fill: $primary;
+              }
+            }
+          }
+
+          &::after {
+            content: '';
+            width: size(0);
+            height: size(0);
+            display: none;
+          }
+        }
+      }
+    }
+
+    .slidelink {
+      display: block;
+      @include h100;
+    }
+  }
+
+  &-info {
+    @include flex-center-column;
+    text-align: center;
+
+    .doctorstoday-title {
+      color: $headingtext;
+    }
+
+    .datetoday {
+      color: $graytext;
+      @include font($secondaryFont, 14, semibold, normal, 19.6);
+    }
+  }
+}
+
 .schedule-today {
   background: $white;
   box-shadow: $cardshadow;

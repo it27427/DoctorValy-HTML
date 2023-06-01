@@ -12,11 +12,12 @@ function currentDateTime() {
   const dayName = days[day.getDay()] + ',';
   
   const monthName = monthNames[day.getMonth()];
-  const date = current.getDate() + ' ' + monthName + ', ' + current.getFullYear();
+  const date = current.getDate() + ' ' + monthName + ' ' + current.getFullYear();
   
   const dateTime = dayName + ' ' + date;
 
   return dateTime;
 }
 
-console.log(currentDateTime())
+const dateToday = document.querySelector('.datetoday');
+dateToday.innerHTML = currentDateTime();
