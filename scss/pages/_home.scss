@@ -56,15 +56,37 @@
 
   &-info {
     @include flex-center-column;
+    gap: size(4);
     text-align: center;
 
     .doctorstoday-title {
-      color: $headingtext;
+      color: $darktext;
+      @include font($secondaryFont, 32, semibold, normal, 44.8);
     }
 
     .datetoday {
       color: $graytext;
       @include font($secondaryFont, 14, semibold, normal, 19.6);
+    }
+  }
+}
+
+.blogs {
+  padding: size(48) size(0);
+
+  .bloglink {
+    display: block;
+    @include wh100;
+  }
+
+  &-header {
+    @include flex-center;
+    text-align: center;
+    margin-bottom: size(32);
+
+    .blogtitle {
+      color: $darktext;
+      @include font($secondaryFont, 32, semibold, normal, 44.8);
     }
   }
 }

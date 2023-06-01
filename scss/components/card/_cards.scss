@@ -649,6 +649,7 @@
 }
 
 //FRONT-END CARDS
+
 .card-doctor {
   background: $white;
   cursor: pointer;
@@ -658,9 +659,7 @@
   @include flex-center-column;
   gap: size(14);
   text-align: center;
-  // width: size(240);
   @include h100;
-  // margin-inline: auto;
 
   @include breakpoint(desktop1200) {
     padding: size(28) size(26) size(30);
@@ -738,6 +737,139 @@
     .card-doctor-header {
       img {
         @include scale(0.95);
+      }
+    }
+  }
+}
+
+.cardblog {
+  background: $white;
+  @include radius(10);
+  @include flex-center-column;
+  gap: size(14);
+  padding: size(10);
+
+  &-header {
+    position: relative;
+    @include w100;
+    height: size(176);
+    overflow: hidden;
+    @include radius(10);
+    
+    .blogthumbnail {
+      @include wh100;
+      @include flex-center;
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+
+      img {
+        @include wh100;
+        object-fit: cover;
+        object-position: center center;
+        @include transitionsall;
+      }
+
+      &::before {
+        position: absolute;
+        inset: 0;
+        @include wh100;
+        background: rgba($black, 0.5);
+        z-index: 10;
+      }
+    }
+
+    .tags {
+      position: absolute;
+      top: size(8);
+      left: size(8);
+      @include flex-center-vert;
+      gap: size(5);
+      flex-wrap: wrap;
+      z-index: 100;
+
+      .tag {
+        @include setBgColor($white, $headerbg);
+        @include radius(12.5);
+        display: inline-block;
+        @include font($secondaryFont, 10, normal, normal, 14);
+        padding: size(4) size(10);
+        text-align: center;
+      }
+    }
+  }
+
+  &-body {
+    @include flex-column;
+    gap: size(8);
+    padding-bottom: size(16);
+
+    .blogtitle {
+      color: $headingtext;
+      @include font($secondaryFont, 12, medium, normal, 16.8);
+      @include line-clamp;
+      @include transitionscolor;
+
+      @include breakpoint(tab992) {
+        font-size: size(14);
+      }
+
+      @include breakpoint(desktop1400) {
+        font-size: size(16);
+      }
+
+      @include hover {
+        color: $red;
+      }
+    }
+
+    .bloglist {
+      @include list-vertical;
+      gap: size(4);
+      margin-bottom: size(8);
+
+      &-item {
+        @include flex-center-vert;
+        gap: size(4);
+
+        .icon {
+          @include square(16);
+          @include flex-center;
+          overflow: hidden;
+
+          svg {
+            @include wh100;
+
+            path {
+              fill: $authortext;
+            }
+          }
+        }
+
+        .author {
+          color: $authortext;
+          @include font($secondaryFont, 12, medium, normal, 16.8);
+        }
+      }
+    }
+
+    .viewdetail {
+      color: $headingtext;
+      @include font($secondaryFont, 14, semibold, normal, 19.6);
+      @include transitionscolor;
+    
+      @include hover {
+        color: $red;
+      }
+    }
+  }
+
+  @include hover {
+    .cardblog-header {
+      .blogthumbnail {
+        img {
+          @include scale(1.05);
+        }
       }
     }
   }
