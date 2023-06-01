@@ -91,6 +91,56 @@
   }
 }
 
+.doctorsinfo {
+  background: $white;
+  padding: size(48) size(0);
+
+  .categories {
+    @include flex-column;
+    gap: size(14);
+
+    .sidebarlist {
+      @include list-vertical;
+      gap: size(10);
+
+      &-link {
+        color: $headingtext;
+        @include flex-center-vert;
+        @include transitionscolor;
+
+        .categorytitle {
+          color: inherit;
+          @include font($secondaryFont, 13, semibold, normal, 18.2);
+          width: calc(100% - size(40));
+        }
+
+        .categorycounter {
+          color: inherit;
+          @include font($secondaryFont, 13, medium, normal, 18.2);
+          width: size(40);
+        }
+
+        @include hover {
+          color: $hamburgerbg;
+        }
+      }
+    }
+
+    .seeall {
+      &-link {
+        color: $black;
+        @include font($secondaryFont, 14, bold, normal, 19.6);
+        text-transform: uppercase;
+        @include transitionscolor;
+
+        @include hover {
+          color: $hamburgerbg;
+        }
+      }
+    }
+  }
+}
+
 .schedule-today {
   background: $white;
   box-shadow: $cardshadow;

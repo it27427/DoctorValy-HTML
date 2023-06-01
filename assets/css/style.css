@@ -3559,6 +3559,64 @@ label span {
   line-height: 1.4;
 }
 
+.doctorsinfo {
+  background: hsl(0, 0%, 100%);
+  padding: 3rem 0rem;
+}
+.doctorsinfo .categories {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+.doctorsinfo .categories .sidebarlist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+.doctorsinfo .categories .sidebarlist-link {
+  color: hsl(0, 0%, 9%);
+  display: flex;
+  align-items: center;
+  transition: color 350ms ease-in-out;
+}
+.doctorsinfo .categories .sidebarlist-link .categorytitle {
+  color: inherit;
+  font-family: "Nunito", sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 1.4;
+  width: calc(100% - 2.5rem);
+}
+.doctorsinfo .categories .sidebarlist-link .categorycounter {
+  color: inherit;
+  font-family: "Nunito", sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1.4;
+  width: 2.5rem;
+}
+.doctorsinfo .categories .sidebarlist-link:not([disabled]):hover {
+  color: hsl(5, 86%, 56%);
+}
+.doctorsinfo .categories .seeall-link {
+  color: hsl(0, 0%, 0%);
+  font-family: "Nunito", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.4;
+  text-transform: uppercase;
+  transition: color 350ms ease-in-out;
+}
+.doctorsinfo .categories .seeall-link:not([disabled]):hover {
+  color: hsl(5, 86%, 56%);
+}
+
 .schedule-today {
   background: hsl(0, 0%, 100%);
   box-shadow: 0.25rem 0.25rem 1rem 0.1875rem rgba(72, 75, 137, 0.2);
