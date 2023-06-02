@@ -806,20 +806,20 @@
 
     .blogtitle {
       color: $headingtext;
-      @include font($secondaryFont, 12, medium, normal, 16.8);
+      @include font($secondaryFont, 15, medium, normal, 21);
       @include line-clamp;
       @include transitionscolor;
 
-      @include breakpoint(tab992) {
-        font-size: size(14);
-      }
-
-      @include breakpoint(desktop1400) {
-        font-size: size(16);
-      }
-
       @include hover {
         color: $red;
+      }
+    }
+
+    .bloginfos {
+      .blogtext {
+        color: $gray-800;
+        @include font($secondaryFont, 13, normal, normal, 18.2);
+        @include line-clamp-3;
       }
     }
 
@@ -855,7 +855,7 @@
 
     .viewdetail {
       color: $headingtext;
-      @include font($secondaryFont, 14, semibold, normal, 19.6);
+      @include font($secondaryFont, 12, semibold, normal, 16.8);
       @include transitionscolor;
     
       @include hover {
@@ -873,4 +873,178 @@
       }
     }
   }
+}
+
+.card-article {
+	background: $white;
+	@include radius(8);
+	@include flex-column;
+	gap: size(8);
+	padding: size(6);
+  @include wh100;
+
+	&-header {
+		@include radius(8);
+		@include w100;
+		height: size(170);
+		overflow: hidden;
+
+		img {
+			@include wh100;
+			object-fit: cover;
+			@include transitiontransform;
+
+			@include hover {
+				@include transform(scale(1.05));
+			}
+		}
+	}
+
+	&-body {
+		@include flex-column;
+		gap: size(12);
+		padding: size(6);
+
+		.title-date {
+			@include flex-column;
+      gap: size(5);
+
+			.title {
+        color: $headingtext;
+        @include font($secondaryFont, 15, semibold, normal, 21);
+				@include transitionscolor;
+
+				@include hover {
+					color: $primary;
+				}
+			}
+
+			.date {
+				color: $gray-600;
+        @include font($secondaryFont, 12, normal, normal, 16.8);
+			}
+		}
+
+		.articledescript {
+			.articletext {
+				color: $gray-600;
+        @include font($secondaryFont, 13, normal, normal, 21);
+        @include line-clamp-3;
+			}
+		}
+
+		.articlelink {
+			color: $gray-800;
+      @include font($secondaryFont, 12, semibold, normal, 16.8);
+			@include transitionscolor;
+
+			@include hover {
+				color: $primary;
+			}
+		}
+	}
+}
+
+.card-bigblog {
+	background: $white;
+	@include radius(16);
+	overflow: hidden;
+
+	&-thumbnail {
+		overflow: hidden;
+		@include wh100;
+
+		@include breakpoint(tablet991) {
+			@include radius(16);
+		}
+
+		img {
+			@include wh100;
+			object-fit: cover;
+		}
+	}
+
+	&-details {
+		padding: size(44) size(44) size(44) size(0);
+		@include flex-column;
+		gap: size(44);
+
+		@include breakpoint(desktop1400) {
+			padding: size(40) size(42) size(40) size(0);
+		}
+
+		@include breakpoint(desktop1200) {
+			gap: size(32);
+			padding: size(30) size(30) size(30) size(0);
+		}
+
+		@include breakpoint(tablet991) {
+			padding: size(32);
+		}
+
+		@include breakpoint(phone768) {
+			padding: size(24);
+		}
+
+		@include breakpoint(phone575) {
+			padding: size(16) size(16) size(32);
+		}
+
+		.info {
+			@include flex-column;
+			gap: size(16);
+
+			@include breakpoint(desktop1200) {
+				gap: size(28);
+			}
+
+			&-head {
+				@include flex-column;
+				gap: size(8);
+
+				.blogtitle {
+					color: $gray-800;
+          @include font($secondaryFont, 20, semibold, normal, 28);
+          @include line-clamp;
+
+					@include breakpoint(mobile768) {
+						font-size: size(24);
+					}
+
+					@include breakpoint(tab992) {
+						font-size: size(28);
+					}
+
+					@include breakpoint(desktop1400) {
+						font-size: size(36);
+					}
+				}
+
+				.date {
+          @include font($secondaryFont, 20, normal, normal, 28);
+					// color: $dateColor;
+					
+					@include breakpoint(mobile768) {
+						font-size: size(16);
+					}
+				}
+			}
+
+			&-body {
+				.blogtext {
+					color: $gray-600;
+          @include font($secondaryFont, 14, normal, normal, 19.6);
+          @include line-clamp-3;
+					
+					@include breakpoint(mobile768) {
+						font-size: size(18);
+					}
+				}
+			}
+		}
+
+		.readinfo {
+			width: size(200);
+		}
+	}
 }

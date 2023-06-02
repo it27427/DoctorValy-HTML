@@ -6,3 +6,28 @@
   font-weight: 700;
   text-transform: uppercase;
 }
+
+.btn-viewall {
+	@include border(solid, 1, $primary);
+	@include setBgColor($white, $primary);
+  @include font($secondaryFont, 12, semibold, normal, 16.8);
+	padding: size(16);
+	text-align: center;
+	@include flex-center;
+	@include w100;
+	@include radius(8);
+	text-align: center;
+	@include transitionsall;
+
+	@include breakpoint(mobile576) {
+		font-size: size(14);
+	}
+
+	@include hover {
+		@include setBgColor($primary, $white);
+	}
+}
+
+.bloglink {
+	@include wh100;
+}

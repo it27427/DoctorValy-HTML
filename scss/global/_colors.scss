@@ -39,6 +39,8 @@ $alertcolor: hsl(0, 0%, 44%); //#707070
 $textplaceholder: hsl(214, 20%, 69%); //#a0aec0
 $headingtext: hsl(0, 0%, 9%); //#171717
 $graytext: hsl(218, 17%, 35%); //#4a5568
+$placeholderText: hsl(240, 6%, 73%); //#B5B5BD
+$textLabel: hsl(210, 21%, 33%); //#425466
 
 // SUCCESS COLOR
 
@@ -54,6 +56,14 @@ $linearbg: linear-gradient(180deg, rgba(240, 65, 48, 0) 0%, rgba(240, 65, 48, 0.
 // BORDER-COLORS
 $orborder: hsl(0, 0%, 85%); //#DADADA
 
+$gray-100:hsl(204, 45%, 98%); //#F7FAFC
+$gray-200:hsl(210, 38%, 95%); //#EDF2F7
+$gray-300:hsl(214, 32%, 91%); //#E2E8F0
+$gray-500:hsl(214, 20%, 69%); //#A0AEC0
+$gray-600:hsl(216, 15%, 52%); //#718096
+$gray-700:hsl(218, 17%, 35%); //#4A5568
+$gray-800:hsl(218, 23%, 23%); //#2D3748
+$allblogsbg: hsl(0, 0%, 96%); //#F5F5F5
 
 // SHADOWS
 $shade-1: rgba(72, 75, 137, 0.2);

@@ -1,0 +1,561 @@
+@use "../global" as *;
+@use "../partials" as *;
+
+.doctorstoday {
+  padding: size(48) size(0);
+
+  &-details {
+    .slider {
+      margin-bottom: size(24);
+      position: relative;
+
+      &-buttons {
+        position: absolute;
+        top: 50%;
+        @include translateY(-50%);
+        @include w100;
+        @include flex-center-between;
+        z-index: 1000;
+
+        button {
+          @include square(36);
+          @include flex-center;
+
+          svg {
+            @include wh100;
+
+            path {
+              fill: $dropdownbg;
+              @include transitionsall;
+            }
+          }
+
+          @include hover {
+            svg {
+              path {
+                fill: $primary;
+              }
+            }
+          }
+
+          &::after {
+            content: '';
+            width: size(0);
+            height: size(0);
+            display: none;
+          }
+        }
+      }
+    }
+
+    .slidelink {
+      display: block;
+      @include h100;
+    }
+  }
+
+  &-info {
+    @include flex-center-column;
+    gap: size(4);
+    text-align: center;
+
+    .doctorstoday-title {
+      color: $darktext;
+      @include font($secondaryFont, 32, semibold, normal, 44.8);
+    }
+
+    .datetoday {
+      color: $graytext;
+      @include font($secondaryFont, 14, semibold, normal, 19.6);
+    }
+  }
+}
+
+.blogs {
+  padding: size(48) size(0);
+
+  .bloglink {
+    display: block;
+    @include wh100;
+  }
+
+  &-header {
+    @include flex-center;
+    text-align: center;
+    margin-bottom: size(32);
+
+    .blogtitle {
+      color: $darktext;
+      @include font($secondaryFont, 32, semibold, normal, 44.8);
+    }
+  }
+}
+
+.doctorsinfo {
+  background: $white;
+  padding: size(48) size(0);
+
+  .categories {
+    @include flex-column;
+    gap: size(14);
+
+    .sidebarlist {
+      @include list-vertical;
+      gap: size(10);
+
+      &-link {
+        color: $headingtext;
+        @include flex-center-vert;
+        @include transitionscolor;
+
+        .categorytitle {
+          color: inherit;
+          @include font($secondaryFont, 13, semibold, normal, 18.2);
+          width: calc(100% - size(40));
+        }
+
+        .categorycounter {
+          color: inherit;
+          @include font($secondaryFont, 13, medium, normal, 18.2);
+          width: size(40);
+        }
+
+        @include hover {
+          color: $hamburgerbg;
+        }
+      }
+    }
+
+    .seeall {
+      &-link {
+        color: $black;
+        @include font($secondaryFont, 14, bold, normal, 19.6);
+        text-transform: uppercase;
+        @include transitionscolor;
+
+        @include hover {
+          color: $hamburgerbg;
+        }
+      }
+    }
+  }
+}
+
+.schedule-today {
+  background: $white;
+  box-shadow: $cardshadow;
+  padding: size(16);
+  @include radius(10);
+  @include flex-column;
+  gap: size(15);
+  
+  @include breakpoint(mobile768) {
+    padding: size(20);
+  }
+
+  &-header {
+    .schedule-title {
+      color: $dropdownbg;
+      font-weight: 700;
+    }
+  }
+
+  &-body {
+    @include flex-column;
+    gap: size(20);
+  }
+}
+
+.doctors-section {
+  padding: size(48) size(0);
+}
+
+.blogbanner {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 50vh;
+  position: relative;
+  @include flex-center;
+
+  .overlay {
+    background: rgba($black, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include wh100;
+    z-index: 1;
+  }
+
+  &-content {
+    padding: size(48);
+    @include flex-center;
+
+    .banner-title {
+      position: relative;
+      z-index: 2;
+      color: $gray-100;
+      @include font($secondaryFont, 24, semibold, normal, 33.6);
+
+      @include breakpoint(mobile768) {
+       font-size: size(28);
+      }
+
+      @include breakpoint(tab992) {
+        font-size: size(36);
+      }
+
+      @include breakpoint(desktop1100) {
+        font-size: size(48);
+      }
+    }
+  }
+}
+
+.blog {
+  padding: size(48) size(0);
+
+  @include breakpoint(tab992) {
+    padding: size(80) size(0);
+  }
+}
+
+.allblogs {
+  padding: size(48) size(0);
+  background: $allblogsbg;
+
+  @include breakpoint(tab992) {
+    padding: size(80) size(0);
+  }
+
+  &-content {
+    @include flex-center-column;
+    gap: size(48);
+
+    .viewall {
+      width: size(200);
+    }
+  }
+}
+
+.blogdetails {
+  padding: size(40) size(8) size(80);
+
+  @include breakpoint(tablet991) {
+    padding: size(40) size(8) size(40);
+  }
+
+  &-content {
+    @include flex-center-column;
+    gap: size(24);
+    
+    @include breakpoint(tab992) {
+      gap: size(48);
+    }
+  }
+
+  &-thumbnail {
+    @include w100;
+    @include radius(16);
+    @include flex-center;
+    overflow: hidden;
+    height: size(340);
+
+    @include breakpoint(mobile576) {
+      height: size(400);
+    }
+
+    @include breakpoint(mobile768) {
+      height: size(480);
+    }
+
+    @include breakpoint(tab992) {
+      height: size(580);
+      width: 85%;
+    }
+
+    img {
+      @include wh100;
+      object-fit: cover;
+      @include transitiontransform;
+
+      @include hover {
+        @include transform(scale(1.05));
+      }
+    }
+  }
+
+  .bloginfo {
+    @include w100;
+
+    .blogdescriptions {
+      @include flex-column;
+      gap: size(24);
+      
+      @include breakpoint(tab992) {
+        gap: size(48);
+      }
+
+      &-header {
+        @include flex-column;
+        gap: size(24);
+
+        .titlebox {
+          .title {
+            color: $gray-800;
+            @include font($secondaryFont, 16, normal, normal, 22.4);
+            @include line-clamp;
+
+            @include breakpoint(mobile480) {
+              font-size: size(18);
+            }
+
+            @include breakpoint(mobile768) {
+              font-size: size(20);
+            }
+
+            @include breakpoint(tab992) {
+              font-size: size(24);
+            }
+
+            @include breakpoint(desktop1100) {
+              font-size: size(28);
+            }
+          }
+        }
+
+        .authorinfo-shareinfo {
+          @include flex-column;
+          gap: size(12);
+
+          @include breakpoint(mobile768) {
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: size(24);
+          }
+
+          .authorinfo {
+            @include flex-column;
+            gap: size(8);
+
+            .authorname {
+              @include font($secondaryFont, 14, normal, normal, 19.6);
+              color: $gray-600;
+
+              @include breakpoint(mobile768) {
+                font-size: size(15);
+              }
+            }
+
+            .date {
+              @include font($secondaryFont, 12, normal, normal, 16.8);
+              color: $gray-600;
+            }
+          }
+
+          .shareinfo {
+            @include flex-column;
+            gap: size(12);
+
+            .sharetitle {
+              @include font($secondaryFont, 12, normal, normal, 16.8);
+              color: $gray-600;
+            }
+
+            .sociallist {
+              @include list-horizontal;
+              gap: size(8);
+
+              &-link {
+                @include flex-center-column;
+                gap: size(4);
+
+                .icon {
+                  @include square(44);
+                  padding: size(14);
+                  @include circle;
+                  @include flex-center;
+                  overflow: hidden;
+                  @include transitionsall;
+
+                  svg {
+                    @include wh100;
+                    
+                    path {
+                      @include transitionsall;
+                    }
+                  }
+                }
+
+                .text {
+                  @include font($secondaryFont, 12, normal, normal, 16.8);
+                  color: $gray-600;
+                  text-align: center;
+                  @include transitionsall;
+                }
+
+                @include hover {
+                  .icon {
+                    background: lighten($primary, 40%);
+
+                    svg {
+                      path {
+                        fill: $primary;
+                      }
+                    }
+                  }
+
+                  .text {
+                    color: $primary;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .divider {
+        @include w100;
+        height: size(1);
+        background: $gray-500;
+      }
+
+      &-body {
+        @include flex-column;
+        gap: size(32);
+
+        .detail {
+          @include flex-column;
+          gap: size(14);
+
+          &-title {
+            color: $gray-800;
+            @include font($secondaryFont, 20, semibold, normal, 28);
+            @include line-clamp;
+
+            @include breakpoint(mobile768) {
+              font-size: size(24);
+            }
+          }
+
+          .description {
+            @include flex-column;
+            gap: size(4);
+
+            .descriptiontext {
+              @include font($secondaryFont, 13, normal, normal, 21);
+              color: $gray-600;
+              @include line-clamp-3;
+
+              @include breakpoint(mobile768) {
+                font-size: size(15);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.contact {
+	padding: size(48) size(8);
+
+	@include breakpoint(tab992) {
+		padding: size(80) size(0);
+	}
+
+	&-content {
+		background: $white;
+		padding: size(24);
+		@include flex-column;
+		gap: size(40);
+
+		@include breakpoint(mobile576) {
+			padding: size(40);
+		}
+
+		@include breakpoint(mobile768) {
+			padding: size(40) size(55);
+			gap: size(64);
+		}
+
+		@include breakpoint(tab992) {
+			padding: size(80) size(110);
+			gap: size(80);
+		}
+
+		.contact-header {
+			@include flex-center;
+			text-align: center;
+
+			.contact-title {
+				color: $gray-700;
+        @include font($secondaryFont, 32, semibold, normal, 44.8);
+
+				@include breakpoint(mobile768) {
+					font-size: size(40);
+				}
+
+				@include breakpoint(tab992) {
+					font-size: size(52);
+				}
+			}
+		}
+
+		.contact-body {
+			.contactform {
+				@include flex-column;
+				gap: size(16);
+
+        .inputbox {
+          @include flex-column;
+          gap: size(8);
+
+          .inputlabel {
+            @include font($secondaryFont, 14, normal, normal, 19.6);
+            color: $textLabel;
+          }
+
+          .inputfield {
+            @include border(solid, 1, $gray-300);
+            @include radius(6);
+            @include setBgColor($white, $black);
+            @include font($secondaryFont, 15, medium, normal, 21);
+            padding: size(11.5) size(16);
+            @include transitionsall;
+
+            &::placeholder {
+              color: $placeholderText;
+            }
+
+            &:focus {
+              border-color: $gray-500;
+            }
+          }
+
+          textarea {
+            resize: none;
+
+            &:focus {
+              outline: none;
+            }
+          }
+        }
+			}
+		}
+	}
+
+	&-body {
+		.formsubmit {
+			@include flex-end;
+      margin-top: size(24);
+
+      .btn-submit {
+        width: size(200);
+      }
+		}
+	}
+}

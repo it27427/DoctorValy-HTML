@@ -146,3 +146,68 @@ button,
     color: $hamburgerbg;
   }
 }
+
+.btn-read {
+	@include setBgColor($primary, $white);
+  @include font($secondaryFont, 12, semibold, normal, 16.8);
+	padding: size(16);
+	text-align: center;
+	@include flex-center;
+	@include w100;
+	@include radius(8);
+	text-align: center;
+	@include transitionsall;
+
+	@include breakpoint(mobile576) {
+		font-size: size(14);
+	}
+
+	@include hover {
+			@include setBgColor(darken($primary, 15%), $white);
+	}
+}
+
+.btn-send {
+	@include w100;
+	padding: size(12);
+	position: relative;
+	background: $white;
+	@include border(solid, 2, $primary);
+	@include radius(5);
+	@include flex-center;
+	text-align: center;
+	@include transitionsall;
+  width: size(200);
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		@include wh100;
+		background: $primary;
+		@include transitionsall;
+	}
+
+	.btn-text {
+		color: $white;
+		position: relative;
+    @include font($secondaryFont, 14, semibold, normal, 19.6);
+    text-transform: uppercase;
+
+		@include breakpoint(tab992) {
+			font-size: size(16);
+		}
+	}
+
+	@include hover {
+		.btn-text {
+			color: $primary;
+		}
+
+		&::before {
+			width: 0;
+		}
+	}
+}
