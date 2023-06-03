@@ -743,6 +743,67 @@
   }
 }
 
+.card-gallery {
+  background: $gray-200;
+  cursor: pointer;
+  overflow: hidden;
+  @include flex-center-column;
+  gap: size(24);
+  text-align: center;
+  @include h100;
+
+  &-header {
+    @include w100;
+    @include flex-center;
+
+    .card-thumbnail {
+      @include w100;
+      height: size(200);
+      overflow: hidden;
+
+      @include breakpoint(mobile768) {
+        height: size(260);
+      }
+
+      @include breakpoint(tab992) {
+        height: size(650);
+      }
+
+      img {
+        @include wh100;
+        object-fit: contain;
+        @include transitiontransform;
+  
+        @include hover {
+          @include transform(scale(1.05));
+        }
+      }
+    }
+  }
+
+  &-body {
+    @include flex-center-column;
+    gap: size(8);
+    padding: size(0) size(24) size(24);
+
+    .doctorname {
+      .name {
+        color: $gray-700;
+        @include font($secondaryFont, 14, normal, normal, 19.6);
+        @include transitionscolor;
+        
+        @include breakpoint(mobile768) {
+          font-size: size(16);
+        }
+  
+        @include hover {
+          color: $black;
+        }
+      }
+    }
+  }
+}
+
 .cardblog {
   background: $white;
   @include radius(10);
@@ -1004,7 +1065,7 @@
 				gap: size(8);
 
 				.blogtitle {
-					color: $gray-800;
+					color: $black;
           @include font($secondaryFont, 20, semibold, normal, 28);
           @include line-clamp;
 
@@ -1048,4 +1109,50 @@
 			width: size(200);
 		}
 	}
+}
+
+.card-thumb {
+  @include flex-center-column;
+  gap: size(10);
+  text-align: center;
+  @include w100;
+  background: $white;
+  box-shadow: $cardshadow;
+
+  &-header {
+    @include w100;
+    height: size(80);
+
+    @include breakpoint(tab992) {
+      @include w100;
+      height: size(100);
+    }
+
+    .card-thumbnail {
+      @include wh100;
+  
+      img {
+        @include wh100;
+        object-fit: contain;
+      }
+    }
+  }
+
+  &-body {
+    padding: size(10) size(8);
+    display: none;
+    
+    @include breakpoint(mobile576) {
+      display: block;
+    }
+    
+    .doctorname {
+
+      .name {
+        color: $gray-700;
+        @include font($secondaryFont, 12, normal, normal, 16.8);
+        @include line-clamp;
+      }
+    }
+  }
 }

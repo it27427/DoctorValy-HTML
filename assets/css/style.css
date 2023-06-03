@@ -519,7 +519,7 @@ button:not([disabled]):hover,
   color: hsl(0, 0%, 100%);
   position: relative;
   font-family: "Nunito", sans-serif;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-weight: 600;
   font-style: normal;
   line-height: 1.4;
@@ -527,7 +527,7 @@ button:not([disabled]):hover,
 }
 @media screen and (min-width: 62rem) {
   .btn-send .btn-text {
-    font-size: 1rem;
+    font-size: 0.875rem;
   }
 }
 .btn-send:not([disabled]):hover .btn-text {
@@ -1339,6 +1339,75 @@ button:not([disabled]):hover,
   transform: scale(0.95);
 }
 
+.card-gallery {
+  background: hsl(210, 38%, 95%);
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+  height: 100%;
+}
+.card-gallery-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-gallery-header .card-thumbnail {
+  width: 100%;
+  height: 12.5rem;
+  overflow: hidden;
+}
+@media screen and (min-width: 48rem) {
+  .card-gallery-header .card-thumbnail {
+    height: 16.25rem;
+  }
+}
+@media screen and (min-width: 62rem) {
+  .card-gallery-header .card-thumbnail {
+    height: 40.625rem;
+  }
+}
+.card-gallery-header .card-thumbnail img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  transition: transform 350ms ease-in-out;
+}
+.card-gallery-header .card-thumbnail img:not([disabled]):hover {
+  transform: scale(1.05);
+}
+.card-gallery-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0rem 1.5rem 1.5rem;
+}
+.card-gallery-body .doctorname .name {
+  color: hsl(218, 17%, 35%);
+  font-family: "Nunito", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.4;
+  transition: color 350ms ease-in-out;
+}
+@media screen and (min-width: 48rem) {
+  .card-gallery-body .doctorname .name {
+    font-size: 1rem;
+  }
+}
+.card-gallery-body .doctorname .name:not([disabled]):hover {
+  color: hsl(0, 0%, 0%);
+}
+
 .cardblog {
   background: hsl(0, 0%, 100%);
   border-radius: 0.625rem;
@@ -1644,7 +1713,7 @@ button:not([disabled]):hover,
   gap: 0.5rem;
 }
 .card-bigblog-details .info-head .blogtitle {
-  color: hsl(218, 23%, 23%);
+  color: hsl(0, 0%, 0%);
   font-family: "Nunito", sans-serif;
   font-size: 1.25rem;
   font-weight: 600;
@@ -1703,6 +1772,60 @@ button:not([disabled]):hover,
 }
 .card-bigblog-details .readinfo {
   width: 12.5rem;
+}
+
+.card-thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.625rem;
+  text-align: center;
+  width: 100%;
+  background: hsl(0, 0%, 100%);
+  box-shadow: 0.25rem 0.25rem 1rem 0.1875rem rgba(72, 75, 137, 0.2);
+}
+.card-thumb-header {
+  width: 100%;
+  height: 5rem;
+}
+@media screen and (min-width: 62rem) {
+  .card-thumb-header {
+    width: 100%;
+    height: 6.25rem;
+  }
+}
+.card-thumb-header .card-thumbnail {
+  width: 100%;
+  height: 100%;
+}
+.card-thumb-header .card-thumbnail img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.card-thumb-body {
+  padding: 0.625rem 0.5rem;
+  display: none;
+}
+@media screen and (min-width: 36rem) {
+  .card-thumb-body {
+    display: block;
+  }
+}
+.card-thumb-body .doctorname .name {
+  color: hsl(218, 17%, 35%);
+  font-family: "Nunito", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
 }
 
 .header {
@@ -5070,6 +5193,52 @@ label span {
   background: hsl(0, 0%, 100%);
   padding: 3rem 0rem;
 }
+.doctorsinfo .doctorlasts {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+@media screen and (min-width: 62rem) {
+  .doctorsinfo .doctorlasts {
+    flex-direction: row;
+  }
+}
+.doctorsinfo .doctorlasts-left {
+  height: 100%;
+}
+@media screen and (min-width: 62rem) {
+  .doctorsinfo .doctorlasts-left {
+    width: 70%;
+  }
+}
+.doctorsinfo .doctorlasts-right {
+  height: 100%;
+}
+@media screen and (min-width: 62rem) {
+  .doctorsinfo .doctorlasts-right {
+    width: 30%;
+  }
+}
+.doctorsinfo .doctorlasts-right .gallery-thumbs {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+@media screen and (min-width: 62rem) {
+  .doctorsinfo .doctorlasts-right .gallery-thumbs {
+    flex-direction: column;
+  }
+}
+.doctorsinfo .doctorlasts-right .gallery-thumbs .card-thumb {
+  width: 20%;
+}
+@media screen and (min-width: 62rem) {
+  .doctorsinfo .doctorlasts-right .gallery-thumbs .card-thumb {
+    width: 12rem;
+    height: 20%;
+    margin-inline: auto;
+  }
+}
 .doctorsinfo .categories {
   display: flex;
   flex-direction: column;
@@ -5482,7 +5651,7 @@ label span {
   gap: 1.5rem;
 }
 .blogdetails .bloginfo .blogdescriptions-header .titlebox .title {
-  color: hsl(218, 23%, 23%);
+  color: hsl(0, 0%, 0%);
   font-family: "Nunito", sans-serif;
   font-size: 1rem;
   font-weight: 400;
@@ -5714,7 +5883,7 @@ label span {
   text-align: center;
 }
 .contact-content .contact-header .contact-title {
-  color: hsl(218, 17%, 35%);
+  color: hsl(0, 0%, 0%);
   font-family: "Nunito", sans-serif;
   font-size: 2rem;
   font-weight: 600;

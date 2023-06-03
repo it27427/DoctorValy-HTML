@@ -193,11 +193,11 @@ button,
 	.btn-text {
 		color: $white;
 		position: relative;
-    @include font($secondaryFont, 14, semibold, normal, 19.6);
+    @include font($secondaryFont, 12, semibold, normal, 16.8);
     text-transform: uppercase;
 
 		@include breakpoint(tab992) {
-			font-size: size(16);
+			font-size: size(14);
 		}
 	}
 

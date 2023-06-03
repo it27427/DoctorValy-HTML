@@ -45,6 +45,50 @@
   background: $white;
   padding: size(48) size(0);
 
+  .doctorlasts {
+    @include flex-column;
+    gap: size(24);
+
+    @include breakpoint(tab992) {
+      flex-direction: row;
+    }
+
+    &-left {
+      @include h100;
+
+      @include breakpoint(tab992) {
+        width: 70%;
+      }
+    }
+
+    &-right {
+      @include h100;
+      
+      @include breakpoint(tab992) {
+        width: 30%;
+      }
+
+      .gallery-thumbs {
+        @include flex-center-vert;
+        gap: size(4);
+  
+        @include breakpoint(tab992) {
+          flex-direction: column;
+        }
+  
+        .card-thumb {
+          width: calc(100% / 5);
+  
+          @include breakpoint(tab992) {
+            width: size(192);
+            height: calc(100% / 5);
+            margin-inline: auto;
+          }
+        }
+      }
+    }
+  }
+
   .categories {
     @include flex-column;
     gap: size(14);
@@ -419,7 +463,7 @@
 
         .titlebox {
           .title {
-            color: $gray-800;
+            color: $black;
             @include font($secondaryFont, 16, normal, normal, 22.4);
             @include line-clamp;
 
@@ -609,7 +653,7 @@
 			text-align: center;
 
 			.contact-title {
-				color: $gray-700;
+				color: $black;
         @include font($secondaryFont, 32, semibold, normal, 44.8);
 
 				@include breakpoint(mobile768) {
