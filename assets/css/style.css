@@ -1317,7 +1317,7 @@ button:not([disabled]):hover,
   font-weight: 400;
   font-style: normal;
   line-height: 1.4;
-  height: 2.5rem;
+  height: 2rem;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
@@ -1327,6 +1327,7 @@ button:not([disabled]):hover,
 @media screen and (min-width: 62rem) {
   .card-doctor-body .position {
     font-size: 0.875rem;
+    height: 2.375rem;
   }
 }
 @media screen and (min-width: 87.5rem) {
@@ -5147,7 +5148,181 @@ label span {
 }
 
 .doctors-section {
-  padding: 3rem 0rem;
+  padding: 0rem 0rem 3rem;
+}
+@media screen and (min-width: 48rem) {
+  .doctors-section {
+    padding: 3rem 0rem;
+  }
+}
+.doctors-section .filter {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.doctors-section .filter .inputbox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3125rem;
+}
+.doctors-section .filter .inputbox .inputlabel {
+  color: hsl(210, 11%, 15%);
+  font-family: "Nunito", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.4;
+}
+.doctors-section .select-dropdown {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+}
+.doctors-section .select-dropdown--0 {
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 1.4;
+}
+@media screen and (min-width: 62rem) {
+  .doctors-section .select-dropdown--0 {
+    font-size: 0.875rem;
+  }
+}
+.doctors-section .select-dropdown__button {
+  background: hsl(0, 0%, 100%);
+  color: hsl(218, 23%, 23%);
+  border-radius: 0.3125rem;
+  border-radius: 0.3125rem;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  font-size: 0.625rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  gap: 0.5rem;
+  max-width: 100%;
+  min-width: 9.1875rem;
+  width: 100%;
+  height: 2.75rem;
+  letter-spacing: 0rem;
+  padding: 0.375rem 0.75rem;
+  text-align: left;
+  text-transform: capitalize;
+}
+@media screen and (min-width: 48rem) {
+  .doctors-section .select-dropdown__button {
+    min-width: 10rem;
+    font-size: 0.75rem;
+  }
+}
+@media screen and (min-width: 62rem) {
+  .doctors-section .select-dropdown__button {
+    font-size: 0.875rem;
+  }
+}
+.doctors-section .select-dropdown__button:focus {
+  outline: none;
+}
+.doctors-section .select-dropdown__button .arrowicon {
+  transition: transform 350ms ease-in-out;
+}
+.doctors-section .select-dropdown__button.active .arrowicon {
+  transform: rotate(180deg);
+}
+.doctors-section .select-dropdown__list {
+  background: hsl(0, 0%, 85%);
+  border-radius: 0.625rem;
+  border-radius: 0.625rem;
+  position: absolute;
+  display: block;
+  left: 0rem;
+  right: 0rem;
+  min-width: 10rem;
+  max-height: 18.75rem;
+  overflow: auto;
+  margin: 0rem;
+  padding: 0.3125rem;
+  list-style: none;
+  opacity: 0;
+  pointer-events: none;
+  transform-origin: top left;
+  transform: scale(1, 0);
+  transition: all ease-in-out 0.3s;
+  z-index: 2;
+  border-radius: 0.3125rem;
+  border-radius: 0.3125rem;
+  top: calc(100% + 0.3125rem);
+}
+.doctors-section .select-dropdown__list.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1, 1);
+}
+.doctors-section .select-dropdown__list-item {
+  background: transparent;
+  color: hsl(0, 3%, 17%);
+  border-radius: 0.3125rem;
+  border-radius: 0.3125rem;
+  cursor: pointer;
+  display: block;
+  list-style-type: none;
+  padding: 0.5rem 1rem;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0rem;
+  text-align: center;
+  text-transform: capitalize;
+  transition: all ease-in-out 0.3s;
+}
+.doctors-section .select-dropdown__list-item:not([disabled]):hover {
+  background: hsl(5, 86%, 56%);
+  color: hsl(0, 0%, 100%);
+  transition: all ease-in-out 0.3s;
+}
+.doctors-section .mobilefilter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0rem;
+}
+.doctors-section .mobilefilter-title {
+  color: hsl(210, 11%, 15%);
+  font-family: "Nunito", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1;
+  text-transform: uppercase;
+}
+.doctors-section .mobilefilter .btn-filter {
+  width: 1.25rem;
+  height: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.doctors-section .mobilefilter .btn-filter svg {
+  width: 100%;
+  height: 100%;
+}
+.doctors-section .mobilefilter .btn-filter svg path {
+  transition: all 350ms ease-in-out;
+}
+.doctors-section .mobilefilter .btn-filter:not([disabled]):hover svg path {
+  fill: hsl(5, 86%, 56%);
+}
+.doctors-section .mobilefilter .offcanvas-body .filter .inputlabel {
+  color: hsl(0, 0%, 100%);
 }
 
 .blogbanner {

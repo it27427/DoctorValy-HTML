@@ -720,11 +720,12 @@
     .position {
       color: $textprimary;
       @include font($secondaryFont, 12, normal, normal, 16.8);
-      height: size(40);
+      height: size(32);
       @include line-clamp;
 
       @include breakpoint(tab992) {
         font-size: size(14);
+        height: size(38);
       }
 
       @include breakpoint(desktop1400) {

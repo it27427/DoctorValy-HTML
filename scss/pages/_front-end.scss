@@ -167,7 +167,174 @@
 }
 
 .doctors-section {
-  padding: size(48) size(0);
+  padding: size(0) size(0) size(48);
+
+  @include breakpoint(mobile768) {
+    padding: size(48) size(0);
+  }
+
+  .filter {
+    @include flex-column;
+    gap: size(24);
+
+    .inputbox {
+      @include flex-column;
+      gap: size(5);
+
+      .inputlabel {
+        color: $labeltext;
+        @include font($secondaryFont, 14, bold, normal, 19.6);
+      }
+    }
+  }
+
+  .select-dropdown {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+  
+    &--0 {
+      @include font($primaryFont, 12, semibold, normal, 16.8);
+  
+      @include breakpoint(tab992) {
+        font-size: size(14);
+      }
+    }
+    
+    &__button {
+      @include setBgColor($white, $gray-800);
+      @include radius(5);
+      cursor: pointer;
+      @include font($primaryFont, 10, normal, normal, 14);
+      @include flex-center-between;
+      border: none;
+      gap: size(8);
+      max-width: 100%;
+      min-width: size(147);
+      @include w100;
+      height: size(44);
+      letter-spacing: size(0);
+      padding: size(6) size(12);
+      text-align: left;
+      text-transform: capitalize;
+  
+      @include breakpoint(mobile768) {
+        min-width: size(160);
+        font-size: size(12);
+      }
+  
+      @include breakpoint(tab992) {
+        font-size: size(14);
+      }
+  
+      &:focus {
+        outline: none;
+      }
+  
+      .arrowicon {
+        @include transitiontransform;
+      }
+  
+      &.active {
+        .arrowicon {
+          @include rotate(180);
+        }
+      }
+    }
+  
+    &__list {
+      background: $progressbg;
+      @include radius(10);
+      position: absolute;
+      display: block;
+      left: size(0);
+      right: size(0);
+      min-width: size(160);
+      max-height: size(300);
+      overflow: auto;
+      margin: size(0);
+      padding: size(5);
+      list-style: none;
+      opacity: 0;
+      pointer-events: none;
+      transform-origin: top left;
+      transform: scale(1,0);
+      transition: all ease-in-out .3s;
+      z-index: 2;
+      @include radius(5);
+      top: calc(100% + size(5));
+  
+      &.active {
+        opacity: 1;
+        pointer-events: auto;
+        transform: scale(1,1);
+      }
+    }
+  
+    &__list-item {
+      @include setBgColor(transparent, $selectcolor);
+      @include radius(5);
+      cursor: pointer;
+      display: block;
+      list-style-type: none;
+      padding: size(8) size(16);
+      font-size: size(13);
+      font-weight: 400;
+      line-height: 1.4;
+      letter-spacing: size(0);
+      text-align: center;
+      text-transform: capitalize;
+      transition: all ease-in-out .3s;
+  
+      @include hover {
+        @include setBgColor($hamburgerbg, $white);
+        transition: all ease-in-out .3s;
+      }
+    }
+  }
+
+  .mobilefilter {
+    @include flex-center-between;
+    padding: size(32) size(0);
+
+    &-title {
+      color: $labeltext;
+      @include font($secondaryFont, 20, bold, normal, 20);
+      text-transform: uppercase;
+    }
+
+    .btn-filter {
+      @include square(20);
+      @include flex-center;
+      overflow: hidden;
+
+      svg {
+        @include wh100;
+
+        path {
+          @include transitionsall;
+        }
+      }
+
+      @include hover {
+        svg {
+          path {
+            fill: $hamburgerbg;
+          }
+        }
+      }
+    }
+
+    .offcanvas {
+      &-body {
+        .filter {
+          .inputlabel {
+            color: $white;
+          }
+        }
+      }
+    }
+  }
 }
 
 .blogbanner {
