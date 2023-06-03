@@ -4,56 +4,6 @@
 .doctorstoday {
   padding: size(48) size(0);
 
-  &-details {
-    .slider {
-      margin-bottom: size(24);
-      position: relative;
-
-      &-buttons {
-        position: absolute;
-        top: 50%;
-        @include translateY(-50%);
-        @include w100;
-        @include flex-center-between;
-        z-index: 1000;
-
-        button {
-          @include square(36);
-          @include flex-center;
-
-          svg {
-            @include wh100;
-
-            path {
-              fill: $dropdownbg;
-              @include transitionsall;
-            }
-          }
-
-          @include hover {
-            svg {
-              path {
-                fill: $primary;
-              }
-            }
-          }
-
-          &::after {
-            content: '';
-            width: size(0);
-            height: size(0);
-            display: none;
-          }
-        }
-      }
-    }
-
-    .slidelink {
-      display: block;
-      @include h100;
-    }
-  }
-
   &-info {
     @include flex-center-column;
     gap: size(4);
@@ -725,4 +675,254 @@
       }
 		}
 	}
+}
+
+.doctordetails {
+  padding: size(48) size(0) size(0);
+  @include flex-column;
+  gap: size(24);
+  text-align: left;
+  
+  @include breakpoint(tab992) {
+    gap: size(48);
+  }
+
+  &-content {
+    @include flex-column;
+    gap: size(48);
+
+    @include breakpoint(tablet991) {
+      gap: size(96);
+    }
+
+    .profileinfo {
+      @include flex-column;
+      gap: size(24);
+
+      .doctor-profile {
+        position: relative;
+        @include w100;
+        height: size(430);
+
+        img {
+          @include wh100;
+          object-fit: cover;
+        }
+
+        .docinfo {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          @include w100;
+          background: rgba($primary, 0.85);
+          padding: size(16);
+          display: none;
+          @extend %animation;
+          @extend %slideUpIn;
+          @include transitionsall;
+
+          .name {
+            color: $white;
+          }
+
+          .designation {
+            color: $gray-200;
+          }
+        }
+
+        @include hover {
+          .docinfo {
+            @include flex-column;
+            gap: size(4);
+          }
+        }
+      }
+
+      .biography {
+        padding: size(14);
+        @include flex-center-column;
+        gap: size(8);
+        text-align: center;
+      }
+    }
+
+    .profile-information {
+      background: $white;
+      padding: size(32);
+      @include flex-column;
+
+      .name {
+        color: $footerbg;
+        margin-bottom: size(4);
+      }
+
+      .studylist {
+        @include list-vertical;
+        gap: size(4);
+
+        &-item {
+          font-size: size(12);
+          font-weight: 500;
+        }
+      }
+
+      .workingplace {
+        font-size: size(12);
+        margin-bottom: size(20);
+        color: $footerbg;
+        font-weight: 500
+      }
+
+      .specilities {
+        @include flex-column;
+        gap: size(8);
+        margin-bottom: size(20);
+
+        &-body {
+          @include flex-center-vert;
+          gap: size(8);
+          flex-wrap: wrap;
+
+          .spacility {
+            @include setBgColor($gray-200, $footerbg);
+            @include radius(8);
+            font-size: size(12);
+            display: inline-block;
+            font-weight: 500;
+            padding: size(8) size(16);
+          }
+        }
+      }
+
+      .experience {
+        margin-bottom: size(20);
+        @include flex-column;
+        gap: size(4);
+      }
+
+      .contacts {
+        @include flex-column;
+        gap: size(8);
+
+        &-body {
+          .followlist {
+            @include list-horizontal;
+            gap: size(12);
+
+            &-link {
+              @include flex-center;
+              @include square(40);
+              background: $gray-200;
+              @include circle;
+
+              &:nth-child(1) {
+                color: $facebookbg;
+
+                @include hover {
+                  @include setBgColor($facebookbg, $white);
+                }
+              }
+
+              &:nth-child(2) {
+                color: $twitterbg;
+
+                @include hover {
+                  @include setBgColor($twitterbg, $white);
+                }
+              }
+
+              &:nth-child(3) {
+                color: $instagrambg;
+
+                @include hover {
+                  @include setBgColor($instagrambg, $white);
+                }
+              }
+
+              &:nth-child(4) {
+                color: $linkedinbg;
+
+                @include hover {
+                  @include setBgColor($linkedinbg, $white);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .chember {
+    @include flex-column;
+    gap: size(16);
+
+    &-body {
+      .schedulelist {
+        @include list-vertical;
+        gap: size(12);
+
+        &-item {
+          @include flex-column;
+          background: $primary;
+          padding: size(16);
+          @include radius(8);
+          
+          span {
+            @include flex-center-vert;
+            gap: size(4);
+
+            .icon {
+              @include flex-center;
+              @include square(32);
+
+              i {
+                color: $gray-100;
+              }
+            }
+
+            .text {
+              color: $gray-100;
+              font-weight: 600;
+              font-size: size(13);
+              text-align: left;
+            }
+
+            .link {
+              color: $gray-100;
+              font-size: size(13);
+              font-weight: 600;
+              @include transitionscolor;
+
+              @include hover {
+                color: $gray-100;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .moredoc {
+    background: $gray-300;
+    @include w100;
+    padding: size(48) size(0) size(80);
+    @include flex-center-column;
+    gap: size(24);
+    text-align: center;
+
+    &-header {
+      .suggestedtitle {
+        color: $darktext;
+        @include font($secondaryFont, 32, semibold, normal, 44.8);
+      }
+    }
+
+    &-body {
+      .card-doctor {
+        
+      }
+    }
+  }
 }

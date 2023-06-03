@@ -1,0 +1,51 @@
+
+@use "../../global"as *;
+@use "../../partials"as *;
+
+.slider {
+  margin-bottom: size(24);
+  position: relative;
+
+  &-buttons {
+    position: absolute;
+    top: 50%;
+    @include translateY(-50%);
+    @include w100;
+    @include flex-center-between;
+    z-index: 1000;
+
+    button {
+      @include square(36);
+      @include flex-center;
+
+      svg {
+        @include wh100;
+
+        path {
+          fill: $dropdownbg;
+          @include transitionsall;
+        }
+      }
+
+      @include hover {
+        svg {
+          path {
+            fill: $primary;
+          }
+        }
+      }
+
+      &::after {
+        content: '';
+        width: size(0);
+        height: size(0);
+        display: none;
+      }
+    }
+  }
+}
+
+.slidelink {
+  display: block;
+  @include h100;
+}

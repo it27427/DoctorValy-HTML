@@ -2,7 +2,7 @@
 /**=====================================================**
                 ANIMATION-STYLES
 =======================================================**/
-.dashboard-header-nav .dashboard-dropdown .dropdown-info, .dashboard-header-nav .mynotifications-info {
+.doctordetails-content .profileinfo .doctor-profile .docinfo, .dashboard-header-nav .dashboard-dropdown .dropdown-info, .dashboard-header-nav .mynotifications-info {
   animation-duration: 350ms;
   animation-fill-mode: both;
 }
@@ -40,7 +40,7 @@
     transform: translateY(1.25rem);
   }
 }
-.dashboard-header-nav .dashboard-dropdown .dropdown-info, .dashboard-header-nav .mynotifications-info {
+.doctordetails-content .profileinfo .doctor-profile .docinfo, .dashboard-header-nav .dashboard-dropdown .dropdown-info, .dashboard-header-nav .mynotifications-info {
   animation-name: slideUpIn;
 }
 
@@ -3502,6 +3502,51 @@ label span {
   transition: all ease-in-out 0.3s;
 }
 
+.slider {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+.slider-buttons {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+.slider-buttons button {
+  width: 2.25rem;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slider-buttons button svg {
+  width: 100%;
+  height: 100%;
+}
+.slider-buttons button svg path {
+  fill: hsl(226, 20%, 20%);
+  transition: all 350ms ease-in-out;
+}
+.slider-buttons button:not([disabled]):hover svg path {
+  fill: hsl(0, 100%, 64%);
+}
+.slider-buttons button::after {
+  content: "";
+  width: 0rem;
+  height: 0rem;
+  display: none;
+}
+
+.slidelink {
+  display: block;
+  height: 100%;
+}
+
 .authentication {
   min-height: 100vh;
   display: flex;
@@ -4972,49 +5017,6 @@ label span {
 .doctorstoday {
   padding: 3rem 0rem;
 }
-.doctorstoday-details .slider {
-  margin-bottom: 1.5rem;
-  position: relative;
-}
-.doctorstoday-details .slider-buttons {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1000;
-}
-.doctorstoday-details .slider-buttons button {
-  width: 2.25rem;
-  height: 2.25rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.doctorstoday-details .slider-buttons button svg {
-  width: 100%;
-  height: 100%;
-}
-.doctorstoday-details .slider-buttons button svg path {
-  fill: hsl(226, 20%, 20%);
-  transition: all 350ms ease-in-out;
-}
-.doctorstoday-details .slider-buttons button:not([disabled]):hover svg path {
-  fill: hsl(0, 100%, 64%);
-}
-.doctorstoday-details .slider-buttons button::after {
-  content: "";
-  width: 0rem;
-  height: 0rem;
-  display: none;
-}
-.doctorstoday-details .slidelink {
-  display: block;
-  height: 100%;
-}
 .doctorstoday-info {
   display: flex;
   align-items: center;
@@ -5785,6 +5787,250 @@ label span {
   width: 12.5rem;
 }
 
+.doctordetails {
+  padding: 3rem 0rem 0rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: left;
+}
+@media screen and (min-width: 62rem) {
+  .doctordetails {
+    gap: 3rem;
+  }
+}
+.doctordetails-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+@media screen and (max-width: 61.9375rem) {
+  .doctordetails-content {
+    gap: 6rem;
+  }
+}
+.doctordetails-content .profileinfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.doctordetails-content .profileinfo .doctor-profile {
+  position: relative;
+  width: 100%;
+  height: 26.875rem;
+}
+.doctordetails-content .profileinfo .doctor-profile img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.doctordetails-content .profileinfo .doctor-profile .docinfo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 71, 71, 0.85);
+  padding: 1rem;
+  display: none;
+  transition: all 350ms ease-in-out;
+}
+.doctordetails-content .profileinfo .doctor-profile .docinfo .name {
+  color: hsl(0, 0%, 100%);
+}
+.doctordetails-content .profileinfo .doctor-profile .docinfo .designation {
+  color: hsl(210, 38%, 95%);
+}
+.doctordetails-content .profileinfo .doctor-profile:not([disabled]):hover .docinfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.doctordetails-content .profileinfo .biography {
+  padding: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: center;
+}
+.doctordetails-content .profile-information {
+  background: hsl(0, 0%, 100%);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+.doctordetails-content .profile-information .name {
+  color: hsl(225, 6%, 13%);
+  margin-bottom: 0.25rem;
+}
+.doctordetails-content .profile-information .studylist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.doctordetails-content .profile-information .studylist-item {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.doctordetails-content .profile-information .workingplace {
+  font-size: 0.75rem;
+  margin-bottom: 1.25rem;
+  color: hsl(225, 6%, 13%);
+  font-weight: 500;
+}
+.doctordetails-content .profile-information .specilities {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+.doctordetails-content .profile-information .specilities-body {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.doctordetails-content .profile-information .specilities-body .spacility {
+  background: hsl(210, 38%, 95%);
+  color: hsl(225, 6%, 13%);
+  border-radius: 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  display: inline-block;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+}
+.doctordetails-content .profile-information .experience {
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.doctordetails-content .profile-information .contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.doctordetails-content .profile-information .contacts-body .followlist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.doctordetails-content .profile-information .contacts-body .followlist-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: hsl(210, 38%, 95%);
+  border-radius: 100%;
+}
+.doctordetails-content .profile-information .contacts-body .followlist-link:nth-child(1) {
+  color: hsl(221, 44%, 41%);
+}
+.doctordetails-content .profile-information .contacts-body .followlist-link:nth-child(1):not([disabled]):hover {
+  background: hsl(221, 44%, 41%);
+  color: hsl(0, 0%, 100%);
+}
+.doctordetails-content .profile-information .contacts-body .followlist-link:nth-child(2) {
+  color: hsl(197, 100%, 47%);
+}
+.doctordetails-content .profile-information .contacts-body .followlist-link:nth-child(2):not([disabled]):hover {
+  background: hsl(197, 100%, 47%);
+  color: hsl(0, 0%, 100%);
+}
+.doctordetails-content .profile-information .contacts-body .followlist-link:nth-child(3) {
+  color: hsl(207, 42%, 43%);
+}
+.doctordetails-content .profile-information .contacts-body .followlist-link:nth-child(3):not([disabled]):hover {
+  background: hsl(207, 42%, 43%);
+  color: hsl(0, 0%, 100%);
+}
+.doctordetails-content .profile-information .contacts-body .followlist-link:nth-child(4) {
+  color: hsl(201, 100%, 35%);
+}
+.doctordetails-content .profile-information .contacts-body .followlist-link:nth-child(4):not([disabled]):hover {
+  background: hsl(201, 100%, 35%);
+  color: hsl(0, 0%, 100%);
+}
+.doctordetails .chember {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.doctordetails .chember-body .schedulelist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.doctordetails .chember-body .schedulelist-item {
+  display: flex;
+  flex-direction: column;
+  background: hsl(0, 100%, 64%);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border-radius: 0.5rem;
+}
+.doctordetails .chember-body .schedulelist-item span {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.doctordetails .chember-body .schedulelist-item span .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+}
+.doctordetails .chember-body .schedulelist-item span .icon i {
+  color: hsl(204, 45%, 98%);
+}
+.doctordetails .chember-body .schedulelist-item span .text {
+  color: hsl(204, 45%, 98%);
+  font-weight: 600;
+  font-size: 0.8125rem;
+  text-align: left;
+}
+.doctordetails .chember-body .schedulelist-item span .link {
+  color: hsl(204, 45%, 98%);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  transition: color 350ms ease-in-out;
+}
+.doctordetails .chember-body .schedulelist-item span .link:not([disabled]):hover {
+  color: hsl(204, 45%, 98%);
+}
+.doctordetails .moredoc {
+  background: hsl(214, 32%, 91%);
+  width: 100%;
+  padding: 3rem 0rem 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+}
+.doctordetails .moredoc-header .suggestedtitle {
+  color: hsl(0, 0%, 10%);
+  font-family: "Nunito", sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 1.4;
+}
 /*
  ERROR-SECTION START
 */
