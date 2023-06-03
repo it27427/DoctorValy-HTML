@@ -108,7 +108,7 @@ video {
   margin: 0;
 
   &::selection {
-    // @include setBgColor($countdowntext, $white);
+    @include setBgColor($textprimary, $white);
   }
 }
 
@@ -140,7 +140,7 @@ h6 {
   margin: 0;
 
   &::selection {
-    // @include setBgColor($countdowntext, $white);
+    @include setBgColor($textprimary, $white);
   }
 }
 

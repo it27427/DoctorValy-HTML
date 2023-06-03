@@ -203,6 +203,95 @@ video {
   font-family: inherit;
   margin: 0;
 }
+a::-moz-selection, abbr::-moz-selection, acronym::-moz-selection, address::-moz-selection, applet::-moz-selection, article::-moz-selection, aside::-moz-selection, audio::-moz-selection, b::-moz-selection, big::-moz-selection, blockquote::-moz-selection, button::-moz-selection, body::-moz-selection, canvas::-moz-selection, caption::-moz-selection, center::-moz-selection, cite::-moz-selection, code::-moz-selection, dd::-moz-selection, del::-moz-selection, details::-moz-selection, dfn::-moz-selection, div::-moz-selection, dl::-moz-selection, dt::-moz-selection, em::-moz-selection, embed::-moz-selection, fieldset::-moz-selection, figcaption::-moz-selection, figure::-moz-selection, footer::-moz-selection, form::-moz-selection, header::-moz-selection, hgroup::-moz-selection, html::-moz-selection, i::-moz-selection, input::-moz-selection, iframe::-moz-selection, img::-moz-selection, ins::-moz-selection, kbd::-moz-selection, label::-moz-selection, legend::-moz-selection, li::-moz-selection, mark::-moz-selection, menu::-moz-selection, main::-moz-selection, nav::-moz-selection, object::-moz-selection, ol::-moz-selection, output::-moz-selection, option::-moz-selection, p::-moz-selection, pre::-moz-selection, q::-moz-selection, ruby::-moz-selection, s::-moz-selection, samp::-moz-selection, section::-moz-selection, small::-moz-selection, span::-moz-selection, strike::-moz-selection, strong::-moz-selection, sub::-moz-selection, summary::-moz-selection, select::-moz-selection, sup::-moz-selection, table::-moz-selection, tbody::-moz-selection, td::-moz-selection, tfoot::-moz-selection, th::-moz-selection, thead::-moz-selection, time::-moz-selection, tr::-moz-selection, tt::-moz-selection, textarea::-moz-selection, u::-moz-selection, ul::-moz-selection, var::-moz-selection, video::-moz-selection {
+  background: hsl(231, 15%, 24%);
+  color: hsl(0, 0%, 100%);
+}
+a::selection,
+abbr::selection,
+acronym::selection,
+address::selection,
+applet::selection,
+article::selection,
+aside::selection,
+audio::selection,
+b::selection,
+big::selection,
+blockquote::selection,
+button::selection,
+body::selection,
+canvas::selection,
+caption::selection,
+center::selection,
+cite::selection,
+code::selection,
+dd::selection,
+del::selection,
+details::selection,
+dfn::selection,
+div::selection,
+dl::selection,
+dt::selection,
+em::selection,
+embed::selection,
+fieldset::selection,
+figcaption::selection,
+figure::selection,
+footer::selection,
+form::selection,
+header::selection,
+hgroup::selection,
+html::selection,
+i::selection,
+input::selection,
+iframe::selection,
+img::selection,
+ins::selection,
+kbd::selection,
+label::selection,
+legend::selection,
+li::selection,
+mark::selection,
+menu::selection,
+main::selection,
+nav::selection,
+object::selection,
+ol::selection,
+output::selection,
+option::selection,
+p::selection,
+pre::selection,
+q::selection,
+ruby::selection,
+s::selection,
+samp::selection,
+section::selection,
+small::selection,
+span::selection,
+strike::selection,
+strong::selection,
+sub::selection,
+summary::selection,
+select::selection,
+sup::selection,
+table::selection,
+tbody::selection,
+td::selection,
+tfoot::selection,
+th::selection,
+thead::selection,
+time::selection,
+tr::selection,
+tt::selection,
+textarea::selection,
+u::selection,
+ul::selection,
+var::selection,
+video::selection {
+  background: hsl(231, 15%, 24%);
+  color: hsl(0, 0%, 100%);
+}
+
 body {
   background: hsl(0, 3%, 94%);
   font-family: "Inter", sans-serif;
@@ -231,6 +320,20 @@ h6 {
   font-family: inherit;
   margin: 0;
 }
+h1::-moz-selection, h2::-moz-selection, h3::-moz-selection, h4::-moz-selection, h5::-moz-selection, h6::-moz-selection {
+  background: hsl(231, 15%, 24%);
+  color: hsl(0, 0%, 100%);
+}
+h1::selection,
+h2::selection,
+h3::selection,
+h4::selection,
+h5::selection,
+h6::selection {
+  background: hsl(231, 15%, 24%);
+  color: hsl(0, 0%, 100%);
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -6102,31 +6205,31 @@ label span {
   background: hsl(210, 38%, 95%);
   border-radius: 100%;
 }
-.doctordetails-content .profile-information .contacts-body .followlist-link:nth-child(1) {
+.doctordetails-content .profile-information .contacts-body .followlist-link.facebook-link {
   color: hsl(221, 44%, 41%);
 }
-.doctordetails-content .profile-information .contacts-body .followlist-link:nth-child(1):not([disabled]):hover {
+.doctordetails-content .profile-information .contacts-body .followlist-link.facebook-link:not([disabled]):hover {
   background: hsl(221, 44%, 41%);
   color: hsl(0, 0%, 100%);
 }
-.doctordetails-content .profile-information .contacts-body .followlist-link:nth-child(2) {
+.doctordetails-content .profile-information .contacts-body .followlist-link.twitter-link {
   color: hsl(197, 100%, 47%);
 }
-.doctordetails-content .profile-information .contacts-body .followlist-link:nth-child(2):not([disabled]):hover {
+.doctordetails-content .profile-information .contacts-body .followlist-link.twitter-link:not([disabled]):hover {
   background: hsl(197, 100%, 47%);
   color: hsl(0, 0%, 100%);
 }
-.doctordetails-content .profile-information .contacts-body .followlist-link:nth-child(3) {
+.doctordetails-content .profile-information .contacts-body .followlist-link.instagram-link {
   color: hsl(207, 42%, 43%);
 }
-.doctordetails-content .profile-information .contacts-body .followlist-link:nth-child(3):not([disabled]):hover {
+.doctordetails-content .profile-information .contacts-body .followlist-link.instagram-link:not([disabled]):hover {
   background: hsl(207, 42%, 43%);
   color: hsl(0, 0%, 100%);
 }
-.doctordetails-content .profile-information .contacts-body .followlist-link:nth-child(4) {
+.doctordetails-content .profile-information .contacts-body .followlist-link.linkedin-link {
   color: hsl(201, 100%, 35%);
 }
-.doctordetails-content .profile-information .contacts-body .followlist-link:nth-child(4):not([disabled]):hover {
+.doctordetails-content .profile-information .contacts-body .followlist-link.linkedin-link:not([disabled]):hover {
   background: hsl(201, 100%, 35%);
   color: hsl(0, 0%, 100%);
 }
