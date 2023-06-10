@@ -161,5 +161,10 @@
         }
       }
     }
+
+    .mydoctors {
+      @include flex-column;
+      gap: size(20);
+    }
   }
 }

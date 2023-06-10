@@ -115,4 +115,23 @@
       }
     }
   }
+
+}
+
+.dashboard-footer {
+  @include w100;
+  background: $headerbg;
+  height: size(40);
+  @include flex-center;
+
+  @include breakpoint(tab992) {
+    width: calc(100% - size(250));
+    margin-left: auto;
+  }
+
+  .text-copyright {
+    color: $white;
+    @include font($secondaryFont, 13, medium, normal, 18.2);
+    text-align: center;
+  }
 }

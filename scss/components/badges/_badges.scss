@@ -1,3 +1,17 @@
 @use "../../global" as *;
 @use "../../partials" as *;
 
+.speciality {
+  @include setBgColor($hamburgerbg, $white);
+  @include radius(50);
+  @include flex-center;
+  font-family: $secondaryFont;
+  font-size: size(12);
+  padding: size(5);
+  text-align: center;
+  @include text-overflow;
+
+  @include breakpoint(mobile576) {
+    padding: size(4) size(12);
+  }
+}

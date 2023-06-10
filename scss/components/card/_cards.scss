@@ -1171,17 +1171,6 @@
       @include flex-column;
       gap: size(5);
       width: calc(100% - size(96));
-
-      .speciality {
-        @include setBgColor($hamburgerbg, $white);
-        @include radius(50);
-        @include flex-center;
-        font-family: $secondaryFont;
-        font-size: size(12);
-        padding: size(5);
-        text-align: center;
-        @include text-overflow;
-      }
     }
 
     .thumbnail {
@@ -1261,5 +1250,60 @@
         }
       }
     }
+  }
+}
+
+.mydoctor {
+  background: $white;
+  @include radius(10);
+  padding: size(10);
+  @include flex-column;
+
+  &-detail {
+    @include flex-center-vert;
+    align-items: flex-start;
+    gap: size(12);
+
+    .thumb {
+      @include square(80);
+      @include flex-center;
+      overflow: hidden;
+
+      img {
+        @include wh100;
+      }
+    }
+
+    .detail {
+      width: calc(100% - size(80));
+      @include flex-column;
+      gap: size(8);
+
+      .name {
+        color: $hamburgerbg;
+        font-family: $secondaryFont;
+        font-size: size(16);
+        @include line-clamp;
+      }
+
+      .text {
+        color: $dropdownbg;
+        font-family: $secondaryFont;
+        font-size: size(12);
+        @include line-clamp;
+      }
+
+      .specilities {
+        margin-top: size(12);
+        @include flex-center-vert;
+        gap: size(8);
+        flex-wrap: wrap;
+      }
+    }
+  }
+  
+  &-info {
+    @include flex-center-vert;
+
   }
 }

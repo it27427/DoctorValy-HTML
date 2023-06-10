@@ -420,6 +420,29 @@ table tr th, table tr td {
   margin-top: 4rem;
 }
 
+.speciality {
+  background: hsl(5, 86%, 56%);
+  color: hsl(0, 0%, 100%);
+  border-radius: 3.125rem;
+  border-radius: 3.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Nunito", sans-serif;
+  font-size: 0.75rem;
+  padding: 0.3125rem;
+  text-align: center;
+  max-width: 99%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media screen and (min-width: 36rem) {
+  .speciality {
+    padding: 0.25rem 0.75rem;
+  }
+}
+
 button,
 [type=button],
 [type=reset],
@@ -1952,23 +1975,6 @@ button:not([disabled]):hover,
   gap: 0.3125rem;
   width: calc(100% - 6rem);
 }
-.carddoctor-header .specilities .speciality {
-  background: hsl(5, 86%, 56%);
-  color: hsl(0, 0%, 100%);
-  border-radius: 3.125rem;
-  border-radius: 3.125rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "Nunito", sans-serif;
-  font-size: 0.75rem;
-  padding: 0.3125rem;
-  text-align: center;
-  max-width: 99%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
 .carddoctor-header .thumbnail {
   width: 5.625rem;
   height: 5.625rem;
@@ -2048,6 +2054,70 @@ button:not([disabled]):hover,
 }
 .carddoctor-footer .btn-card:not([disabled]):hover .text {
   color: hsl(5, 86%, 56%);
+}
+
+.mydoctor {
+  background: hsl(0, 0%, 100%);
+  border-radius: 0.625rem;
+  border-radius: 0.625rem;
+  padding: 0.625rem;
+  display: flex;
+  flex-direction: column;
+}
+.mydoctor-detail {
+  display: flex;
+  align-items: center;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+.mydoctor-detail .thumb {
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.mydoctor-detail .thumb img {
+  width: 100%;
+  height: 100%;
+}
+.mydoctor-detail .detail {
+  width: calc(100% - 5rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.mydoctor-detail .detail .name {
+  color: hsl(5, 86%, 56%);
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+}
+.mydoctor-detail .detail .text {
+  color: hsl(226, 20%, 20%);
+  font-family: "Nunito", sans-serif;
+  font-size: 0.75rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+}
+.mydoctor-detail .detail .specilities {
+  margin-top: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.mydoctor-info {
+  display: flex;
+  align-items: center;
 }
 
 .header {
@@ -3103,6 +3173,30 @@ label span {
   padding: 0.75rem;
 }
 .footer .footerlower .copyright .copyright-text {
+  color: hsl(0, 0%, 100%);
+  font-family: "Nunito", sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.dashboard-footer {
+  width: 100%;
+  background: hsl(0, 3%, 6%);
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (min-width: 62rem) {
+  .dashboard-footer {
+    width: calc(100% - 15.625rem);
+    margin-left: auto;
+  }
+}
+.dashboard-footer .text-copyright {
   color: hsl(0, 0%, 100%);
   font-family: "Nunito", sans-serif;
   font-size: 0.8125rem;
@@ -4382,6 +4476,11 @@ label span {
 }
 .chambersection-body .emptydoctors-body .text a:not([disabled]):hover {
   text-decoration: none;
+}
+.chambersection-body .mydoctors {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
 }
 
 .blog {
