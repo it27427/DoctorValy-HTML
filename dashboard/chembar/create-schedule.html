@@ -4,12 +4,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DoctorValy | My Doctors</title>
+  <title>DoctorValy | Create Schedule</title>
   <!-- FAVICON -->
   <link rel="shortcut icon" href="../assets/images/logo/favicon.ico" type="image/x-icon">
   <!-- BOOTSTRAP-CSS[v5.3] -->
   <link rel="stylesheet" href="../../assets/css/bootstrap/bootstrap-icons.css">
   <link rel="stylesheet" href="../../assets/css/bootstrap/bootstrap.min.css">
+  <!-- MC-DATEPICKER -->
+  <link rel="stylesheet" href="../../assets/css/mc-datepicker/mc-calendar.min.css">
   <!-- DOCTORVALY CSS -->
   <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
@@ -83,7 +85,7 @@
                   </li>
           
                   <li class="sidelist-item">
-                    <a href="my-doctors.html" class="sidelist-link active">
+                    <a href="my-doctors.html" class="sidelist-link">
                       <span class="icon">
                         <svg width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M16.3086 13.0625C16.3086 12.3166 16.0127 11.6011 15.4851 11.0735C14.9575 10.5459 14.242 10.25 13.4961 10.25C11.1865 10.25 7.93072 10.25 5.62109 10.25C4.87522 10.25 4.15972 10.5459 3.63209 11.0735C3.10447 11.6011 2.80859 12.3166 2.80859 13.0625C2.80859 14.9154 2.80859 15.875 2.80859 15.875H16.3086C16.3086 15.875 16.3086 14.9154 16.3086 13.0625ZM14.0586 5.75H16.3086C16.9048 5.75 17.4775 5.98737 17.8993 6.40925C18.3212 6.83112 18.5586 7.40375 18.5586 8V11.375H17.0545C16.4222 10.0452 15.0666 9.125 13.4961 9.125H12.5342C13.4691 8.30037 14.0586 7.09325 14.0586 5.75ZM2.06272 11.375H0.558594C0.558594 11.375 0.558594 9.566 0.558594 8C0.558594 7.40375 0.795969 6.83112 1.21784 6.40925C1.63972 5.98737 2.21234 5.75 2.80859 5.75H5.05859C5.05859 7.09325 5.64809 8.30037 6.58297 9.125H5.62109C4.05059 9.125 2.69497 10.0441 2.06272 11.375ZM9.55859 2.375C11.4216 2.375 12.9336 3.887 12.9336 5.75C12.9336 7.613 11.4216 9.125 9.55859 9.125C7.69559 9.125 6.18359 7.613 6.18359 5.75C6.18359 3.887 7.69559 2.375 9.55859 2.375ZM5.20147 4.6205C5.15422 4.62387 5.10697 4.625 5.05859 4.625C3.81659 4.625 2.80859 3.617 2.80859 2.375C2.80859 1.133 3.81659 0.125 5.05859 0.125C6.13184 0.125 7.03072 0.87875 7.25459 1.8845C6.25222 2.48412 5.50184 3.46175 5.20147 4.6205ZM11.8626 1.8845C12.0865 0.87875 12.9853 0.125 14.0586 0.125C15.3006 0.125 16.3086 1.133 16.3086 2.375C16.3086 3.617 15.3006 4.625 14.0586 4.625C14.0102 4.625 13.963 4.62387 13.9157 4.6205C13.6153 3.46175 12.865 2.48412 11.8626 1.8845Z" fill="#F04130"/>
@@ -333,7 +335,7 @@
         </li>
 
         <li class="sidelist-item">
-          <a href="my-doctors.html" class="sidelist-link active" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="My Doctors">
+          <a href="my-doctors.html" class="sidelist-link" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="My Doctors">
             <span class="icon">
               <svg width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M16.3086 13.0625C16.3086 12.3166 16.0127 11.6011 15.4851 11.0735C14.9575 10.5459 14.242 10.25 13.4961 10.25C11.1865 10.25 7.93072 10.25 5.62109 10.25C4.87522 10.25 4.15972 10.5459 3.63209 11.0735C3.10447 11.6011 2.80859 12.3166 2.80859 13.0625C2.80859 14.9154 2.80859 15.875 2.80859 15.875H16.3086C16.3086 15.875 16.3086 14.9154 16.3086 13.0625ZM14.0586 5.75H16.3086C16.9048 5.75 17.4775 5.98737 17.8993 6.40925C18.3212 6.83112 18.5586 7.40375 18.5586 8V11.375H17.0545C16.4222 10.0452 15.0666 9.125 13.4961 9.125H12.5342C13.4691 8.30037 14.0586 7.09325 14.0586 5.75ZM2.06272 11.375H0.558594C0.558594 11.375 0.558594 9.566 0.558594 8C0.558594 7.40375 0.795969 6.83112 1.21784 6.40925C1.63972 5.98737 2.21234 5.75 2.80859 5.75H5.05859C5.05859 7.09325 5.64809 8.30037 6.58297 9.125H5.62109C4.05059 9.125 2.69497 10.0441 2.06272 11.375ZM9.55859 2.375C11.4216 2.375 12.9336 3.887 12.9336 5.75C12.9336 7.613 11.4216 9.125 9.55859 9.125C7.69559 9.125 6.18359 7.613 6.18359 5.75C6.18359 3.887 7.69559 2.375 9.55859 2.375ZM5.20147 4.6205C5.15422 4.62387 5.10697 4.625 5.05859 4.625C3.81659 4.625 2.80859 3.617 2.80859 2.375C2.80859 1.133 3.81659 0.125 5.05859 0.125C6.13184 0.125 7.03072 0.87875 7.25459 1.8845C6.25222 2.48412 5.50184 3.46175 5.20147 4.6205ZM11.8626 1.8845C12.0865 0.87875 12.9853 0.125 14.0586 0.125C15.3006 0.125 16.3086 1.133 16.3086 2.375C16.3086 3.617 15.3006 4.625 14.0586 4.625C14.0102 4.625 13.963 4.62387 13.9157 4.6205C13.6153 3.46175 12.865 2.48412 11.8626 1.8845Z" fill="#F04130"/>
@@ -392,273 +394,204 @@
       <div class="container">
         <div class="chambersection-details">
           <div class="chambersection-header">
-            <h1 class="title">MY DOCTOR LIST</h1>
+            <h1 class="title">DOCTOR SCHEDULE</h1>
           </div>
           
           <div class="chambersection-body">
-            <div class="mydoctors">
-              <div class="mydoctor">
-                <div class="mydoctor-detail">
-                  <figure class="thumb">
-                    <img src="../assets/images/avatar/profile.svg" alt="doctor-thumb">
-                  </figure>
-
+            <div class="createschedule">
+              <div class="row g-4">
+                <div class="col-lg-9 col-md-8 col-12">
                   <div class="detail">
-                    <h5 class="name">Doctor Stephen Strange</h5>
-                    <p class="text">MBBS, MD (Pediatric Hematology & Oncology)</p>
-                    <p class="text">Dhaka Medical College & Hospital</p>
-
-                    <div class="specilities">
-                      <span class="speciality">Neurobiologist</span>
-                      <span class="speciality">Medicinologist</span>
-                    </div>
+                    <h4 class="name">
+                      Schedule of <span>Doctor Stephen Strange</span>
+                    </h4>
+                    <p class="text">
+                      Create/Update the schedule of the doctor. 
+                      You can set a special note by clicking special note button 
+                      if doctor not available or nay specific reason.
+                    </p>
                   </div>
                 </div>
 
-                <div class="divider"></div>
-
-                <div class="mydoctor-info">
-                  <a href="create-schedule.html" class="btn-calendar">
-                    <span class="icon">
-                      <svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M6.97489 10.4347H4.58984V12.8199H6.97489V10.4347Z" fill="#3430F0"/>
-                        <path d="M17.4085 10.4347H15.0234V12.8199H17.4085V10.4347Z" fill="#3430F0"/>
-                        <path d="M13.93 10.4347H11.5449V12.8199H13.93V10.4347Z" fill="#3430F0"/>
-                        <path d="M6.97489 14.1614H4.58984V16.5466H6.97489V14.1614Z" fill="#3430F0"/>
-                        <path d="M13.93 14.1614H11.5449V16.5466H13.93V14.1614Z" fill="#3430F0"/>
-                        <path d="M10.4534 14.1614H8.06836V16.5466H10.4534V14.1614Z" fill="#3430F0"/>
-                        <path d="M17.4085 17.8881H15.0234V20.2733H17.4085V17.8881Z" fill="#3430F0"/>
-                        <path d="M13.93 17.8881H11.5449V20.2733H13.93V17.8881Z" fill="#3430F0"/>
-                        <path d="M10.4534 17.8881H8.06836V20.2733H10.4534V17.8881Z" fill="#3430F0"/>
-                        <path d="M19.5902 2.58028H17.6507V4.43981C17.6507 5.13365 17.079 5.69793 16.3765 5.69793H13.8441C13.1415 5.69793 12.5699 5.13365 12.5699 4.43981V2.58028H9.42488V4.42232C9.42488 5.12582 8.84695 5.69793 8.13656 5.69793H5.63231C4.92192 5.69793 4.344 5.12582 4.344 4.42232V2.58028H2.4045C1.14328 2.58028 0.117188 3.59709 0.117188 4.84687V21.7334C0.117188 22.9831 1.14328 24 2.4045 24H19.5902C20.8533 24 21.881 22.9832 21.881 21.7334V4.84687C21.881 3.59714 20.8533 2.58028 19.5902 2.58028ZM20.2413 21.6894C20.2413 22.0906 19.9717 22.3601 19.5705 22.3601H2.4277C2.02645 22.3601 1.75688 22.0906 1.75688 21.6894V8.34792H20.2413V21.6894Z" fill="#3430F0"/>
-                        <path d="M5.63252 4.80502H8.13527C8.34719 4.80502 8.51959 4.63378 8.51959 4.42327V0.960609C8.51959 0.430922 8.08506 0 7.55087 0H6.21686C5.68272 0 5.24805 0.430875 5.24805 0.960609V4.42327C5.24809 4.63378 5.4205 4.80502 5.63252 4.80502Z" fill="#3430F0"/>
-                        <path d="M13.8441 4.80502H16.3765C16.5803 4.80502 16.7461 4.64034 16.7461 4.43817V0.945844C16.7461 0.424359 16.3182 0 15.7921 0H14.4285C13.9025 0 13.4746 0.424359 13.4746 0.945844V4.43817C13.4746 4.64034 13.6404 4.80502 13.8441 4.80502Z" fill="#3430F0"/>
-                      </svg>
-                    </span>
-                  </a>
-
-                  <button type="button" class="btn-delete" data-bs-toggle="modal" data-bs-target="#removeModal">
-                    <span class="delicon">
-                      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M19.5645 10.6084H8.90625V24.3164C8.90625 25.1426 9.58008 25.8105 10.4092 25.8105H19.5615C20.3936 25.8105 21.0674 25.1426 21.0674 24.3164V10.6113H19.5645V10.6084Z" fill="white"/>
-                        <path d="M21.9805 8.64844C21.9805 8.3877 21.7578 8.17676 21.4824 8.17676H8.49219C8.2168 8.17676 7.99414 8.3877 7.99414 8.64844V10.1396C7.99414 10.4004 8.2168 10.6113 8.49219 10.6113H21.4824C21.7578 10.6113 21.9805 10.4004 21.9805 10.1396V8.64844Z" fill="white"/>
-                        <path d="M21.4834 7.56738H18.3574V5.74219C18.3574 5.40527 18.085 5.13281 17.748 5.13281H12.2783C11.9414 5.13281 11.6689 5.40527 11.6689 5.74219V7.56738H8.49316C7.88379 7.56738 7.38867 8.05078 7.38867 8.64551V10.1367C7.38867 10.667 7.78418 11.1064 8.2998 11.1973V24.3164C8.2998 25.4766 9.24609 26.4199 10.4121 26.4199H19.5645C20.7305 26.4199 21.6768 25.4766 21.6768 24.3164V11.1973C22.1953 11.1064 22.5879 10.667 22.5879 10.1367V8.64551C22.5908 8.05371 22.0928 7.56738 21.4834 7.56738ZM12.8848 6.35156H17.1416V7.56738H12.8848V6.35156ZM8.60156 8.78613H21.3721V10.002H8.60156V8.78613ZM20.4609 24.3193C20.4609 24.8086 20.0596 25.207 19.5645 25.207H10.4121C9.91699 25.207 9.51562 24.8086 9.51562 24.3193V11.2178H20.4609V24.3193Z" fill="#F04130"/>
-                        <path d="M14.9883 23.4053C15.3252 23.4053 15.5977 23.1328 15.5977 22.7959V13.6758C15.5977 13.3389 15.3252 13.0664 14.9883 13.0664C14.6514 13.0664 14.3789 13.3389 14.3789 13.6758V22.7988C14.3789 23.1328 14.6514 23.4053 14.9883 23.4053ZM11.9473 23.4053C12.2842 23.4053 12.5566 23.1328 12.5566 22.7959V13.6758C12.5566 13.3389 12.2842 13.0664 11.9473 13.0664C11.6104 13.0664 11.3379 13.3389 11.3379 13.6758V22.7988C11.3408 23.1328 11.6133 23.4053 11.9473 23.4053ZM18.0293 23.4258C18.3662 23.4258 18.6387 23.1533 18.6387 22.8164V13.6934C18.6387 13.3564 18.3662 13.084 18.0293 13.084C17.6924 13.084 17.4199 13.3564 17.4199 13.6934V22.8164C17.4199 23.1533 17.6924 23.4258 18.0293 23.4258Z" fill="#F04130"/>
-                      </svg>
-                    </span>
-                  </button>
-                </div>
-              </div>
-              
-              <div class="mydoctor">
-                <div class="mydoctor-detail">
-                  <figure class="thumb">
-                    <img src="../assets/images/avatar/profile.svg" alt="doctor-thumb">
+                <div class="col-lg-3 col-md-4 col-12">
+                  <figure class="thumbnail">
+                    <img src="../assets/images/avatar/profile.svg" alt="doctor-dp">
                   </figure>
+                </div>
 
-                  <div class="detail">
-                    <h5 class="name">Doctor Stephen Strange</h5>
-                    <p class="text">MBBS, MD (Pediatric Hematology & Oncology)</p>
-                    <p class="text">Dhaka Medical College & Hospital</p>
+                <div class="col-lg-9 col-md-8 col-12">
+                  <table class="table table-responsive">
+                    <thead>
+                      <tr>
+                        <th>
+                          <div class="checkfield">
+                            <input type="checkbox" class="checkinput" id="everyday" autocomplete="off" hidden="">
+                            <label for="everyday" class="checklabel fw-bold">
+                              Everyday
+                            </label>
+                          </div>
+                        </th>
+                        <th class="text-center">From</th>
+                        <th class="text-center">To</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="tablerow">
+                        <td>
+                          <div class="checkfield">
+                            <input type="checkbox" class="checkinput" id="sunday" autocomplete="off" hidden="">
+                            <label for="sunday" class="checklabel fw-bold">
+                              Sunday
+                            </label>
+                          </div>
+                        </td>
 
-                    <div class="specilities">
-                      <span class="speciality">Neurobiologist</span>
-                      <span class="speciality">Medicinologist</span>
-                    </div>
+                        <td class="text-center">
+                          <input type="text" class="form-control schedulefield" disabled>
+                        </td>
+                        
+                        <td class="text-center d-flex gap-2">
+                          <div class="singleschedulebox">
+                            <input type="text" class="form-control schedulefield" disabled>
+                          </div>
+                          <span class="btn-info" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Special Note for this doctor.">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path opacity="0.1" d="M20 40C31.0457 40 40 31.0457 40 20C40 8.95431 31.0457 0 20 0C8.95431 0 0 8.95431 0 20C0 31.0457 8.95431 40 20 40Z" fill="#F04130"/>
+                              <g>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M26.9992 12.741V16C27.3932 16 27.7833 16.0776 28.1472 16.2284C28.5112 16.3792 28.8419 16.6001 29.1205 16.8787C29.3991 17.1573 29.6201 17.488 29.7708 17.852C29.9216 18.216 29.9992 18.6061 29.9992 19C29.9992 19.394 29.9216 19.7841 29.7708 20.1481C29.6201 20.5121 29.3991 20.8428 29.1205 21.1214C28.8419 21.3999 28.5112 21.6209 28.1472 21.7717C27.7833 21.9224 27.3932 22 26.9992 22V25C26.9992 26.648 25.1182 27.589 23.7992 26.6L21.7392 25.054C20.6381 24.2284 19.356 23.6772 17.9992 23.446V26.29C17.9993 26.9438 17.7631 27.5755 17.3341 28.0688C16.9051 28.5621 16.3122 28.8837 15.6648 28.9743C15.0174 29.0649 14.359 28.9185 13.8111 28.5619C13.2631 28.2053 12.8626 27.6627 12.6832 27.034L11.1132 21.538C10.5482 20.8708 10.1805 20.0593 10.0515 19.1945C9.92244 18.3298 10.0371 17.4463 10.3827 16.6432C10.7282 15.8401 11.2909 15.1493 12.0075 14.6484C12.7242 14.1476 13.5663 13.8566 14.4392 13.808L17.4572 13.64C18.9338 13.5579 20.3698 13.1264 21.6472 12.381L23.9912 11.013C25.3252 10.236 26.9992 11.197 26.9992 12.741ZM13.6332 23.078L14.6062 26.485C14.653 26.65 14.7579 26.7924 14.9016 26.886C15.0452 26.9796 15.2178 27.018 15.3876 26.9943C15.5574 26.9705 15.7129 26.8861 15.8253 26.7567C15.9377 26.6272 15.9995 26.4615 15.9992 26.29V23.28L14.4392 23.193C14.1677 23.178 13.8981 23.1395 13.6332 23.078ZM24.9992 12.741L22.6542 14.11C21.2296 14.9405 19.641 15.4503 17.9992 15.604V21.423C19.7862 21.669 21.4872 22.366 22.9392 23.454L24.9992 25V12.741ZM15.9992 15.724L14.5492 15.804C13.8746 15.8413 13.2386 16.1301 12.7665 16.6134C12.2945 17.0967 12.0208 17.7394 11.9994 18.4146C11.9781 19.0899 12.2106 19.7486 12.6512 20.2607C13.0918 20.7729 13.7083 21.1013 14.3792 21.181L14.5492 21.196L15.9992 21.276V15.724ZM26.9992 18V20C27.2541 19.9998 27.4992 19.9022 27.6846 19.7272C27.8699 19.5522 27.9814 19.3131 27.9964 19.0586C28.0113 18.8042 27.9285 18.5537 27.7649 18.3582C27.6013 18.1628 27.3693 18.0371 27.1162 18.007L26.9992 18Z" fill="#F04130"/>
+                              </g>
+                              <defs>
+                              <clipPath>
+                                <rect width="24" height="24" fill="white" transform="translate(8 8)"/>
+                              </clipPath>
+                              </defs>
+                            </svg>
+                          </span>
+                        </td>
+                      </tr>
+
+                      <tr class="tablerow">
+                        <td>
+                          <div class="checkfield">
+                            <input type="checkbox" class="checkinput" id="monday" autocomplete="off" hidden="">
+                            <label for="monday" class="checklabel fw-bold">
+                              Monday
+                            </label>
+                          </div>
+                        </td>
+
+                        <td class="text-center">
+                          <input type="text" class="form-control schedulefield" disabled>
+                        </td>
+                        
+                        <td class="text-center">
+                          <input type="text" class="form-control schedulefield" disabled>
+                        </td>
+                      </tr>
+
+                      <tr class="tablerow">
+                        <td>
+                          <div class="checkfield">
+                            <input type="checkbox" class="checkinput" id="tuesday" autocomplete="off" hidden="">
+                            <label for="tuesday" class="checklabel fw-bold">
+                              Tuesday
+                            </label>
+                          </div>
+                        </td>
+
+                        <td class="text-center">
+                          <input type="text" class="form-control schedulefield" disabled>
+                        </td>
+                        
+                        <td class="text-center">
+                          <input type="text" class="form-control schedulefield" disabled>
+                        </td>
+                      </tr>
+
+                      <tr class="tablerow">
+                        <td>
+                          <div class="checkfield">
+                            <input type="checkbox" class="checkinput" id="wednesday" autocomplete="off" hidden="">
+                            <label for="wednesday" class="checklabel fw-bold">
+                              Wednesday
+                            </label>
+                          </div>
+                        </td>
+
+                        <td class="text-center">
+                          <input type="text" class="form-control schedulefield" disabled>
+                        </td>
+                        
+                        <td class="text-center">
+                          <input type="text" class="form-control schedulefield" disabled>
+                        </td>
+                      </tr>
+
+                      <tr class="tablerow">
+                        <td>
+                          <div class="checkfield">
+                            <input type="checkbox" class="checkinput" id="thursday" autocomplete="off" hidden="">
+                            <label for="thursday" class="checklabel fw-bold">
+                              Thursday
+                            </label>
+                          </div>
+                        </td>
+
+                        <td class="text-center">
+                          <input type="text" class="form-control schedulefield" disabled>
+                        </td>
+                        
+                        <td class="text-center">
+                          <input type="text" class="form-control schedulefield" disabled>
+                        </td>
+                      </tr>
+
+                      <tr class="tablerow">
+                        <td>
+                          <div class="checkfield">
+                            <input type="checkbox" class="checkinput" id="friday" autocomplete="off" hidden="">
+                            <label for="friday" class="checklabel fw-bold">
+                              Friday
+                            </label>
+                          </div>
+                        </td>
+
+                        <td class="text-center">
+                          <input type="text" class="form-control schedulefield" disabled>
+                        </td>
+                        
+                        <td class="text-center">
+                          <input type="text" class="form-control schedulefield" disabled>
+                        </td>
+                      </tr>
+
+                      <tr class="tablerow">
+                        <td>
+                          <div class="checkfield">
+                            <input type="checkbox" class="checkinput" id="saturday" autocomplete="off" hidden="">
+                            <label for="saturday" class="checklabel fw-bold">
+                              Saturday
+                            </label>
+                          </div>
+                        </td>
+
+                        <td class="text-center">
+                          <input type="text" class="form-control schedulefield" disabled>
+                        </td>
+                        
+                        <td class="text-center">
+                          <input type="text" class="form-control schedulefield" disabled>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-12">
+                  <div class="schedulesbutton">
+                    <button class="btn-special" data-bs-toggle="modal" data-bs-target="#specialNoteModal">SPECIAL NOTE</button>
+                    <button class="btn-save">SAVE</button>
                   </div>
-                </div>
-
-                <div class="divider"></div>
-
-                <div class="mydoctor-info">
-                  <a href="create-schedule.html" class="btn-calendar">
-                    <span class="icon">
-                      <svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M6.97489 10.4347H4.58984V12.8199H6.97489V10.4347Z" fill="#3430F0"/>
-                        <path d="M17.4085 10.4347H15.0234V12.8199H17.4085V10.4347Z" fill="#3430F0"/>
-                        <path d="M13.93 10.4347H11.5449V12.8199H13.93V10.4347Z" fill="#3430F0"/>
-                        <path d="M6.97489 14.1614H4.58984V16.5466H6.97489V14.1614Z" fill="#3430F0"/>
-                        <path d="M13.93 14.1614H11.5449V16.5466H13.93V14.1614Z" fill="#3430F0"/>
-                        <path d="M10.4534 14.1614H8.06836V16.5466H10.4534V14.1614Z" fill="#3430F0"/>
-                        <path d="M17.4085 17.8881H15.0234V20.2733H17.4085V17.8881Z" fill="#3430F0"/>
-                        <path d="M13.93 17.8881H11.5449V20.2733H13.93V17.8881Z" fill="#3430F0"/>
-                        <path d="M10.4534 17.8881H8.06836V20.2733H10.4534V17.8881Z" fill="#3430F0"/>
-                        <path d="M19.5902 2.58028H17.6507V4.43981C17.6507 5.13365 17.079 5.69793 16.3765 5.69793H13.8441C13.1415 5.69793 12.5699 5.13365 12.5699 4.43981V2.58028H9.42488V4.42232C9.42488 5.12582 8.84695 5.69793 8.13656 5.69793H5.63231C4.92192 5.69793 4.344 5.12582 4.344 4.42232V2.58028H2.4045C1.14328 2.58028 0.117188 3.59709 0.117188 4.84687V21.7334C0.117188 22.9831 1.14328 24 2.4045 24H19.5902C20.8533 24 21.881 22.9832 21.881 21.7334V4.84687C21.881 3.59714 20.8533 2.58028 19.5902 2.58028ZM20.2413 21.6894C20.2413 22.0906 19.9717 22.3601 19.5705 22.3601H2.4277C2.02645 22.3601 1.75688 22.0906 1.75688 21.6894V8.34792H20.2413V21.6894Z" fill="#3430F0"/>
-                        <path d="M5.63252 4.80502H8.13527C8.34719 4.80502 8.51959 4.63378 8.51959 4.42327V0.960609C8.51959 0.430922 8.08506 0 7.55087 0H6.21686C5.68272 0 5.24805 0.430875 5.24805 0.960609V4.42327C5.24809 4.63378 5.4205 4.80502 5.63252 4.80502Z" fill="#3430F0"/>
-                        <path d="M13.8441 4.80502H16.3765C16.5803 4.80502 16.7461 4.64034 16.7461 4.43817V0.945844C16.7461 0.424359 16.3182 0 15.7921 0H14.4285C13.9025 0 13.4746 0.424359 13.4746 0.945844V4.43817C13.4746 4.64034 13.6404 4.80502 13.8441 4.80502Z" fill="#3430F0"/>
-                      </svg>
-                    </span>
-                  </a>
-
-                  <button type="button" class="btn-delete" data-bs-toggle="modal" data-bs-target="#removeModal">
-                    <span class="delicon">
-                      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M19.5645 10.6084H8.90625V24.3164C8.90625 25.1426 9.58008 25.8105 10.4092 25.8105H19.5615C20.3936 25.8105 21.0674 25.1426 21.0674 24.3164V10.6113H19.5645V10.6084Z" fill="white"/>
-                        <path d="M21.9805 8.64844C21.9805 8.3877 21.7578 8.17676 21.4824 8.17676H8.49219C8.2168 8.17676 7.99414 8.3877 7.99414 8.64844V10.1396C7.99414 10.4004 8.2168 10.6113 8.49219 10.6113H21.4824C21.7578 10.6113 21.9805 10.4004 21.9805 10.1396V8.64844Z" fill="white"/>
-                        <path d="M21.4834 7.56738H18.3574V5.74219C18.3574 5.40527 18.085 5.13281 17.748 5.13281H12.2783C11.9414 5.13281 11.6689 5.40527 11.6689 5.74219V7.56738H8.49316C7.88379 7.56738 7.38867 8.05078 7.38867 8.64551V10.1367C7.38867 10.667 7.78418 11.1064 8.2998 11.1973V24.3164C8.2998 25.4766 9.24609 26.4199 10.4121 26.4199H19.5645C20.7305 26.4199 21.6768 25.4766 21.6768 24.3164V11.1973C22.1953 11.1064 22.5879 10.667 22.5879 10.1367V8.64551C22.5908 8.05371 22.0928 7.56738 21.4834 7.56738ZM12.8848 6.35156H17.1416V7.56738H12.8848V6.35156ZM8.60156 8.78613H21.3721V10.002H8.60156V8.78613ZM20.4609 24.3193C20.4609 24.8086 20.0596 25.207 19.5645 25.207H10.4121C9.91699 25.207 9.51562 24.8086 9.51562 24.3193V11.2178H20.4609V24.3193Z" fill="#F04130"/>
-                        <path d="M14.9883 23.4053C15.3252 23.4053 15.5977 23.1328 15.5977 22.7959V13.6758C15.5977 13.3389 15.3252 13.0664 14.9883 13.0664C14.6514 13.0664 14.3789 13.3389 14.3789 13.6758V22.7988C14.3789 23.1328 14.6514 23.4053 14.9883 23.4053ZM11.9473 23.4053C12.2842 23.4053 12.5566 23.1328 12.5566 22.7959V13.6758C12.5566 13.3389 12.2842 13.0664 11.9473 13.0664C11.6104 13.0664 11.3379 13.3389 11.3379 13.6758V22.7988C11.3408 23.1328 11.6133 23.4053 11.9473 23.4053ZM18.0293 23.4258C18.3662 23.4258 18.6387 23.1533 18.6387 22.8164V13.6934C18.6387 13.3564 18.3662 13.084 18.0293 13.084C17.6924 13.084 17.4199 13.3564 17.4199 13.6934V22.8164C17.4199 23.1533 17.6924 23.4258 18.0293 23.4258Z" fill="#F04130"/>
-                      </svg>
-                    </span>
-                  </button>
-                </div>
-              </div>
-
-              <div class="mydoctor">
-                <div class="mydoctor-detail">
-                  <figure class="thumb">
-                    <img src="../assets/images/avatar/profile.svg" alt="doctor-thumb">
-                  </figure>
-
-                  <div class="detail">
-                    <h5 class="name">Doctor Stephen Strange</h5>
-                    <p class="text">MBBS, MD (Pediatric Hematology & Oncology)</p>
-                    <p class="text">Dhaka Medical College & Hospital</p>
-
-                    <div class="specilities">
-                      <span class="speciality">Neurobiologist</span>
-                      <span class="speciality">Medicinologist</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="divider"></div>
-
-                <div class="mydoctor-info">
-                  <a href="create-schedule.html" class="btn-calendar">
-                    <span class="icon">
-                      <svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M6.97489 10.4347H4.58984V12.8199H6.97489V10.4347Z" fill="#3430F0"/>
-                        <path d="M17.4085 10.4347H15.0234V12.8199H17.4085V10.4347Z" fill="#3430F0"/>
-                        <path d="M13.93 10.4347H11.5449V12.8199H13.93V10.4347Z" fill="#3430F0"/>
-                        <path d="M6.97489 14.1614H4.58984V16.5466H6.97489V14.1614Z" fill="#3430F0"/>
-                        <path d="M13.93 14.1614H11.5449V16.5466H13.93V14.1614Z" fill="#3430F0"/>
-                        <path d="M10.4534 14.1614H8.06836V16.5466H10.4534V14.1614Z" fill="#3430F0"/>
-                        <path d="M17.4085 17.8881H15.0234V20.2733H17.4085V17.8881Z" fill="#3430F0"/>
-                        <path d="M13.93 17.8881H11.5449V20.2733H13.93V17.8881Z" fill="#3430F0"/>
-                        <path d="M10.4534 17.8881H8.06836V20.2733H10.4534V17.8881Z" fill="#3430F0"/>
-                        <path d="M19.5902 2.58028H17.6507V4.43981C17.6507 5.13365 17.079 5.69793 16.3765 5.69793H13.8441C13.1415 5.69793 12.5699 5.13365 12.5699 4.43981V2.58028H9.42488V4.42232C9.42488 5.12582 8.84695 5.69793 8.13656 5.69793H5.63231C4.92192 5.69793 4.344 5.12582 4.344 4.42232V2.58028H2.4045C1.14328 2.58028 0.117188 3.59709 0.117188 4.84687V21.7334C0.117188 22.9831 1.14328 24 2.4045 24H19.5902C20.8533 24 21.881 22.9832 21.881 21.7334V4.84687C21.881 3.59714 20.8533 2.58028 19.5902 2.58028ZM20.2413 21.6894C20.2413 22.0906 19.9717 22.3601 19.5705 22.3601H2.4277C2.02645 22.3601 1.75688 22.0906 1.75688 21.6894V8.34792H20.2413V21.6894Z" fill="#3430F0"/>
-                        <path d="M5.63252 4.80502H8.13527C8.34719 4.80502 8.51959 4.63378 8.51959 4.42327V0.960609C8.51959 0.430922 8.08506 0 7.55087 0H6.21686C5.68272 0 5.24805 0.430875 5.24805 0.960609V4.42327C5.24809 4.63378 5.4205 4.80502 5.63252 4.80502Z" fill="#3430F0"/>
-                        <path d="M13.8441 4.80502H16.3765C16.5803 4.80502 16.7461 4.64034 16.7461 4.43817V0.945844C16.7461 0.424359 16.3182 0 15.7921 0H14.4285C13.9025 0 13.4746 0.424359 13.4746 0.945844V4.43817C13.4746 4.64034 13.6404 4.80502 13.8441 4.80502Z" fill="#3430F0"/>
-                      </svg>
-                    </span>
-                  </a>
-
-                  <button type="button" class="btn-delete" data-bs-toggle="modal" data-bs-target="#removeModal">
-                    <span class="delicon">
-                      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M19.5645 10.6084H8.90625V24.3164C8.90625 25.1426 9.58008 25.8105 10.4092 25.8105H19.5615C20.3936 25.8105 21.0674 25.1426 21.0674 24.3164V10.6113H19.5645V10.6084Z" fill="white"/>
-                        <path d="M21.9805 8.64844C21.9805 8.3877 21.7578 8.17676 21.4824 8.17676H8.49219C8.2168 8.17676 7.99414 8.3877 7.99414 8.64844V10.1396C7.99414 10.4004 8.2168 10.6113 8.49219 10.6113H21.4824C21.7578 10.6113 21.9805 10.4004 21.9805 10.1396V8.64844Z" fill="white"/>
-                        <path d="M21.4834 7.56738H18.3574V5.74219C18.3574 5.40527 18.085 5.13281 17.748 5.13281H12.2783C11.9414 5.13281 11.6689 5.40527 11.6689 5.74219V7.56738H8.49316C7.88379 7.56738 7.38867 8.05078 7.38867 8.64551V10.1367C7.38867 10.667 7.78418 11.1064 8.2998 11.1973V24.3164C8.2998 25.4766 9.24609 26.4199 10.4121 26.4199H19.5645C20.7305 26.4199 21.6768 25.4766 21.6768 24.3164V11.1973C22.1953 11.1064 22.5879 10.667 22.5879 10.1367V8.64551C22.5908 8.05371 22.0928 7.56738 21.4834 7.56738ZM12.8848 6.35156H17.1416V7.56738H12.8848V6.35156ZM8.60156 8.78613H21.3721V10.002H8.60156V8.78613ZM20.4609 24.3193C20.4609 24.8086 20.0596 25.207 19.5645 25.207H10.4121C9.91699 25.207 9.51562 24.8086 9.51562 24.3193V11.2178H20.4609V24.3193Z" fill="#F04130"/>
-                        <path d="M14.9883 23.4053C15.3252 23.4053 15.5977 23.1328 15.5977 22.7959V13.6758C15.5977 13.3389 15.3252 13.0664 14.9883 13.0664C14.6514 13.0664 14.3789 13.3389 14.3789 13.6758V22.7988C14.3789 23.1328 14.6514 23.4053 14.9883 23.4053ZM11.9473 23.4053C12.2842 23.4053 12.5566 23.1328 12.5566 22.7959V13.6758C12.5566 13.3389 12.2842 13.0664 11.9473 13.0664C11.6104 13.0664 11.3379 13.3389 11.3379 13.6758V22.7988C11.3408 23.1328 11.6133 23.4053 11.9473 23.4053ZM18.0293 23.4258C18.3662 23.4258 18.6387 23.1533 18.6387 22.8164V13.6934C18.6387 13.3564 18.3662 13.084 18.0293 13.084C17.6924 13.084 17.4199 13.3564 17.4199 13.6934V22.8164C17.4199 23.1533 17.6924 23.4258 18.0293 23.4258Z" fill="#F04130"/>
-                      </svg>
-                    </span>
-                  </button>
-                </div>
-              </div>
-
-              <div class="mydoctor">
-                <div class="mydoctor-detail">
-                  <figure class="thumb">
-                    <img src="../assets/images/avatar/profile.svg" alt="doctor-thumb">
-                  </figure>
-
-                  <div class="detail">
-                    <h5 class="name">Doctor Stephen Strange</h5>
-                    <p class="text">MBBS, MD (Pediatric Hematology & Oncology)</p>
-                    <p class="text">Dhaka Medical College & Hospital</p>
-
-                    <div class="specilities">
-                      <span class="speciality">Neurobiologist</span>
-                      <span class="speciality">Medicinologist</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="divider"></div>
-
-                <div class="mydoctor-info">
-                  <a href="create-schedule.html" class="btn-calendar">
-                    <span class="icon">
-                      <svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M6.97489 10.4347H4.58984V12.8199H6.97489V10.4347Z" fill="#3430F0"/>
-                        <path d="M17.4085 10.4347H15.0234V12.8199H17.4085V10.4347Z" fill="#3430F0"/>
-                        <path d="M13.93 10.4347H11.5449V12.8199H13.93V10.4347Z" fill="#3430F0"/>
-                        <path d="M6.97489 14.1614H4.58984V16.5466H6.97489V14.1614Z" fill="#3430F0"/>
-                        <path d="M13.93 14.1614H11.5449V16.5466H13.93V14.1614Z" fill="#3430F0"/>
-                        <path d="M10.4534 14.1614H8.06836V16.5466H10.4534V14.1614Z" fill="#3430F0"/>
-                        <path d="M17.4085 17.8881H15.0234V20.2733H17.4085V17.8881Z" fill="#3430F0"/>
-                        <path d="M13.93 17.8881H11.5449V20.2733H13.93V17.8881Z" fill="#3430F0"/>
-                        <path d="M10.4534 17.8881H8.06836V20.2733H10.4534V17.8881Z" fill="#3430F0"/>
-                        <path d="M19.5902 2.58028H17.6507V4.43981C17.6507 5.13365 17.079 5.69793 16.3765 5.69793H13.8441C13.1415 5.69793 12.5699 5.13365 12.5699 4.43981V2.58028H9.42488V4.42232C9.42488 5.12582 8.84695 5.69793 8.13656 5.69793H5.63231C4.92192 5.69793 4.344 5.12582 4.344 4.42232V2.58028H2.4045C1.14328 2.58028 0.117188 3.59709 0.117188 4.84687V21.7334C0.117188 22.9831 1.14328 24 2.4045 24H19.5902C20.8533 24 21.881 22.9832 21.881 21.7334V4.84687C21.881 3.59714 20.8533 2.58028 19.5902 2.58028ZM20.2413 21.6894C20.2413 22.0906 19.9717 22.3601 19.5705 22.3601H2.4277C2.02645 22.3601 1.75688 22.0906 1.75688 21.6894V8.34792H20.2413V21.6894Z" fill="#3430F0"/>
-                        <path d="M5.63252 4.80502H8.13527C8.34719 4.80502 8.51959 4.63378 8.51959 4.42327V0.960609C8.51959 0.430922 8.08506 0 7.55087 0H6.21686C5.68272 0 5.24805 0.430875 5.24805 0.960609V4.42327C5.24809 4.63378 5.4205 4.80502 5.63252 4.80502Z" fill="#3430F0"/>
-                        <path d="M13.8441 4.80502H16.3765C16.5803 4.80502 16.7461 4.64034 16.7461 4.43817V0.945844C16.7461 0.424359 16.3182 0 15.7921 0H14.4285C13.9025 0 13.4746 0.424359 13.4746 0.945844V4.43817C13.4746 4.64034 13.6404 4.80502 13.8441 4.80502Z" fill="#3430F0"/>
-                      </svg>
-                    </span>
-                  </a>
-
-                  <button type="button" class="btn-delete" data-bs-toggle="modal" data-bs-target="#removeModal">
-                    <span class="delicon">
-                      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M19.5645 10.6084H8.90625V24.3164C8.90625 25.1426 9.58008 25.8105 10.4092 25.8105H19.5615C20.3936 25.8105 21.0674 25.1426 21.0674 24.3164V10.6113H19.5645V10.6084Z" fill="white"/>
-                        <path d="M21.9805 8.64844C21.9805 8.3877 21.7578 8.17676 21.4824 8.17676H8.49219C8.2168 8.17676 7.99414 8.3877 7.99414 8.64844V10.1396C7.99414 10.4004 8.2168 10.6113 8.49219 10.6113H21.4824C21.7578 10.6113 21.9805 10.4004 21.9805 10.1396V8.64844Z" fill="white"/>
-                        <path d="M21.4834 7.56738H18.3574V5.74219C18.3574 5.40527 18.085 5.13281 17.748 5.13281H12.2783C11.9414 5.13281 11.6689 5.40527 11.6689 5.74219V7.56738H8.49316C7.88379 7.56738 7.38867 8.05078 7.38867 8.64551V10.1367C7.38867 10.667 7.78418 11.1064 8.2998 11.1973V24.3164C8.2998 25.4766 9.24609 26.4199 10.4121 26.4199H19.5645C20.7305 26.4199 21.6768 25.4766 21.6768 24.3164V11.1973C22.1953 11.1064 22.5879 10.667 22.5879 10.1367V8.64551C22.5908 8.05371 22.0928 7.56738 21.4834 7.56738ZM12.8848 6.35156H17.1416V7.56738H12.8848V6.35156ZM8.60156 8.78613H21.3721V10.002H8.60156V8.78613ZM20.4609 24.3193C20.4609 24.8086 20.0596 25.207 19.5645 25.207H10.4121C9.91699 25.207 9.51562 24.8086 9.51562 24.3193V11.2178H20.4609V24.3193Z" fill="#F04130"/>
-                        <path d="M14.9883 23.4053C15.3252 23.4053 15.5977 23.1328 15.5977 22.7959V13.6758C15.5977 13.3389 15.3252 13.0664 14.9883 13.0664C14.6514 13.0664 14.3789 13.3389 14.3789 13.6758V22.7988C14.3789 23.1328 14.6514 23.4053 14.9883 23.4053ZM11.9473 23.4053C12.2842 23.4053 12.5566 23.1328 12.5566 22.7959V13.6758C12.5566 13.3389 12.2842 13.0664 11.9473 13.0664C11.6104 13.0664 11.3379 13.3389 11.3379 13.6758V22.7988C11.3408 23.1328 11.6133 23.4053 11.9473 23.4053ZM18.0293 23.4258C18.3662 23.4258 18.6387 23.1533 18.6387 22.8164V13.6934C18.6387 13.3564 18.3662 13.084 18.0293 13.084C17.6924 13.084 17.4199 13.3564 17.4199 13.6934V22.8164C17.4199 23.1533 17.6924 23.4258 18.0293 23.4258Z" fill="#F04130"/>
-                      </svg>
-                    </span>
-                  </button>
-                </div>
-              </div>
-
-              <div class="mydoctor">
-                <div class="mydoctor-detail">
-                  <figure class="thumb">
-                    <img src="../assets/images/avatar/profile.svg" alt="doctor-thumb">
-                  </figure>
-
-                  <div class="detail">
-                    <h5 class="name">Doctor Stephen Strange</h5>
-                    <p class="text">MBBS, MD (Pediatric Hematology & Oncology)</p>
-                    <p class="text">Dhaka Medical College & Hospital</p>
-
-                    <div class="specilities">
-                      <span class="speciality">Neurobiologist</span>
-                      <span class="speciality">Medicinologist</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="divider"></div>
-
-                <div class="mydoctor-info">
-                  <a href="create-schedule.html" class="btn-calendar">
-                    <span class="icon">
-                      <svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M6.97489 10.4347H4.58984V12.8199H6.97489V10.4347Z" fill="#3430F0"/>
-                        <path d="M17.4085 10.4347H15.0234V12.8199H17.4085V10.4347Z" fill="#3430F0"/>
-                        <path d="M13.93 10.4347H11.5449V12.8199H13.93V10.4347Z" fill="#3430F0"/>
-                        <path d="M6.97489 14.1614H4.58984V16.5466H6.97489V14.1614Z" fill="#3430F0"/>
-                        <path d="M13.93 14.1614H11.5449V16.5466H13.93V14.1614Z" fill="#3430F0"/>
-                        <path d="M10.4534 14.1614H8.06836V16.5466H10.4534V14.1614Z" fill="#3430F0"/>
-                        <path d="M17.4085 17.8881H15.0234V20.2733H17.4085V17.8881Z" fill="#3430F0"/>
-                        <path d="M13.93 17.8881H11.5449V20.2733H13.93V17.8881Z" fill="#3430F0"/>
-                        <path d="M10.4534 17.8881H8.06836V20.2733H10.4534V17.8881Z" fill="#3430F0"/>
-                        <path d="M19.5902 2.58028H17.6507V4.43981C17.6507 5.13365 17.079 5.69793 16.3765 5.69793H13.8441C13.1415 5.69793 12.5699 5.13365 12.5699 4.43981V2.58028H9.42488V4.42232C9.42488 5.12582 8.84695 5.69793 8.13656 5.69793H5.63231C4.92192 5.69793 4.344 5.12582 4.344 4.42232V2.58028H2.4045C1.14328 2.58028 0.117188 3.59709 0.117188 4.84687V21.7334C0.117188 22.9831 1.14328 24 2.4045 24H19.5902C20.8533 24 21.881 22.9832 21.881 21.7334V4.84687C21.881 3.59714 20.8533 2.58028 19.5902 2.58028ZM20.2413 21.6894C20.2413 22.0906 19.9717 22.3601 19.5705 22.3601H2.4277C2.02645 22.3601 1.75688 22.0906 1.75688 21.6894V8.34792H20.2413V21.6894Z" fill="#3430F0"/>
-                        <path d="M5.63252 4.80502H8.13527C8.34719 4.80502 8.51959 4.63378 8.51959 4.42327V0.960609C8.51959 0.430922 8.08506 0 7.55087 0H6.21686C5.68272 0 5.24805 0.430875 5.24805 0.960609V4.42327C5.24809 4.63378 5.4205 4.80502 5.63252 4.80502Z" fill="#3430F0"/>
-                        <path d="M13.8441 4.80502H16.3765C16.5803 4.80502 16.7461 4.64034 16.7461 4.43817V0.945844C16.7461 0.424359 16.3182 0 15.7921 0H14.4285C13.9025 0 13.4746 0.424359 13.4746 0.945844V4.43817C13.4746 4.64034 13.6404 4.80502 13.8441 4.80502Z" fill="#3430F0"/>
-                      </svg>
-                    </span>
-                  </a>
-
-                  <button type="button" class="btn-delete" data-bs-toggle="modal" data-bs-target="#removeModal">
-                    <span class="delicon">
-                      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M19.5645 10.6084H8.90625V24.3164C8.90625 25.1426 9.58008 25.8105 10.4092 25.8105H19.5615C20.3936 25.8105 21.0674 25.1426 21.0674 24.3164V10.6113H19.5645V10.6084Z" fill="white"/>
-                        <path d="M21.9805 8.64844C21.9805 8.3877 21.7578 8.17676 21.4824 8.17676H8.49219C8.2168 8.17676 7.99414 8.3877 7.99414 8.64844V10.1396C7.99414 10.4004 8.2168 10.6113 8.49219 10.6113H21.4824C21.7578 10.6113 21.9805 10.4004 21.9805 10.1396V8.64844Z" fill="white"/>
-                        <path d="M21.4834 7.56738H18.3574V5.74219C18.3574 5.40527 18.085 5.13281 17.748 5.13281H12.2783C11.9414 5.13281 11.6689 5.40527 11.6689 5.74219V7.56738H8.49316C7.88379 7.56738 7.38867 8.05078 7.38867 8.64551V10.1367C7.38867 10.667 7.78418 11.1064 8.2998 11.1973V24.3164C8.2998 25.4766 9.24609 26.4199 10.4121 26.4199H19.5645C20.7305 26.4199 21.6768 25.4766 21.6768 24.3164V11.1973C22.1953 11.1064 22.5879 10.667 22.5879 10.1367V8.64551C22.5908 8.05371 22.0928 7.56738 21.4834 7.56738ZM12.8848 6.35156H17.1416V7.56738H12.8848V6.35156ZM8.60156 8.78613H21.3721V10.002H8.60156V8.78613ZM20.4609 24.3193C20.4609 24.8086 20.0596 25.207 19.5645 25.207H10.4121C9.91699 25.207 9.51562 24.8086 9.51562 24.3193V11.2178H20.4609V24.3193Z" fill="#F04130"/>
-                        <path d="M14.9883 23.4053C15.3252 23.4053 15.5977 23.1328 15.5977 22.7959V13.6758C15.5977 13.3389 15.3252 13.0664 14.9883 13.0664C14.6514 13.0664 14.3789 13.3389 14.3789 13.6758V22.7988C14.3789 23.1328 14.6514 23.4053 14.9883 23.4053ZM11.9473 23.4053C12.2842 23.4053 12.5566 23.1328 12.5566 22.7959V13.6758C12.5566 13.3389 12.2842 13.0664 11.9473 13.0664C11.6104 13.0664 11.3379 13.3389 11.3379 13.6758V22.7988C11.3408 23.1328 11.6133 23.4053 11.9473 23.4053ZM18.0293 23.4258C18.3662 23.4258 18.6387 23.1533 18.6387 22.8164V13.6934C18.6387 13.3564 18.3662 13.084 18.0293 13.084C17.6924 13.084 17.4199 13.3564 17.4199 13.6934V22.8164C17.4199 23.1533 17.6924 23.4258 18.0293 23.4258Z" fill="#F04130"/>
-                      </svg>
-                    </span>
-                  </button>
                 </div>
               </div>
             </div>
@@ -680,18 +613,33 @@
   <!-- FOOTER-SECTION END -->
 
   <!-- CONFIRM-REMOVE MODAL -->
-  <div class="modal fade" id="removeModal" tabindex="-1" aria-labelledby="removeModal" aria-hidden="true">
+  <div class="modal fade" id="specialNoteModal" tabindex="-1" aria-labelledby="specialNoteModal" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Remove doctor</h5>
+          <h5 class="modal-title">Special Note</h5>
         </div>
         <div class="modal-body">
-          <p>Remove doctor from doctor list</p>
+          <form class="noteform">
+            <div class="inputbox">
+              <label for="select-date" class="inputlabel">
+                Select Date <span>*</span>
+              </label>
+              <input type="text" id="select-date" class="form-control" placeholder="28/11/2023">
+            </div>
+
+            <div class="inputbox">
+              <label for="specialnote" class="inputlabel">
+                Special Note
+              </label>
+              
+              <textarea id="specialnote" class="form-control" rows="5"></textarea>
+            </div>
+          </form>
         </div>
         <div class="modal-footer justify-content-end gap-3">
           <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancel</button>
-          <button type="button" class="btn btn-remove">Remove</button>
+          <button type="button" class="btn btn-remove">Save</button>
         </div>
       </div>
     </div>
@@ -709,6 +657,9 @@
   <script src="../../assets/js/lottie-js/lottie-player.js"></script>
   <!-- PRELOADER -->
   <script src="../../assets/js/loader/loader.js"></script>
+  <!-- MC-DATEPICKER -->
+  <script src="../../assets/js/mc-datepicker/mc-calendar.min.js"></script>
+  <script src="../../assets/js/mc-datepicker/selectdate.js"></script>
 
 
 </body>

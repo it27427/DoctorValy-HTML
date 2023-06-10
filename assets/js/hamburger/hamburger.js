@@ -12,10 +12,17 @@ function toggleBurger() {
   const sidebar = document.querySelector('.sidebar');
   const main = document.querySelector('#main-section');
   const footer = document.querySelector('.footer');
+  const dashfooter = document.querySelector('.dashboard-footer');
 
   sidebar.classList.toggle('collapsed-sidebar');
   main.classList.toggle('collapsed-main');
-  footer.classList.toggle('collapsed-footer');
+  if(footer) {
+    footer.classList.toggle('collapsed-footer');
+  }
+
+  if(dashfooter) {
+    dashfooter.classList.toggle('collapsed-footer');
+  }
 }
 
 btnHamburger.addEventListener('click', toggleBurger);

@@ -125,6 +125,16 @@ label {
   &:focus {
     border-color: $dropdownbg;
   }
+
+  &:disabled {
+    background: $progressbg;
+    border: none;
+    @include radius(0);
+  }
+}
+
+.schedulefield {
+  @include radius(0);
 }
 
 .inputbox {

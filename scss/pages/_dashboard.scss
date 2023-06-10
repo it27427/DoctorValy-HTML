@@ -168,3 +168,103 @@
     }
   }
 }
+
+.createschedule {
+  background: $white;
+  padding: size(16);
+
+  @include breakpoint(tab992) {
+    padding: size(32);
+  }
+
+  .detail {
+    @include flex-column;
+    gap: size(16);
+
+    .name {
+      color: $dropdownbg;
+      @include font($secondaryFont, 24, semibold, normal, 33.6);
+
+      @include breakpoint(mobile768) {
+       font-size: size(28);
+      }
+
+      span {
+        color: $hamburgerbg;
+        font: inherit;
+      }
+    }
+
+    .text {
+      color: $dropdownbg;
+      @include font($secondaryFont, 14, normal, normal, 19.6);
+
+      @include breakpoint(tab992) {
+       font-size: size(16);
+      }
+    }
+  }
+
+  .thumbnail {
+    @include square(150);
+    @include flex-center;
+    overflow: hidden;
+    margin-inline: auto;
+    
+    @include breakpoint(mobile768) {
+      margin-left: auto;
+    }
+
+    img {
+      @include wh100;
+      object-fit: cover;
+    }
+  }
+}
+
+.singleschedulebox {
+  width: calc(100% - size(40));
+}
+
+.schedulesbutton {
+  @include flex-center-column;
+  gap: size(16);
+  margin-top: auto;
+  justify-content: flex-end;
+  @include h100;
+
+  @include breakpoint(mobile768) {
+    margin-top: size(-24);
+  }
+
+  button {
+    width: size(180);
+    height: size(36);
+    @include flex-center;
+    text-align: center;
+    @include radius(5);
+    padding: size(8);
+    text-transform: uppercase;
+    font-family: $secondaryFont;
+    font-size: size(13);
+    font-weight: 600;
+    letter-spacing: size(1.6)
+  }
+
+  .btn-special {
+    @include setBgColor($closebg, $white);
+  }
+
+  .btn-save {
+    @include setBgColor($hamburgerbg, $white);
+  }
+}
+
+.mc-calendar {
+  z-index: 1300;
+}
+
+.noteform {
+  @include flex-column;
+  gap: size(16);
+}

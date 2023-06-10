@@ -1348,11 +1348,16 @@
       padding-inline: size(32)
     }
 
-    button {
+    .btn-calendar,
+    .btn-delete {
       @include square(48);
       @include circle;
       @include flex-center;
       overflow: hidden;
+    }
+
+    .btn-calendar {
+      background: rgba($calendarbg, 0.1);
 
       .icon {
         @include square(24);
@@ -1362,6 +1367,10 @@
           @include wh100;
         }
       }
+    }
+
+    .btn-delete {
+      background: rgba($hamburgerbg, 0.1);
 
       .delicon {
         @include square(30);
@@ -1371,14 +1380,6 @@
           @include wh100;
         }
       }
-    }
-
-    .btn-calendar {
-      background: rgba($calendarbg, 0.1);
-    }
-
-    .btn-delete {
-      background: rgba($hamburgerbg, 0.1);
     }
   }
 }

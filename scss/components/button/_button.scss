@@ -211,3 +211,16 @@ button,
 		}
 	}
 }
+
+.btn-info {
+  cursor: pointer;
+  @include transparent-button;
+  @include square(40);
+  @include circle;
+  @include flex-center;
+  overflow: hidden;
+
+  svg {
+    @include wh100;
+  }
+}

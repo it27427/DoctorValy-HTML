@@ -115,7 +115,6 @@
       }
     }
   }
-
 }
 
 .dashboard-footer {
@@ -133,5 +132,9 @@
     color: $white;
     @include font($secondaryFont, 13, medium, normal, 18.2);
     text-align: center;
+  }
+
+  &.collapsed-footer {
+    width: calc(100% - size(80));
   }
 }

@@ -668,6 +668,23 @@ button:not([disabled]):hover,
   width: 0;
 }
 
+.btn-info {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.btn-info svg {
+  width: 100%;
+  height: 100%;
+}
+
 .card-welcome {
   background: hsl(0, 0%, 100%);
   box-shadow: 0.25rem 0.25rem 1rem 0.1875rem rgba(72, 75, 137, 0.2);
@@ -2175,7 +2192,8 @@ button:not([disabled]):hover,
     padding-inline: 2rem;
   }
 }
-.mydoctor-info button {
+.mydoctor-info .btn-calendar,
+.mydoctor-info .btn-delete {
   width: 3rem;
   height: 3rem;
   border-radius: 100%;
@@ -2184,29 +2202,29 @@ button:not([disabled]):hover,
   justify-content: center;
   overflow: hidden;
 }
-.mydoctor-info button .icon {
+.mydoctor-info .btn-calendar {
+  background: rgba(50, 46, 239, 0.1);
+}
+.mydoctor-info .btn-calendar .icon {
   width: 1.5rem;
   height: 1.5rem;
   overflow: hidden;
 }
-.mydoctor-info button .icon svg {
+.mydoctor-info .btn-calendar .icon svg {
   width: 100%;
   height: 100%;
 }
-.mydoctor-info button .delicon {
+.mydoctor-info .btn-delete {
+  background: rgba(239, 62, 46, 0.1);
+}
+.mydoctor-info .btn-delete .delicon {
   width: 1.875rem;
   height: 1.875rem;
   overflow: hidden;
 }
-.mydoctor-info button .delicon svg {
+.mydoctor-info .btn-delete .delicon svg {
   width: 100%;
   height: 100%;
-}
-.mydoctor-info .btn-calendar {
-  background: rgba(50, 46, 239, 0.1);
-}
-.mydoctor-info .btn-delete {
-  background: rgba(239, 62, 46, 0.1);
 }
 
 .header {
@@ -2613,6 +2631,17 @@ label span {
 }
 .form-control:focus {
   border-color: hsl(226, 20%, 20%);
+}
+.form-control:disabled {
+  background: hsl(0, 0%, 85%);
+  border: none;
+  border-radius: 0rem;
+  border-radius: 0rem;
+}
+
+.schedulefield {
+  border-radius: 0rem;
+  border-radius: 0rem;
 }
 
 .inputbox .select-dropdown__button {
@@ -3356,6 +3385,9 @@ label span {
   font-style: normal;
   line-height: 1.4;
   text-align: center;
+}
+.dashboard-footer.collapsed-footer {
+  width: calc(100% - 5rem);
 }
 
 .preloader {
@@ -4633,6 +4665,125 @@ label span {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+}
+
+.createschedule {
+  background: hsl(0, 0%, 100%);
+  padding: 1rem;
+}
+@media screen and (min-width: 62rem) {
+  .createschedule {
+    padding: 2rem;
+  }
+}
+.createschedule .detail {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.createschedule .detail .name {
+  color: hsl(226, 20%, 20%);
+  font-family: "Nunito", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 1.4;
+}
+@media screen and (min-width: 48rem) {
+  .createschedule .detail .name {
+    font-size: 1.75rem;
+  }
+}
+.createschedule .detail .name span {
+  color: hsl(5, 86%, 56%);
+  font: inherit;
+}
+.createschedule .detail .text {
+  color: hsl(226, 20%, 20%);
+  font-family: "Nunito", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.4;
+}
+@media screen and (min-width: 62rem) {
+  .createschedule .detail .text {
+    font-size: 1rem;
+  }
+}
+.createschedule .thumbnail {
+  width: 9.375rem;
+  height: 9.375rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-inline: auto;
+}
+@media screen and (min-width: 48rem) {
+  .createschedule .thumbnail {
+    margin-left: auto;
+  }
+}
+.createschedule .thumbnail img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.singleschedulebox {
+  width: calc(100% - 2.5rem);
+}
+
+.schedulesbutton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: auto;
+  justify-content: flex-end;
+  height: 100%;
+}
+@media screen and (min-width: 48rem) {
+  .schedulesbutton {
+    margin-top: -1.5rem;
+  }
+}
+.schedulesbutton button {
+  width: 11.25rem;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 0.3125rem;
+  border-radius: 0.3125rem;
+  padding: 0.5rem;
+  text-transform: uppercase;
+  font-family: "Nunito", sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+}
+.schedulesbutton .btn-special {
+  background: hsl(5, 5%, 49%);
+  color: hsl(0, 0%, 100%);
+}
+.schedulesbutton .btn-save {
+  background: hsl(5, 86%, 56%);
+  color: hsl(0, 0%, 100%);
+}
+
+.mc-calendar {
+  z-index: 1300;
+}
+
+.noteform {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .blog {
