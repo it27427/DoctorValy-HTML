@@ -2,7 +2,6 @@
 @use "../partials" as *;
 
 .chambersection {
-  
   &-details {
     @include flex-column;
     gap: size(20);
@@ -102,6 +101,63 @@
         &.active {
           border: none;
           @include setBgColor($hamburgerbg, $white);
+        }
+      }
+    }
+
+    .emptydoctors {
+      @include flex-column;
+      min-height: 60vh;
+      @include flex-center-column;
+      text-align: center;
+      gap: size(32);
+
+      &-header {
+        @include flex-center-column;
+        gap: size(24);
+
+        .icon {
+          @include square(100);
+          @include flex-center;
+          overflow: hidden;
+
+          svg {
+            @include wh100;
+          }
+        }
+
+        .title {
+          color: $black;
+          font-size: size(24);
+          font-family: $secondaryFont;
+
+          @include breakpoint(tab992) {
+            font-size: size(30);
+          }
+        }
+      }
+
+      &-body {
+        @include flex-center-column;
+
+        .text {
+          color: $textgray;
+          font-family: $secondaryFont;
+          font-size: size(14);
+
+          a {
+            text-decoration: underline;
+            color: $hamburgerbg;
+            font: inherit;
+            font-style: italic;
+            display: inline-block;
+            width: size(60);
+            @include transitionsall;
+
+            @include hover {
+              text-decoration: none;
+            }
+          }
         }
       }
     }

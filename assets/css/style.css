@@ -4320,6 +4320,69 @@ label span {
   background: hsl(5, 86%, 56%);
   color: hsl(0, 0%, 100%);
 }
+.chambersection-body .emptydoctors {
+  display: flex;
+  flex-direction: column;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 2rem;
+}
+.chambersection-body .emptydoctors-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.chambersection-body .emptydoctors-header .icon {
+  width: 6.25rem;
+  height: 6.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.chambersection-body .emptydoctors-header .icon svg {
+  width: 100%;
+  height: 100%;
+}
+.chambersection-body .emptydoctors-header .title {
+  color: hsl(0, 0%, 0%);
+  font-size: 1.5rem;
+  font-family: "Nunito", sans-serif;
+}
+@media screen and (min-width: 62rem) {
+  .chambersection-body .emptydoctors-header .title {
+    font-size: 1.875rem;
+  }
+}
+.chambersection-body .emptydoctors-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.chambersection-body .emptydoctors-body .text {
+  color: hsl(0, 0%, 63%);
+  font-family: "Nunito", sans-serif;
+  font-size: 0.875rem;
+}
+.chambersection-body .emptydoctors-body .text a {
+  text-decoration: underline;
+  color: hsl(5, 86%, 56%);
+  font: inherit;
+  font-style: italic;
+  display: inline-block;
+  width: 3.75rem;
+  transition: all 350ms ease-in-out;
+}
+.chambersection-body .emptydoctors-body .text a:not([disabled]):hover {
+  text-decoration: none;
+}
 
 .blog {
   display: flex;
