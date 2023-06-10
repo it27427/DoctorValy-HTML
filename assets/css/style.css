@@ -2242,6 +2242,85 @@ button:not([disabled]):hover,
   height: 100%;
 }
 
+.doctoday {
+  background: hsl(0, 0%, 100%);
+  box-shadow: 0.25rem 0.25rem 1rem 0.1875rem rgba(72, 75, 137, 0.2);
+  border-radius: 0.625rem;
+  border-radius: 0.625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 0.625rem 0rem 0rem;
+  overflow: hidden;
+}
+.doctoday .thumb {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+.doctoday .thumb img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.doctoday-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-inline: 0.625rem;
+}
+.doctoday-detail .name {
+  color: hsl(226, 20%, 20%);
+  font-family: "Nunito", sans-serif;
+  font-size: 0.875rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+}
+@media screen and (min-width: 48rem) {
+  .doctoday-detail .name {
+    font-size: 1rem;
+  }
+}
+.doctoday-detail .speciality {
+  font-size: 0.625rem;
+}
+.doctoday-detail .text {
+  color: hsl(226, 20%, 20%);
+  font-family: "Nunito", sans-serif;
+  font-size: 0.6875rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+}
+.doctoday-footer {
+  background: hsl(0, 0%, 94%);
+  padding: 0.5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.doctoday-footer .text {
+  color: hsl(0, 0%, 0%);
+  font-family: "Nunito", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
 .header {
   background: hsl(0, 3%, 6%);
   display: flex;
@@ -4863,6 +4942,32 @@ label span {
   font-weight: 400;
   font-size: 0.8125rem;
   font-family: "Nunito", sans-serif;
+}
+
+.dashtodaydoctors {
+  background: hsl(0, 0%, 100%);
+  border-radius: 0.625rem;
+  border-radius: 0.625rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+@media screen and (min-width: 62rem) {
+  .dashtodaydoctors {
+    padding: 1.5rem;
+  }
+}
+.dashtodaydoctors-header .title {
+  color: hsl(0, 0%, 0%);
+  font-size: 1rem;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+}
+@media screen and (min-width: 62rem) {
+  .dashtodaydoctors-header .title {
+    font-size: 1.125rem;
+  }
 }
 
 .blog {

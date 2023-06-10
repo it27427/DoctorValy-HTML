@@ -337,3 +337,28 @@
     }
   }
 }
+
+.dashtodaydoctors {
+  background: $white;
+  @include radius(10);
+  padding: size(16);
+  @include flex-column;
+  gap: size(24);
+
+  @include breakpoint(tab992) {
+    padding: size(24);
+  }
+
+  &-header {
+    .title {
+      color: $black;
+      font-size: size(16);
+      font-family: $secondaryFont;
+      font-weight: 600;
+
+      @include breakpoint(tab992) {
+        font-size: size(18);
+      }
+    }
+  }
+}

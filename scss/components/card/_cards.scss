@@ -1395,3 +1395,69 @@
     }
   }
 }
+
+.doctoday {
+  background: $white;
+  box-shadow: $cardshadow;
+  @include radius(10);
+  @include flex-center-column;
+  text-align: center;
+  padding: size(10) size(0) size(0);
+  overflow: hidden;
+
+  .thumb {
+    @include square(96);
+    @include circle;
+    @include flex-center;
+    overflow: hidden;
+    margin-bottom: size(8);
+
+    img {
+      @include wh100;
+      object-fit: cover;
+    }
+  }
+
+  &-detail {
+    @include flex-column;
+    gap: size(8);
+    padding-inline: size(10);
+    
+    .name {
+      color: $dropdownbg;
+      font-family: $secondaryFont;
+      font-size: size(14);
+      @include line-clamp;
+
+      @include breakpoint(mobile768) {
+        font-size: size(16);
+      }
+    }
+
+    .speciality {
+      font-size: size(10);
+    }
+
+    .text {
+      color: $dropdownbg;
+      font-family: $secondaryFont;
+      font-size: size(11);
+      @include line-clamp;
+    }
+  }
+
+  &-footer {
+    background: $lightbg;
+    padding: size(8);
+    @include w100;
+    @include flex-center;
+    text-align: center;
+
+    .text {
+      color: $black;
+      font-family: $secondaryFont;
+      font-size: size(12);
+      font-weight: 600;
+    }
+  }
+}
