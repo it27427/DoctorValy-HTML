@@ -10,6 +10,11 @@
   &-header {
     border-bottom: 0;
 
+    .modal-title{
+      font-family: $secondaryFont;
+      font-size: size(18);
+    }
+
     .btn-close {
       @include square(24);
       @include flex-center;
@@ -29,6 +34,58 @@
             // stroke: $danger;
           }
         }
+      }
+    }
+  }
+
+  &-body {
+    p {
+      font-family: $secondaryFont;
+      font-size: size(14);
+    }
+  }
+
+  &-footer {
+    @include flex-center-between;
+    border: none;
+
+    .rightbuttons {
+      @include flex-center-vert;
+      gap: size(12);
+    }
+
+    .btn-remove,
+    .btn-cancel,
+    .btn-update {
+      width: size(88);
+      height: size(36);
+      @include radius(4);
+      @include flex-center;
+      @include font($secondaryFont, 13, medium, normal, 18.2);
+      text-align: center;
+    }
+
+    .btn-remove {
+      @include setBgColor($red, $white);
+
+      @include hover {
+        @include setBgColor(darken($red, 5%), $white);
+      }
+    }
+    
+    .btn-cancel {
+      @include setBgColor($closebg, $white);
+
+      @include hover {
+        @include setBgColor(darken($closebg, 5%), $white);
+      }
+    }
+    
+    .btn-update {
+      @include setBgColor(darken($primary, 25%), $white);
+
+      @include hover {
+        @include setBgColor(darken($primary, 15%), $white);
       }
     }
   }

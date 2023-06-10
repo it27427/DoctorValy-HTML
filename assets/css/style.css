@@ -442,6 +442,11 @@ table tr th, table tr td {
     padding: 0.25rem 0.75rem;
   }
 }
+@media screen and (min-width: 48rem) {
+  .speciality {
+    font-size: 0.875rem;
+  }
+}
 
 button,
 [type=button],
@@ -2063,12 +2068,24 @@ button:not([disabled]):hover,
   padding: 0.625rem;
   display: flex;
   flex-direction: column;
+  gap: 1rem;
+}
+@media screen and (min-width: 48rem) {
+  .mydoctor {
+    flex-direction: row;
+    align-items: center;
+  }
 }
 .mydoctor-detail {
   display: flex;
   align-items: center;
   align-items: flex-start;
   gap: 0.75rem;
+}
+@media screen and (min-width: 48rem) {
+  .mydoctor-detail {
+    align-items: center;
+  }
 }
 .mydoctor-detail .thumb {
   width: 5rem;
@@ -2077,6 +2094,12 @@ button:not([disabled]):hover,
   align-items: center;
   justify-content: center;
   overflow: hidden;
+}
+@media screen and (min-width: 30rem) {
+  .mydoctor-detail .thumb {
+    width: 9.375rem;
+    height: 9.375rem;
+  }
 }
 .mydoctor-detail .thumb img {
   width: 100%;
@@ -2088,6 +2111,11 @@ button:not([disabled]):hover,
   flex-direction: column;
   gap: 0.5rem;
 }
+@media screen and (min-width: 30rem) {
+  .mydoctor-detail .detail {
+    width: calc(100% - 9.375rem);
+  }
+}
 .mydoctor-detail .detail .name {
   color: hsl(5, 86%, 56%);
   font-family: "Nunito", sans-serif;
@@ -2097,6 +2125,11 @@ button:not([disabled]):hover,
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-line-clamp: 2;
+}
+@media screen and (min-width: 48rem) {
+  .mydoctor-detail .detail .name {
+    font-size: 1.5rem;
+  }
 }
 .mydoctor-detail .detail .text {
   color: hsl(226, 20%, 20%);
@@ -2108,6 +2141,11 @@ button:not([disabled]):hover,
   text-overflow: ellipsis;
   -webkit-line-clamp: 2;
 }
+@media screen and (min-width: 48rem) {
+  .mydoctor-detail .detail .text {
+    font-size: 0.875rem;
+  }
+}
 .mydoctor-detail .detail .specilities {
   margin-top: 0.75rem;
   display: flex;
@@ -2115,9 +2153,60 @@ button:not([disabled]):hover,
   gap: 0.5rem;
   flex-wrap: wrap;
 }
+.mydoctor .divider {
+  width: 100%;
+  height: 0.0625rem;
+  background: hsl(0, 0%, 94%);
+}
+@media screen and (min-width: 48rem) {
+  .mydoctor .divider {
+    width: 0.0625rem;
+    height: 8.75rem;
+    margin-left: auto;
+  }
+}
 .mydoctor-info {
   display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+@media screen and (min-width: 48rem) {
+  .mydoctor-info {
+    padding-inline: 2rem;
+  }
+}
+.mydoctor-info button {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 100%;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.mydoctor-info button .icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  overflow: hidden;
+}
+.mydoctor-info button .icon svg {
+  width: 100%;
+  height: 100%;
+}
+.mydoctor-info button .delicon {
+  width: 1.875rem;
+  height: 1.875rem;
+  overflow: hidden;
+}
+.mydoctor-info button .delicon svg {
+  width: 100%;
+  height: 100%;
+}
+.mydoctor-info .btn-calendar {
+  background: rgba(50, 46, 239, 0.1);
+}
+.mydoctor-info .btn-delete {
+  background: rgba(239, 62, 46, 0.1);
 }
 
 .header {
@@ -3023,6 +3112,10 @@ label span {
 .modal-header {
   border-bottom: 0;
 }
+.modal-header .modal-title {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.125rem;
+}
 .modal-header .btn-close {
   width: 1.5rem;
   height: 1.5rem;
@@ -3040,6 +3133,64 @@ label span {
 .modal-header .btn-close:not([disabled]):hover svg {
   transform: rotate(90deg);
 }
+.modal-body p {
+  font-family: "Nunito", sans-serif;
+  font-size: 0.875rem;
+}
+.modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+}
+.modal-footer .rightbuttons {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.modal-footer .btn-remove,
+.modal-footer .btn-cancel,
+.modal-footer .btn-update {
+  width: 5.5rem;
+  height: 2.25rem;
+  border-radius: 0.25rem;
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Nunito", sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1.4;
+  text-align: center;
+}
+.modal-footer .btn-remove {
+  background: hsl(1, 71%, 54%);
+  color: hsl(0, 0%, 100%);
+}
+.modal-footer .btn-remove:not([disabled]):hover {
+  background: #d62724;
+  color: hsl(0, 0%, 100%);
+}
+.modal-footer .btn-cancel {
+  background: hsl(5, 5%, 49%);
+  color: hsl(0, 0%, 100%);
+}
+.modal-footer .btn-cancel:not([disabled]):hover {
+  background: #766c6b;
+  color: hsl(0, 0%, 100%);
+}
+.modal-footer .btn-update {
+  background: #c70000;
+  color: hsl(0, 0%, 100%);
+}
+.modal-footer .btn-update:not([disabled]):hover {
+  background: #fa0000;
+  color: hsl(0, 0%, 100%);
+}
+
 .tooltip-inner {
   background: hsl(226, 20%, 20%);
   font-size: 0.75rem;

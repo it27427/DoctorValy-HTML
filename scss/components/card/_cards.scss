@@ -1258,16 +1258,30 @@
   @include radius(10);
   padding: size(10);
   @include flex-column;
+  gap: size(16);
+
+  @include breakpoint(mobile768) {
+    flex-direction: row;
+    align-items: center;
+  }
 
   &-detail {
     @include flex-center-vert;
     align-items: flex-start;
     gap: size(12);
 
+    @include breakpoint(mobile768) {
+      align-items: center;
+    }
+
     .thumb {
       @include square(80);
       @include flex-center;
       overflow: hidden;
+
+      @include breakpoint(mobile480) {
+        @include square(150);
+      }
 
       img {
         @include wh100;
@@ -1279,11 +1293,19 @@
       @include flex-column;
       gap: size(8);
 
+      @include breakpoint(mobile480) {
+        width: calc(100% - size(150))
+      }
+
       .name {
         color: $hamburgerbg;
         font-family: $secondaryFont;
         font-size: size(16);
         @include line-clamp;
+
+        @include breakpoint(mobile768) {
+          font-size: size(24);
+        }
       }
 
       .text {
@@ -1291,6 +1313,10 @@
         font-family: $secondaryFont;
         font-size: size(12);
         @include line-clamp;
+
+        @include breakpoint(mobile768) {
+          font-size: size(14);
+        }
       }
 
       .specilities {
@@ -1301,9 +1327,58 @@
       }
     }
   }
+
+  .divider {
+    @include w100;
+    height: size(1);
+    background: $lightbg;
+
+    @include breakpoint(mobile768) {
+      width: size(1);
+      height: size(140);
+      margin-left: auto;
+    }
+  }
   
   &-info {
-    @include flex-center-vert;
+    @include flex-end;
+    gap: size(16);
 
+    @include breakpoint(mobile768) {
+      padding-inline: size(32)
+    }
+
+    button {
+      @include square(48);
+      @include circle;
+      @include flex-center;
+      overflow: hidden;
+
+      .icon {
+        @include square(24);
+        overflow: hidden;
+
+        svg {
+          @include wh100;
+        }
+      }
+
+      .delicon {
+        @include square(30);
+        overflow: hidden;
+
+        svg {
+          @include wh100;
+        }
+      }
+    }
+
+    .btn-calendar {
+      background: rgba($calendarbg, 0.1);
+    }
+
+    .btn-delete {
+      background: rgba($hamburgerbg, 0.1);
+    }
   }
 }
