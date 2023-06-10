@@ -1156,3 +1156,110 @@
     }
   }
 }
+
+.carddoctor {
+  background: $white;
+  @include radius(10);
+  @include flex-column;
+
+  &-header {
+    @include flex-center-between;
+    gap: size(6);
+    padding: size(12);
+
+    .specilities {
+      @include flex-column;
+      gap: size(5);
+      width: calc(100% - size(96));
+
+      .speciality {
+        @include setBgColor($hamburgerbg, $white);
+        @include radius(50);
+        @include flex-center;
+        font-family: $secondaryFont;
+        font-size: size(12);
+        padding: size(5);
+        text-align: center;
+        @include text-overflow;
+      }
+    }
+
+    .thumbnail {
+      @include square(90);
+      @include circle;
+      @include flex-center;
+      filter: $profileshadow;
+      overflow: hidden;
+      
+      img {
+        @include wh100;
+        object-fit: cover;
+      }
+    }
+  }
+  
+  &-body {
+    @include flex-column;
+    text-align: right;
+    padding: size(0) size(12) size(8);
+    @include flex-column;
+    gap: size(4);
+
+    .name {
+      color: $black;
+      font-family: $secondaryFont;
+      font-size: size(16);
+      @include text-overflow;
+    }
+    
+    .text {
+      color: $textcolor;
+      font-family: $secondaryFont;
+      font-size: size(12);
+      @include line-clamp;
+    }
+  }
+  
+  &-footer {
+    @include flex-center-vert;
+    gap: size(8);
+    background: rgba($lightbg, 0.5);
+    padding: size(12);
+
+    .btn-card {
+      width: 50%;
+      @include flex-center-vert;
+      gap: size(4);
+
+      .icon {
+        @include square(14);
+        @include flex-center;
+        overflow: hidden;
+
+        svg {
+          @include wh100;
+        }
+      }
+
+      .text {
+        color: $textgray;
+        font-family: $secondaryFont;
+        font-size: size(13);
+      }
+
+      @include hover {
+        .icon {
+          svg {  
+            path:not(.whitepath) {
+              fill: $hamburgerbg;
+            }
+          }
+        }
+  
+        .text {
+          color: $hamburgerbg;
+        }
+      }
+    }
+  }
+}

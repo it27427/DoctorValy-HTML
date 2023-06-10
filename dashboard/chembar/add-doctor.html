@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DoctorValy | Add Doctor</title>
+  <!-- FAVICON -->
+  <link rel="shortcut icon" href="../assets/images/logo/favicon.ico" type="image/x-icon">
+  <!-- MC-DATEPICKER -->
+  <link rel="stylesheet" href="../../assets/css/mc-datepicker/mc-calendar.min.css">
+  <!-- BOOTSTRAP-CSS[v5.3] -->
+  <link rel="stylesheet" href="../../assets/css/bootstrap/bootstrap-icons.css">
+  <link rel="stylesheet" href="../../assets/css/bootstrap/bootstrap.min.css">
+  <!-- DOCTORVALY CSS -->
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body class="dashboard-body">
+
+  <!-- PRELOADER START -->
+  <div class="preloader" id="preloader">
+    <div class="loader">
+      <lottie-player src="../../assets/js/lottie-js/loader.json" background="transparent" speed="1" loop autoplay></lottie-player>
+    </div>
+  </div>
+  <!-- PRELOADER END -->
+  
+  <!-- HEADER-SECTION START -->
+  <header class="dashboard-header fixed-top">
+    <nav class="dashboard-header-nav">
+      <!-- MOBILE-MENU -->
+      <div class="d-lg-none d-block">
+        <!-- HAMBURGER-BUTTON -->
+        <button type="button" class="btn-hamburger" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
+          <span></span>
+        </button>
+
+        <!-- MOBILE-MENU-START -->
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenu">
+          <div class="offcanvas-body p-0">
+            <div class="mobilesidebar">
+              <div class="mobilesidebar-header d-flex align-items-center justify-content-between">
+                <a href="profile.html" class="userlink">
+                  <span class="user-avatar">
+                    <img src="../assets/images/avatar/avatar.svg" alt="user-avatar">
+                  </span>
+                  
+                  <span class="userlink-info">
+                    <span class="name">Doctor Strange</span>
+                    <span class="mail">strange@marvel.com</span>
+                  </span>
+                </a>
+
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                  </svg>
+                </button>
+              </div>
+          
+              <div class="divider"></div>
+              
+              <div class="mobilesidebar-body">
+                <ul class="sidelist">
+                  <li class="sidelist-item">
+                    <a href="index.html" class="sidelist-link">
+                      <span class="icon">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M1.523 10H7.30281C7.5583 10 7.80331 9.89464 7.98397 9.70711C8.16462 9.51957 8.26611 9.26522 8.26611 9V1C8.26611 0.734784 8.16462 0.48043 7.98397 0.292893C7.80331 0.105357 7.5583 0 7.30281 0H1.523C1.26751 0 1.02249 0.105357 0.841837 0.292893C0.661183 0.48043 0.559692 0.734784 0.559692 1V9C0.559692 9.26522 0.661183 9.51957 0.841837 9.70711C1.02249 9.89464 1.26751 10 1.523 10ZM1.523 18H7.30281C7.5583 18 7.80331 17.8946 7.98397 17.7071C8.16462 17.5196 8.26611 17.2652 8.26611 17V13C8.26611 12.7348 8.16462 12.4804 7.98397 12.2929C7.80331 12.1054 7.5583 12 7.30281 12H1.523C1.26751 12 1.02249 12.1054 0.841837 12.2929C0.661183 12.4804 0.559692 12.7348 0.559692 13V17C0.559692 17.2652 0.661183 17.5196 0.841837 17.7071C1.02249 17.8946 1.26751 18 1.523 18ZM11.156 18H16.9358C17.1913 18 17.4363 17.8946 17.617 17.7071C17.7977 17.5196 17.8991 17.2652 17.8991 17V9C17.8991 8.73478 17.7977 8.48043 17.617 8.29289C17.4363 8.10536 17.1913 8 16.9358 8H11.156C10.9005 8 10.6555 8.10536 10.4749 8.29289C10.2942 8.48043 10.1927 8.73478 10.1927 9V17C10.1927 17.2652 10.2942 17.5196 10.4749 17.7071C10.6555 17.8946 10.9005 18 11.156 18ZM10.1927 1V5C10.1927 5.26522 10.2942 5.51957 10.4749 5.70711C10.6555 5.89464 10.9005 6 11.156 6H16.9358C17.1913 6 17.4363 5.89464 17.617 5.70711C17.7977 5.51957 17.8991 5.26522 17.8991 5V1C17.8991 0.734784 17.7977 0.48043 17.617 0.292893C17.4363 0.105357 17.1913 0 16.9358 0H11.156C10.9005 0 10.6555 0.105357 10.4749 0.292893C10.2942 0.48043 10.1927 0.734784 10.1927 1Z" fill="#F04130"/>
+                        </svg>
+                      </span>
+                      <span class="text">DashBoard</span>
+                    </a>
+                  </li>
+          
+                  <li class="sidelist-item">
+                    <a href="find-doctor.html" class="sidelist-link">
+                      <span class="icon">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M12.7805 11.2374H11.9675L11.6793 10.9596C12.6879 9.78631 13.2951 8.26316 13.2951 6.60621C13.2951 2.91153 10.3002 -0.0833282 6.60555 -0.0833282C2.91087 -0.0833282 -0.0839844 2.91153 -0.0839844 6.60621C-0.0839844 10.3009 2.91087 13.2957 6.60555 13.2957C8.2625 13.2957 9.78566 12.6885 10.9589 11.68L11.2368 11.9681V12.7812L16.3826 17.9167L17.916 16.3832L12.7805 11.2374V11.2374ZM6.60555 11.2374C4.04295 11.2374 1.97433 9.16882 1.97433 6.60621C1.97433 4.0436 4.04295 1.97499 6.60555 1.97499C9.16816 1.97499 11.2368 4.0436 11.2368 6.60621C11.2368 9.16882 9.16816 11.2374 6.60555 11.2374Z" fill="#F04130"/>
+                        </svg>
+                      </span>
+                      <span class="text">Find Doctor</span>
+                    </a>
+                  </li>
+          
+                  <li class="sidelist-item">
+                    <a href="my-doctors.html" class="sidelist-link">
+                      <span class="icon">
+                        <svg width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M16.3086 13.0625C16.3086 12.3166 16.0127 11.6011 15.4851 11.0735C14.9575 10.5459 14.242 10.25 13.4961 10.25C11.1865 10.25 7.93072 10.25 5.62109 10.25C4.87522 10.25 4.15972 10.5459 3.63209 11.0735C3.10447 11.6011 2.80859 12.3166 2.80859 13.0625C2.80859 14.9154 2.80859 15.875 2.80859 15.875H16.3086C16.3086 15.875 16.3086 14.9154 16.3086 13.0625ZM14.0586 5.75H16.3086C16.9048 5.75 17.4775 5.98737 17.8993 6.40925C18.3212 6.83112 18.5586 7.40375 18.5586 8V11.375H17.0545C16.4222 10.0452 15.0666 9.125 13.4961 9.125H12.5342C13.4691 8.30037 14.0586 7.09325 14.0586 5.75ZM2.06272 11.375H0.558594C0.558594 11.375 0.558594 9.566 0.558594 8C0.558594 7.40375 0.795969 6.83112 1.21784 6.40925C1.63972 5.98737 2.21234 5.75 2.80859 5.75H5.05859C5.05859 7.09325 5.64809 8.30037 6.58297 9.125H5.62109C4.05059 9.125 2.69497 10.0441 2.06272 11.375ZM9.55859 2.375C11.4216 2.375 12.9336 3.887 12.9336 5.75C12.9336 7.613 11.4216 9.125 9.55859 9.125C7.69559 9.125 6.18359 7.613 6.18359 5.75C6.18359 3.887 7.69559 2.375 9.55859 2.375ZM5.20147 4.6205C5.15422 4.62387 5.10697 4.625 5.05859 4.625C3.81659 4.625 2.80859 3.617 2.80859 2.375C2.80859 1.133 3.81659 0.125 5.05859 0.125C6.13184 0.125 7.03072 0.87875 7.25459 1.8845C6.25222 2.48412 5.50184 3.46175 5.20147 4.6205ZM11.8626 1.8845C12.0865 0.87875 12.9853 0.125 14.0586 0.125C15.3006 0.125 16.3086 1.133 16.3086 2.375C16.3086 3.617 15.3006 4.625 14.0586 4.625C14.0102 4.625 13.963 4.62387 13.9157 4.6205C13.6153 3.46175 12.865 2.48412 11.8626 1.8845Z" fill="#F04130"/>
+                        </svg>
+                      </span>
+                      <span class="text">My Doctors</span>
+                    </a>
+                  </li>
+          
+                  <li class="sidelist-item">
+                    <a href="../auth/login.html" class="sidelist-link">
+                      <span class="icon">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M12.75 6L11.6925 7.0575L12.8775 8.25H6.75V9.75H12.8775L11.6925 10.935L12.75 12L15.75 9L12.75 6ZM3.75 3.75H9V2.25H3.75C2.925 2.25 2.25 2.925 2.25 3.75V14.25C2.25 15.075 2.925 15.75 3.75 15.75H9V14.25H3.75V3.75Z" fill="#F04130"/>
+                        </svg>
+                      </span>
+                      <span class="text">Log Out</span>
+                    </a>
+                  </li>
+                </ul>
+          
+                <ul class="userlist">
+                  <li class="userlist-item">
+                    <a href="feedback.html" class="userlist-link">
+                      <span class="icon">
+                        <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M19 8.97005C18.992 6.5831 18.0362 4.29708 16.3428 2.61488C14.6493 0.932675 12.357 -0.00790642 9.97 5.00706e-05C7.58306 0.00800657 5.29703 0.963849 3.61483 2.6573C1.93263 4.35076 0.992054 6.6431 1.00001 9.03005C0.695547 9.20205 0.44241 9.45207 0.26665 9.75438C0.0908891 10.0567 -0.00114735 10.4004 1.07967e-05 10.7501V12.7501C0.00159352 13.28 0.212815 13.7878 0.587545 14.1625C0.962275 14.5372 1.47006 14.7485 2.00001 14.7501V14.7501C2.26523 14.7501 2.51958 14.6447 2.70712 14.4572C2.89465 14.2696 3.00001 14.0153 3.00001 13.7501V8.94005C2.9712 7.08489 3.66065 5.29042 4.92422 3.9318C6.18778 2.57319 7.92763 1.75563 9.78 1.65005C10.7174 1.62154 11.6509 1.78148 12.5253 2.12039C13.3997 2.4593 14.1972 2.97029 14.8705 3.62306C15.5438 4.27584 16.0792 5.05712 16.445 5.92062C16.8108 6.78412 16.9995 7.71227 17 8.65005V15.7501H10C9.73479 15.7501 9.48043 15.8554 9.2929 16.0429C9.10536 16.2305 9.00001 16.4848 9.00001 16.75C9.00001 17.0153 9.10536 17.2696 9.2929 17.4572C9.48043 17.6447 9.73479 17.75 10 17.75H17C17.5299 17.7485 18.0377 17.5372 18.4125 17.1625C18.7872 16.7878 18.9984 16.28 19 15.7501V14.5301C19.3009 14.3745 19.5533 14.1393 19.7297 13.8501C19.906 13.5609 19.9995 13.2288 20 12.89V10.5901C19.9968 10.2545 19.9019 9.92627 19.7257 9.64075C19.5494 9.35524 19.2985 9.12331 19 8.97005V8.97005Z" fill="#F04130"/>
+                          <path d="M7 10.75C7.55228 10.75 8 10.3023 8 9.75C8 9.19772 7.55228 8.75 7 8.75C6.44771 8.75 6 9.19772 6 9.75C6 10.3023 6.44771 10.75 7 10.75Z" fill="#F04130"/>
+                          <path d="M13 10.75C13.5523 10.75 14 10.3023 14 9.75C14 9.19772 13.5523 8.75 13 8.75C12.4477 8.75 12 9.19772 12 9.75C12 10.3023 12.4477 10.75 13 10.75Z" fill="#F04130"/>
+                          <path d="M16.0001 7.78016C15.7433 6.2505 14.9077 4.87833 13.6666 3.94803C12.4254 3.01773 10.874 2.60064 9.33367 2.78321C7.79338 2.96578 6.38239 3.73401 5.39315 4.92868C4.40391 6.12335 3.91227 7.65284 4.02012 9.20016C5.25326 8.69555 6.34236 7.89365 7.19035 6.86595C8.03833 5.83824 8.61884 4.61668 8.88012 3.31016C9.5386 4.63989 10.5524 5.76137 11.8091 6.55034C13.0658 7.33931 14.5164 7.76497 16.0001 7.78016Z" fill="#F04130"/>
+                        </svg>
+                      </span>
+                      <span class="text">Your Feedback</span>
+                    </a>
+                  </li>
+          
+                  <li class="userlist-item">
+                    <a href="mailto:admin@dv.com" class="userlist-link">
+                      <span class="icon">
+                        <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M18 0H2C1.47005 0.00158273 0.962265 0.212805 0.587535 0.587535C0.212805 0.962265 0.00158273 1.47005 0 2V14C0.00158273 14.5299 0.212805 15.0377 0.587535 15.4125C0.962265 15.7872 1.47005 15.9984 2 16H18C18.5299 15.9984 19.0377 15.7872 19.4125 15.4125C19.7872 15.0377 19.9984 14.5299 20 14V2C19.9984 1.47005 19.7872 0.962265 19.4125 0.587535C19.0377 0.212805 18.5299 0.00158273 18 0ZM17.6 4.25L11.06 8.34C10.7429 8.54083 10.3753 8.64745 10 8.64745C9.62468 8.64745 9.25707 8.54083 8.94 8.34L2.4 4.25C2.30545 4.19091 2.22346 4.11377 2.15872 4.02299C2.09398 3.93221 2.04776 3.82956 2.02269 3.72092C1.99761 3.61227 1.99419 3.49976 2.0126 3.38979C2.03101 3.27982 2.07091 3.17455 2.13 3.08C2.1891 2.98545 2.26623 2.90346 2.35701 2.83872C2.44779 2.77398 2.55044 2.72776 2.65908 2.70268C2.76773 2.67761 2.88024 2.67419 2.99021 2.6926C3.10018 2.71101 3.20545 2.75091 3.3 2.81L10 7L16.7 2.81C16.7946 2.75091 16.8998 2.71101 17.0098 2.6926C17.1198 2.67419 17.2323 2.67761 17.3409 2.70268C17.4496 2.72776 17.5522 2.77398 17.643 2.83872C17.7338 2.90346 17.8109 2.98545 17.87 3.08C17.9291 3.17455 17.969 3.27982 17.9874 3.38979C18.0058 3.49976 18.0024 3.61227 17.9773 3.72092C17.9522 3.82956 17.906 3.93221 17.8413 4.02299C17.7765 4.11377 17.6946 4.19091 17.6 4.25Z" fill="#F04130"/>
+                        </svg>
+                      </span>
+                      <span class="text">admin@dv.com</span>
+                    </a>
+                  </li>
+          
+                  <li class="userlist-item">
+                    <a href="tel:+8801965088417" class="userlist-link">
+                      <span class="icon">
+                        <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M18.0402 12.2501L15.212 11.9601C14.8795 11.9251 14.5424 11.9582 14.2261 12.0569C13.9099 12.1556 13.6226 12.3174 13.3859 12.5301L11.3371 14.3701C8.17621 12.9263 5.60699 10.6189 3.99938 7.78007L6.0593 5.93007C6.29612 5.7175 6.47625 5.45951 6.58617 5.17548C6.69609 4.89144 6.73295 4.58873 6.69397 4.29007L6.37107 1.77007C6.30818 1.28216 6.04757 0.832094 5.63892 0.505664C5.23028 0.179235 4.70217 -0.000731442 4.15527 7.13026e-05H2.22897C1.92917 -0.00221074 1.632 0.0503069 1.35552 0.154429C1.07904 0.258551 0.829035 0.412102 0.620718 0.605738C0.412401 0.799374 0.250127 1.02905 0.143766 1.28079C0.0374051 1.53253 -0.0108179 1.80107 0.00203084 2.07007C0.291677 6.19911 2.24875 10.0914 5.50615 13.0169C8.76355 15.9423 13.0975 17.6999 17.695 17.9601C17.9946 17.9716 18.2936 17.9283 18.5739 17.8328C18.8542 17.7373 19.1099 17.5915 19.3255 17.4044C19.5411 17.2173 19.7121 16.9928 19.828 16.7445C19.944 16.4962 20.0025 16.2293 19.9999 15.9601V14.2301C20.0028 13.741 19.8043 13.2683 19.4425 12.9028C19.0808 12.5373 18.5813 12.3048 18.0402 12.2501Z" fill="#F04130"/>
+                        </svg>
+                      </span>
+                      <span class="text">+8801965088417</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex align-items-center gap-3">
+        <div class="d-none d-lg-block">
+          <!-- HAMBURGER-BUTTON -->
+          <button type="button" class="btn-hamburger" id="btn-hamburger">
+            <span></span>
+          </button>
+        </div>
+
+        <!-- SITE-LOGO -->
+        <a href="index.html" class="logo">
+          <img src="../assets/images/logo/logo.svg" alt="logo">
+        </a>
+      </div>
+
+      <div class="d-flex align-items-center">
+        <!-- DESKTOP-USER-DROPDOWN -->
+        <div class="d-none d-lg-block">
+          <div class="dashboard-dropdown">
+            <button class="dropdownlink" type="button">
+              <span class="text">Dr Strange</span>
+              <span class="arrowicon">
+                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0.295808 1.71002L2.88581 4.30002C3.07317 4.48627 3.32662 4.59081 3.59081 4.59081C3.85499 4.59081 4.10844 4.48627 4.29581 4.30002L6.88581 1.71002C7.02684 1.57015 7.12302 1.39145 7.16209 1.1967C7.20116 1.00195 7.18134 0.799979 7.10518 0.616535C7.02901 0.433091 6.89994 0.276486 6.73442 0.166685C6.5689 0.0568838 6.37443 -0.00113818 6.17581 1.69169e-05H0.995807C0.798035 0.000846148 0.604949 0.060301 0.440965 0.170864C0.276982 0.281427 0.149465 0.438133 0.0745398 0.621165C-0.000385769 0.804198 -0.0193555 1.00534 0.0200297 1.19915C0.0594149 1.39296 0.155386 1.57075 0.295808 1.71002Z" fill="white"/>
+                </svg>
+              </span>
+            </button>
+
+            <div class="dropdown-info">
+              <div class="dropdownlist">
+                <a href="profile.html" class="dropdownlink">
+                  <span class="icon">
+                    <svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.81248 4.5C9.81248 5.24592 9.51617 5.96129 8.98872 6.48874C8.46127 7.01618 7.7459 7.3125 6.99998 7.3125C6.25406 7.3125 5.53869 7.01618 5.01124 6.48874C4.4838 5.96129 4.18748 5.24592 4.18748 4.5C4.18748 3.75408 4.4838 3.03871 5.01124 2.51126C5.53869 1.98382 6.25406 1.6875 6.99998 1.6875C7.7459 1.6875 8.46127 1.98382 8.98872 2.51126C9.51617 3.03871 9.81248 3.75408 9.81248 4.5V4.5ZM1.37573 15.0885C1.39983 13.6128 2.00299 12.2056 3.05512 11.1705C4.10724 10.1354 5.52405 9.55535 6.99998 9.55535C8.47592 9.55535 9.89272 10.1354 10.9448 11.1705C11.997 12.2056 12.6001 13.6128 12.6242 15.0885C10.8598 15.8976 8.94109 16.3151 6.99998 16.3125C4.99298 16.3125 3.08798 15.8745 1.37573 15.0885Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <span class="text">Profile</span>
+                </a>
+  
+                <a href="../auth/login.html" class="dropdownlink">
+                  <span class="icon">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12.75 6L11.6925 7.0575L12.8775 8.25H6.75V9.75H12.8775L11.6925 10.935L12.75 12L15.75 9L12.75 6ZM3.75 3.75H9V2.25H3.75C2.925 2.25 2.25 2.925 2.25 3.75V14.25C2.25 15.075 2.925 15.75 3.75 15.75H9V14.25H3.75V3.75Z" fill="white"/>
+                    </svg>
+                  </span>
+                  <span class="text">Log out</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- NOTIFICATIONS -->
+        <div class="mynotifications">
+          <button type="button" class="notificationlink">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32Z" fill="#F0F0F0"/>
+              <path d="M15.5858 24.5C16.1158 24.4984 16.6235 24.2872 16.9983 23.9125C17.373 23.5377 17.5842 23.0299 17.5858 22.5H13.5858C13.5858 23.0304 13.7965 23.5391 14.1716 23.9142C14.5467 24.2893 15.0554 24.5 15.5858 24.5ZM21.5858 18.5V13.5C21.5858 10.43 19.9458 7.86 17.0858 7.18V6.5C17.0858 6.10218 16.9278 5.72064 16.6465 5.43934C16.3652 5.15804 15.9836 5 15.5858 5C15.188 5 14.8065 5.15804 14.5251 5.43934C14.2438 5.72064 14.0858 6.10218 14.0858 6.5V7.18C11.2158 7.86 9.58581 10.42 9.58581 13.5V18.5L8.29581 19.79C8.15539 19.9293 8.05942 20.1071 8.02003 20.3009C7.98064 20.4947 7.99961 20.6958 8.07454 20.8789C8.14947 21.0619 8.27698 21.2186 8.44097 21.3292C8.60495 21.4397 8.79803 21.4992 8.99581 21.5H22.1658C22.3644 21.5012 22.5589 21.4431 22.7244 21.3333C22.8899 21.2235 23.019 21.0669 23.0952 20.8835C23.1713 20.7 23.1912 20.4981 23.1521 20.3033C23.113 20.1086 23.0168 19.9299 22.8758 19.79L21.5858 18.5Z" fill="#292E3E"/>
+              <path d="M27 11C29.7614 11 32 8.76142 32 6C32 3.23858 29.7614 1 27 1C24.2386 1 22 3.23858 22 6C22 8.76142 24.2386 11 27 11Z" fill="#F04130"/>
+            </svg>
+          </button>
+
+          <div class="mynotifications-info">
+            <ul class="notificationlist">
+              <li class="notificationlist-item">
+                <a href="#" class="notificationlist-link">
+                  <span class="icon">
+                    <img src="https://logowik.com/content/uploads/images/google-exposure-notification4676.jpg" alt="notification-icon">
+                  </span>
+
+                  <span class="textbox">
+                    <span class="text">
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis nobis reprehenderit voluptatum, sequi quo commodi velit odit illum alias quod.
+                    </span>
+                  </span>
+                </a>
+              </li>
+              
+              <li class="notificationlist-item">
+                <a href="#" class="notificationlist-link">
+                  <span class="icon">
+                    <img src="https://dynamic.brandcrowd.com/asset/logo/fd639e81-db67-427e-885e-13e6d0ec1ddb/logo-search-grid-1x?logoTemplateVersion=1&v=637672052885230000" alt="notification-icon">
+                  </span>
+
+                  <span class="textbox">
+                    <span class="text">
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis nobis reprehenderit voluptatum, sequi quo commodi velit odit illum alias quod.
+                    </span>
+                  </span>
+                </a>
+              </li>
+
+              <li class="notificationlist-item">
+                <a href="#" class="notificationlist-link">
+                  <span class="icon">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN8hUnMiv55zGUKv3_ntVUdWCXgIMoN3WMd-Gjbb411fq_zp4J9VUrQF84GI71W5HrONY&usqp=CAU" alt="notification-icon">
+                  </span>
+
+                  <span class="textbox">
+                    <span class="text">
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis nobis reprehenderit voluptatum, sequi quo commodi velit odit illum alias quod.
+                    </span>
+                  </span>
+                </a>
+              </li>
+
+              <li class="notificationlist-item">
+                <a href="#" class="notificationlist-link">
+                  <span class="icon">
+                    <img src="https://img.favpng.com/10/23/14/mercari-logo-product-yahoo-auctions-design-png-favpng-fK2xiTjhxmUTZntxMiqhFN4F1.jpg" alt="notification-icon">
+                  </span>
+
+                  <span class="textbox">
+                    <span class="text">
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis nobis reprehenderit voluptatum, sequi quo commodi velit odit illum alias quod.
+                    </span>
+                  </span>
+                </a>
+              </li>
+
+              <li class="notificationlist-item">
+                <a href="#" class="notificationlist-link">
+                  <span class="icon">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9pxwPyiYL13_IQMNUn6L0ypZOqfQKvPvTvQKxzfB6T5ILTyriIl-rfNE4iA94DQaWtEY&usqp=CAU" alt="notification-icon">
+                  </span>
+
+                  <span class="textbox">
+                    <span class="text">
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis nobis reprehenderit voluptatum, sequi quo commodi velit odit illum alias quod.
+                    </span>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            
+            <div class="viewall">
+              <a href="notifications.html" class="viewall-link">View all notifications</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- HEADER-SECTION END -->
+
+  <!-- SIDEBAR-MENU START -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <a href="profile.html" class="userlink">
+        <span class="user-avatar">
+          <img src="../assets/images/avatar/avatar.svg" alt="user-avatar">
+        </span>
+        
+        <span class="userlink-info">
+          <span class="name">Doctor Strange</span>
+          <span class="mail">strange@marvel.com</span>
+        </span>
+      </a>
+    </div>
+    
+    <div class="sidebar-body">
+      <ul class="sidelist">
+        <li class="sidelist-item">
+          <a href="index.html" class="sidelist-link" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="DashBoard">
+            <span class="icon">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.523 10H7.30281C7.5583 10 7.80331 9.89464 7.98397 9.70711C8.16462 9.51957 8.26611 9.26522 8.26611 9V1C8.26611 0.734784 8.16462 0.48043 7.98397 0.292893C7.80331 0.105357 7.5583 0 7.30281 0H1.523C1.26751 0 1.02249 0.105357 0.841837 0.292893C0.661183 0.48043 0.559692 0.734784 0.559692 1V9C0.559692 9.26522 0.661183 9.51957 0.841837 9.70711C1.02249 9.89464 1.26751 10 1.523 10ZM1.523 18H7.30281C7.5583 18 7.80331 17.8946 7.98397 17.7071C8.16462 17.5196 8.26611 17.2652 8.26611 17V13C8.26611 12.7348 8.16462 12.4804 7.98397 12.2929C7.80331 12.1054 7.5583 12 7.30281 12H1.523C1.26751 12 1.02249 12.1054 0.841837 12.2929C0.661183 12.4804 0.559692 12.7348 0.559692 13V17C0.559692 17.2652 0.661183 17.5196 0.841837 17.7071C1.02249 17.8946 1.26751 18 1.523 18ZM11.156 18H16.9358C17.1913 18 17.4363 17.8946 17.617 17.7071C17.7977 17.5196 17.8991 17.2652 17.8991 17V9C17.8991 8.73478 17.7977 8.48043 17.617 8.29289C17.4363 8.10536 17.1913 8 16.9358 8H11.156C10.9005 8 10.6555 8.10536 10.4749 8.29289C10.2942 8.48043 10.1927 8.73478 10.1927 9V17C10.1927 17.2652 10.2942 17.5196 10.4749 17.7071C10.6555 17.8946 10.9005 18 11.156 18ZM10.1927 1V5C10.1927 5.26522 10.2942 5.51957 10.4749 5.70711C10.6555 5.89464 10.9005 6 11.156 6H16.9358C17.1913 6 17.4363 5.89464 17.617 5.70711C17.7977 5.51957 17.8991 5.26522 17.8991 5V1C17.8991 0.734784 17.7977 0.48043 17.617 0.292893C17.4363 0.105357 17.1913 0 16.9358 0H11.156C10.9005 0 10.6555 0.105357 10.4749 0.292893C10.2942 0.48043 10.1927 0.734784 10.1927 1Z" fill="#F04130"/>
+              </svg>
+            </span>
+            <span class="text">DashBoard</span>
+          </a>
+        </li>
+
+        <li class="sidelist-item">
+          <a href="find-doctor.html" class="sidelist-link" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Find Doctor">
+            <span class="icon">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.7805 11.2374H11.9675L11.6793 10.9596C12.6879 9.78631 13.2951 8.26316 13.2951 6.60621C13.2951 2.91153 10.3002 -0.0833282 6.60555 -0.0833282C2.91087 -0.0833282 -0.0839844 2.91153 -0.0839844 6.60621C-0.0839844 10.3009 2.91087 13.2957 6.60555 13.2957C8.2625 13.2957 9.78566 12.6885 10.9589 11.68L11.2368 11.9681V12.7812L16.3826 17.9167L17.916 16.3832L12.7805 11.2374V11.2374ZM6.60555 11.2374C4.04295 11.2374 1.97433 9.16882 1.97433 6.60621C1.97433 4.0436 4.04295 1.97499 6.60555 1.97499C9.16816 1.97499 11.2368 4.0436 11.2368 6.60621C11.2368 9.16882 9.16816 11.2374 6.60555 11.2374Z" fill="#F04130"/>
+              </svg>
+            </span>
+            <span class="text">Find Doctor</span>
+          </a>
+        </li>
+
+        <li class="sidelist-item">
+          <a href="my-doctors.html" class="sidelist-link" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="My Doctors">
+            <span class="icon">
+              <svg width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16.3086 13.0625C16.3086 12.3166 16.0127 11.6011 15.4851 11.0735C14.9575 10.5459 14.242 10.25 13.4961 10.25C11.1865 10.25 7.93072 10.25 5.62109 10.25C4.87522 10.25 4.15972 10.5459 3.63209 11.0735C3.10447 11.6011 2.80859 12.3166 2.80859 13.0625C2.80859 14.9154 2.80859 15.875 2.80859 15.875H16.3086C16.3086 15.875 16.3086 14.9154 16.3086 13.0625ZM14.0586 5.75H16.3086C16.9048 5.75 17.4775 5.98737 17.8993 6.40925C18.3212 6.83112 18.5586 7.40375 18.5586 8V11.375H17.0545C16.4222 10.0452 15.0666 9.125 13.4961 9.125H12.5342C13.4691 8.30037 14.0586 7.09325 14.0586 5.75ZM2.06272 11.375H0.558594C0.558594 11.375 0.558594 9.566 0.558594 8C0.558594 7.40375 0.795969 6.83112 1.21784 6.40925C1.63972 5.98737 2.21234 5.75 2.80859 5.75H5.05859C5.05859 7.09325 5.64809 8.30037 6.58297 9.125H5.62109C4.05059 9.125 2.69497 10.0441 2.06272 11.375ZM9.55859 2.375C11.4216 2.375 12.9336 3.887 12.9336 5.75C12.9336 7.613 11.4216 9.125 9.55859 9.125C7.69559 9.125 6.18359 7.613 6.18359 5.75C6.18359 3.887 7.69559 2.375 9.55859 2.375ZM5.20147 4.6205C5.15422 4.62387 5.10697 4.625 5.05859 4.625C3.81659 4.625 2.80859 3.617 2.80859 2.375C2.80859 1.133 3.81659 0.125 5.05859 0.125C6.13184 0.125 7.03072 0.87875 7.25459 1.8845C6.25222 2.48412 5.50184 3.46175 5.20147 4.6205ZM11.8626 1.8845C12.0865 0.87875 12.9853 0.125 14.0586 0.125C15.3006 0.125 16.3086 1.133 16.3086 2.375C16.3086 3.617 15.3006 4.625 14.0586 4.625C14.0102 4.625 13.963 4.62387 13.9157 4.6205C13.6153 3.46175 12.865 2.48412 11.8626 1.8845Z" fill="#F04130"/>
+              </svg>
+            </span>
+            <span class="text">My Doctors</span>
+          </a>
+        </li>
+      </ul>
+
+      <ul class="userlist">
+        <li class="userlist-item">
+          <a href="feedback.html" class="userlist-link" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Your Feedback">
+            <span class="icon">
+              <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19 8.97005C18.992 6.5831 18.0362 4.29708 16.3428 2.61488C14.6493 0.932675 12.357 -0.00790642 9.97 5.00706e-05C7.58306 0.00800657 5.29703 0.963849 3.61483 2.6573C1.93263 4.35076 0.992054 6.6431 1.00001 9.03005C0.695547 9.20205 0.44241 9.45207 0.26665 9.75438C0.0908891 10.0567 -0.00114735 10.4004 1.07967e-05 10.7501V12.7501C0.00159352 13.28 0.212815 13.7878 0.587545 14.1625C0.962275 14.5372 1.47006 14.7485 2.00001 14.7501V14.7501C2.26523 14.7501 2.51958 14.6447 2.70712 14.4572C2.89465 14.2696 3.00001 14.0153 3.00001 13.7501V8.94005C2.9712 7.08489 3.66065 5.29042 4.92422 3.9318C6.18778 2.57319 7.92763 1.75563 9.78 1.65005C10.7174 1.62154 11.6509 1.78148 12.5253 2.12039C13.3997 2.4593 14.1972 2.97029 14.8705 3.62306C15.5438 4.27584 16.0792 5.05712 16.445 5.92062C16.8108 6.78412 16.9995 7.71227 17 8.65005V15.7501H10C9.73479 15.7501 9.48043 15.8554 9.2929 16.0429C9.10536 16.2305 9.00001 16.4848 9.00001 16.75C9.00001 17.0153 9.10536 17.2696 9.2929 17.4572C9.48043 17.6447 9.73479 17.75 10 17.75H17C17.5299 17.7485 18.0377 17.5372 18.4125 17.1625C18.7872 16.7878 18.9984 16.28 19 15.7501V14.5301C19.3009 14.3745 19.5533 14.1393 19.7297 13.8501C19.906 13.5609 19.9995 13.2288 20 12.89V10.5901C19.9968 10.2545 19.9019 9.92627 19.7257 9.64075C19.5494 9.35524 19.2985 9.12331 19 8.97005V8.97005Z" fill="#F04130"/>
+                <path d="M7 10.75C7.55228 10.75 8 10.3023 8 9.75C8 9.19772 7.55228 8.75 7 8.75C6.44771 8.75 6 9.19772 6 9.75C6 10.3023 6.44771 10.75 7 10.75Z" fill="#F04130"/>
+                <path d="M13 10.75C13.5523 10.75 14 10.3023 14 9.75C14 9.19772 13.5523 8.75 13 8.75C12.4477 8.75 12 9.19772 12 9.75C12 10.3023 12.4477 10.75 13 10.75Z" fill="#F04130"/>
+                <path d="M16.0001 7.78016C15.7433 6.2505 14.9077 4.87833 13.6666 3.94803C12.4254 3.01773 10.874 2.60064 9.33367 2.78321C7.79338 2.96578 6.38239 3.73401 5.39315 4.92868C4.40391 6.12335 3.91227 7.65284 4.02012 9.20016C5.25326 8.69555 6.34236 7.89365 7.19035 6.86595C8.03833 5.83824 8.61884 4.61668 8.88012 3.31016C9.5386 4.63989 10.5524 5.76137 11.8091 6.55034C13.0658 7.33931 14.5164 7.76497 16.0001 7.78016Z" fill="#F04130"/>
+              </svg>
+            </span>
+            <span class="text">Your Feedback</span>
+          </a>
+        </li>
+
+        <li class="userlist-item">
+          <a href="mailto:admin@dv.com" class="userlist-link" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="admin@dv.com">
+            <span class="icon">
+              <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 0H2C1.47005 0.00158273 0.962265 0.212805 0.587535 0.587535C0.212805 0.962265 0.00158273 1.47005 0 2V14C0.00158273 14.5299 0.212805 15.0377 0.587535 15.4125C0.962265 15.7872 1.47005 15.9984 2 16H18C18.5299 15.9984 19.0377 15.7872 19.4125 15.4125C19.7872 15.0377 19.9984 14.5299 20 14V2C19.9984 1.47005 19.7872 0.962265 19.4125 0.587535C19.0377 0.212805 18.5299 0.00158273 18 0ZM17.6 4.25L11.06 8.34C10.7429 8.54083 10.3753 8.64745 10 8.64745C9.62468 8.64745 9.25707 8.54083 8.94 8.34L2.4 4.25C2.30545 4.19091 2.22346 4.11377 2.15872 4.02299C2.09398 3.93221 2.04776 3.82956 2.02269 3.72092C1.99761 3.61227 1.99419 3.49976 2.0126 3.38979C2.03101 3.27982 2.07091 3.17455 2.13 3.08C2.1891 2.98545 2.26623 2.90346 2.35701 2.83872C2.44779 2.77398 2.55044 2.72776 2.65908 2.70268C2.76773 2.67761 2.88024 2.67419 2.99021 2.6926C3.10018 2.71101 3.20545 2.75091 3.3 2.81L10 7L16.7 2.81C16.7946 2.75091 16.8998 2.71101 17.0098 2.6926C17.1198 2.67419 17.2323 2.67761 17.3409 2.70268C17.4496 2.72776 17.5522 2.77398 17.643 2.83872C17.7338 2.90346 17.8109 2.98545 17.87 3.08C17.9291 3.17455 17.969 3.27982 17.9874 3.38979C18.0058 3.49976 18.0024 3.61227 17.9773 3.72092C17.9522 3.82956 17.906 3.93221 17.8413 4.02299C17.7765 4.11377 17.6946 4.19091 17.6 4.25Z" fill="#F04130"/>
+              </svg>
+            </span>
+            <span class="text">admin@dv.com</span>
+          </a>
+        </li>
+
+        <li class="userlist-item">
+          <a href="tel:+8801965088417" class="userlist-link" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="+8801965088417">
+            <span class="icon">
+              <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.0402 12.2501L15.212 11.9601C14.8795 11.9251 14.5424 11.9582 14.2261 12.0569C13.9099 12.1556 13.6226 12.3174 13.3859 12.5301L11.3371 14.3701C8.17621 12.9263 5.60699 10.6189 3.99938 7.78007L6.0593 5.93007C6.29612 5.7175 6.47625 5.45951 6.58617 5.17548C6.69609 4.89144 6.73295 4.58873 6.69397 4.29007L6.37107 1.77007C6.30818 1.28216 6.04757 0.832094 5.63892 0.505664C5.23028 0.179235 4.70217 -0.000731442 4.15527 7.13026e-05H2.22897C1.92917 -0.00221074 1.632 0.0503069 1.35552 0.154429C1.07904 0.258551 0.829035 0.412102 0.620718 0.605738C0.412401 0.799374 0.250127 1.02905 0.143766 1.28079C0.0374051 1.53253 -0.0108179 1.80107 0.00203084 2.07007C0.291677 6.19911 2.24875 10.0914 5.50615 13.0169C8.76355 15.9423 13.0975 17.6999 17.695 17.9601C17.9946 17.9716 18.2936 17.9283 18.5739 17.8328C18.8542 17.7373 19.1099 17.5915 19.3255 17.4044C19.5411 17.2173 19.7121 16.9928 19.828 16.7445C19.944 16.4962 20.0025 16.2293 19.9999 15.9601V14.2301C20.0028 13.741 19.8043 13.2683 19.4425 12.9028C19.0808 12.5373 18.5813 12.3048 18.0402 12.2501Z" fill="#F04130"/>
+              </svg>
+            </span>
+            <span class="text">+8801965088417</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </aside>
+  <!-- SIDEBAR-MENU END -->
+
+  <!-- MY-PROFILE SECTION START -->
+  <main class="myprofile" id="main-section">
+    <ul class="nav nav-tabs" id="profileTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="personalinformation-tab" data-bs-toggle="tab" data-bs-target="#personalinformation-tab-pane" type="button" role="tab" aria-controls="personalinformation-tab-pane" aria-selected="true">
+          Personal Information
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="professionalinformation-tab" data-bs-toggle="tab" data-bs-target="#professionalinformation-tab-pane" type="button" role="tab" aria-controls="professionalinformation-tab-pane" aria-selected="false">
+          Professional Information
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="educationalinformation-tab" data-bs-toggle="tab" data-bs-target="#educationalinformation-tab-pane" type="button" role="tab" aria-controls="educationalinformation-tab-pane" aria-selected="false">
+          Educational Information
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="userprofileimage-tab" data-bs-toggle="tab" data-bs-target="#userprofileimage-tab-pane" type="button" role="tab" aria-controls="userprofileimage-tab-pane" aria-selected="false">
+          Profile Image
+        </button>
+      </li>
+    </ul>
+
+    <div class="tab-content" id="profileTabContent">
+      <!-- PERSONAL-INFORMATION -->
+      <div class="tab-pane fade show active" id="personalinformation-tab-pane" role="tabpanel" aria-labelledby="personalinformation-tab" tabindex="0">
+        <div class="personalinfo">
+          <div class="myprofile-detail">
+            <figure class="icon">
+              <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="30" cy="30" r="30" fill="#F04130" fill-opacity="0.2"/>
+                <g clip-path="url(#usericon-1)">
+                  <path d="M37.0625 19.5625C37.0625 23.1855 34.123 26.125 30.5 26.125C26.877 26.125 23.9375 23.1855 23.9375 19.5625C23.9375 15.9395 26.877 13 30.5 13C34.123 13 37.0625 15.9395 37.0625 19.5625ZM29.4062 29.9531V48L26.0977 46.3457C24.6689 45.6348 23.124 45.1836 21.5312 45.0264L14.9688 44.3701C13.8545 44.2539 13 43.3174 13 42.1895V28.3125C13 27.1025 13.9775 26.125 15.1875 26.125H17.2588C21.6064 26.125 25.8447 27.4648 29.4062 29.9531ZM31.5938 48V29.9531C35.1553 27.4648 39.3936 26.125 43.7412 26.125H45.8125C47.0225 26.125 48 27.1025 48 28.3125V42.1895C48 43.3105 47.1455 44.2539 46.0312 44.3633L39.4688 45.0195C37.8828 45.1768 36.3311 45.6279 34.9023 46.3389L31.5938 48Z" fill="#F04130"/>
+                </g>
+                <defs>
+                  <clipPath id="usericon-1">
+                    <rect width="35" height="35" fill="white" transform="translate(13 13)"/>
+                  </clipPath>
+                </defs>
+              </svg>
+            </figure>
+      
+            <div class="detail">
+              <h2 class="profile-title">PERSONAL INFORMATION</h2>
+              <p class="profiletext">
+                Update your personal information here. 
+                This will help us to show your profile with proper information.
+              </p>
+            </div>
+          </div>
+
+          <div class="personalinfo-info">
+            <div class="details">
+              <div class="details-body">
+                <!-- ADD-PERSONAL-INFORMATION -->
+                <form class="educationinfoform" id="personalinfoform">
+                  <div class="row g-3">
+                    <div class="col-md-6 col-12">
+                      <div class="inputbox">
+                        <label for="full-name" class="inputlabel">
+                          Full Name <span>*</span>
+                        </label>
+                        <input type="text" id="full-name" class="form-control" placeholder="Dr Stephen Strange" autocomplete="off">
+                        <p class="error-message d-none">This field is required</p>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 col-12">
+                      <div class="inputbox">
+                        <label for="bmdcnumber" class="inputlabel">
+                          BMDC Registration No <span>*</span>
+                        </label>
+                        <input type="text" id="bmdcnumber" class="form-control" placeholder="A-40742" autocomplete="off">
+                        <p class="error-message d-none">This field is required</p>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 col-12">
+                      <div class="inputbox">
+                        <label for="emailaddress" class="inputlabel">
+                          E-mail <span>*</span>
+                        </label>
+                        <input type="email" id="emailaddress" class="form-control" placeholder="doctor.strange@gmail.com" autocomplete="off">
+                        <p class="error-message d-none">This field is required</p>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 col-12">
+                      <div class="inputbox">
+                        <label for="phonenumber" class="inputlabel">
+                          Phone Number <span>*</span>
+                        </label>
+                        <input type="tel" pattern="[0-9]{3}-[0-9]{8}" id="phonenumber" class="form-control" placeholder="01965088417" autocomplete="off">
+                        <p class="error-message d-none">This field is required</p>
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="gender">
+                        <label class="gender-title">
+                          Select Your Gender:
+                        </label>
+
+                        <div class="gender-box">
+                          <div class="gender-single">
+                            <input type="radio" id="male" name="gender" checked hidden>
+                            <label for="male">
+                              <span class="icon">
+                                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M15.525 1.1331C15.7232 0.650955 16.1946 0.34024 16.7143 0.34024H22.7143C23.4268 0.34024 24 0.913455 24 1.62595V7.62595C24 8.1456 23.6893 8.61703 23.2071 8.81524C22.725 9.01345 22.1732 8.90631 21.8036 8.53667L20.0143 6.74738L17.1964 9.56524C18.2411 11.0867 18.8571 12.9242 18.8571 14.9117C18.8571 20.1188 14.6357 24.3402 9.42857 24.3402C4.22143 24.3402 0 20.1188 0 14.9117C0 9.70453 4.22143 5.4831 9.42857 5.4831C11.4107 5.4831 13.2536 6.09381 14.775 7.14381L17.5929 4.32595L15.8036 2.53667C15.4339 2.16703 15.3268 1.61524 15.525 1.1331ZM9.42857 20.9117C12.7446 20.9117 15.4286 18.2277 15.4286 14.9117C15.4286 11.5956 12.7446 8.91167 9.42857 8.91167C6.1125 8.91167 3.42857 11.5956 3.42857 14.9117C3.42857 18.2277 6.1125 20.9117 9.42857 20.9117Z" fill="black"/>
+                                </svg>
+                              </span>
+                              <span class="gentext">Male</span>
+                            </label>
+                          </div>
+
+                          <div class="gender-single">
+                            <input type="radio" id="female" name="gender" hidden>
+                            <label for="female">
+                              <span class="icon">
+                                <svg width="18" height="25" viewBox="0 0 18 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M14.25 8.59024C14.25 11.4918 11.9016 13.8402 9 13.8402C6.09844 13.8402 3.75 11.4918 3.75 8.59024C3.75 5.68868 6.09844 3.34024 9 3.34024C11.9016 3.34024 14.25 5.68868 14.25 8.59024ZM10.5 16.7043C14.3391 16.0012 17.25 12.6356 17.25 8.59024C17.25 4.03399 13.5562 0.34024 9 0.34024C4.44375 0.34024 0.75 4.03399 0.75 8.59024C0.75 12.6356 3.66094 16.0012 7.5 16.7043V18.3402H6C5.17031 18.3402 4.5 19.0106 4.5 19.8402C4.5 20.6699 5.17031 21.3402 6 21.3402H7.5V22.8402C7.5 23.6699 8.17031 24.3402 9 24.3402C9.82969 24.3402 10.5 23.6699 10.5 22.8402V21.3402H12C12.8297 21.3402 13.5 20.6699 13.5 19.8402C13.5 19.0106 12.8297 18.3402 12 18.3402H10.5V16.7043Z" fill="black"/>
+                                </svg>
+                              </span>
+                              <span class="gentext">Female</span>
+                            </label>
+                          </div>
+
+                          <div class="gender-single">
+                            <input type="radio" id="others" name="gender" hidden>
+                            <label for="others">
+                              <span class="icon">
+                                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M5.25 0.34024C5.55469 0.34024 5.82656 0.523053 5.94375 0.804303C6.06094 1.08555 5.99531 1.40899 5.77969 1.61993L4.32656 3.07305L5.25 4.00118L5.57812 3.67305C6.01875 3.23243 6.73125 3.23243 7.16719 3.67305C7.60312 4.11368 7.60781 4.82618 7.16719 5.26212L6.83906 5.59024L7.55156 6.30274C8.79844 5.38399 10.3359 4.84024 12 4.84024C13.6641 4.84024 15.2016 5.38399 16.4484 6.30274L19.6734 3.07774L18.2203 1.62462C18.0047 1.40899 17.9438 1.08555 18.0563 0.80899C18.1688 0.532428 18.4453 0.344928 18.75 0.344928H23.25C23.6625 0.344928 24 0.682428 24 1.09493V5.59493C24 5.89962 23.8172 6.17149 23.5359 6.28868C23.2547 6.40587 22.9313 6.34024 22.7203 6.12462L21.2672 4.67149L18.0422 7.89649C18.9562 9.13868 19.5 10.6762 19.5 12.3402C19.5 16.0996 16.7344 19.2121 13.125 19.7559V20.5902H13.875C14.4984 20.5902 15 21.0918 15 21.7152C15 22.3387 14.4984 22.8402 13.875 22.8402H13.125V23.2152C13.125 23.8387 12.6234 24.3402 12 24.3402C11.3766 24.3402 10.875 23.8387 10.875 23.2152V22.8402H10.125C9.50156 22.8402 9 22.3387 9 21.7152C9 21.0918 9.50156 20.5902 10.125 20.5902H10.875V19.7559C7.26562 19.2121 4.5 16.0996 4.5 12.3402C4.5 10.6762 5.04375 9.13868 5.9625 7.8918L5.25 7.1793L4.92188 7.50743C4.48125 7.94805 3.76875 7.94805 3.33281 7.50743C2.89687 7.0668 2.89219 6.3543 3.33281 5.91837L3.66094 5.59024L2.73281 4.6668L1.27969 6.11993C1.06406 6.33555 0.740625 6.39649 0.464062 6.28399C0.1875 6.17149 0 5.89493 0 5.59024V1.09024C0 0.67774 0.3375 0.34024 0.75 0.34024H5.25ZM16.5 12.3402C16.5 9.85587 14.4844 7.84024 12 7.84024C9.51562 7.84024 7.5 9.85587 7.5 12.3402C7.5 14.8246 9.51562 16.8402 12 16.8402C14.4844 16.8402 16.5 14.8246 16.5 12.3402Z" fill="black"/>
+                                </svg>
+                              </span>
+                              <span class="gentext">Others</span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="inputbox">
+                        <label for="speciality" class="inputlabel">
+                          Speciality <span>*</span>
+                        </label>
+                        <input type="text" class="form-control" id="speciality" autocomplete="off">
+                        <p class="error-message d-none">This field is required</p>
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="inputbox">
+                        <label for="address" class="inputlabel">
+                          Address
+                        </label>
+                        <input type="text" id="address" class="form-control" placeholder="Sherpur Sadar, Sherpur" autocomplete="off">
+                        <p class="error-message d-none">This field is required</p>
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="inputbox">
+                        <label for="bio" class="inputlabel">
+                          Bio
+                        </label>
+                        <textarea id="bio" class="form-control" placeholder="He is Marvel Universe doctor. who has the ability to do magic." rows="4" autocomplete="off"></textarea>
+                        <p class="error-message d-none">This field is required</p>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 col-12">
+                      <div class="socialbox">
+                        <figure class="icon">
+                          <svg width="57" height="57" viewBox="0 0 57 57" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#fbicon)">
+                              <path d="M50.1786 0.34021H6.02143C4.42445 0.34021 2.89287 0.972351 1.76364 2.09757C0.634399 3.22279 0 4.74891 0 6.34021L0 50.3402C0 51.9315 0.634399 53.4576 1.76364 54.5829C2.89287 55.7081 4.42445 56.3402 6.02143 56.3402H23.239V37.3015H15.3358V28.3402H23.239V21.5102C23.239 13.7415 27.8805 9.45021 34.9895 9.45021C38.3941 9.45021 41.9543 10.0552 41.9543 10.0552V17.6802H38.0316C34.1666 17.6802 32.961 20.0702 32.961 22.5215V28.3402H41.5893L40.2093 37.3015H32.961V56.3402H50.1786C51.7756 56.3402 53.3071 55.7081 54.4364 54.5829C55.5656 53.4576 56.2 51.9315 56.2 50.3402V6.34021C56.2 4.74891 55.5656 3.22279 54.4364 2.09757C53.3071 0.972351 51.7756 0.34021 50.1786 0.34021Z" fill="#3B5998"/>
+                            </g>
+                            <defs>
+                              <clipPath id="fbicon">
+                                <rect width="56.2" height="56" fill="white" transform="translate(0 0.34021)"/>
+                              </clipPath>
+                            </defs>
+                          </svg>
+                        </figure>
+
+                        <div class="detail">
+                          <input type="text" placeholder="https://facebook.com/ratulalmamun" autocomplete="off">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 col-12">
+                      <div class="socialbox">
+                        <figure class="icon">
+                          <svg width="54" height="64" viewBox="0 0 54 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22.0574 24.7816L33.2986 31.3028L22.0574 37.824V24.7816ZM52.8999 10.0636V52.4938C52.8999 55.6881 50.3612 58.2797 47.2321 58.2797H5.66785C2.53872 58.2797 0 55.6881 0 52.4938V10.0636C0 6.86932 2.53872 4.27771 5.66785 4.27771H47.2321C50.3612 4.27771 52.8999 6.86932 52.8999 10.0636ZM47.9406 31.3149C47.9406 31.3149 47.9406 24.1307 47.0431 20.6832C46.5472 18.7787 45.0948 17.284 43.241 16.7777C39.8993 15.8496 26.45 15.8496 26.45 15.8496C26.45 15.8496 13.0006 15.8496 9.65896 16.7777C7.8051 17.284 6.35271 18.7787 5.85678 20.6832C4.95937 24.1186 4.95937 31.3149 4.95937 31.3149C4.95937 31.3149 4.95937 38.4991 5.85678 41.9465C6.35271 43.8511 7.8051 45.2855 9.65896 45.7918C13.0006 46.7079 26.45 46.7079 26.45 46.7079C26.45 46.7079 39.8993 46.7079 43.241 45.7797C45.0948 45.2734 46.5472 43.839 47.0431 41.9345C47.9406 38.4991 47.9406 31.3149 47.9406 31.3149Z" fill="#C4302B"/>
+                          </svg>
+                        </figure>
+
+                        <div class="detail">
+                          <input type="text" placeholder="https://youtube.com/ratulalmamun" autocomplete="off">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="edubtns">
+                        <button class="btn-profile-add">SAVE</button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROFESSIONAL-INFORMATION -->
+      <div class="tab-pane fade" id="professionalinformation-tab-pane" role="tabpanel" aria-labelledby="professionalinformation-tab" tabindex="0">
+        <div class="professionalinfo">
+          <div class="myprofile-detail">
+            <figure class="icon">
+              <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="30" cy="30" r="30" fill="#F04130" fill-opacity="0.2"/>
+                <g clip-path="url(#usericon-1)">
+                  <path d="M37.0625 19.5625C37.0625 23.1855 34.123 26.125 30.5 26.125C26.877 26.125 23.9375 23.1855 23.9375 19.5625C23.9375 15.9395 26.877 13 30.5 13C34.123 13 37.0625 15.9395 37.0625 19.5625ZM29.4062 29.9531V48L26.0977 46.3457C24.6689 45.6348 23.124 45.1836 21.5312 45.0264L14.9688 44.3701C13.8545 44.2539 13 43.3174 13 42.1895V28.3125C13 27.1025 13.9775 26.125 15.1875 26.125H17.2588C21.6064 26.125 25.8447 27.4648 29.4062 29.9531ZM31.5938 48V29.9531C35.1553 27.4648 39.3936 26.125 43.7412 26.125H45.8125C47.0225 26.125 48 27.1025 48 28.3125V42.1895C48 43.3105 47.1455 44.2539 46.0312 44.3633L39.4688 45.0195C37.8828 45.1768 36.3311 45.6279 34.9023 46.3389L31.5938 48Z" fill="#F04130"/>
+                </g>
+                <defs>
+                  <clipPath id="usericon-1">
+                    <rect width="35" height="35" fill="white" transform="translate(13 13)"/>
+                  </clipPath>
+                </defs>
+              </svg>
+            </figure>
+      
+            <div class="detail">
+              <h2 class="profile-title">PROFESSIONAL INFORMATION</h2>
+              <p class="profiletext">
+                Update your professional information here. 
+                This will help us to show your profile with proper information.
+              </p>
+            </div>
+          </div>
+
+          <div class="professionalinfo-info">
+            <div class="details">
+              <div class="treatment-summary">
+                <span class="summarytitle">Treatment Summary</span>
+                <p class="summarytext">
+                  A Treatment Summary is a document produced by the doctor or 
+                  Specialist Nurse at the end of initial treatment for cancer. 
+                  It is shared with the patient and their GP. 
+                  The Treatment Summary: describes the treatment that that person has received.
+                </p>
+              </div>
+
+              <div class="details-header">
+                <h3 class="title">PROFESSIONAL EXPERIENCE(S)</h3>
+              </div>
+              
+              <div class="details-body">
+                <!-- EMPTY-EXPERIENCE -->
+                <div class="emptyeducation">
+                  <figure class="icon">
+                    <svg width="104" height="104" viewBox="0 0 104 104" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M37.375 9.75H66.625C67.5188 9.75 68.25 10.4812 68.25 11.375V19.5H35.75V11.375C35.75 10.4812 36.4813 9.75 37.375 9.75ZM26 11.375V19.5H13C5.82969 19.5 0 25.3297 0 32.5V84.5C0 91.6703 5.82969 97.5 13 97.5H91C98.1703 97.5 104 91.6703 104 84.5V32.5C104 25.3297 98.1703 19.5 91 19.5H78V11.375C78 5.09844 72.9016 0 66.625 0H37.375C31.0984 0 26 5.09844 26 11.375ZM45.5 42.25C45.5 40.4625 46.9625 39 48.75 39H55.25C57.0375 39 58.5 40.4625 58.5 42.25V52H68.25C70.0375 52 71.5 53.4625 71.5 55.25V61.75C71.5 63.5375 70.0375 65 68.25 65H58.5V74.75C58.5 76.5375 57.0375 78 55.25 78H48.75C46.9625 78 45.5 76.5375 45.5 74.75V65H35.75C33.9625 65 32.5 63.5375 32.5 61.75V55.25C32.5 53.4625 33.9625 52 35.75 52H45.5V42.25Z" fill="#F04130"/>
+                    </svg>
+                  </figure>
+
+                  <div class="info">
+                    <p>
+                      Currently no data exists! Please click on the following 
+                      button to add your employment information. 
+                    </p>
+                  </div>
+
+                  <button class="btn-qualifications">
+                    <span class="text">ADD EXPERIENCES</span>
+                    <span class="icon">
+                      <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#plus-symble-1)">
+                          <path d="M10.4014 20.6365C15.9248 20.6365 20.4014 16.1599 20.4014 10.6365C20.4014 5.11304 15.9248 0.636475 10.4014 0.636475C4.87793 0.636475 0.401367 5.11304 0.401367 10.6365C0.401367 16.1599 4.87793 20.6365 10.4014 20.6365ZM9.46387 14.074V11.574H6.96387C6.44434 11.574 6.02637 11.156 6.02637 10.6365C6.02637 10.1169 6.44434 9.69897 6.96387 9.69897H9.46387V7.19897C9.46387 6.67944 9.88184 6.26147 10.4014 6.26147C10.9209 6.26147 11.3389 6.67944 11.3389 7.19897V9.69897H13.8389C14.3584 9.69897 14.7764 10.1169 14.7764 10.6365C14.7764 11.156 14.3584 11.574 13.8389 11.574H11.3389V14.074C11.3389 14.5935 10.9209 15.0115 10.4014 15.0115C9.88184 15.0115 9.46387 14.5935 9.46387 14.074Z" fill="#F04130"/>
+                        </g>
+                        <defs>
+                          <clipPath id="plus-symble-1">
+                            <rect width="20" height="20" fill="white" transform="translate(0.401367 0.636475)"/>
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    </span>
+                  </button>
+                </div>
+
+                <!-- ADD-EXPERIENCE -->
+                <form class="educationinfoform d-none" id="experienceform">
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <div class="inputbox">
+                        <label for="organization-name" class="inputlabel">
+                          Institute/Organization Name <span>*</span>
+                        </label>
+                        <input type="text" id="organization-name" class="form-control" placeholder="Dhaka Medical College" autocomplete="off">
+                        <p class="error-message d-none">This field is required</p>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="inputbox">
+                        <label for="designation" class="inputlabel">
+                          Designation <span>*</span>
+                        </label>
+                        <input type="text" id="designation" class="form-control" placeholder="Dhaka Medical College" autocomplete="off">
+                        <p class="error-message d-none">This field is required</p>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="inputbox">
+                        <label for="starting-calendar" class="inputlabel">
+                          From Date <span>*</span>
+                        </label>
+                        <input type="text" class="form-control" placeholder="01/01/2016" id="starting-calendar" autocomplete="off">
+                        <p class="error-message d-none">This field is required</p>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="inputbox">
+                        <label for="ending-calendar" class="inputlabel">
+                          To Date <span>*</span>
+                        </label>
+                        <input type="text" class="form-control" placeholder="31/12/2020" id="ending-calendar" autocomplete="off">
+                        <p class="error-message d-none">This field is required</p>
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="checkfield">
+                        <input type="checkbox" class="checkinput" id="currentworking" autocomplete="off" hidden>
+                        <label for="currentworking" class="checklabel">
+                          Currenty Working
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="inputbox">
+                        <label for="institutelocation" class="inputlabel">
+                          Institute/Organiztion Location
+                        </label>
+                        <input type="text" id="institutelocation" class="form-control" placeholder="Sherpur Sadar, Sherpur" autocomplete="off">
+                        <p class="error-message d-none">This field is required</p>
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="edubtns">
+                        <button class="btn-profile-add">ADD</button>
+                        <button class="btn-profile-close">CLOSE</button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+
+                <!-- EXPERIENCE-LIST -->
+                <div class="qualificationsinfo d-none">
+                  <div class="qualificationlist">
+                    <div class="qualificationlist-item">
+                      <div class="institute">
+                        <span class="institute-name">Sherpur Abedin Hospital (Doctor Saab)</span>
+                      </div>
+  
+                      <div class="duration">
+                        <span class="coursedeadline">3 Years Experience</span>
+                      </div>
+  
+                      <div class="actions">
+                        <button class="btn-edit" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Edit">
+                          <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.8399 22.5406V24.7902C11.8399 24.8883 11.8789 24.9824 11.9482 25.0518C12.0176 25.1212 12.1117 25.1602 12.2099 25.1602H14.4595C14.508 25.1608 14.5561 25.1513 14.6007 25.1322C14.6454 25.113 14.6855 25.0848 14.7185 25.0492L22.7993 16.9758L20.0243 14.2008L11.9509 22.2742C11.9152 22.3087 11.8869 22.3501 11.8678 22.3959C11.8487 22.4417 11.8392 22.491 11.8399 22.5406ZM24.9453 14.8298C25.0831 14.6911 25.1605 14.5036 25.1605 14.3081C25.1605 14.1126 25.0831 13.925 24.9453 13.7864L23.2137 12.0548C23.075 11.917 22.8875 11.8396 22.692 11.8396C22.4965 11.8396 22.3089 11.917 22.1703 12.0548L20.8161 13.409L23.5911 16.184L24.9453 14.8298Z" fill="#292E3E"/>
+                            <path opacity="0.1" d="M18.5 37C28.7173 37 37 28.7173 37 18.5C37 8.28273 28.7173 0 18.5 0C8.28273 0 0 8.28273 0 18.5C0 28.7173 8.28273 37 18.5 37Z" fill="#F04130"/>
+                          </svg>
+                        </button>
+  
+                        <button class="btn-delete" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Delete">
+                          <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M25.5561 13.902C26.1417 13.3164 26.1417 12.3652 25.5561 11.7796C24.9704 11.1939 24.0193 11.1939 23.4336 11.7796L18.5 16.7179L13.5617 11.7843C12.976 11.1986 12.0249 11.1986 11.4392 11.7843C10.8536 12.3699 10.8536 13.321 11.4392 13.9067L16.3776 18.8403L11.4439 23.7786C10.8583 24.3643 10.8583 25.3154 11.4439 25.9011C12.0296 26.4867 12.9807 26.4867 13.5664 25.9011L18.5 20.9628L23.4383 25.8964C24.024 26.4821 24.9751 26.4821 25.5608 25.8964C26.1464 25.3107 26.1464 24.3596 25.5608 23.774L20.6224 18.8403L25.5561 13.902Z" fill="#292E3E"/>
+                            <path opacity="0.1" d="M18.5 37C28.7173 37 37 28.7173 37 18.5C37 8.28273 28.7173 0 18.5 0C8.28273 0 0 8.28273 0 18.5C0 28.7173 8.28273 37 18.5 37Z" fill="#F04130"/>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="qualificationlist-item">
+                      <div class="institute">
+                        <span class="institute-name">Sherpur Abedin Hospital (Doctor Saab)</span>
+                      </div>
+  
+                      <div class="duration">
+                        <span class="coursedeadline">3 Years Experience</span>
+                      </div>
+  
+                      <div class="actions">
+                        <button class="btn-edit" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Edit">
+                          <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.8399 22.5406V24.7902C11.8399 24.8883 11.8789 24.9824 11.9482 25.0518C12.0176 25.1212 12.1117 25.1602 12.2099 25.1602H14.4595C14.508 25.1608 14.5561 25.1513 14.6007 25.1322C14.6454 25.113 14.6855 25.0848 14.7185 25.0492L22.7993 16.9758L20.0243 14.2008L11.9509 22.2742C11.9152 22.3087 11.8869 22.3501 11.8678 22.3959C11.8487 22.4417 11.8392 22.491 11.8399 22.5406ZM24.9453 14.8298C25.0831 14.6911 25.1605 14.5036 25.1605 14.3081C25.1605 14.1126 25.0831 13.925 24.9453 13.7864L23.2137 12.0548C23.075 11.917 22.8875 11.8396 22.692 11.8396C22.4965 11.8396 22.3089 11.917 22.1703 12.0548L20.8161 13.409L23.5911 16.184L24.9453 14.8298Z" fill="#292E3E"/>
+                            <path opacity="0.1" d="M18.5 37C28.7173 37 37 28.7173 37 18.5C37 8.28273 28.7173 0 18.5 0C8.28273 0 0 8.28273 0 18.5C0 28.7173 8.28273 37 18.5 37Z" fill="#F04130"/>
+                          </svg>
+                        </button>
+  
+                        <button class="btn-delete" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Delete">
+                          <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M25.5561 13.902C26.1417 13.3164 26.1417 12.3652 25.5561 11.7796C24.9704 11.1939 24.0193 11.1939 23.4336 11.7796L18.5 16.7179L13.5617 11.7843C12.976 11.1986 12.0249 11.1986 11.4392 11.7843C10.8536 12.3699 10.8536 13.321 11.4392 13.9067L16.3776 18.8403L11.4439 23.7786C10.8583 24.3643 10.8583 25.3154 11.4439 25.9011C12.0296 26.4867 12.9807 26.4867 13.5664 25.9011L18.5 20.9628L23.4383 25.8964C24.024 26.4821 24.9751 26.4821 25.5608 25.8964C26.1464 25.3107 26.1464 24.3596 25.5608 23.774L20.6224 18.8403L25.5561 13.902Z" fill="#292E3E"/>
+                            <path opacity="0.1" d="M18.5 37C28.7173 37 37 28.7173 37 18.5C37 8.28273 28.7173 0 18.5 0C8.28273 0 0 8.28273 0 18.5C0 28.7173 8.28273 37 18.5 37Z" fill="#F04130"/>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="qualificationlist-item">
+                      <div class="institute">
+                        <span class="institute-name">Sherpur Abedin Hospital (Doctor Saab)</span>
+                      </div>
+  
+                      <div class="duration">
+                        <span class="coursedeadline">3 Years Experience</span>
+                      </div>
+  
+                      <div class="actions">
+                        <button class="btn-edit" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Edit">
+                          <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.8399 22.5406V24.7902C11.8399 24.8883 11.8789 24.9824 11.9482 25.0518C12.0176 25.1212 12.1117 25.1602 12.2099 25.1602H14.4595C14.508 25.1608 14.5561 25.1513 14.6007 25.1322C14.6454 25.113 14.6855 25.0848 14.7185 25.0492L22.7993 16.9758L20.0243 14.2008L11.9509 22.2742C11.9152 22.3087 11.8869 22.3501 11.8678 22.3959C11.8487 22.4417 11.8392 22.491 11.8399 22.5406ZM24.9453 14.8298C25.0831 14.6911 25.1605 14.5036 25.1605 14.3081C25.1605 14.1126 25.0831 13.925 24.9453 13.7864L23.2137 12.0548C23.075 11.917 22.8875 11.8396 22.692 11.8396C22.4965 11.8396 22.3089 11.917 22.1703 12.0548L20.8161 13.409L23.5911 16.184L24.9453 14.8298Z" fill="#292E3E"/>
+                            <path opacity="0.1" d="M18.5 37C28.7173 37 37 28.7173 37 18.5C37 8.28273 28.7173 0 18.5 0C8.28273 0 0 8.28273 0 18.5C0 28.7173 8.28273 37 18.5 37Z" fill="#F04130"/>
+                          </svg>
+                        </button>
+  
+                        <button class="btn-delete" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Delete">
+                          <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M25.5561 13.902C26.1417 13.3164 26.1417 12.3652 25.5561 11.7796C24.9704 11.1939 24.0193 11.1939 23.4336 11.7796L18.5 16.7179L13.5617 11.7843C12.976 11.1986 12.0249 11.1986 11.4392 11.7843C10.8536 12.3699 10.8536 13.321 11.4392 13.9067L16.3776 18.8403L11.4439 23.7786C10.8583 24.3643 10.8583 25.3154 11.4439 25.9011C12.0296 26.4867 12.9807 26.4867 13.5664 25.9011L18.5 20.9628L23.4383 25.8964C24.024 26.4821 24.9751 26.4821 25.5608 25.8964C26.1464 25.3107 26.1464 24.3596 25.5608 23.774L20.6224 18.8403L25.5561 13.902Z" fill="#292E3E"/>
+                            <path opacity="0.1" d="M18.5 37C28.7173 37 37 28.7173 37 18.5C37 8.28273 28.7173 0 18.5 0C8.28273 0 0 8.28273 0 18.5C0 28.7173 8.28273 37 18.5 37Z" fill="#F04130"/>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <button class="btn-qualifications mx-auto">
+                    <span class="text">ADD EXPERIENCES</span>
+                    <span class="icon">
+                      <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#plus-symble-1)">
+                          <path d="M10.4014 20.6365C15.9248 20.6365 20.4014 16.1599 20.4014 10.6365C20.4014 5.11304 15.9248 0.636475 10.4014 0.636475C4.87793 0.636475 0.401367 5.11304 0.401367 10.6365C0.401367 16.1599 4.87793 20.6365 10.4014 20.6365ZM9.46387 14.074V11.574H6.96387C6.44434 11.574 6.02637 11.156 6.02637 10.6365C6.02637 10.1169 6.44434 9.69897 6.96387 9.69897H9.46387V7.19897C9.46387 6.67944 9.88184 6.26147 10.4014 6.26147C10.9209 6.26147 11.3389 6.67944 11.3389 7.19897V9.69897H13.8389C14.3584 9.69897 14.7764 10.1169 14.7764 10.6365C14.7764 11.156 14.3584 11.574 13.8389 11.574H11.3389V14.074C11.3389 14.5935 10.9209 15.0115 10.4014 15.0115C9.88184 15.0115 9.46387 14.5935 9.46387 14.074Z" fill="#F04130"/>
+                        </g>
+                        <defs>
+                          <clipPath id="plus-symble-1">
+                            <rect width="20" height="20" fill="white" transform="translate(0.401367 0.636475)"/>
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EDUCATIONAL-IMFORMATION -->
+      <div class="tab-pane fade" id="educationalinformation-tab-pane" role="tabpanel" aria-labelledby="educationalinformation-tab" tabindex="0">
+        <div class="educationinfo">
+          <div class="myprofile-detail">
+            <figure class="icon">
+              <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="30" cy="30" r="30" fill="#F04130" fill-opacity="0.2"/>
+                <g clip-path="url(#usericon-1)">
+                  <path d="M37.0625 19.5625C37.0625 23.1855 34.123 26.125 30.5 26.125C26.877 26.125 23.9375 23.1855 23.9375 19.5625C23.9375 15.9395 26.877 13 30.5 13C34.123 13 37.0625 15.9395 37.0625 19.5625ZM29.4062 29.9531V48L26.0977 46.3457C24.6689 45.6348 23.124 45.1836 21.5312 45.0264L14.9688 44.3701C13.8545 44.2539 13 43.3174 13 42.1895V28.3125C13 27.1025 13.9775 26.125 15.1875 26.125H17.2588C21.6064 26.125 25.8447 27.4648 29.4062 29.9531ZM31.5938 48V29.9531C35.1553 27.4648 39.3936 26.125 43.7412 26.125H45.8125C47.0225 26.125 48 27.1025 48 28.3125V42.1895C48 43.3105 47.1455 44.2539 46.0312 44.3633L39.4688 45.0195C37.8828 45.1768 36.3311 45.6279 34.9023 46.3389L31.5938 48Z" fill="#F04130"/>
+                </g>
+                <defs>
+                  <clipPath id="usericon-1">
+                    <rect width="35" height="35" fill="white" transform="translate(13 13)"/>
+                  </clipPath>
+                </defs>
+              </svg>
+            </figure>
+      
+            <div class="detail">
+              <h2 class="profile-title">EDUCATIONAL INFORMATION</h2>
+              <p class="profiletext">
+                Update your educational information here. 
+                This will help us to show your profile with proper information.
+              </p>
+            </div>
+          </div>
+
+          <div class="educationinfo-info">
+            <div class="details">
+              <div class="details-header">
+                <h3 class="title">Academic Qualifination(s)</h3>
+              </div>
+
+              <div class="details-body">
+                <!-- EMPTY-EDUCATION -->
+                <div class="emptyeducation">
+                  <figure class="icon">
+                    <svg width="130" height="104" viewBox="0 0 130 104" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#graduate-cap-1)">
+                        <path d="M65.0002 6.5C63.3549 6.5 61.7299 6.78437 60.1861 7.33281L3.20957 27.9094C1.27988 28.6203 0.000196867 30.4484 0.000196867 32.5C0.000196867 34.5516 1.27988 36.3797 3.20957 37.0906L14.9705 41.3359C11.6393 46.5766 9.7502 52.7719 9.7502 59.2922V65C9.7502 70.7688 7.55645 76.7203 5.22051 81.4125C3.9002 84.0531 2.39707 86.6531 0.650197 89.05C0.000196874 89.9234 -0.182616 91.0609 0.183009 92.0969C0.548634 93.1328 1.40176 93.9047 2.45801 94.1688L15.458 97.4188C16.3111 97.6422 17.2252 97.4797 17.9768 97.0125C18.7283 96.5453 19.2564 95.7734 19.4189 94.9C21.1658 86.2063 20.2924 78.4062 18.9924 72.8203C18.3424 69.9359 17.4689 66.9906 16.2502 64.2891V59.2922C16.2502 53.1578 18.3221 47.3687 21.9174 42.7375C24.5377 39.5891 27.9299 37.05 31.9111 35.4859L63.8018 22.9531C65.4674 22.3031 67.3564 23.1156 68.0064 24.7812C68.6564 26.4469 67.8439 28.3359 66.1783 28.9859L34.2877 41.5187C31.7689 42.5141 29.5549 44.0375 27.7471 45.9062L60.1658 57.6063C61.7096 58.1547 63.3346 58.4391 64.9799 58.4391C66.6252 58.4391 68.2502 58.1547 69.7939 57.6063L126.791 37.0906C128.721 36.4 130 34.5516 130 32.5C130 30.4484 128.721 28.6203 126.791 27.9094L69.8143 7.33281C68.2705 6.78437 66.6455 6.5 65.0002 6.5ZM26.0002 82.875C26.0002 90.0453 43.4689 97.5 65.0002 97.5C86.5314 97.5 104 90.0453 104 82.875L100.892 53.3406L72.008 63.7812C69.7533 64.5938 67.3768 65 65.0002 65C62.6236 65 60.2268 64.5938 57.9924 63.7812L29.108 53.3406L26.0002 82.875Z" fill="#F04130"/>
+                      </g>
+                      <defs>
+                      <clipPath id="graduate-cap-1">
+                        <rect width="130" height="104" fill="white"/>
+                      </clipPath>
+                      </defs>
+                    </svg>
+                  </figure>
+
+                  <div class="info">
+                    <p>
+                      Currently no data exists! Please click on the following button to add your EDUCATIONAL information.
+                    </p>
+                  </div>
+
+                  <button class="btn-qualifications">
+                    <span class="text">ADD QUALIFICATIONS</span>
+                    <span class="icon">
+                      <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#plus-symble-1)">
+                          <path d="M10.4014 20.6365C15.9248 20.6365 20.4014 16.1599 20.4014 10.6365C20.4014 5.11304 15.9248 0.636475 10.4014 0.636475C4.87793 0.636475 0.401367 5.11304 0.401367 10.6365C0.401367 16.1599 4.87793 20.6365 10.4014 20.6365ZM9.46387 14.074V11.574H6.96387C6.44434 11.574 6.02637 11.156 6.02637 10.6365C6.02637 10.1169 6.44434 9.69897 6.96387 9.69897H9.46387V7.19897C9.46387 6.67944 9.88184 6.26147 10.4014 6.26147C10.9209 6.26147 11.3389 6.67944 11.3389 7.19897V9.69897H13.8389C14.3584 9.69897 14.7764 10.1169 14.7764 10.6365C14.7764 11.156 14.3584 11.574 13.8389 11.574H11.3389V14.074C11.3389 14.5935 10.9209 15.0115 10.4014 15.0115C9.88184 15.0115 9.46387 14.5935 9.46387 14.074Z" fill="#F04130"/>
+                        </g>
+                        <defs>
+                          <clipPath id="plus-symble-1">
+                            <rect width="20" height="20" fill="white" transform="translate(0.401367 0.636475)"/>
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    </span>
+                  </button>
+                </div>
+
+                <!-- ADD-EDUCATION -->
+                <form class="educationinfoform d-none" id="educationform">
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <div class="inputbox">
+                        <label for="normal-select-1" class="inputlabel">
+                          Degree Title <span>*</span>
+                        </label>
+                        <select id="normal-select-1" class="form-select" placeholder-text="MBBS" autocomplete="off">
+                          <option value="1" class="select-dropdown__list-item">MBBS</option>
+                          <option value="2" class="select-dropdown__list-item">DENTAL</option>
+                          <option value="3" class="select-dropdown__list-item">NEWEST</option>
+                          <option value="4" class="select-dropdown__list-item">OLDEST</option>
+                        </select>
+                        <p class="error-message d-none">This field is required</p>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="inputbox">
+                        <label for="majorcourse" class="inputlabel">
+                          Major Course <span>*</span>
+                        </label>
+                        <input type="text" id="majorcourse" class="form-control" placeholder="Dental" autocomplete="off">
+                        <p class="error-message d-none">This field is required</p>
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="inputbox">
+                        <label for="institutename" class="inputlabel">
+                          Institution Name <span>*</span>
+                        </label>
+                        <input type="text" id="institutename" class="form-control" placeholder="Dental" autocomplete="off">
+                        <p class="error-message d-none">This field is required</p>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="inputbox">
+                        <label for="starting-calendar" class="inputlabel">
+                          From Date <span>*</span>
+                        </label>
+                        <input type="text" class="form-control" placeholder="01/01/2016" id="starting-calendar" autocomplete="off">
+                        <p class="error-message d-none">This field is required</p>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="inputbox">
+                        <label for="ending-calendar" class="inputlabel">
+                          To Date <span>*</span>
+                        </label>
+                        <input type="text" class="form-control" placeholder="31/12/2020" id="ending-calendar" autocomplete="off">
+                        <p class="error-message d-none">This field is required</p>
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="edubtns">
+                        <button class="btn-profile-add">ADD</button>
+                        <button class="btn-profile-close">CLOSE</button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+
+                <!-- QUALIFICATION-LIST -->
+                <div class="qualificationsinfo d-none">
+                  <div class="qualificationlist">
+                    <div class="qualificationlist-item">
+                      <div class="institute">
+                        <span class="institute-name">Dhaka Medical College(MBBS)</span>
+                      </div>
+  
+                      <div class="duration">
+                        <span class="coursedeadline">4 Year course</span>
+                      </div>
+  
+                      <div class="actions">
+                        <button class="btn-edit" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Edit">
+                          <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.8399 22.5406V24.7902C11.8399 24.8883 11.8789 24.9824 11.9482 25.0518C12.0176 25.1212 12.1117 25.1602 12.2099 25.1602H14.4595C14.508 25.1608 14.5561 25.1513 14.6007 25.1322C14.6454 25.113 14.6855 25.0848 14.7185 25.0492L22.7993 16.9758L20.0243 14.2008L11.9509 22.2742C11.9152 22.3087 11.8869 22.3501 11.8678 22.3959C11.8487 22.4417 11.8392 22.491 11.8399 22.5406ZM24.9453 14.8298C25.0831 14.6911 25.1605 14.5036 25.1605 14.3081C25.1605 14.1126 25.0831 13.925 24.9453 13.7864L23.2137 12.0548C23.075 11.917 22.8875 11.8396 22.692 11.8396C22.4965 11.8396 22.3089 11.917 22.1703 12.0548L20.8161 13.409L23.5911 16.184L24.9453 14.8298Z" fill="#292E3E"/>
+                            <path opacity="0.1" d="M18.5 37C28.7173 37 37 28.7173 37 18.5C37 8.28273 28.7173 0 18.5 0C8.28273 0 0 8.28273 0 18.5C0 28.7173 8.28273 37 18.5 37Z" fill="#F04130"/>
+                          </svg>
+                        </button>
+  
+                        <button class="btn-delete" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Delete">
+                          <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M25.5561 13.902C26.1417 13.3164 26.1417 12.3652 25.5561 11.7796C24.9704 11.1939 24.0193 11.1939 23.4336 11.7796L18.5 16.7179L13.5617 11.7843C12.976 11.1986 12.0249 11.1986 11.4392 11.7843C10.8536 12.3699 10.8536 13.321 11.4392 13.9067L16.3776 18.8403L11.4439 23.7786C10.8583 24.3643 10.8583 25.3154 11.4439 25.9011C12.0296 26.4867 12.9807 26.4867 13.5664 25.9011L18.5 20.9628L23.4383 25.8964C24.024 26.4821 24.9751 26.4821 25.5608 25.8964C26.1464 25.3107 26.1464 24.3596 25.5608 23.774L20.6224 18.8403L25.5561 13.902Z" fill="#292E3E"/>
+                            <path opacity="0.1" d="M18.5 37C28.7173 37 37 28.7173 37 18.5C37 8.28273 28.7173 0 18.5 0C8.28273 0 0 8.28273 0 18.5C0 28.7173 8.28273 37 18.5 37Z" fill="#F04130"/>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="qualificationlist-item">
+                      <div class="institute">
+                        <span class="institute-name">Dhaka Medical College(MBBS)</span>
+                      </div>
+  
+                      <div class="duration">
+                        <span class="coursedeadline">4 Year course</span>
+                      </div>
+  
+                      <div class="actions">
+                        <button class="btn-edit" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Edit">
+                          <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.8399 22.5406V24.7902C11.8399 24.8883 11.8789 24.9824 11.9482 25.0518C12.0176 25.1212 12.1117 25.1602 12.2099 25.1602H14.4595C14.508 25.1608 14.5561 25.1513 14.6007 25.1322C14.6454 25.113 14.6855 25.0848 14.7185 25.0492L22.7993 16.9758L20.0243 14.2008L11.9509 22.2742C11.9152 22.3087 11.8869 22.3501 11.8678 22.3959C11.8487 22.4417 11.8392 22.491 11.8399 22.5406ZM24.9453 14.8298C25.0831 14.6911 25.1605 14.5036 25.1605 14.3081C25.1605 14.1126 25.0831 13.925 24.9453 13.7864L23.2137 12.0548C23.075 11.917 22.8875 11.8396 22.692 11.8396C22.4965 11.8396 22.3089 11.917 22.1703 12.0548L20.8161 13.409L23.5911 16.184L24.9453 14.8298Z" fill="#292E3E"/>
+                            <path opacity="0.1" d="M18.5 37C28.7173 37 37 28.7173 37 18.5C37 8.28273 28.7173 0 18.5 0C8.28273 0 0 8.28273 0 18.5C0 28.7173 8.28273 37 18.5 37Z" fill="#F04130"/>
+                          </svg>
+                        </button>
+  
+                        <button class="btn-delete" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Delete">
+                          <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M25.5561 13.902C26.1417 13.3164 26.1417 12.3652 25.5561 11.7796C24.9704 11.1939 24.0193 11.1939 23.4336 11.7796L18.5 16.7179L13.5617 11.7843C12.976 11.1986 12.0249 11.1986 11.4392 11.7843C10.8536 12.3699 10.8536 13.321 11.4392 13.9067L16.3776 18.8403L11.4439 23.7786C10.8583 24.3643 10.8583 25.3154 11.4439 25.9011C12.0296 26.4867 12.9807 26.4867 13.5664 25.9011L18.5 20.9628L23.4383 25.8964C24.024 26.4821 24.9751 26.4821 25.5608 25.8964C26.1464 25.3107 26.1464 24.3596 25.5608 23.774L20.6224 18.8403L25.5561 13.902Z" fill="#292E3E"/>
+                            <path opacity="0.1" d="M18.5 37C28.7173 37 37 28.7173 37 18.5C37 8.28273 28.7173 0 18.5 0C8.28273 0 0 8.28273 0 18.5C0 28.7173 8.28273 37 18.5 37Z" fill="#F04130"/>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="qualificationlist-item">
+                      <div class="institute">
+                        <span class="institute-name">Dhaka Medical College(MBBS)</span>
+                      </div>
+  
+                      <div class="duration">
+                        <span class="coursedeadline">4 Year course</span>
+                      </div>
+  
+                      <div class="actions">
+                        <button class="btn-edit" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Edit">
+                          <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.8399 22.5406V24.7902C11.8399 24.8883 11.8789 24.9824 11.9482 25.0518C12.0176 25.1212 12.1117 25.1602 12.2099 25.1602H14.4595C14.508 25.1608 14.5561 25.1513 14.6007 25.1322C14.6454 25.113 14.6855 25.0848 14.7185 25.0492L22.7993 16.9758L20.0243 14.2008L11.9509 22.2742C11.9152 22.3087 11.8869 22.3501 11.8678 22.3959C11.8487 22.4417 11.8392 22.491 11.8399 22.5406ZM24.9453 14.8298C25.0831 14.6911 25.1605 14.5036 25.1605 14.3081C25.1605 14.1126 25.0831 13.925 24.9453 13.7864L23.2137 12.0548C23.075 11.917 22.8875 11.8396 22.692 11.8396C22.4965 11.8396 22.3089 11.917 22.1703 12.0548L20.8161 13.409L23.5911 16.184L24.9453 14.8298Z" fill="#292E3E"/>
+                            <path opacity="0.1" d="M18.5 37C28.7173 37 37 28.7173 37 18.5C37 8.28273 28.7173 0 18.5 0C8.28273 0 0 8.28273 0 18.5C0 28.7173 8.28273 37 18.5 37Z" fill="#F04130"/>
+                          </svg>
+                        </button>
+  
+                        <button class="btn-delete" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Delete">
+                          <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M25.5561 13.902C26.1417 13.3164 26.1417 12.3652 25.5561 11.7796C24.9704 11.1939 24.0193 11.1939 23.4336 11.7796L18.5 16.7179L13.5617 11.7843C12.976 11.1986 12.0249 11.1986 11.4392 11.7843C10.8536 12.3699 10.8536 13.321 11.4392 13.9067L16.3776 18.8403L11.4439 23.7786C10.8583 24.3643 10.8583 25.3154 11.4439 25.9011C12.0296 26.4867 12.9807 26.4867 13.5664 25.9011L18.5 20.9628L23.4383 25.8964C24.024 26.4821 24.9751 26.4821 25.5608 25.8964C26.1464 25.3107 26.1464 24.3596 25.5608 23.774L20.6224 18.8403L25.5561 13.902Z" fill="#292E3E"/>
+                            <path opacity="0.1" d="M18.5 37C28.7173 37 37 28.7173 37 18.5C37 8.28273 28.7173 0 18.5 0C8.28273 0 0 8.28273 0 18.5C0 28.7173 8.28273 37 18.5 37Z" fill="#F04130"/>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <button class="btn-qualifications mx-auto">
+                    <span class="text">ADD QUALIFICATIONS</span>
+                    <span class="icon">
+                      <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#plus-symble-1)">
+                          <path d="M10.4014 20.6365C15.9248 20.6365 20.4014 16.1599 20.4014 10.6365C20.4014 5.11304 15.9248 0.636475 10.4014 0.636475C4.87793 0.636475 0.401367 5.11304 0.401367 10.6365C0.401367 16.1599 4.87793 20.6365 10.4014 20.6365ZM9.46387 14.074V11.574H6.96387C6.44434 11.574 6.02637 11.156 6.02637 10.6365C6.02637 10.1169 6.44434 9.69897 6.96387 9.69897H9.46387V7.19897C9.46387 6.67944 9.88184 6.26147 10.4014 6.26147C10.9209 6.26147 11.3389 6.67944 11.3389 7.19897V9.69897H13.8389C14.3584 9.69897 14.7764 10.1169 14.7764 10.6365C14.7764 11.156 14.3584 11.574 13.8389 11.574H11.3389V14.074C11.3389 14.5935 10.9209 15.0115 10.4014 15.0115C9.88184 15.0115 9.46387 14.5935 9.46387 14.074Z" fill="#F04130"/>
+                        </g>
+                        <defs>
+                          <clipPath id="plus-symble-1">
+                            <rect width="20" height="20" fill="white" transform="translate(0.401367 0.636475)"/>
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- PROFILE-IMAGE -->
+      <div class="tab-pane fade" id="userprofileimage-tab-pane" role="tabpanel" aria-labelledby="userprofileimage-tab" tabindex="0">
+        <div class="profileimage">
+          <div class="myprofile-detail">
+            <figure class="icon">
+              <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="30" cy="30" r="30" fill="#F04130" fill-opacity="0.2"/>
+                <g clip-path="url(#usericon-1)">
+                  <path d="M37.0625 19.5625C37.0625 23.1855 34.123 26.125 30.5 26.125C26.877 26.125 23.9375 23.1855 23.9375 19.5625C23.9375 15.9395 26.877 13 30.5 13C34.123 13 37.0625 15.9395 37.0625 19.5625ZM29.4062 29.9531V48L26.0977 46.3457C24.6689 45.6348 23.124 45.1836 21.5312 45.0264L14.9688 44.3701C13.8545 44.2539 13 43.3174 13 42.1895V28.3125C13 27.1025 13.9775 26.125 15.1875 26.125H17.2588C21.6064 26.125 25.8447 27.4648 29.4062 29.9531ZM31.5938 48V29.9531C35.1553 27.4648 39.3936 26.125 43.7412 26.125H45.8125C47.0225 26.125 48 27.1025 48 28.3125V42.1895C48 43.3105 47.1455 44.2539 46.0312 44.3633L39.4688 45.0195C37.8828 45.1768 36.3311 45.6279 34.9023 46.3389L31.5938 48Z" fill="#F04130"/>
+                </g>
+                <defs>
+                  <clipPath id="usericon-1">
+                    <rect width="35" height="35" fill="white" transform="translate(13 13)"/>
+                  </clipPath>
+                </defs>
+              </svg>
+            </figure>
+      
+            <div class="detail">
+              <h2 class="profile-title">PROFILE IMAGE</h2>
+              <p class="profiletext">
+                Update your profile image here. 
+                This will help us to show your profile with proper image.
+              </p>
+            </div>
+          </div>
+
+          <div class="profileimage-info">
+            <div class="details emptyprofile">
+              <figure class="default-thumb">
+                <img src="../assets/images/avatar/default-profile.svg" alt="default-profile" id="uploadedImage" class="default-image">
+
+                <input type="file" id="profileImage" multiple hidden>
+                <label for="profileImage" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Upload Profile">
+                  <svg width="56" height="57" viewBox="0 0 56 57" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M55.5 28.4C55.5 43.8154 43.1811 56.2999 28 56.2999C12.8188 56.2999 0.5 43.8154 0.5 28.4C0.5 12.9845 12.8188 0.5 28 0.5C43.1811 0.5 55.5 12.9845 55.5 28.4Z" fill="#707070" stroke="white"/>
+                    <path d="M31.0119 22.9519L32.3473 24.3064L19.1972 37.6462H17.8619V36.2916L31.0119 22.9519ZM36.2371 14.0881C35.8743 14.0881 35.4969 14.2354 35.2211 14.5151L32.565 17.2096L38.0079 22.731L40.664 20.0365C41.2301 19.4623 41.2301 18.5347 40.664 17.9605L37.2677 14.5151C36.9774 14.2206 36.6145 14.0881 36.2371 14.0881ZM31.0119 18.785L14.959 35.0695V40.591H20.4019L36.4548 24.3064L31.0119 18.785Z" fill="white"/>
+                  </svg>
+                </label>
+              </figure>
+
+              <div class="empty-info">
+                <p>You don't have any photo</p>
+                <p>Please upload photo By CliCKING EDIT ICON AND THEN CLICK UPDATE IMAGE BUTTON</p>
+              </div>
+
+              <div class="updateinfo">
+                <button class="btn-update">UPDATE IMAGE</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- MY-PROFILE SECTION END -->
+
+  <!-- FOOTER-SECTION START -->
+  <footer class="footer">
+    <div class="container">
+      <p class="text-copyright">
+        &copy; DoctorValy &ndash; <span class="currentyear"></span> all rights reserved.
+      </p>
+    </div>
+  </footer>
+  <!-- FOOTER-SECTION END -->
+  
+  <!-- BOOTSTRAP-BUNDLE-JS[v5.3] -->
+  <script src="../../assets/js/bootsrap/bootstrap.bundle.min.js"></script>
+  <!-- TOOLTIP -->
+  <script src="../../assets/js/tooltip/tooltip.js"></script>
+  <!-- LOTTIE-JS -->
+  <script src="../../assets/js/lottie-js/lottie-player.js"></script>
+  <!-- PRELOADER -->
+  <script src="../../assets/js/loader/loader.js"></script>
+  <!-- HAMBURER-ICON -->
+  <script src="../../assets/js/hamburger/hamburger.js"></script>
+  <!-- COPYRIGHT -->
+  <script src="../../assets/js/copyright/copyright.js"></script>
+  <script src="../../assets/js/fileupload/uploadprofile.js"></script>
+  <script src="../../assets/js/selets/select.js"></script>
+  <!-- MC-DATEPICKER -->
+  <script src="../../assets/js/mc-datepicker/mc-calendar.min.js"></script>
+  <script src="../../assets/js/filter/deadline.js"></script>
+  <script src="../../assets/js/showhide/showhide.js"></script>
+  <!-- TAG-GENERATOR -->
+  <script src="../../assets/js/tag-generator/tag-generator.js"></script>
+</body>
+</html>

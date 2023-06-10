@@ -41,6 +41,7 @@ $headingtext: hsl(0, 0%, 9%); //#171717
 $graytext: hsl(218, 17%, 35%); //#4a5568
 $placeholderText: hsl(240, 6%, 73%); //#B5B5BD
 $textLabel: hsl(210, 21%, 33%); //#425466
+$textcolor: hsl(0, 2%, 51%); //#847E7E
 
 // SUCCESS COLOR
 
@@ -79,6 +80,7 @@ $shade-1: rgba(72, 75, 137, 0.2);
 // BOX-SHADOWS
 $cardshadow: .25rem .25rem 1rem .1875rem $shade-1;
 $authshadow: 0 .375rem 1rem 0 rgba($black, 0.2);
+$profileshadow: drop-shadow(0 .25rem .25rem rgba($black, .25));
 
 // LETTER-SPECING
 $specing-1: size(0.24);

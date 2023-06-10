@@ -1,0 +1,65 @@
+@use "../../global"as *;
+@use "../../partials"as *;
+    
+.pagination {
+  gap: size(8);
+
+  .page-item {
+    .btn-previous,
+    .btn-next {
+      svg {
+        circle, path {
+          @include transitionsall;
+        }
+      }
+
+      @include hover {
+        svg {
+          circle {
+            fill: $hamburgerbg;
+          }
+
+          path {
+            fill: $white;
+          }
+        }
+      }
+    }
+  }
+
+  &-list {
+    background: $white;
+    box-shadow: $cardshadow;
+    @include radius(10);
+    max-width: size(200);
+    @include list-horizontal;
+    gap: size(4);
+
+    .page-item {
+      .page-link {
+        @include square(36);
+        @include radius(10);
+        @include flex-center;
+        @include setBgColor($white, $selectcolor);
+        border: 0;
+
+        &:focus {
+          box-shadow: none;
+          outline: none;
+        }
+      }
+
+      &:hover:not(.active) {
+        .page-link {
+          @include setBgColor($hamburgerbg, $white);
+        }
+      }
+
+      &.active {
+        .page-link {
+          @include setBgColor($hamburgerbg, $white);
+        }
+      }
+    }
+  }
+}
