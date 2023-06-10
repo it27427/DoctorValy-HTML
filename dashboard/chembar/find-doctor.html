@@ -395,10 +395,52 @@
         <div class="chambersection-details">
           <div class="chambersection-header">
             <h1 class="title">FIND YOUR DOCTOR</h1>
+
+            <div class="searchbox">
+              <input type="search" id="seachdocs" class="searchfield" placeholder="Search Your Doctors">
+              <button class="btn-search">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12.9028 11.4444H12.1347L11.8625 11.1819C12.8153 10.0736 13.3889 8.63472 13.3889 7.06945C13.3889 3.57917 10.5597 0.750002 7.06944 0.750002C3.57917 0.750002 0.75 3.57917 0.75 7.06945C0.75 10.5597 3.57917 13.3889 7.06944 13.3889C8.63472 13.3889 10.0736 12.8153 11.1819 11.8625L11.4444 12.1347V12.9028L16.3056 17.7542L17.7542 16.3056L12.9028 11.4444ZM7.06944 11.4444C4.64861 11.4444 2.69444 9.49028 2.69444 7.06945C2.69444 4.64861 4.64861 2.69445 7.06944 2.69445C9.49028 2.69445 11.4444 4.64861 11.4444 7.06945C11.4444 9.49028 9.49028 11.4444 7.06944 11.4444Z" fill="white"/>
+                </svg>
+              </button>
+            </div>
           </div>
           
           <div class="chambersection-body">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="findalldoc-tab" data-bs-toggle="tab" data-bs-target="#findalldoc-tab-pane" type="button" role="tab" aria-controls="findalldoc-tab-pane" aria-selected="true">
+                  ALL
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="findneurodoc-tab" data-bs-toggle="tab" data-bs-target="#findneurodoc-tab-pane" type="button" role="tab" aria-controls="findneurodoc-tab-pane" aria-selected="false">
+                  Neurologist
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="findcardiodoc-tab" data-bs-toggle="tab" data-bs-target="#findcardiodoc-tab-pane" type="button" role="tab" aria-controls="findcardiodoc-tab-pane" aria-selected="false">
+                  Cardiology
+                </button>
+              </li>
+            </ul>
 
+            <div class="tab-content" id="myTabContent">
+              <!-- ALL-DOCS -->
+              <div class="tab-pane fade show active" id="findalldoc-tab-pane" role="tabpanel" aria-labelledby="findalldoc-tab" tabindex="0">
+                <h1>All</h1>
+              </div>
+
+              <!-- NEUROLOGISTS -->
+              <div class="tab-pane fade" id="findneurodoc-tab-pane" role="tabpanel" aria-labelledby="findneurodoc-tab" tabindex="0">
+                <h1>Neurologist</h1>
+              </div>
+              
+              <!-- CARDIOLOGISTS -->
+              <div class="tab-pane fade" id="findcardiodoc-tab-pane" role="tabpanel" aria-labelledby="findcardiodoc-tab" tabindex="0">
+                <h1>Cardiology</h1>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -428,11 +470,6 @@
   <script src="../../assets/js/lottie-js/lottie-player.js"></script>
   <!-- PRELOADER -->
   <script src="../../assets/js/loader/loader.js"></script>
-
-  <!-- APEXCHARTS-JS -->
-  <script src="../../assets/js/apexcharts/apexcharts.min.js"></script>
-  <!-- CHARTS -->
-  <script src="../../assets/js/charts/homechart.js"></script>
 
 </body>
 </html>

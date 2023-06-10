@@ -8,6 +8,5 @@
   &-header {
     padding-bottom: size(14);
     @include border-single(bottom, solid, 2, $hamburgerbg);
-
   }
 }

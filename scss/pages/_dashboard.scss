@@ -1,2 +1,109 @@
 @use "../global" as *;
 @use "../partials" as *;
+
+.chambersection {
+  
+  &-details {
+    @include flex-column;
+    gap: size(20);
+  }
+
+  &-header {
+    padding-bottom: size(14);
+    @include border-single(bottom, solid, 1, $hamburgerbg);
+    @include flex-center-between;
+    flex-wrap: wrap;
+    gap: size(8);
+
+    .title {
+      color: $dropdownbg;
+      @include font($secondaryFont, 16, bold, normal, 22.4);
+      text-transform: uppercase;
+
+      @include breakpoint(tab992) {
+        font-size: size(18);
+      }
+
+      @include breakpoint(desktop1200) {
+        font-size: size(20);
+      }
+    }
+
+    .searchbox {
+      @include flex-center-vert;
+      @include radius(10);
+      overflow: hidden;
+      
+      .searchfield {
+        width: calc(100% - size(36));
+        height: size(36);
+        padding: size(8) size(16);
+        @include setBgColor($white, $black);
+        letter-spacing: size(0.15);
+
+        &::placeholder {
+          color: $textgray;
+        }
+      }
+      
+      .btn-search {
+        @include square(36);
+        background: $hamburgerbg;
+      }
+    }
+  }
+
+  &-body {
+    @include flex-column;
+    gap: size(32);
+
+    .nav-tabs {
+      border: none;
+      @include w100;
+      background: $white;
+      @include border(solid, 1, $lightbg);
+      gap: size(4);
+      padding: size(8) size(16);
+      @include radius(8);
+
+      @include breakpoint(tab992) {
+        gap: size(8);
+      }
+
+      &-item {
+        &:first-child,
+        &:last-child {
+          .nav-link {
+            @include radius(0);
+          }
+        }
+      }
+
+      .nav-link {
+        @include setBgColor($white, $selectcolor);
+        border: none;
+        @include radius(50);
+        @include font($secondaryFont, 14, normal, normal, 19.6);
+        @include flex-center;
+        letter-spacing: size(0.15);
+        margin: size(0);
+        padding: size(6) size(12);
+        @include transitionsall;
+
+        @include breakpoint(tab992) {
+          padding: size(8) size(20);
+        }
+
+        &:hover:not(.active) {
+          border: none;
+          @include setBgColor($hamburgerbg, $white);
+        }
+
+        &.active {
+          border: none;
+          @include setBgColor($hamburgerbg, $white);
+        }
+      }
+    }
+  }
+}
