@@ -268,3 +268,72 @@
   @include flex-column;
   gap: size(16);
 }
+
+.scheduletable {
+  background: $white;
+  @include radius(10);
+  padding: size(16);
+  @include flex-column;
+  gap: size(24);
+
+  @include breakpoint(tab992) {
+    padding: size(24);
+  }
+
+  &-header {
+    .title {
+      color: $black;
+      font-size: size(16);
+      font-family: $secondaryFont;
+      font-weight: 600;
+
+      @include breakpoint(tab992) {
+        font-size: size(18);
+      }
+    }
+  }
+
+  table {
+    background: $white;
+
+    td {
+      color: $black;
+      font-family: $secondaryFont;
+      font-size: size(14);
+      font-weight: 700;
+
+      &:first-child {
+        text-align: center;
+      }
+    }
+
+    .docschedules {
+      @include flex-column;
+
+      .detail {
+        @include flex-column;
+        gap: size(4);
+        @include border-single(bottom, solid, 1, $border-1);
+        padding: size(12);
+
+        &:last-child {
+          padding-bottom: size(0);
+          border-bottom: size(0);
+        }
+
+        .name {
+          color: $dropdownbg;
+          font-family: $secondaryFont;
+          font-size: size(16);
+          font-weight: 600;
+        }
+
+        .time {
+          font-weight: 400;
+          font-size: size(13);
+          font-family: $secondaryFont;
+        }
+      }
+    }
+  }
+}

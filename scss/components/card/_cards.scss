@@ -246,6 +246,18 @@
     }
   }
 
+  &-thumb {
+    @include square(64);
+    @include circle;
+    @include flex-center;
+    overflow: hidden;
+
+    img {
+      @include wh100;
+      object-fit: cover;
+    }
+  }
+
   &-detail {
     @include flex-column;
     gap: size(8);
@@ -255,7 +267,7 @@
       color: $black;
       font-weight: 700;
     }
-
+  
     .view-count {
       color: $black;
       font-size: size(20);
