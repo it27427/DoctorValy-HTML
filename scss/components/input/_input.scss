@@ -347,6 +347,7 @@ label {
 
     input {
       @include font($primaryFont, 14, normal, normal, 19.6);
+      @include w100;
     }
   }
 }
