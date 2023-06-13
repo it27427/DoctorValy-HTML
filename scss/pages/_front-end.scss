@@ -135,6 +135,7 @@
 
 .doctors-section {
   padding: size(0) size(0) size(48);
+  overflow: auto;
 
   @include breakpoint(mobile768) {
     padding: size(48) size(0);
@@ -941,5 +942,30 @@
         
     //   }
     // }
+  }
+}
+
+.stickyfilter {
+  position: fixed;
+  width: size(260);
+  background: $bodybg;
+  top: size(112);
+  padding-inline: size(10);
+  // min-height: 100vh;
+  z-index: 10;
+
+  .filter {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: size(350);
+
+    &::-webkit-scrollbar {
+      background: transparent;
+      width: size(8);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      @include radius(8);
+    }
   }
 }

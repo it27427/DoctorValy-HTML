@@ -3352,6 +3352,8 @@ label span {
 .footer {
   width: 100%;
   background: hsl(225, 6%, 13%);
+  position: relative;
+  z-index: 100;
 }
 .footer-content {
   display: flex;
@@ -6347,6 +6349,7 @@ label span {
 
 .doctors-section {
   padding: 0rem 0rem 3rem;
+  overflow: auto;
 }
 @media screen and (min-width: 48rem) {
   .doctors-section {
@@ -7226,6 +7229,28 @@ label span {
   font-weight: 600;
   font-style: normal;
   line-height: 1.4;
+}
+
+.stickyfilter {
+  position: fixed;
+  width: 16.25rem;
+  background: hsl(0, 3%, 94%);
+  top: 7rem;
+  padding-inline: 0.625rem;
+  z-index: 10;
+}
+.stickyfilter .filter {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  max-height: 21.875rem;
+}
+.stickyfilter .filter::-webkit-scrollbar {
+  background: transparent;
+  width: 0.5rem;
+}
+.stickyfilter .filter::-webkit-scrollbar-thumb {
+  border-radius: 0.5rem;
+  border-radius: 0.5rem;
 }
 
 /*

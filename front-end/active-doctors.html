@@ -7,8 +7,6 @@
   <title>Doctorvaly | Active Doctors</title>
   <!-- FAVICON-ICON -->
   <link rel="shortcut icon" href="assets/images/logo/favicon.ico" type="image/x-icon">
-  <!-- SWIPER-CSS -->
-  <link rel="stylesheet" href="../assets/css/swiper/swiper-bundle.min.css">
   <!-- FONTAWESOME-CSS -->
   <link rel="stylesheet" href="../assets/css/all.min.css">
   <!-- BOOTSTRAP-CSS -->
@@ -154,100 +152,102 @@
       <div class="container">
         <div class="row g-4">
           <div class="col-lg-3 col-md-4 d-none d-md-block">
-            <div class="filter">
-              <div class="inputbox">
-                <label for="doctorscategory" class="inputlabel">DOCTOR</label>
-                <select id="doctorscategory" placeholder-text="ইউরোলোজি বিশেষজ্ঞ" autocomplete="off">
-                  <option value="ইউরোলোজি বিশেষজ্ঞ">
-                    ইউরোলোজি বিশেষজ্ঞ
-                  </option>
-                  <option value="ক্যান্সার ও টিউমার বিশেষজ্ঞ">
-                    ক্যান্সার ও টিউমার বিশেষজ্ঞ
-                  </option>
-                  <option value="গাইনী ও প্রসূতি বিশেষজ্ঞ">
-                    গাইনী ও প্রসূতি বিশেষজ্ঞ
-                  </option>
-                  <option value="গাইনী সার্জন">
-                    গাইনী সার্জন
-                  </option>
-                  <option value="গ্যাস্ট্রোলিভার বিষেশজ্ঞ">
-                    গ্যাস্ট্রোলিভার বিষেশজ্ঞ
-                  </option>
-                  <option value="চর্ম ও যৌন রোগ বিশেষজ্ঞ">
-                    চর্ম ও যৌন রোগ বিশেষজ্ঞ
-                  </option>
-                  <option value="নাক-কান-গলা রোগ বিশেষজ্ঞ">
-                    নাক-কান-গলা রোগ বিশেষজ্ঞ
-                  </option>
-                  <option value="নিউরোমেডিসিন বিশেষজ্ঞ">
-                    নিউরোমেডিসিন বিশেষজ্ঞ
-                  </option>
-                  <option value="ফিজিওথেরাপিষ্ট">
-                    ফিজিওথেরাপিষ্ট
-                  </option>
-                  <option value="বক্ষব্যাধি ও হৃদরোগ বিশেষজ্ঞ">
-                    বক্ষব্যাধি ও হৃদরোগ বিশেষজ্ঞ
-                  </option>
-                  <option value="বিশেষজ্ঞ পুষ্টিবিদ">
-                    বিশেষজ্ঞ পুষ্টিবিদ
-                  </option>
-                  <option value="মাথা ও মনোরোগ বিশেষজ্ঞ">
-                    মাথা ও মনোরোগ বিশেষজ্ঞ
-                  </option>
-                  <option value="মেডিসিন বিশেষজ্ঞ">
-                    মেডিসিন বিশেষজ্ঞ
-                  </option>
-                  <option value="ল্যাপারোস্কোপিক সার্জন">
-                    ল্যাপারোস্কোপিক সার্জন
-                  </option>
-                  <option value="শিশুরোগ বিশেষজ্ঞ">
-                    শিশুরোগ বিশেষজ্ঞ
-                  </option>
-                  <option value="হাড়-ভাঙ্গা বিশেষজ্ঞ">
-                    হাড়-ভাঙ্গা বিশেষজ্ঞ
-                  </option>
-                  <option value="হেড-নেক সার্জন">
-                    হেড-নেক সার্জন
-                  </option>
-                </select>
-              </div>
-
-              <div class="inputbox">
-                <label for="districts" class="inputlabel">DISTIRCT</label>
-                <select id="districts" placeholder-text="Sherpur" autocomplete="off">
-                  <option value="Sherpur">Sherpur</option>
-                  <option value="Dhaka">Dhaka</option>
-                  <option value="Barishal">Barishal</option>
-                  <option value="Sylhet">Sylhet</option>
-                  <option value="Khulna">Khulna</option>
-                  <option value="Chittagong">Chittagong</option>
-                  <option value="Rangpur">Rangpur</option>
-                  <option value="Mymensingh">Mymensingh</option>
-                </select>
-              </div>
-
-              <div class="inputbox">
-                <label for="thanas" class="inputlabel">THANA</label>
-                <select id="thanas" placeholder-text="Sherpur Sadar" autocomplete="off">
-                  <option value="Sherpur Sadar">Sherpur Sadar</option>
-                  <option value="Nakla">Nakla</option>
-                  <option value="Nalitabari">Nalitabari</option>
-                  <option value="Sribordi">Sribordi</option>
-                  <option value="Jhenaigati">Jhenaigati</option>
-                </select>
-              </div>
-
-              <div class="inputbox">
-                <label for="days" class="inputlabel">DAYS</label>
-                <select id="days" placeholder-text="Saturday" autocomplete="off">
-                  <option value="Saturday">Saturday</option>
-                  <option value="Sunday">Sunday</option>
-                  <option value="Monday">Monday</option>
-                  <option value="Tuesday">Tuesday</option>
-                  <option value="Wednesday">Wednesday</option>
-                  <option value="Thursday">Thursday</option>
-                  <option value="Friday">Friday</option>
-                </select>
+            <div class="stickyfilter">
+              <div class="filter">
+                <div class="inputbox">
+                  <label for="doctorscategory" class="inputlabel">DOCTOR</label>
+                  <select id="doctorscategory" placeholder-text="ইউরোলোজি বিশেষজ্ঞ" autocomplete="off">
+                    <option value="ইউরোলোজি বিশেষজ্ঞ">
+                      ইউরোলোজি বিশেষজ্ঞ
+                    </option>
+                    <option value="ক্যান্সার ও টিউমার বিশেষজ্ঞ">
+                      ক্যান্সার ও টিউমার বিশেষজ্ঞ
+                    </option>
+                    <option value="গাইনী ও প্রসূতি বিশেষজ্ঞ">
+                      গাইনী ও প্রসূতি বিশেষজ্ঞ
+                    </option>
+                    <option value="গাইনী সার্জন">
+                      গাইনী সার্জন
+                    </option>
+                    <option value="গ্যাস্ট্রোলিভার বিষেশজ্ঞ">
+                      গ্যাস্ট্রোলিভার বিষেশজ্ঞ
+                    </option>
+                    <option value="চর্ম ও যৌন রোগ বিশেষজ্ঞ">
+                      চর্ম ও যৌন রোগ বিশেষজ্ঞ
+                    </option>
+                    <option value="নাক-কান-গলা রোগ বিশেষজ্ঞ">
+                      নাক-কান-গলা রোগ বিশেষজ্ঞ
+                    </option>
+                    <option value="নিউরোমেডিসিন বিশেষজ্ঞ">
+                      নিউরোমেডিসিন বিশেষজ্ঞ
+                    </option>
+                    <option value="ফিজিওথেরাপিষ্ট">
+                      ফিজিওথেরাপিষ্ট
+                    </option>
+                    <option value="বক্ষব্যাধি ও হৃদরোগ বিশেষজ্ঞ">
+                      বক্ষব্যাধি ও হৃদরোগ বিশেষজ্ঞ
+                    </option>
+                    <option value="বিশেষজ্ঞ পুষ্টিবিদ">
+                      বিশেষজ্ঞ পুষ্টিবিদ
+                    </option>
+                    <option value="মাথা ও মনোরোগ বিশেষজ্ঞ">
+                      মাথা ও মনোরোগ বিশেষজ্ঞ
+                    </option>
+                    <option value="মেডিসিন বিশেষজ্ঞ">
+                      মেডিসিন বিশেষজ্ঞ
+                    </option>
+                    <option value="ল্যাপারোস্কোপিক সার্জন">
+                      ল্যাপারোস্কোপিক সার্জন
+                    </option>
+                    <option value="শিশুরোগ বিশেষজ্ঞ">
+                      শিশুরোগ বিশেষজ্ঞ
+                    </option>
+                    <option value="হাড়-ভাঙ্গা বিশেষজ্ঞ">
+                      হাড়-ভাঙ্গা বিশেষজ্ঞ
+                    </option>
+                    <option value="হেড-নেক সার্জন">
+                      হেড-নেক সার্জন
+                    </option>
+                  </select>
+                </div>
+  
+                <div class="inputbox">
+                  <label for="districts" class="inputlabel">DISTIRCT</label>
+                  <select id="districts" placeholder-text="Sherpur" autocomplete="off">
+                    <option value="Sherpur">Sherpur</option>
+                    <option value="Dhaka">Dhaka</option>
+                    <option value="Barishal">Barishal</option>
+                    <option value="Sylhet">Sylhet</option>
+                    <option value="Khulna">Khulna</option>
+                    <option value="Chittagong">Chittagong</option>
+                    <option value="Rangpur">Rangpur</option>
+                    <option value="Mymensingh">Mymensingh</option>
+                  </select>
+                </div>
+  
+                <div class="inputbox">
+                  <label for="thanas" class="inputlabel">THANA</label>
+                  <select id="thanas" placeholder-text="Sherpur Sadar" autocomplete="off">
+                    <option value="Sherpur Sadar">Sherpur Sadar</option>
+                    <option value="Nakla">Nakla</option>
+                    <option value="Nalitabari">Nalitabari</option>
+                    <option value="Sribordi">Sribordi</option>
+                    <option value="Jhenaigati">Jhenaigati</option>
+                  </select>
+                </div>
+  
+                <div class="inputbox">
+                  <label for="days" class="inputlabel">DAYS</label>
+                  <select id="days" placeholder-text="Saturday" autocomplete="off">
+                    <option value="Saturday">Saturday</option>
+                    <option value="Sunday">Sunday</option>
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                  </select>
+                </div>
               </div>
             </div>
           </div>

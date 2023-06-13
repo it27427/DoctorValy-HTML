@@ -4,6 +4,8 @@
 .footer {
   @include w100;
   background: $footerbg;
+  position: relative;
+  z-index: 100;
 
   &-content {
     @include flex-column;
