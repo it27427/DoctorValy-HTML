@@ -422,10 +422,10 @@
                 <div class="col-lg-9 col-md-8 col-12">
                   <table class="table table-responsive">
                     <thead>
-                      <tr>
+                      <tr class="tablerow">
                         <th>
                           <div class="checkfield">
-                            <input type="checkbox" class="checkinput" id="everyday" autocomplete="off" hidden="">
+                            <input type="checkbox" onchange="checkedAll(this)" class="checkinput" id="everyday" autocomplete="off" hidden>
                             <label for="everyday" class="checklabel fw-bold">
                               Everyday
                             </label>
@@ -439,7 +439,7 @@
                       <tr class="tablerow">
                         <td>
                           <div class="checkfield">
-                            <input type="checkbox" class="checkinput" id="sunday" autocomplete="off" hidden="">
+                            <input type="checkbox" class="checkinput" id="sunday" autocomplete="off" hidden>
                             <label for="sunday" class="checklabel fw-bold">
                               Sunday
                             </label>
@@ -473,7 +473,7 @@
                       <tr class="tablerow">
                         <td>
                           <div class="checkfield">
-                            <input type="checkbox" class="checkinput" id="monday" autocomplete="off" hidden="">
+                            <input type="checkbox" class="checkinput" id="monday" autocomplete="off" hidden>
                             <label for="monday" class="checklabel fw-bold">
                               Monday
                             </label>
@@ -492,7 +492,7 @@
                       <tr class="tablerow">
                         <td>
                           <div class="checkfield">
-                            <input type="checkbox" class="checkinput" id="tuesday" autocomplete="off" hidden="">
+                            <input type="checkbox" class="checkinput" id="tuesday" autocomplete="off" hidden>
                             <label for="tuesday" class="checklabel fw-bold">
                               Tuesday
                             </label>
@@ -511,7 +511,7 @@
                       <tr class="tablerow">
                         <td>
                           <div class="checkfield">
-                            <input type="checkbox" class="checkinput" id="wednesday" autocomplete="off" hidden="">
+                            <input type="checkbox" class="checkinput" id="wednesday" autocomplete="off" hidden>
                             <label for="wednesday" class="checklabel fw-bold">
                               Wednesday
                             </label>
@@ -530,7 +530,7 @@
                       <tr class="tablerow">
                         <td>
                           <div class="checkfield">
-                            <input type="checkbox" class="checkinput" id="thursday" autocomplete="off" hidden="">
+                            <input type="checkbox" class="checkinput" id="thursday" autocomplete="off" hidden>
                             <label for="thursday" class="checklabel fw-bold">
                               Thursday
                             </label>
@@ -549,7 +549,7 @@
                       <tr class="tablerow">
                         <td>
                           <div class="checkfield">
-                            <input type="checkbox" class="checkinput" id="friday" autocomplete="off" hidden="">
+                            <input type="checkbox" class="checkinput" id="friday" autocomplete="off" hidden>
                             <label for="friday" class="checklabel fw-bold">
                               Friday
                             </label>
@@ -568,7 +568,7 @@
                       <tr class="tablerow">
                         <td>
                           <div class="checkfield">
-                            <input type="checkbox" class="checkinput" id="saturday" autocomplete="off" hidden="">
+                            <input type="checkbox" class="checkinput" id="saturday" autocomplete="off" hidden>
                             <label for="saturday" class="checklabel fw-bold">
                               Saturday
                             </label>
@@ -660,7 +660,7 @@
   <!-- MC-DATEPICKER -->
   <script src="../../assets/js/mc-datepicker/mc-calendar.min.js"></script>
   <script src="../../assets/js/mc-datepicker/selectdate.js"></script>
-
-
+  <!-- CHECK-ALL -->
+  <script src="../../assets/js/allcheck/checkall.js"></script>
 </body>
 </html>

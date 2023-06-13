@@ -4629,6 +4629,10 @@ label span {
   gap: 1.5rem;
 }
 
+.schedulefield {
+  height: 2.75rem;
+}
+
 .chambersection-details {
   display: flex;
   flex-direction: column;
