@@ -280,3 +280,30 @@
     }
   }
 }
+
+.sidebarlist {
+  @include list-vertical;
+  gap: size(10);
+
+  &-link {
+    color: $headingtext;
+    @include flex-center-vert;
+    @include transitionscolor;
+
+    .categorytitle {
+      color: inherit;
+      @include font($secondaryFont, 13, semibold, normal, 18.2);
+      width: calc(100% - size(40));
+    }
+
+    .categorycounter {
+      color: inherit;
+      @include font($secondaryFont, 13, medium, normal, 18.2);
+      width: size(40);
+    }
+
+    @include hover {
+      color: $hamburgerbg;
+    }
+  }
+}

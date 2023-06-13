@@ -262,6 +262,7 @@
     @include flex-column;
     gap: size(8);
     text-align: right;
+    width: calc(100% - size(64));
 
     .view-title {
       color: $black;
