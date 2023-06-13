@@ -224,3 +224,19 @@ button,
     @include wh100;
   }
 }
+
+.btn-link {
+  color: $headerbg;
+  font-family: $secondaryFont;
+  font-size: size(13);
+  font-weight: 700;
+  letter-spacing: size(1.4);
+  text-transform: uppercase;
+  text-decoration: none;
+  @include transparent-button;
+  @include transitionsall;
+
+  @include hover {
+    color: $hamburgerbg;
+  }
+}
