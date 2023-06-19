@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DoctorValy | Doctor Dashboard</title>
+  <!-- FAVICON -->
+  <link rel="shortcut icon" href="assets/images/logo/favicon.ico" type="image/x-icon">
+  <!-- BOOTSTRAP-CSS[v5.3] -->
+  <link rel="stylesheet" href="../../assets/css/bootstrap/bootstrap-icons.css">
+  <link rel="stylesheet" href="../../assets/css/bootstrap/bootstrap.min.css">
+  <!-- APEXCHARTS-CSS -->
+  <link rel="stylesheet" href="../../assets/css/apexcharts/apexcharts.css">
+  <!-- DOCTORVALY CSS -->
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body class="dashboard-body">
+
+  <!-- PRELOADER START -->
+  <div class="preloader" id="preloader">
+    <div class="loader">
+      <lottie-player src="../../assets/js/lottie-js/loader.json" background="transparent" speed="1" loop autoplay></lottie-player>
+    </div>
+  </div>
+  <!-- PRELOADER END -->
+  
+  <!-- HEADER-SECTION START -->
+  <header class="dashboard-header fixed-top">
+    <nav class="dashboard-header-nav">
+      <!-- MOBILE-MENU -->
+      <div class="d-lg-none d-block">
+        <!-- HAMBURGER-BUTTON -->
+        <button type="button" class="btn-hamburger" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
+          <span></span>
+        </button>
+
+        <!-- MOBILE-MENU-START -->
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenu">
+          <div class="offcanvas-body p-0">
+            <div class="mobilesidebar">              
+              <div class="mobilesidebar-body">
+                <ul class="sidelist">
+                  <li class="sidelist-item">
+                    <a href="index.html" class="sidelist-link active">
+                      <span class="icon">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M1.523 10H7.30281C7.5583 10 7.80331 9.89464 7.98397 9.70711C8.16462 9.51957 8.26611 9.26522 8.26611 9V1C8.26611 0.734784 8.16462 0.48043 7.98397 0.292893C7.80331 0.105357 7.5583 0 7.30281 0H1.523C1.26751 0 1.02249 0.105357 0.841837 0.292893C0.661183 0.48043 0.559692 0.734784 0.559692 1V9C0.559692 9.26522 0.661183 9.51957 0.841837 9.70711C1.02249 9.89464 1.26751 10 1.523 10ZM1.523 18H7.30281C7.5583 18 7.80331 17.8946 7.98397 17.7071C8.16462 17.5196 8.26611 17.2652 8.26611 17V13C8.26611 12.7348 8.16462 12.4804 7.98397 12.2929C7.80331 12.1054 7.5583 12 7.30281 12H1.523C1.26751 12 1.02249 12.1054 0.841837 12.2929C0.661183 12.4804 0.559692 12.7348 0.559692 13V17C0.559692 17.2652 0.661183 17.5196 0.841837 17.7071C1.02249 17.8946 1.26751 18 1.523 18ZM11.156 18H16.9358C17.1913 18 17.4363 17.8946 17.617 17.7071C17.7977 17.5196 17.8991 17.2652 17.8991 17V9C17.8991 8.73478 17.7977 8.48043 17.617 8.29289C17.4363 8.10536 17.1913 8 16.9358 8H11.156C10.9005 8 10.6555 8.10536 10.4749 8.29289C10.2942 8.48043 10.1927 8.73478 10.1927 9V17C10.1927 17.2652 10.2942 17.5196 10.4749 17.7071C10.6555 17.8946 10.9005 18 11.156 18ZM10.1927 1V5C10.1927 5.26522 10.2942 5.51957 10.4749 5.70711C10.6555 5.89464 10.9005 6 11.156 6H16.9358C17.1913 6 17.4363 5.89464 17.617 5.70711C17.7977 5.51957 17.8991 5.26522 17.8991 5V1C17.8991 0.734784 17.7977 0.48043 17.617 0.292893C17.4363 0.105357 17.1913 0 16.9358 0H11.156C10.9005 0 10.6555 0.105357 10.4749 0.292893C10.2942 0.48043 10.1927 0.734784 10.1927 1Z" fill="#F04130"/>
+                        </svg>
+                      </span>
+                      <span class="text">DashBoard</span>
+                    </a>
+                  </li>
+          
+                  <li class="sidelist-item">
+                    <a href="schedule.html" class="sidelist-link">
+                      <span class="icon">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M6.10714 2.25H11.8929V0.84375C11.8929 0.37793 12.3228 0 12.8571 0C13.3915 0 13.8214 0.37793 13.8214 0.84375V2.25H15.4286C16.8469 2.25 18 3.25723 18 4.5V15.75C18 16.991 16.8469 18 15.4286 18H2.57143C1.15112 18 0 16.991 0 15.75V4.5C0 3.25723 1.15112 2.25 2.57143 2.25H4.17857V0.84375C4.17857 0.37793 4.60848 0 5.14286 0C5.67723 0 6.10714 0.37793 6.10714 0.84375V2.25ZM1.92857 8.71875H5.14286V6.75H1.92857V8.71875ZM1.92857 10.4062V12.6562H5.14286V10.4062H1.92857ZM7.07143 10.4062V12.6562H10.9286V10.4062H7.07143ZM12.8571 10.4062V12.6562H16.0714V10.4062H12.8571ZM16.0714 6.75H12.8571V8.71875H16.0714V6.75ZM16.0714 14.3438H12.8571V16.3125H15.4286C15.7821 16.3125 16.0714 16.0594 16.0714 15.75V14.3438ZM10.9286 14.3438H7.07143V16.3125H10.9286V14.3438ZM5.14286 14.3438H1.92857V15.75C1.92857 16.0594 2.21625 16.3125 2.57143 16.3125H5.14286V14.3438ZM10.9286 6.75H7.07143V8.71875H10.9286V6.75Z" fill="#F04130"/>
+                        </svg>
+                      </span>
+                      <span class="text">Schedule</span>
+                    </a>
+                  </li>
+          
+                  <li class="sidelist-item">
+                    <a href="blogs.html" class="sidelist-link">
+                      <span class="icon">
+                        <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M0.560059 2.25C0.560059 1.00898 1.45693 0 2.56006 0H7.56006V4.5C7.56006 5.12227 8.00693 5.625 8.56006 5.625H12.5601V10.0441L9.84756 13.0957C9.52568 13.4578 9.30068 13.9078 9.19131 14.4035L8.60693 17.0367C8.53506 17.3602 8.55068 17.6977 8.64756 18.0035H2.56006C1.45693 18.0035 0.560059 16.9945 0.560059 15.7535V2.25ZM12.5601 4.5H8.56006V0L12.5601 4.5ZM17.7413 8.28633L18.1913 8.79258C18.6788 9.34102 18.6788 10.2305 18.1913 10.7824L17.2726 11.816L15.0538 9.31992L15.9726 8.28633C16.4601 7.73789 17.2507 7.73789 17.7413 8.28633V8.28633ZM10.3069 14.6602L14.3444 10.118L16.5632 12.6141L12.5257 17.1527C12.3976 17.2969 12.2382 17.3988 12.0601 17.448L10.1819 17.9754C10.0101 18.0246 9.83193 17.9684 9.70693 17.8277C9.58193 17.6871 9.53193 17.4867 9.57568 17.2934L10.0444 15.1805C10.0882 14.9836 10.1788 14.8008 10.3069 14.6566V14.6602Z" fill="#F04130"/>
+                        </svg>
+                      </span>
+                      <span class="text">Blogs</span>
+                    </a>
+                  </li>
+          
+                  <li class="sidelist-item">
+                    <a href="../auth/login.html" class="sidelist-link">
+                      <span class="icon">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M12.75 6L11.6925 7.0575L12.8775 8.25H6.75V9.75H12.8775L11.6925 10.935L12.75 12L15.75 9L12.75 6ZM3.75 3.75H9V2.25H3.75C2.925 2.25 2.25 2.925 2.25 3.75V14.25C2.25 15.075 2.925 15.75 3.75 15.75H9V14.25H3.75V3.75Z" fill="#F04130"/>
+                        </svg>
+                      </span>
+                      <span class="text">Log Out</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex align-items-center gap-3">
+        <div class="d-none d-lg-block">
+          <!-- HAMBURGER-BUTTON -->
+          <button type="button" class="btn-hamburger" id="btn-hamburger">
+            <span></span>
+          </button>
+        </div>
+
+        <!-- SITE-LOGO -->
+        <a href="index.html" class="logo">
+          <img src="assets/images/logo/logo.svg" alt="logo">
+        </a>
+      </div>
+
+      <div class="d-flex align-items-center">
+        <!-- DESKTOP-USER-DROPDOWN -->
+        <div class="d-none d-lg-block">
+          <div class="dashboard-dropdown">
+            <button class="dropdownlink" type="button">
+              <span class="text">Dr Strange</span>
+              <span class="arrowicon">
+                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0.295808 1.71002L2.88581 4.30002C3.07317 4.48627 3.32662 4.59081 3.59081 4.59081C3.85499 4.59081 4.10844 4.48627 4.29581 4.30002L6.88581 1.71002C7.02684 1.57015 7.12302 1.39145 7.16209 1.1967C7.20116 1.00195 7.18134 0.799979 7.10518 0.616535C7.02901 0.433091 6.89994 0.276486 6.73442 0.166685C6.5689 0.0568838 6.37443 -0.00113818 6.17581 1.69169e-05H0.995807C0.798035 0.000846148 0.604949 0.060301 0.440965 0.170864C0.276982 0.281427 0.149465 0.438133 0.0745398 0.621165C-0.000385769 0.804198 -0.0193555 1.00534 0.0200297 1.19915C0.0594149 1.39296 0.155386 1.57075 0.295808 1.71002Z" fill="white"/>
+                </svg>
+              </span>
+            </button>
+
+            <div class="dropdown-info">
+              <div class="dropdownlist">
+                <a href="profile.html" class="dropdownlink">
+                  <span class="icon">
+                    <svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.81248 4.5C9.81248 5.24592 9.51617 5.96129 8.98872 6.48874C8.46127 7.01618 7.7459 7.3125 6.99998 7.3125C6.25406 7.3125 5.53869 7.01618 5.01124 6.48874C4.4838 5.96129 4.18748 5.24592 4.18748 4.5C4.18748 3.75408 4.4838 3.03871 5.01124 2.51126C5.53869 1.98382 6.25406 1.6875 6.99998 1.6875C7.7459 1.6875 8.46127 1.98382 8.98872 2.51126C9.51617 3.03871 9.81248 3.75408 9.81248 4.5V4.5ZM1.37573 15.0885C1.39983 13.6128 2.00299 12.2056 3.05512 11.1705C4.10724 10.1354 5.52405 9.55535 6.99998 9.55535C8.47592 9.55535 9.89272 10.1354 10.9448 11.1705C11.997 12.2056 12.6001 13.6128 12.6242 15.0885C10.8598 15.8976 8.94109 16.3151 6.99998 16.3125C4.99298 16.3125 3.08798 15.8745 1.37573 15.0885Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <span class="text">Profile</span>
+                </a>
+  
+                <a href="../auth/login.html" class="dropdownlink">
+                  <span class="icon">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12.75 6L11.6925 7.0575L12.8775 8.25H6.75V9.75H12.8775L11.6925 10.935L12.75 12L15.75 9L12.75 6ZM3.75 3.75H9V2.25H3.75C2.925 2.25 2.25 2.925 2.25 3.75V14.25C2.25 15.075 2.925 15.75 3.75 15.75H9V14.25H3.75V3.75Z" fill="white"/>
+                    </svg>
+                  </span>
+                  <span class="text">Log out</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- NOTIFICATIONS -->
+        <div class="mynotifications">
+          <button type="button" class="notificationlink">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32Z" fill="#F0F0F0"/>
+              <path d="M15.5858 24.5C16.1158 24.4984 16.6235 24.2872 16.9983 23.9125C17.373 23.5377 17.5842 23.0299 17.5858 22.5H13.5858C13.5858 23.0304 13.7965 23.5391 14.1716 23.9142C14.5467 24.2893 15.0554 24.5 15.5858 24.5ZM21.5858 18.5V13.5C21.5858 10.43 19.9458 7.86 17.0858 7.18V6.5C17.0858 6.10218 16.9278 5.72064 16.6465 5.43934C16.3652 5.15804 15.9836 5 15.5858 5C15.188 5 14.8065 5.15804 14.5251 5.43934C14.2438 5.72064 14.0858 6.10218 14.0858 6.5V7.18C11.2158 7.86 9.58581 10.42 9.58581 13.5V18.5L8.29581 19.79C8.15539 19.9293 8.05942 20.1071 8.02003 20.3009C7.98064 20.4947 7.99961 20.6958 8.07454 20.8789C8.14947 21.0619 8.27698 21.2186 8.44097 21.3292C8.60495 21.4397 8.79803 21.4992 8.99581 21.5H22.1658C22.3644 21.5012 22.5589 21.4431 22.7244 21.3333C22.8899 21.2235 23.019 21.0669 23.0952 20.8835C23.1713 20.7 23.1912 20.4981 23.1521 20.3033C23.113 20.1086 23.0168 19.9299 22.8758 19.79L21.5858 18.5Z" fill="#292E3E"/>
+              <path d="M27 11C29.7614 11 32 8.76142 32 6C32 3.23858 29.7614 1 27 1C24.2386 1 22 3.23858 22 6C22 8.76142 24.2386 11 27 11Z" fill="#F04130"/>
+            </svg>
+          </button>
+
+          <div class="mynotifications-info">
+            <ul class="notificationlist">
+              <li class="notificationlist-item">
+                <a href="#" class="notificationlist-link">
+                  <span class="icon">
+                    <img src="https://logowik.com/content/uploads/images/google-exposure-notification4676.jpg" alt="notification-icon">
+                  </span>
+
+                  <span class="textbox">
+                    <span class="text">
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis nobis reprehenderit voluptatum, sequi quo commodi velit odit illum alias quod.
+                    </span>
+                  </span>
+                </a>
+              </li>
+              
+              <li class="notificationlist-item">
+                <a href="#" class="notificationlist-link">
+                  <span class="icon">
+                    <img src="https://dynamic.brandcrowd.com/asset/logo/fd639e81-db67-427e-885e-13e6d0ec1ddb/logo-search-grid-1x?logoTemplateVersion=1&v=637672052885230000" alt="notification-icon">
+                  </span>
+
+                  <span class="textbox">
+                    <span class="text">
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis nobis reprehenderit voluptatum, sequi quo commodi velit odit illum alias quod.
+                    </span>
+                  </span>
+                </a>
+              </li>
+
+              <li class="notificationlist-item">
+                <a href="#" class="notificationlist-link">
+                  <span class="icon">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN8hUnMiv55zGUKv3_ntVUdWCXgIMoN3WMd-Gjbb411fq_zp4J9VUrQF84GI71W5HrONY&usqp=CAU" alt="notification-icon">
+                  </span>
+
+                  <span class="textbox">
+                    <span class="text">
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis nobis reprehenderit voluptatum, sequi quo commodi velit odit illum alias quod.
+                    </span>
+                  </span>
+                </a>
+              </li>
+
+              <li class="notificationlist-item">
+                <a href="#" class="notificationlist-link">
+                  <span class="icon">
+                    <img src="https://img.favpng.com/10/23/14/mercari-logo-product-yahoo-auctions-design-png-favpng-fK2xiTjhxmUTZntxMiqhFN4F1.jpg" alt="notification-icon">
+                  </span>
+
+                  <span class="textbox">
+                    <span class="text">
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis nobis reprehenderit voluptatum, sequi quo commodi velit odit illum alias quod.
+                    </span>
+                  </span>
+                </a>
+              </li>
+
+              <li class="notificationlist-item">
+                <a href="#" class="notificationlist-link">
+                  <span class="icon">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9pxwPyiYL13_IQMNUn6L0ypZOqfQKvPvTvQKxzfB6T5ILTyriIl-rfNE4iA94DQaWtEY&usqp=CAU" alt="notification-icon">
+                  </span>
+
+                  <span class="textbox">
+                    <span class="text">
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis nobis reprehenderit voluptatum, sequi quo commodi velit odit illum alias quod.
+                    </span>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            
+            <div class="viewall">
+              <a href="notifications.html" class="viewall-link">View all notifications</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- HEADER-SECTION END -->
+
+  <!-- SIDEBAR-MENU START -->
+  <aside class="sidebar">    
+    <div class="sidebar-body">
+      <!-- MAIN-LIST -->
+      <ul class="sidelist">
+        <li class="sidelist-item">
+          <a href="index.html" class="sidelist-link active" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="DashBoard">
+            <span class="icon">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.523 10H7.30281C7.5583 10 7.80331 9.89464 7.98397 9.70711C8.16462 9.51957 8.26611 9.26522 8.26611 9V1C8.26611 0.734784 8.16462 0.48043 7.98397 0.292893C7.80331 0.105357 7.5583 0 7.30281 0H1.523C1.26751 0 1.02249 0.105357 0.841837 0.292893C0.661183 0.48043 0.559692 0.734784 0.559692 1V9C0.559692 9.26522 0.661183 9.51957 0.841837 9.70711C1.02249 9.89464 1.26751 10 1.523 10ZM1.523 18H7.30281C7.5583 18 7.80331 17.8946 7.98397 17.7071C8.16462 17.5196 8.26611 17.2652 8.26611 17V13C8.26611 12.7348 8.16462 12.4804 7.98397 12.2929C7.80331 12.1054 7.5583 12 7.30281 12H1.523C1.26751 12 1.02249 12.1054 0.841837 12.2929C0.661183 12.4804 0.559692 12.7348 0.559692 13V17C0.559692 17.2652 0.661183 17.5196 0.841837 17.7071C1.02249 17.8946 1.26751 18 1.523 18ZM11.156 18H16.9358C17.1913 18 17.4363 17.8946 17.617 17.7071C17.7977 17.5196 17.8991 17.2652 17.8991 17V9C17.8991 8.73478 17.7977 8.48043 17.617 8.29289C17.4363 8.10536 17.1913 8 16.9358 8H11.156C10.9005 8 10.6555 8.10536 10.4749 8.29289C10.2942 8.48043 10.1927 8.73478 10.1927 9V17C10.1927 17.2652 10.2942 17.5196 10.4749 17.7071C10.6555 17.8946 10.9005 18 11.156 18ZM10.1927 1V5C10.1927 5.26522 10.2942 5.51957 10.4749 5.70711C10.6555 5.89464 10.9005 6 11.156 6H16.9358C17.1913 6 17.4363 5.89464 17.617 5.70711C17.7977 5.51957 17.8991 5.26522 17.8991 5V1C17.8991 0.734784 17.7977 0.48043 17.617 0.292893C17.4363 0.105357 17.1913 0 16.9358 0H11.156C10.9005 0 10.6555 0.105357 10.4749 0.292893C10.2942 0.48043 10.1927 0.734784 10.1927 1Z" fill="#F04130"/>
+              </svg>
+            </span>
+            <span class="text">DashBoard</span>
+          </a>
+        </li>
+
+        <li class="sidelist-item">
+          <a href="schedule.html" class="sidelist-link" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Schedule">
+            <span class="icon">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.10714 2.25H11.8929V0.84375C11.8929 0.37793 12.3228 0 12.8571 0C13.3915 0 13.8214 0.37793 13.8214 0.84375V2.25H15.4286C16.8469 2.25 18 3.25723 18 4.5V15.75C18 16.991 16.8469 18 15.4286 18H2.57143C1.15112 18 0 16.991 0 15.75V4.5C0 3.25723 1.15112 2.25 2.57143 2.25H4.17857V0.84375C4.17857 0.37793 4.60848 0 5.14286 0C5.67723 0 6.10714 0.37793 6.10714 0.84375V2.25ZM1.92857 8.71875H5.14286V6.75H1.92857V8.71875ZM1.92857 10.4062V12.6562H5.14286V10.4062H1.92857ZM7.07143 10.4062V12.6562H10.9286V10.4062H7.07143ZM12.8571 10.4062V12.6562H16.0714V10.4062H12.8571ZM16.0714 6.75H12.8571V8.71875H16.0714V6.75ZM16.0714 14.3438H12.8571V16.3125H15.4286C15.7821 16.3125 16.0714 16.0594 16.0714 15.75V14.3438ZM10.9286 14.3438H7.07143V16.3125H10.9286V14.3438ZM5.14286 14.3438H1.92857V15.75C1.92857 16.0594 2.21625 16.3125 2.57143 16.3125H5.14286V14.3438ZM10.9286 6.75H7.07143V8.71875H10.9286V6.75Z" fill="#F04130"/>
+              </svg>
+            </span>
+            <span class="text">Schedule</span>
+          </a>
+        </li>
+
+        <li class="sidelist-item">
+          <a href="blogs.html" class="sidelist-link" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Blogs">
+            <span class="icon">
+              <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.560059 2.25C0.560059 1.00898 1.45693 0 2.56006 0H7.56006V4.5C7.56006 5.12227 8.00693 5.625 8.56006 5.625H12.5601V10.0441L9.84756 13.0957C9.52568 13.4578 9.30068 13.9078 9.19131 14.4035L8.60693 17.0367C8.53506 17.3602 8.55068 17.6977 8.64756 18.0035H2.56006C1.45693 18.0035 0.560059 16.9945 0.560059 15.7535V2.25ZM12.5601 4.5H8.56006V0L12.5601 4.5ZM17.7413 8.28633L18.1913 8.79258C18.6788 9.34102 18.6788 10.2305 18.1913 10.7824L17.2726 11.816L15.0538 9.31992L15.9726 8.28633C16.4601 7.73789 17.2507 7.73789 17.7413 8.28633V8.28633ZM10.3069 14.6602L14.3444 10.118L16.5632 12.6141L12.5257 17.1527C12.3976 17.2969 12.2382 17.3988 12.0601 17.448L10.1819 17.9754C10.0101 18.0246 9.83193 17.9684 9.70693 17.8277C9.58193 17.6871 9.53193 17.4867 9.57568 17.2934L10.0444 15.1805C10.0882 14.9836 10.1788 14.8008 10.3069 14.6566V14.6602Z" fill="#F04130"/>
+              </svg>
+            </span>
+            <span class="text">Blogs</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </aside>
+  <!-- SIDEBAR-MENU END -->
+
+  <!-- MAIN-SECTION START -->
+  <main class="mainsection" id="main-section">
+    <div class="row g-4">
+      <div class="col-lg-8">
+        <div class="d-flex flex-column gap-4">
+          <!-- WELCOME-USER -->
+          <div class="card-welcome">
+            <div class="card-detail">
+              <h1 class="cardtitle">
+                Good Morning, <span>Doctor Strange</span>
+              </h1>
+              
+              <div class="textbox">
+                <p class="cardtext">
+                  medicines cure diseases but only doctors can cure patients.
+                </p>
+              </div>
+
+              <div class="d-flex justify-content-end">
+                <p class="author">- Carl Jung</p>
+              </div>
+            </div>
+            
+            <figure class="card-thumbnail">
+              <img src="assets/images/avatar/profile.svg" alt="card-thumbnail">
+            </figure>
+          </div>
+
+          <!-- PROFILE-IMPRESSION-CHART -->
+          <div class="card-impression">
+            <div class="card-impression-header">
+              <h5 class="impression-title">Your Profile Impression</h5>
+              <p class="impression-text">
+                This graph shows your profile view for the last 6 months. 
+                This views are counted when any users views your profile. 
+                Every time they visits we increase your profile impression.
+              </p>
+            </div>
+            
+            <div class="card-impression-body">
+              <div id="profile-impression-chart"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-4">
+        <div class="d-flex flex-column gap-4">
+          <!-- PROILE-PROGRESS -->
+          <div class="card-progress">
+            <div class="d-flex align-items-center justify-content-between">
+              <h6 class="progress-title">Your Profile</h6>
+              <p class="progress-completed">80% complete</p>
+            </div>
+
+            <div class="card-progress-body">
+              <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar" style="width: 80%"></div>
+              </div>
+              
+              <p class="progress-text">
+                Your social link field is empty !
+              </p>
+            </div>
+          </div>
+
+          <!-- TODAY SCHEDULES -->
+          <div class="schedule-today">
+            <div class="schedule-today-header">
+              <h6 class="schedule-title">Today’s Schedule</h6>
+            </div>
+  
+            <div class="schedule-today-body">
+              <div class="card-schedule active">
+                <span class="schedule-time">04:00PM - 10:00PM</span>
+                <span class="hospitalname">Abedin Hospital</span>
+                <span class="location">Sherpur Sadar, Sherpur</span>
+              </div>
+
+              <div class="card-schedule">
+                <span class="schedule-time">07:00PM - 10:00PM</span>
+                <span class="hospitalname">Zaman Health Complex</span>
+                <span class="location">Sherpur Sadar, Sherpur</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- VIEW-COUNTERS -->
+          <div class="viewscounter">
+            <div class="card-view">
+              <figure class="card-view-icon">
+                <svg width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20.8281 29.5625C21.7191 29.5625 22.5736 29.2086 23.2036 28.5786C23.8336 27.9486 24.1875 27.0941 24.1875 26.2031C24.1875 25.3122 23.8336 24.4577 23.2036 23.8277C22.5736 23.1977 21.7191 22.8438 20.8281 22.8438C19.9372 22.8438 19.0827 23.1977 18.4527 23.8277C17.8227 24.4577 17.4688 25.3122 17.4688 26.2031C17.4688 27.0941 17.8227 27.9486 18.4527 28.5786C19.0827 29.2086 19.9372 29.5625 20.8281 29.5625Z" fill="#F04130"/>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M10.0781 2.6875H16.125C17.9069 2.6875 19.6159 3.39537 20.8759 4.65538C22.1359 5.91539 22.8438 7.62433 22.8438 9.40625V12.7656C22.8438 14.6218 24.3487 16.125 26.2031 16.125H29.5625C31.3444 16.125 33.0534 16.8329 34.3134 18.0929C35.5734 19.3529 36.2812 21.0618 36.2812 22.8438V36.9531C36.2812 38.8075 34.7762 40.3125 32.9219 40.3125H10.0781C9.18716 40.3125 8.33269 39.9586 7.70269 39.3286C7.07268 38.6986 6.71875 37.8441 6.71875 36.9531V6.04688C6.71875 4.19071 8.22375 2.6875 10.0781 2.6875ZM20.8281 32.25C22.0106 32.25 23.1161 31.9096 24.0477 31.3219L25.9254 33.1996C26.1801 33.4369 26.5171 33.5662 26.8652 33.56C27.2133 33.5539 27.5455 33.4129 27.7917 33.1667C28.0379 32.9205 28.1789 32.5883 28.185 32.2402C28.1912 31.8921 28.0619 31.5551 27.8246 31.3004L25.9487 29.4228C26.6626 28.2878 26.9791 26.9477 26.8483 25.6133C26.7175 24.2788 26.1469 23.0257 25.2261 22.0509C24.3054 21.0762 23.0869 20.4351 21.762 20.2285C20.4372 20.0219 19.0813 20.2614 17.9075 20.9095C16.7337 21.5576 15.8086 22.5775 15.2776 23.8087C14.7467 25.04 14.64 26.4128 14.9745 27.7112C15.3089 29.0097 16.0654 30.1602 17.125 30.9818C18.1846 31.8034 19.4873 32.2495 20.8281 32.25Z" fill="#F04130"/>
+                  <path d="M25.5313 9.40625C25.5344 7.14614 24.7206 4.96106 23.2397 3.25366C26.2377 4.04193 28.9725 5.61235 31.1645 7.80429C33.3564 9.99624 34.9269 12.7311 35.7151 15.729C34.0077 14.2482 31.8226 13.4344 29.5625 13.4375H26.2032C26.025 13.4375 25.8541 13.3667 25.7281 13.2407C25.6021 13.1147 25.5313 12.9438 25.5313 12.7656V9.40625Z" fill="#F04130"/>
+                </svg>
+              </figure>
+
+              <div class="card-view-detail">
+                <h6 class="view-title">Total Profile View</h6>
+                <p class="view-count">25,565</p>
+              </div>
+            </div>
+
+            <div class="card-view">
+              <figure class="card-view-icon">
+                <svg width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M10.0781 2.6875C8.22196 2.6875 6.71875 4.1925 6.71875 6.04687V36.9531C6.71875 38.8075 8.22375 40.3125 10.0781 40.3125H32.9219C34.7762 40.3125 36.2812 38.8075 36.2812 36.9531V22.8437C36.2812 21.0618 35.5734 19.3529 34.3134 18.0929C33.0534 16.8329 31.3444 16.125 29.5625 16.125H26.2031C25.3122 16.125 24.4577 15.7711 23.8277 15.1411C23.1977 14.5111 22.8437 13.6566 22.8437 12.7656V9.40625C22.8437 7.62433 22.1359 5.91539 20.8759 4.65538C19.6159 3.39537 17.9069 2.6875 16.125 2.6875H10.0781ZM13.4375 26.875C13.4375 26.5186 13.5791 26.1768 13.8311 25.9248C14.0831 25.6728 14.4249 25.5312 14.7812 25.5312H28.2187C28.5751 25.5312 28.9169 25.6728 29.1689 25.9248C29.4209 26.1768 29.5625 26.5186 29.5625 26.875C29.5625 27.2314 29.4209 27.5732 29.1689 27.8252C28.9169 28.0772 28.5751 28.2187 28.2187 28.2187H14.7812C14.4249 28.2187 14.0831 28.0772 13.8311 27.8252C13.5791 27.5732 13.4375 27.2314 13.4375 26.875ZM14.7812 30.9062C14.4249 30.9062 14.0831 31.0478 13.8311 31.2998C13.5791 31.5518 13.4375 31.8936 13.4375 32.25C13.4375 32.6064 13.5791 32.9482 13.8311 33.2002C14.0831 33.4522 14.4249 33.5937 14.7812 33.5937H21.5C21.8564 33.5937 22.1982 33.4522 22.4502 33.2002C22.7022 32.9482 22.8437 32.6064 22.8437 32.25C22.8437 31.8936 22.7022 31.5518 22.4502 31.2998C22.1982 31.0478 21.8564 30.9062 21.5 30.9062H14.7812Z" fill="#F04130"/>
+                  <path d="M23.2397 3.25366C24.7206 4.96106 25.5344 7.14614 25.5313 9.40625V12.7656C25.5313 13.1365 25.8323 13.4375 26.2032 13.4375H29.5625C31.8226 13.4344 34.0077 14.2482 35.7151 15.729C34.9269 12.7311 33.3564 9.99624 31.1645 7.80429C28.9725 5.61235 26.2377 4.04193 23.2397 3.25366V3.25366Z" fill="#F04130"/>
+                </svg>
+              </figure>
+
+              <div class="card-view-detail">
+                <h6 class="view-title">Total Blog View</h6>
+                <p class="view-count">35,565</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- MAIN-SECTION END -->
+
+  <!-- FOOTER-SECTION START -->
+  <footer class="dashboard-footer">
+    <div class="container">
+      <p class="text-copyright">
+        &copy; DoctorValy &ndash; <span class="currentyear"></span> all rights reserved.
+      </p>
+    </div>
+  </footer>
+  <!-- FOOTER-SECTION END -->
+  
+  <!-- BOOTSTRAP-BUNDLE-JS[v5.3] -->
+  <script src="../../assets/js/bootsrap/bootstrap.bundle.min.js"></script>
+  <!-- HAMBURER-ICON -->
+  <script src="../../assets/js/hamburger/hamburger.js"></script>
+  <!-- COPYRIGHT -->
+  <script src="../../assets/js/copyright/copyright.js"></script>
+  <!-- TOOLTIP -->
+  <script src="../../assets/js/tooltip/tooltip.js"></script>
+  <!-- LOTTIE-JS -->
+  <script src="../../assets/js/lottie-js/lottie-player.js"></script>
+  <!-- PRELOADER -->
+  <script src="../../assets/js/loader/loader.js"></script>
+
+  <!-- APEXCHARTS-JS -->
+  <script src="../../assets/js/apexcharts/apexcharts.min.js"></script>
+  <!-- CHARTS -->
+  <script src="../../assets/js/charts/homechart.js"></script>
+
+</body>
+</html>
