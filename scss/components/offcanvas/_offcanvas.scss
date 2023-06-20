@@ -23,14 +23,8 @@
     border-left: 0;
   }
 
-  &.offcanvas-start {
-    border-right: 0;
-  }
-
   &-header {
     .logo {
-      width: size(136);
-      height: size(44);
       @include flex-center;
       overflow: hidden;
 

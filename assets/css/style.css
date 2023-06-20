@@ -3163,12 +3163,7 @@ label span {
 .offcanvas.offcanvas-end {
   border-left: 0;
 }
-.offcanvas.offcanvas-start {
-  border-right: 0;
-}
 .offcanvas-header .logo {
-  width: 8.5rem;
-  height: 2.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
