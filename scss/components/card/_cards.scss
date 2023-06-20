@@ -1462,3 +1462,62 @@
     }
   }
 }
+
+.card-counter {
+  @include flex-center-column;
+  gap: size(10);
+  background: $white;
+  box-shadow: $cardshadow;
+  padding: size(16);
+  @include radius(10);
+  @include h100;
+  @include border-single(bottom, solid, 5, transparent);
+  
+  @include breakpoint(mobile768) {
+    padding: size(20);
+  }
+
+  .title {
+    color: $dropdownbg;
+    @include font($primaryFont, 14, medium, normal, 19.6);
+    text-transform: uppercase;
+    @include text-overflow;
+  }
+
+  .count {
+    color: $black;
+    @include font($primaryFont, 20, bold, normal, 28);
+  }
+
+  &.counter-1 {
+    border-color: $cardborder-1;
+  }
+
+  &.counter-2 {
+    border-color: $cardborder-2;
+  }
+
+  &.counter-3 {
+    border-color: $cardborder-3;
+  }
+
+  &.counter-4 {
+    border-color: $cardborder-4;
+  }
+
+  &.counter-5 {
+    border-color: $cardborder-5;
+  }
+
+  &.counter-6 {
+    border-color: $cardborder-6;
+  }
+
+  &.counter-7 {
+    border-color: $cardborder-7;
+  }
+
+  &.counter-8 {
+    border-color: $cardborder-8;
+  }
+}
