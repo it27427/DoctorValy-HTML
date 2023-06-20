@@ -1468,13 +1468,13 @@
   gap: size(10);
   background: $white;
   box-shadow: $cardshadow;
-  padding: size(16);
+  padding: size(20);
   @include radius(10);
   @include h100;
   @include border-single(bottom, solid, 5, transparent);
   
   @include breakpoint(mobile768) {
-    padding: size(20);
+    padding: size(40) size(20);
   }
 
   .title {

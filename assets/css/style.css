@@ -2346,7 +2346,7 @@ button:not([disabled]):hover,
   gap: 0.625rem;
   background: hsl(0, 0%, 100%);
   box-shadow: 0.25rem 0.25rem 1rem 0.1875rem rgba(72, 75, 137, 0.2);
-  padding: 1rem;
+  padding: 1.25rem;
   border-radius: 0.625rem;
   border-radius: 0.625rem;
   height: 100%;
@@ -2354,7 +2354,7 @@ button:not([disabled]):hover,
 }
 @media screen and (min-width: 48rem) {
   .card-counter {
-    padding: 1.25rem;
+    padding: 2.5rem 1.25rem;
   }
 }
 .card-counter .title {
