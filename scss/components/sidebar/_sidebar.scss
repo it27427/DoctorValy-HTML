@@ -56,6 +56,17 @@
     @include flex-center-column;
     justify-content: space-between;
     height: calc(100% - size(83));
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      background: transparent;
+      width: size(8);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      @include radius(8);
+    }
 
     .sidelist {
       @include list-vertical;

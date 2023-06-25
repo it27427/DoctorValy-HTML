@@ -3663,6 +3663,16 @@ label span {
   flex-direction: column;
   justify-content: space-between;
   height: calc(100% - 5.1875rem);
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.sidebar-body::-webkit-scrollbar {
+  background: transparent;
+  width: 0.5rem;
+}
+.sidebar-body::-webkit-scrollbar-thumb {
+  border-radius: 0.5rem;
+  border-radius: 0.5rem;
 }
 .sidebar-body .sidelist {
   margin: 0;
