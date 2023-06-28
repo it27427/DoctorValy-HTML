@@ -27,7 +27,7 @@
   
   <!-- HEADER-SECTION START -->
   <header class="dashboard-header fixed-top pe-0">
-    <nav class="dashboard-header-nav">
+    <nav class="dashboard-header-nav" aria-labelledby="nav">
       <!-- MOBILE-MENU -->
       <div class="d-lg-none d-block">
         <!-- HAMBURGER-BUTTON -->
@@ -533,6 +533,50 @@
               </table>
             </div>
           </div>
+        </div>
+        
+        <div class="mt-5 d-flex justify-content-center">
+          <nav aria-label="Page navigation example" aria-labelledby="nav">
+            <ul class="pagination">
+              <li class="page-item">
+                <a href="#" class="btn-previous" aria-label="Previous">
+                  <span aria-hidden="true">
+                    <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="17.5" cy="17.5" r="17.5" fill="white"/>
+                      <path d="M22 23.2375L16.4372 17.5L22 11.7625L20.2874 10L13 17.5L20.2874 25L22 23.2375Z" fill="black"/>
+                    </svg>
+                  </span>
+                </a>
+              </li>
+              <ul class="pagination-list">
+                <li class="page-item active" aria-current="page">
+                  <a href="#" class="page-link">1</a>
+                </li>
+                <li class="page-item">
+                  <a href="#" class="page-link">2</a>
+                </li>
+                <li class="page-item">
+                  <a href="#" class="page-link">3</a>
+                </li>
+                <li class="page-item">
+                  <a href="#" class="page-link">...</a>
+                </li>
+                <li class="page-item">
+                  <a href="#" class="page-link">9</a>
+                </li>
+              </ul>
+              <li class="page-item">
+                <a href="#" class="btn-next" aria-label="Next">
+                  <span aria-hidden="true">
+                    <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="17.5" cy="17.5" r="17.5" fill="white"/>
+                      <path d="M13 11.7625L18.5628 17.5L13 23.2375L14.7126 25L22 17.5L14.7126 10L13 11.7625Z" fill="black"/>
+                    </svg>
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
     </div>
