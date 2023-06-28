@@ -97,6 +97,35 @@
     }
   }
 
+  .blogsearch {
+    margin-top: size(-32);
+  }
+
+  .searchform {
+    @include flex-center-vert;
+    background: $white;
+    @include radius(6);
+
+    .btn-search {
+      @include square(40);
+      @include radius(6);
+      @include flex-center;
+      background: $hamburgerbg;
+    }
+
+    .mysearches {
+      width: calc(100% - size(40));
+      height: size(40);
+
+      .searchfield {
+        background: transparent;
+        @include wh100;
+        padding: size(8) size(16);
+        font-size: size(14);
+      }
+    }
+  }
+
   &-body {
     @include flex-column;
     gap: size(20);
