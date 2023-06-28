@@ -1,3 +1,95 @@
 @use "../../global"as *;
 @use "../../partials"as *;
 
+.table {
+  thead {
+    tr {
+      th {
+        font-size: size(12);
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      td {
+        font-size: size(12);
+        @include text-overflow;
+
+        .actions {
+          @include flex-center-vert;
+          gap: size(12);
+
+          .btn-action {
+            @include square(18);
+            @include flex-center;
+            overflow: hidden;
+
+            svg {
+              @include wh100;
+
+              path {
+                fill: $gray-700;
+              }
+            }
+
+            &:first-child {
+              @include hover {
+                svg {
+                  path {
+                    fill: $cardborder-3;
+                  }
+                }
+              }
+            }
+
+            @include hover {
+              svg {
+                path {
+                  fill: $hamburgerbg;
+                }
+              }
+            }
+          }
+        }
+
+        .specilities {
+          @include flex-center-vert;
+          gap: size(5);
+          flex-wrap: wrap;
+
+          .specility {
+            font-size: size(10);
+            display: inline-block;
+            padding: size(4) size(8);
+            @include radius(8);
+            text-align: center;
+            @include setBgColor($lightdanger, $hamburgerbg);
+          }
+        }
+
+        .blogimg {
+          width: size(96);
+          height: size(48);
+          @include radius(4);
+          @include flex-center;
+          overflow: hidden;
+
+          img {
+            @include wh100;
+            object-fit: cover;
+          }
+        }
+
+        .description {
+          max-width: size(150);
+          @include line-clamp;
+
+          p {
+            font-size: size(11);
+          }
+        }
+      }
+    }
+  }
+}

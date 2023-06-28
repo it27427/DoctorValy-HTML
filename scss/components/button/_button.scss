@@ -14,7 +14,9 @@ button,
   @include wh100;
   overflow:hidden;
 
-  &:focus {
+  &:focus,
+  &:visited,
+  &:active {
     box-shadow: none;
     outline: none;
   }

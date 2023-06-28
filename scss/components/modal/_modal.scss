@@ -31,7 +31,7 @@
           @include rotate(90);
 
           path {
-            // stroke: $danger;
+            stroke: $red;
           }
         }
       }
@@ -42,6 +42,11 @@
     p {
       font-family: $secondaryFont;
       font-size: size(14);
+    }
+
+    .delete-title {
+      font-family: $secondaryFont;
+      font-size: size(16);
     }
   }
 

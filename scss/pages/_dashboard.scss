@@ -380,3 +380,91 @@
     }
   }
 }
+
+.requestlist {
+  @include flex-column;
+  gap: size(16);
+
+  @include breakpoint(tab992) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .request {
+    background: $white;
+    @include radius(10);
+    @include flex-column;
+    gap: size(16);
+    padding: size(16);
+
+    @include breakpoint(tab992) {
+      width: calc(100% / 2 - size(16));
+    }
+
+    &-info {
+      @include flex-center-vert;
+      gap: size(12);
+
+      .request-thumbnail {
+        @include square(80);
+        @include radius(8);
+        @include flex-center;
+        overflow: hidden;
+
+        img {
+          @include wh100;
+          object-fit: cover;
+        }
+      }
+
+      .request-detail {
+        @include flex-column;
+        gap: size(4);
+
+        .namerequest {
+          color: $black;
+          font-size: size(14);
+          font-weight: 600;
+        }
+
+        .textrequest {
+          color: $textprimary;
+          font-size: size(12);
+          font-weight: 500;
+          @include line-clamp;
+        }
+      }
+    }
+
+    &-actions {
+      @include flex-center-vert;
+      gap: size(12);
+
+      button {
+        @include radius(8);
+        @include flex-center;
+        font-size: size(13);
+        font-weight: 700;
+        padding: size(8) size(16);
+        text-align: center;
+        max-width: size(130);
+      }
+
+      .btn-accept {
+        @include setBgColor($successbg, $white);
+
+        @include hover {
+          @include setBgColor(darken($successbg, 10%), $white);
+        }
+      }
+      
+      .btn-decline {
+        @include setBgColor($hamburgerbg, $white);
+
+        @include hover {
+          @include setBgColor(darken($hamburgerbg, 10%), $white);
+        }
+      }
+    }
+  }
+}
