@@ -849,11 +849,11 @@
                 }
               }
 
-              &.instagram-link {
-                color: $instagrambg;
+              &.youtube-link {
+                color: $hamburgerbg;
 
                 @include hover {
-                  @include setBgColor($instagrambg, $white);
+                  @include setBgColor($hamburgerbg, $white);
                 }
               }
 

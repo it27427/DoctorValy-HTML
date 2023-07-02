@@ -1,2 +1,87 @@
 @use "../global" as *;
 @use "../partials" as *;
+
+.doctorsingleinfo {
+  @include flex-column;
+  gap: size(24);
+  padding: size(24);
+
+  @include breakpoint(tab992) {
+    padding: size(48);
+  }
+
+  .actions {
+    @include flex-center-vert;
+    gap: size(12);
+
+    .btn-action {
+      @include square(18);
+      @include flex-center;
+      overflow: hidden;
+
+      svg {
+        @include wh100;
+
+        path {
+          fill: $gray-700;
+        }
+      }
+
+      &:first-child {
+        @include hover {
+          svg {
+            path {
+              fill: $cardborder-3;
+            }
+          }
+        }
+      }
+
+      @include hover {
+        svg {
+          path {
+            fill: $hamburgerbg;
+          }
+        }
+      }
+    }
+  }
+
+  .info {
+    @include radius(10);
+    background: $white;
+    @include flex-column;
+    gap: size(16);
+
+    &-header {
+      padding: size(16) size(24);
+      @include border-single(bottom, solid, 1, rgba($dropdownbg, 0.2));
+
+      .infotitle {
+        color: $black;
+        font-size: size(18);
+        font-weight: 500;
+      }
+    }
+
+    &-body {
+      padding: size(8) size(24) size(24);
+
+      ul {
+        @include list-vertical;
+        gap: size(8);
+      }
+
+      .profileimg {
+        @include square(130);
+        @include flex-center;
+        @include radius(8);
+
+        img {
+          @include wh100;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

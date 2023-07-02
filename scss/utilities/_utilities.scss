@@ -16,7 +16,6 @@
 	@include flex-center;
 	@include w100;
 	@include radius(8);
-	text-align: center;
 	@include transitionsall;
 
 	@include breakpoint(mobile576) {
@@ -30,4 +29,20 @@
 
 .bloglink {
 	@include wh100;
+}
+
+.fa-facebook-f {
+	color: $facebookbg;
+}
+
+.fa-twitter {
+	color: $twitterbg;
+}
+
+.fa-youtube {
+	color: $hamburgerbg;
+}
+
+.fa-linkedin-in {
+	color: $linkedinbg;
 }

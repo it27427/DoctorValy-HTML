@@ -138,6 +138,9 @@ label {
 }
 
 .inputbox {
+  @include flex-column;
+  gap: size(8);
+
   .select-dropdown__button {
     background: $white;
     color: $darktext;
@@ -169,11 +172,6 @@ label {
     color: $dangertext;
     @include font($primaryFont, 12, normal, normal, 16.8);
   }
-}
-
-.inputbox {
-  @include flex-column;
-  gap: size(8);
 }
 
 .edubtns {
@@ -346,9 +344,10 @@ label {
     @include square(44);
     @include flex-center;
     overflow: hidden;
+    @include border-single(right, solid, 1, rgba($dropdownbg, 0.2));
 
-    svg {
-      @include wh100;
+    i {
+      font-size: size(20);
     }
   }
 
