@@ -20,6 +20,23 @@
           @include flex-center-vert;
           gap: size(12);
 
+          .btn-view {
+            @include square(36);
+            @include radius(4);
+            background: $hamburgerbg;
+            @include flex-center;
+            overflow: hidden;
+            padding: size(8);
+
+            svg {
+              @include wh100;
+
+              path {
+                fill: $white;
+              }
+            }
+          }
+
           .btn-action {
             @include square(18);
             @include flex-center;

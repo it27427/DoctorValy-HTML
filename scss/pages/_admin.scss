@@ -85,3 +85,29 @@
     }
   }
 }
+
+.filteroptions {
+  @include flex-center-vert;
+  justify-content: flex-end;
+  gap: size(16);
+
+  button {
+    @include square(40);
+    @include radius(4);
+    @include flex-center;
+
+    svg {
+      path {
+        fill: $white;
+      }
+    }
+  }
+
+  .btn-search {
+    background: $hamburgerbg;
+  }
+
+  .btn-filter {
+    background: $calendarbg;
+  }
+}

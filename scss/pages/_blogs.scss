@@ -97,9 +97,18 @@
     }
   }
 
-  .blogsearch {
-    margin-top: size(-32);
+  &-body {
+    @include flex-column;
+    gap: size(20);
   }
+
+  &-footer {
+    @include flex-center;
+  }
+}
+
+.blogsearch {
+  // margin-top: size(-32);
 
   .searchform {
     @include flex-center-vert;
@@ -124,14 +133,5 @@
         font-size: size(14);
       }
     }
-  }
-
-  &-body {
-    @include flex-column;
-    gap: size(20);
-  }
-
-  &-footer {
-    @include flex-center;
   }
 }
