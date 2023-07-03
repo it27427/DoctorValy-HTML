@@ -19,6 +19,8 @@
 }
 
 .myprofile {
+  min-height: 100vh;
+  
   @include breakpoint(tab992) {
     width: calc(100% - size(250));
     margin-left: auto;

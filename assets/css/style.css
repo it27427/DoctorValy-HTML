@@ -3988,6 +3988,9 @@ label span {
   width: calc(100% - 5rem);
 }
 
+.myprofile {
+  min-height: 100vh;
+}
 @media screen and (min-width: 62rem) {
   .myprofile {
     width: calc(100% - 15.625rem);
