@@ -7,8 +7,12 @@
   <title>DoctorValy | Profile</title>
   <!-- FAVICON -->
   <link rel="shortcut icon" href="../assets/images/logo/favicon.ico" type="image/x-icon">
+  <!-- FONT-AWESONME-CSS -->
+  <link rel="stylesheet" href="../../assets/css/all.min.css">
   <!-- MC-DATEPICKER -->
   <link rel="stylesheet" href="../../assets/css/mc-datepicker/mc-calendar.min.css">
+  <!-- NICE-SELECT2 -->
+  <link rel="stylesheet" href="../../assets/css/nice-select/nice-select2.css">
   <!-- BOOTSTRAP-CSS[v5.3] -->
   <link rel="stylesheet" href="../../assets/css/bootstrap/bootstrap-icons.css">
   <link rel="stylesheet" href="../../assets/css/bootstrap/bootstrap.min.css">
@@ -546,15 +550,15 @@
                         <label for="divisions" class="inputlabel">
                           Division <span>*</span>
                         </label>
-                        <select id="divisions" class="form-select" placeholder-text="Select Division" autocomplete="off">
-                          <option value="" class="select-dropdown__list-item">Dhaka</option>
-                          <option value="" class="select-dropdown__list-item">Chittagong</option>
-                          <option value="" class="select-dropdown__list-item">Mymensingh</option>
-                          <option value="" class="select-dropdown__list-item">Rangpur</option>
-                          <option value="" class="select-dropdown__list-item">Barishal</option>
-                          <option value="" class="select-dropdown__list-item">Sylhet</option>
-                          <option value="" class="select-dropdown__list-item">Rajshahi</option>
-                          <option value="" class="select-dropdown__list-item">Khulna</option>
+                        <select id="divisions" class="wide" autocomplete="off">
+                          <option value="">Dhaka</option>
+                          <option value="">Chittagong</option>
+                          <option value="">Mymensingh</option>
+                          <option value="">Rangpur</option>
+                          <option value="">Barishal</option>
+                          <option value="">Sylhet</option>
+                          <option value="">Rajshahi</option>
+                          <option value="">Khulna</option>
                         </select>
                         <p class="error-message d-none">This field is required</p>
                       </div>
@@ -565,17 +569,17 @@
                         <label for="districts" class="inputlabel">
                           District <span>*</span>
                         </label>
-                        <select id="districts" class="form-select" placeholder-text="Select District" autocomplete="off">
-                          <option value="" class="select-dropdown__list-item">Dhaka</option>
-                          <option value="" class="select-dropdown__list-item">Dinajpur</option>
-                          <option value="" class="select-dropdown__list-item">Sherpur</option>
-                          <option value="" class="select-dropdown__list-item">Chittagong</option>
-                          <option value="" class="select-dropdown__list-item">Mymensingh</option>
-                          <option value="" class="select-dropdown__list-item">Rangpur</option>
-                          <option value="" class="select-dropdown__list-item">Barishal</option>
-                          <option value="" class="select-dropdown__list-item">Sylhet</option>
-                          <option value="" class="select-dropdown__list-item">Rajshahi</option>
-                          <option value="" class="select-dropdown__list-item">Khulna</option>
+                        <select id="districts" class="wide" autocomplete="off">
+                          <option value="">Dhaka</option>
+                          <option value="">Dinajpur</option>
+                          <option value="">Sherpur</option>
+                          <option value="">Chittagong</option>
+                          <option value="">Mymensingh</option>
+                          <option value="">Rangpur</option>
+                          <option value="">Barishal</option>
+                          <option value="">Sylhet</option>
+                          <option value="">Rajshahi</option>
+                          <option value="">Khulna</option>
                         </select>
                         <p class="error-message d-none">This field is required</p>
                       </div>
@@ -586,13 +590,13 @@
                         <label for="thanas" class="inputlabel">
                           Thana <span>*</span>
                         </label>
-                        <select id="thanas" class="form-select" placeholder-text="Select Thana" autocomplete="off">
-                          <option value="" class="select-dropdown__list-item">Sherpur Sadar</option>
-                          <option value="" class="select-dropdown__list-item">Phulbari</option>
-                          <option value="" class="select-dropdown__list-item">Nalitabari</option>
-                          <option value="" class="select-dropdown__list-item">Jhinaigati</option>
-                          <option value="" class="select-dropdown__list-item">Nakla</option>
-                          <option value="" class="select-dropdown__list-item">Sreebardi</option>
+                        <select id="thanas" class="wide" autocomplete="off">
+                          <option value="">Sherpur Sadar</option>
+                          <option value="">Phulbari</option>
+                          <option value="">Nalitabari</option>
+                          <option value="">Jhinaigati</option>
+                          <option value="">Nakla</option>
+                          <option value="">Sreebardi</option>
                         </select>
                         <p class="error-message d-none">This field is required</p>
                       </div>
@@ -620,18 +624,9 @@
 
                     <div class="col-md-6 col-12">
                       <div class="socialbox">
-                        <figure class="icon">
-                          <svg width="57" height="57" viewBox="0 0 57 57" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#fbicon)">
-                              <path d="M50.1786 0.34021H6.02143C4.42445 0.34021 2.89287 0.972351 1.76364 2.09757C0.634399 3.22279 0 4.74891 0 6.34021L0 50.3402C0 51.9315 0.634399 53.4576 1.76364 54.5829C2.89287 55.7081 4.42445 56.3402 6.02143 56.3402H23.239V37.3015H15.3358V28.3402H23.239V21.5102C23.239 13.7415 27.8805 9.45021 34.9895 9.45021C38.3941 9.45021 41.9543 10.0552 41.9543 10.0552V17.6802H38.0316C34.1666 17.6802 32.961 20.0702 32.961 22.5215V28.3402H41.5893L40.2093 37.3015H32.961V56.3402H50.1786C51.7756 56.3402 53.3071 55.7081 54.4364 54.5829C55.5656 53.4576 56.2 51.9315 56.2 50.3402V6.34021C56.2 4.74891 55.5656 3.22279 54.4364 2.09757C53.3071 0.972351 51.7756 0.34021 50.1786 0.34021Z" fill="#3B5998"/>
-                            </g>
-                            <defs>
-                              <clipPath id="fbicon">
-                                <rect width="56.2" height="56" fill="white" transform="translate(0 0.34021)"/>
-                              </clipPath>
-                            </defs>
-                          </svg>
-                        </figure>
+                        <span class="icon">
+                          <i class="fa-brands fa-facebook-f"></i>
+                        </span>
 
                         <div class="detail">
                           <input type="text" placeholder="https://facebook.com/ratulalmamun" autocomplete="off">
@@ -641,14 +636,36 @@
 
                     <div class="col-md-6 col-12">
                       <div class="socialbox">
-                        <figure class="icon">
-                          <svg width="54" height="64" viewBox="0 0 54 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M22.0574 24.7816L33.2986 31.3028L22.0574 37.824V24.7816ZM52.8999 10.0636V52.4938C52.8999 55.6881 50.3612 58.2797 47.2321 58.2797H5.66785C2.53872 58.2797 0 55.6881 0 52.4938V10.0636C0 6.86932 2.53872 4.27771 5.66785 4.27771H47.2321C50.3612 4.27771 52.8999 6.86932 52.8999 10.0636ZM47.9406 31.3149C47.9406 31.3149 47.9406 24.1307 47.0431 20.6832C46.5472 18.7787 45.0948 17.284 43.241 16.7777C39.8993 15.8496 26.45 15.8496 26.45 15.8496C26.45 15.8496 13.0006 15.8496 9.65896 16.7777C7.8051 17.284 6.35271 18.7787 5.85678 20.6832C4.95937 24.1186 4.95937 31.3149 4.95937 31.3149C4.95937 31.3149 4.95937 38.4991 5.85678 41.9465C6.35271 43.8511 7.8051 45.2855 9.65896 45.7918C13.0006 46.7079 26.45 46.7079 26.45 46.7079C26.45 46.7079 39.8993 46.7079 43.241 45.7797C45.0948 45.2734 46.5472 43.839 47.0431 41.9345C47.9406 38.4991 47.9406 31.3149 47.9406 31.3149Z" fill="#C4302B"/>
-                          </svg>
-                        </figure>
+                        <span class="icon">
+                          <i class="fa-brands fa-twitter"></i>
+                        </span>
+
+                        <div class="detail">
+                          <input type="text" placeholder="https://twitter.com/ratulalmamun" autocomplete="off">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 col-12">
+                      <div class="socialbox">
+                        <span class="icon">
+                          <i class="fa-brands fa-youtube"></i>
+                        </span>
 
                         <div class="detail">
                           <input type="text" placeholder="https://youtube.com/ratulalmamun" autocomplete="off">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 col-12">
+                      <div class="socialbox">
+                        <span class="icon">
+                          <i class="fa-brands fa-linkedin-in"></i>
+                        </span>
+
+                        <div class="detail">
+                          <input type="text" placeholder="https://linkedin.com/ratulalmamun" autocomplete="off">
                         </div>
                       </div>
                     </div>
@@ -770,7 +787,7 @@
                         <label for="starting-calendar" class="inputlabel">
                           From Date <span>*</span>
                         </label>
-                        <input type="text" class="form-control" placeholder="28/11/2023" id="starting-calendar" autocomplete="off">
+                        <input type="text" class="form-control" placeholder="01/01/2016" id="starting-calendar" autocomplete="off">
                         <p class="error-message d-none">This field is required</p>
                       </div>
                     </div>
@@ -997,11 +1014,43 @@
                         <label for="normal-select-1" class="inputlabel">
                           Degree Title <span>*</span>
                         </label>
-                        <select id="normal-select-1" class="form-select" placeholder-text="MBBS" autocomplete="off">
-                          <option value="1" class="select-dropdown__list-item">MBBS</option>
-                          <option value="2" class="select-dropdown__list-item">DENTAL</option>
-                          <option value="3" class="select-dropdown__list-item">NEWEST</option>
-                          <option value="4" class="select-dropdown__list-item">OLDEST</option>
+                        <select id="normal-select-1" class="wide" autocomplete="off">
+                          <option value="">MBBS</option>
+                          <option value="">DENTAL</option>
+                          <option value="">NEWEST</option>
+                          <option value="">OLDEST</option>
+                          <option value="">OTHER</option>
+                        </select>
+                        <p class="error-message d-none">This field is required</p>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="inputbox">
+                        <label for="selectinstitute" class="inputlabel">
+                          Select Institute <span>*</span>
+                        </label>
+                        <select id="selectinstitute" class="wide" autocomplete="off">
+                          <option value="">Dhaka Medical College</option>
+                          <option value="">Mymensingh Medical College</option>
+                          <option value="">Chittagong Medical</option>
+                          <option value="">Modarn Medical</option>
+                          <option value="">Dhaka Medical College</option>
+                          <option value="">Mymensingh Medical College</option>
+                          <option value="">Chittagong Medical</option>
+                          <option value="">Dhaka Medical College</option>
+                          <option value="">Mymensingh Medical College</option>
+                          <option value="">Chittagong Medical</option>
+                          <option value="">Modarn Medical</option>
+                          <option value="">Dhaka Medical College</option>
+                          <option value="">Mymensingh Medical College</option>
+                          <option value="">Chittagong Medical</option>
+                          <option value="">Modarn Medical</option>
+                          <option value="">Dhaka Medical College</option>
+                          <option value="">Mymensingh Medical College</option>
+                          <option value="">Chittagong Medical</option>
+                          <option value="">Modarn Medical</option>
+                          <option value="">Other</option>
                         </select>
                         <p class="error-message d-none">This field is required</p>
                       </div>
@@ -1013,6 +1062,16 @@
                           Major Course <span>*</span>
                         </label>
                         <input type="text" id="majorcourse" class="form-control" placeholder="Dental" autocomplete="off">
+                        <p class="error-message d-none">This field is required</p>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="inputbox">
+                        <label for="majorcourse2" class="inputlabel">
+                          Major Course <span>*</span>
+                        </label>
+                        <input type="text" id="majorcourse2" class="form-control" placeholder="Dental" autocomplete="off">
                         <p class="error-message d-none">This field is required</p>
                       </div>
                     </div>
@@ -1044,6 +1103,15 @@
                         </label>
                         <input type="text" class="form-control" placeholder="31/12/2020" id="ending-calendar" autocomplete="off">
                         <p class="error-message d-none">This field is required</p>
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="checkfield">
+                        <input type="checkbox" class="checkinput" id="currentstudy" autocomplete="off" hidden>
+                        <label for="currentstudy" class="checklabel">
+                          Currenty Studying
+                        </label>
                       </div>
                     </div>
 
@@ -1190,7 +1258,7 @@
           <div class="profileimage-info">
             <div class="details emptyprofile">
               <figure class="default-thumb">
-                <img src="../assets/images/avatar/default-profile.svg" alt="default-profile" id="uploadedImage" class="default-image">
+                <img src="../../dashboard/assets/images/avatar/default-profile.svg" alt="default-profile" id="uploadedImage" class="default-image">
 
                 <input type="file" id="profileImage" multiple hidden>
                 <label for="profileImage" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Upload Profile">
@@ -1240,12 +1308,14 @@
   <!-- COPYRIGHT -->
   <script src="../../assets/js/copyright/copyright.js"></script>
   <script src="../../assets/js/fileupload/uploadprofile.js"></script>
-  <script src="../../assets/js/selets/select.js"></script>
   <!-- MC-DATEPICKER -->
   <script src="../../assets/js/mc-datepicker/mc-calendar.min.js"></script>
   <script src="../../assets/js/filter/deadline.js"></script>
   <script src="../../assets/js/showhide/showhide.js"></script>
   <!-- TAG-GENERATOR -->
   <script src="../../assets/js/tag-generator/tag-generator.js"></script>
+  <!-- NICE-SELECT -->
+  <script src="../../assets/js/nice-select/nice-select2.js"></script>
+  <script src="../../assets/js/nice-select/doctorselect.js"></script>
 </body>
 </html>

@@ -7,8 +7,10 @@
   <title>DoctorValy | Create Doctor</title>
   <!-- FAVICON -->
   <link rel="shortcut icon" href="assets/images/logo/favicon.ico" type="image/x-icon">
-  <!-- SWIPER-CSS -->
+  <!-- FONT-AWESONME-CSS -->
   <link rel="stylesheet" href="../assets/css/all.min.css">
+  <!-- NICE-SELECT2 -->
+  <link rel="stylesheet" href="../assets/css/nice-select/nice-select2.css">
   <!-- MC-DATEPICKER -->
   <link rel="stylesheet" href="../assets/css/mc-datepicker/mc-calendar.min.css">
   <!-- BOOTSTRAP-CSS[v5.3] -->
@@ -700,15 +702,15 @@
                         <label for="divisions" class="inputlabel">
                           Division <span>*</span>
                         </label>
-                        <select id="divisions" class="form-select" placeholder-text="Select Division" autocomplete="off">
-                          <option value="" class="select-dropdown__list-item">Dhaka</option>
-                          <option value="" class="select-dropdown__list-item">Chittagong</option>
-                          <option value="" class="select-dropdown__list-item">Mymensingh</option>
-                          <option value="" class="select-dropdown__list-item">Rangpur</option>
-                          <option value="" class="select-dropdown__list-item">Barishal</option>
-                          <option value="" class="select-dropdown__list-item">Sylhet</option>
-                          <option value="" class="select-dropdown__list-item">Rajshahi</option>
-                          <option value="" class="select-dropdown__list-item">Khulna</option>
+                        <select id="divisions" class="wide" autocomplete="off">
+                          <option value="">Dhaka</option>
+                          <option value="">Chittagong</option>
+                          <option value="">Mymensingh</option>
+                          <option value="">Rangpur</option>
+                          <option value="">Barishal</option>
+                          <option value="">Sylhet</option>
+                          <option value="">Rajshahi</option>
+                          <option value="">Khulna</option>
                         </select>
                         <p class="error-message d-none">This field is required</p>
                       </div>
@@ -719,17 +721,17 @@
                         <label for="districts" class="inputlabel">
                           District <span>*</span>
                         </label>
-                        <select id="districts" class="form-select" placeholder-text="Select District" autocomplete="off">
-                          <option value="" class="select-dropdown__list-item">Dhaka</option>
-                          <option value="" class="select-dropdown__list-item">Dinajpur</option>
-                          <option value="" class="select-dropdown__list-item">Sherpur</option>
-                          <option value="" class="select-dropdown__list-item">Chittagong</option>
-                          <option value="" class="select-dropdown__list-item">Mymensingh</option>
-                          <option value="" class="select-dropdown__list-item">Rangpur</option>
-                          <option value="" class="select-dropdown__list-item">Barishal</option>
-                          <option value="" class="select-dropdown__list-item">Sylhet</option>
-                          <option value="" class="select-dropdown__list-item">Rajshahi</option>
-                          <option value="" class="select-dropdown__list-item">Khulna</option>
+                        <select id="districts" class="wide" autocomplete="off">
+                          <option value="">Dhaka</option>
+                          <option value="">Dinajpur</option>
+                          <option value="">Sherpur</option>
+                          <option value="">Chittagong</option>
+                          <option value="">Mymensingh</option>
+                          <option value="">Rangpur</option>
+                          <option value="">Barishal</option>
+                          <option value="">Sylhet</option>
+                          <option value="">Rajshahi</option>
+                          <option value="">Khulna</option>
                         </select>
                         <p class="error-message d-none">This field is required</p>
                       </div>
@@ -740,13 +742,13 @@
                         <label for="thanas" class="inputlabel">
                           Thana <span>*</span>
                         </label>
-                        <select id="thanas" class="form-select" placeholder-text="Select Thana" autocomplete="off">
-                          <option value="" class="select-dropdown__list-item">Sherpur Sadar</option>
-                          <option value="" class="select-dropdown__list-item">Phulbari</option>
-                          <option value="" class="select-dropdown__list-item">Nalitabari</option>
-                          <option value="" class="select-dropdown__list-item">Jhinaigati</option>
-                          <option value="" class="select-dropdown__list-item">Nakla</option>
-                          <option value="" class="select-dropdown__list-item">Sreebardi</option>
+                        <select id="thanas" class="wide" autocomplete="off">
+                          <option value="">Sherpur Sadar</option>
+                          <option value="">Phulbari</option>
+                          <option value="">Nalitabari</option>
+                          <option value="">Jhinaigati</option>
+                          <option value="">Nakla</option>
+                          <option value="">Sreebardi</option>
                         </select>
                         <p class="error-message d-none">This field is required</p>
                       </div>
@@ -1164,11 +1166,43 @@
                         <label for="normal-select-1" class="inputlabel">
                           Degree Title <span>*</span>
                         </label>
-                        <select id="normal-select-1" class="form-select" placeholder-text="MBBS" autocomplete="off">
-                          <option value="1" class="select-dropdown__list-item">MBBS</option>
-                          <option value="2" class="select-dropdown__list-item">DENTAL</option>
-                          <option value="3" class="select-dropdown__list-item">NEWEST</option>
-                          <option value="4" class="select-dropdown__list-item">OLDEST</option>
+                        <select id="normal-select-1" class="wide" autocomplete="off">
+                          <option value="">MBBS</option>
+                          <option value="">DENTAL</option>
+                          <option value="">NEWEST</option>
+                          <option value="">OLDEST</option>
+                          <option value="">OTHER</option>
+                        </select>
+                        <p class="error-message d-none">This field is required</p>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="inputbox">
+                        <label for="selectinstitute" class="inputlabel">
+                          Select Institute <span>*</span>
+                        </label>
+                        <select id="selectinstitute" class="wide" autocomplete="off">
+                          <option value="">Dhaka Medical College</option>
+                          <option value="">Mymensingh Medical College</option>
+                          <option value="">Chittagong Medical</option>
+                          <option value="">Modarn Medical</option>
+                          <option value="">Dhaka Medical College</option>
+                          <option value="">Mymensingh Medical College</option>
+                          <option value="">Chittagong Medical</option>
+                          <option value="">Dhaka Medical College</option>
+                          <option value="">Mymensingh Medical College</option>
+                          <option value="">Chittagong Medical</option>
+                          <option value="">Modarn Medical</option>
+                          <option value="">Dhaka Medical College</option>
+                          <option value="">Mymensingh Medical College</option>
+                          <option value="">Chittagong Medical</option>
+                          <option value="">Modarn Medical</option>
+                          <option value="">Dhaka Medical College</option>
+                          <option value="">Mymensingh Medical College</option>
+                          <option value="">Chittagong Medical</option>
+                          <option value="">Modarn Medical</option>
+                          <option value="">Other</option>
                         </select>
                         <p class="error-message d-none">This field is required</p>
                       </div>
@@ -1180,6 +1214,16 @@
                           Major Course <span>*</span>
                         </label>
                         <input type="text" id="majorcourse" class="form-control" placeholder="Dental" autocomplete="off">
+                        <p class="error-message d-none">This field is required</p>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="inputbox">
+                        <label for="majorcourse2" class="inputlabel">
+                          Major Course <span>*</span>
+                        </label>
+                        <input type="text" id="majorcourse2" class="form-control" placeholder="Dental" autocomplete="off">
                         <p class="error-message d-none">This field is required</p>
                       </div>
                     </div>
@@ -1211,6 +1255,15 @@
                         </label>
                         <input type="text" class="form-control" placeholder="31/12/2020" id="ending-calendar" autocomplete="off">
                         <p class="error-message d-none">This field is required</p>
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="checkfield">
+                        <input type="checkbox" class="checkinput" id="currentstudy" autocomplete="off" hidden>
+                        <label for="currentstudy" class="checklabel">
+                          Currenty Studying
+                        </label>
                       </div>
                     </div>
 
@@ -1407,12 +1460,14 @@
   <!-- COPYRIGHT -->
   <script src="../assets/js/copyright/copyright.js"></script>
   <script src="../assets/js/fileupload/uploadprofile.js"></script>
-  <script src="../assets/js/selets/select.js"></script>
   <!-- MC-DATEPICKER -->
   <script src="../assets/js/mc-datepicker/mc-calendar.min.js"></script>
   <script src="../assets/js/filter/deadline.js"></script>
   <script src="../assets/js/showhide/showhide.js"></script>
   <!-- TAG-GENERATOR -->
   <script src="../assets/js/tag-generator/tag-generator.js"></script>
+  <!-- NICE-SELECT -->
+  <script src="../assets/js/nice-select/nice-select2.js"></script>
+  <script src="../assets/js/nice-select/doctorselect.js"></script>
 </body>
 </html>
